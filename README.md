@@ -79,6 +79,11 @@ Development never happens in this repo — it happens in the two forks, each an
 independent, upstream-connected repo. This repo pins the versions that are
 proven to work together.
 
+The easy way: **`opencode upgrade`** — on fork builds it checks both
+upstreams, proves the sync is conflict-free, then pulls, compiles, and swaps
+the binaries itself. `opencode upgrade --check` for a read-only status.
+Full details and the manual fallback: [docs/upgrading.md](docs/upgrading.md).
+
 - **opencode fork** — new features land on branch `opencode-llama.cpp`; rebase onto
   upstream `sst/opencode` to pick up their improvements, rebuild with
   `scripts/build-opencode.sh`.
