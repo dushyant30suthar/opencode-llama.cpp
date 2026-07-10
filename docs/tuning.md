@@ -97,11 +97,22 @@ Server-based MTP ladder (NVFP4):
 **76.3 t/s vs the Q4_K_XL champion's 70.6 (+8%)** — and note the peak moved
 from n-max 4 to n-max 3 on this quant. Marketing said "2.5× faster"; the real,
 measured story on this rig is single-digit gains everywhere plus the VRAM
-headroom. Max context not yet re-probed for NVFP4 (seeded at 180,224 — the
-smaller weights make it at least as safe as Q4_K_XL's probed value).
+headroom.
 
 Revalidated on engine b9964 (`22b69b6e9`, the current submodule pin):
 **77.1 t/s** at n-max 3 — the newer build is marginally faster still.
+
+Follow-up sweeps on b9964 (`scripts/tune-model.sh` + a ctx bisect, raw data in
+`bench/nvfp4-tune-results.txt`):
+
+- **Current flags confirmed optimal**: f16 KV was within noise of q8_0 on this
+  quant (+0.6 t/s — unlike the old Q4, where f16 gave +7%), so q8_0 keeps its
+  2× context capacity for free; ubatch 1024≈2048; layer split trades −32%
+  decode for +43% prefill (990 t/s) — rejected per the generation-first rule;
+  MTP n-max 3 is the confirmed peak (n2 71.3, n4 75.1, n5 73.4).
+- **Max context probed: 212,992** (bisect, load + real completion, production
+  flags). The 1.6 GB the quant saves became +32k context over the Q4_K_XL
+  ceiling. `models.ini` runs 208,896 (one-4k-step backoff).
 
 ## Sampling
 

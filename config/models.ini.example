@@ -58,7 +58,7 @@ top-k = 20
 min-p = 0
 [michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF]
 model = ~/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf
-ctx-size = 180224
+ctx-size = 208896
 gpu-layers = 99
 flash-attn = on
 cache-type-k = q8_0

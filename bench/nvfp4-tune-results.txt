@@ -1,0 +1,12 @@
+== tuning [michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF] (/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf)
+kv=q8_0 ub=2048 sm=tensor n=3: tg=75.1 t/s  pp=691.9 t/s
+kv=f16 ub=2048 sm=tensor n=3: tg=75.7 t/s  pp=690.5 t/s
+kv=q8_0 ub=1024 sm=tensor n=3: tg=75.2 t/s  pp=696.8 t/s
+kv=q8_0 ub=2048 sm=layer n=3: tg=51.3 t/s  pp=990.0 t/s
+kv=q8_0 ub=2048 sm=tensor n=2: tg=71.3 t/s  pp=688.5 t/s
+kv=q8_0 ub=2048 sm=tensor n=4: tg=75.1 t/s  pp=694.7 t/s
+kv=q8_0 ub=2048 sm=tensor n=5: tg=73.4 t/s  pp=684.4 t/s
+== winner: kv=q8_0 ub=2048 sm=tensor n-max=3 -> kv=q8_0
+75.1 t/s
+
+== ctx bisect (same flags, b9964): probes 221184 FAIL / 200704 PASS / 208896 PASS / 212992 PASS / 217088 FAIL -> max 212992, applied 208896 (-4k backoff)
