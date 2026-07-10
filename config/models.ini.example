@@ -58,7 +58,9 @@ top-k = 20
 min-p = 0
 [michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF]
 model = ~/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf
-ctx-size = 208896
+# 192k: sweet spot below probed max 212992 — 208896 left ~0.3G VRAM free, 196608 keeps ~0.9G
+# on the tighter GPU (15.4/16.3 measured). q8_0 KV ≈ 0.18GB per 4096 tokens here.
+ctx-size = 196608
 gpu-layers = 99
 flash-attn = on
 cache-type-k = q8_0
