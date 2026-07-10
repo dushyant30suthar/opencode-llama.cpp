@@ -11,7 +11,7 @@ Fork builds (channel or version containing `llamastack`) are exempt:
 - `opencode upgrade` and the server upgrade endpoint refuse with
   `custom llamastack build — update by rebuilding the fork`.
 
-Updating is deliberate instead: rebase branch `llamastack` onto upstream,
+Updating is deliberate instead: rebase branch `opencode-llama.cpp` onto upstream,
 rebuild with `scripts/build-opencode.sh`.
 
 Code: `packages/opencode/src/installation/index.ts`,

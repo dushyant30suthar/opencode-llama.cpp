@@ -84,7 +84,7 @@ fork works against a stock llama-server too, just with fewer live displays.
 | llama-server binary | `$LLAMASTACK_SERVER_BIN`, else `$PATH`, else conventional build dirs |
 | Escape hatch | `OPENCODE_DISABLE_LLAMASTACK=1` |
 
-## Where the code lives (opencode submodule, branch `llamastack`)
+## Where the code lives (opencode submodule, branch `opencode-llama.cpp`)
 
 | Area | Path |
 | --- | --- |

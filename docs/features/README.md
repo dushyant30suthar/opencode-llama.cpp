@@ -1,6 +1,6 @@
 # Features added by the opencode fork
 
-Everything below lives on the `llamastack` branch of the `opencode/` submodule
+Everything below lives on the `opencode-llama.cpp` branch of the `opencode/` submodule
 and works with a plain llama.cpp `llama-server` — no other runtime needed.
 
 | Feature | One line |

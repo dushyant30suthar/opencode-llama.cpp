@@ -31,7 +31,7 @@ owning the whole chain:
 | Path | What it is |
 | --- | --- |
 | `llama.cpp/` | Submodule → [our llama.cpp fork](https://github.com/dushyant30suthar/llama.cpp) (tracks upstream ggml-org), pinned at the commit the configs were validated against |
-| `opencode/` | Submodule → [our opencode fork](https://github.com/dushyant30suthar/opencode) (branch `llamastack`), where all stack code lives |
+| `opencode/` | Submodule → [our opencode fork](https://github.com/dushyant30suthar/opencode) (branch `opencode-llama.cpp`), where all stack code lives |
 | `docs/` | Common documentation: [setup](docs/setup.md), [architecture](docs/architecture.md), [tuning](docs/tuning.md), [features](docs/features/README.md) |
 | `scripts/` | `build-llama.sh`, `build-opencode.sh`, model downloaders — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
@@ -78,7 +78,7 @@ Development never happens in this repo — it happens in the two forks, each an
 independent, upstream-connected repo. This repo pins the versions that are
 proven to work together.
 
-- **opencode fork** — new features land on branch `llamastack`; rebase onto
+- **opencode fork** — new features land on branch `opencode-llama.cpp`; rebase onto
   upstream `sst/opencode` to pick up their improvements, rebuild with
   `scripts/build-opencode.sh`.
 - **llama.cpp fork** — carries no patches today, so updating is just syncing

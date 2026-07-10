@@ -4,4 +4,4 @@
 [submodule "opencode"]
 	path = opencode
 	url = https://github.com/dushyant30suthar/opencode.git
-	branch = llamastack
+	branch = opencode-llama.cpp
