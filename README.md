@@ -67,7 +67,8 @@ Highlights ([full tables](docs/tuning.md)):
 
 | Model | Max context | Generation |
 | --- | --- | --- |
-| Qwen3.6-27B-MTP Q4_K_XL (champion) | 180,224 | 70.6 t/s (MTP draft n=4) |
+| **Qwen3.6-27B NVFP4-MTP (champion)** | 180,224 | **76.3 t/s** (MTP draft n=3) |
+| Qwen3.6-27B-MTP Q4_K_XL | 180,224 | 70.6 t/s (MTP draft n=4) |
 | Qwen3.6-35B-A3B Q4_K_M (MoE) | 245,760 | 152 t/s |
 | Qwen3.6-27B Q4_K_M | 258,048 (no mmproj) | 40 t/s |
 | gemma-4-31B QAT Q4_0 | 147,456 | 37 t/s |

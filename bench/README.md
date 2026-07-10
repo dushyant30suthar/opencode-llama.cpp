@@ -17,6 +17,7 @@ with their raw results committed alongside. Two design rules:
 | `flag-sweep.sh` | split-mode × ubatch sweep via llama-bench (pp2048 + tg128) | `sweep-results.txt` |
 | `mtp-bench.sh` | MTP speculative decoding: baseline vs draft-mtp at several n-max values × KV quant, measured server-side over ~600 tokens of code-flavored generation | `mtp-bench-results.txt` |
 | `mtp-ctx-search.sh` | Max context for the MTP build with speculative decoding active | `mtp-ctx-results.txt` |
+| `nvfp4-bench.sh` | NVFP4 vs Q4_K_XL: raw llama-bench pp2048/tg128 for both quants, then the server-based MTP n-max ladder on NVFP4 (crowned the current champion) | `nvfp4-bench-results.txt` |
 
 Result files are raw script output: `label: pp_t/s tg_t/s` for bench sweeps,
 `model max_ctx` for context searches.

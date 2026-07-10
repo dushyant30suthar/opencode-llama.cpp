@@ -66,13 +66,13 @@ rebuilding, see [features/no-self-update.md](features/no-self-update.md).
 
 ### Updating the opencode fork later
 
-The fork's branch (`opencode-llama.cpp`) sits on top of upstream `master`.
-To pick up upstream improvements:
+The fork's branch (`opencode-llama.cpp`) sits on top of upstream `dev`
+(sst/opencode's main branch). To pick up upstream improvements:
 
 ```sh
 cd opencode
 git fetch upstream                  # upstream = github.com/sst/opencode
-git rebase upstream/master
+git rebase upstream/dev
 bun install --ignore-scripts
 bun run --cwd packages/core fix-node-pty
 cd packages/opencode && bun run script/build.ts --single --skip-embed-web-ui

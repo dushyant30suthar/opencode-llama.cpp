@@ -142,3 +142,31 @@ temp = 0.6
 top-p = 0.95
 top-k = 20
 min-p = 0
+
+# NVFP4 (Blackwell-native FP4) build of the 27B with MTP tensors baked in —
+# quantized by michaelw9999, the author of llama.cpp's NVFP4 CUDA kernels.
+# Our b9891 build (> b8967) has native sm_120 NVFP4 MMQ, so this runs on the
+# FP4 tensor cores. Same champion flags as the Q4_K_XL MTP section; 16.19GB
+# file (vs ~16.4GB Q4_K_XL) so 180224 ctx should hold — probe if it OOMs.
+[michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF]
+model = ~/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf
+ctx-size = 180224
+gpu-layers = 99
+flash-attn = on
+cache-type-k = q8_0
+cache-type-v = q8_0
+jinja = true
+split-mode = tensor
+ubatch-size = 2048
+parallel = 1
+spec-type = draft-mtp
+# n-max 3 = measured peak for NVFP4 (76.3 t/s vs 73.2 @ n4, 69.0 @ n5 — 2026-07-10 bench)
+spec-draft-n-max = 3
+# host prompt-cache DISABLED: cap does not hold on hybrid arch
+cache-ram = 0
+reasoning-preserve = true
+# official Qwen3.6 thinking "precise coding" samplers
+temp = 0.6
+top-p = 0.95
+top-k = 20
+min-p = 0

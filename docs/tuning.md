@@ -62,6 +62,40 @@ n-max 4 is the peak — **1.9× the baseline**. Later single-run re-probes put
 Constraints: MTP requires `parallel = 1` (single slot) and doesn't support
 vision.
 
+## NVFP4 — the current champion (2026-07-10)
+
+NVFP4 is NVIDIA's block-scaled FP4 format with native Blackwell tensor-core
+kernels (llama.cpp b8967+; arch `120a`, which our build targets). Quant:
+`michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF` — by the author of llama.cpp's
+NVFP4 CUDA kernels, MTP tensors included, 15.07 GiB vs Q4_K_XL's 16.67 GiB
+(**~1.6 GB VRAM freed**). Measured with `bench/nvfp4-bench.sh` on b9891, same
+flags as everything above:
+
+Raw (llama-bench, no MTP):
+
+| Quant | pp2048 | tg128 |
+| --- | --- | --- |
+| Q4_K_XL | 729.6 ± 1.2 | 37.7 ± 0.5 |
+| NVFP4 | 781.0 ± 1.6 (+7%) | 41.0 ± 0.1 (+8.8%) |
+
+Server-based MTP ladder (NVFP4):
+
+| Config | Gen t/s |
+| --- | --- |
+| baseline (no MTP) | 40.5 |
+| **draft-mtp, n-max 3** | **76.3** |
+| draft-mtp, n-max 4 | 73.2 |
+| draft-mtp, n-max 5 | 69.0 |
+
+**76.3 t/s vs the Q4_K_XL champion's 70.6 (+8%)** — and note the peak moved
+from n-max 4 to n-max 3 on this quant. Marketing said "2.5× faster"; the real,
+measured story on this rig is single-digit gains everywhere plus the VRAM
+headroom. Max context not yet re-probed for NVFP4 (seeded at 180,224 — the
+smaller weights make it at least as safe as Q4_K_XL's probed value).
+
+Revalidated on engine b9964 (`22b69b6e9`, the current submodule pin):
+**77.1 t/s** at n-max 3 — the newer build is marginally faster still.
+
 ## Sampling
 
 Thinking models use the official Qwen3.6 "precise coding" card values:
