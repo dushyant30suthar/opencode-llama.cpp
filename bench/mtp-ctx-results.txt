@@ -1,0 +1,6 @@
+probe 155648 -> best=155648
+probe 196608 -> best=155648
+probe 172032 -> best=172032
+probe 180224 -> best=180224
+probe 188416 -> best=180224
+MTP-27B MAX 180224
