@@ -2,7 +2,7 @@
 # MTP benchmark: baseline vs draft-mtp (n-max 2, 3) x KV cache (q8_0, f16).
 # Server-based (production-faithful), port 9444. Requires idle GPUs.
 set -u
-SRV=~/Projects/llama/llama.cpp/build/bin/llama-server
+SRV="$(dirname "$0")/../llama.cpp/build/bin/llama-server"
 MODEL=~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF/Qwen3.6-27B-UD-Q4_K_XL.gguf
 OUT=~/.local/state/llamastack/mtp-bench-results.txt
 LOG=~/.local/state/llamastack/mtp-bench.log

@@ -2,7 +2,7 @@
 # NVFP4 vs Q4_K_XL champion — same binaries, same flags, same method as
 # bench/mtp-bench.sh (server timings) + llama-bench for raw pp/tg.
 set -u
-BIN=~/Projects/llama/llama.cpp/build/bin
+BIN="$(dirname "$0")/../llama.cpp/build/bin"
 NV=~/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf
 Q4=~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF/Qwen3.6-27B-UD-Q4_K_XL.gguf
 SCRATCH="$(dirname "$0")"

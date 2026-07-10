@@ -2,7 +2,7 @@
 # Flag sweep on the daily-driver MoE: split-mode x ubatch, pp2048 + tg128.
 # Waits for the ctx experiment to finish first (both need exclusive VRAM).
 set -u
-BENCH=~/Projects/llama/llama.cpp/build/bin/llama-bench
+BENCH="$(dirname "$0")/../llama.cpp/build/bin/llama-bench"
 MODEL=~/.lmstudio/models/lmstudio-community/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf
 OUT=~/.local/state/llamastack/sweep-results.txt
 

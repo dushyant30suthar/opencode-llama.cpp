@@ -2,7 +2,7 @@
 # Production-faithful max-context search: probes via llama-server with the SAME
 # config the router uses — mmproj included, tensor split, q8_0 KV, fa on.
 set -u
-SRV=~/Projects/llama/llama.cpp/build/bin/llama-server
+SRV="$(dirname "$0")/../llama.cpp/build/bin/llama-server"
 OUT=~/.local/state/llamastack/ctx-results-v2.txt
 LOG=~/.local/state/llamastack/ctx-search-v2.log
 PORT=9444

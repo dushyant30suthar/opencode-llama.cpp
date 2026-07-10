@@ -2,7 +2,7 @@
 # Find max loadable ctx-size per model on 2x16GB (ngl 99, fa on, kv q8_0).
 # Binary search: a config "fits" if llama-cli loads and generates 1 token.
 set -u
-BIN=~/Projects/llama/llama.cpp/build/bin/llama-cli
+BIN="$(dirname "$0")/../llama.cpp/build/bin"/llama-cli
 OUT=~/.local/state/llamastack/ctx-results.txt
 LOG=~/.local/state/llamastack/ctx-experiment.log
 : > "$OUT"; : > "$LOG"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-SRV=~/Projects/llama/llama.cpp/build/bin/llama-server
+SRV="$(dirname "$0")/../llama.cpp/build/bin/llama-server"
 MODEL=~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF/Qwen3.6-27B-UD-Q4_K_XL.gguf
 OUT=~/.local/state/llamastack/mtp-ctx-results.txt
 PORT=9444

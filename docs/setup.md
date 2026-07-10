@@ -106,6 +106,6 @@ to see what a fully tuned file looks like.
 
 | Env var | Meaning | Default |
 | --- | --- | --- |
-| `LLAMASTACK_SERVER_BIN` | llama-server binary | `$PATH`, then conventional build dirs (`~/Projects/llama/llama.cpp/build/bin`, `~/Projects/llama.cpp/build/bin`, `~/llama.cpp/build/bin`, `/usr/local/bin`) |
+| `LLAMASTACK_SERVER_BIN` | llama-server binary | `$PATH`, then conventional build dirs (the repo's own `llama.cpp/build/bin` first, then `~/Projects/llama/llama.cpp/build/bin`, `~/Projects/llama.cpp/build/bin`, `~/llama.cpp/build/bin`, `/usr/local/bin`) |
 | `LLAMASTACK_MODELS_DIR` | models directory | `~/.lmstudio/models` |
 | `OPENCODE_DISABLE_LLAMASTACK` | set to `1` to skip local-stack detection entirely | unset |
