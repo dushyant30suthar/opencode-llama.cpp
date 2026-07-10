@@ -64,6 +64,24 @@ This produces a single self-contained binary and installs it to
 (that would silently remove the whole local stack) — update by rebasing and
 rebuilding, see [features/no-self-update.md](features/no-self-update.md).
 
+### Updating the opencode fork later
+
+The fork's branch (`opencode-llama.cpp`) sits on top of upstream `master`.
+To pick up upstream improvements:
+
+```sh
+cd opencode
+git fetch upstream                  # upstream = github.com/sst/opencode
+git rebase upstream/master
+bun install --ignore-scripts
+bun run --cwd packages/core fix-node-pty
+cd packages/opencode && bun run script/build.ts --single --skip-embed-web-ui
+cp dist/opencode-linux-x64/bin/opencode ~/.opencode/bin/opencode
+```
+
+Keeping a stock upstream binary at `~/.opencode/bin/opencode-upstream-backup`
+is handy for A/B-ing fork regressions.
+
 ## 4. Models
 
 Models live in the **LM Studio layout**: `~/.lmstudio/models/<publisher>/<repo>/*.gguf`.
