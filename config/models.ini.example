@@ -34,30 +34,6 @@ jinja = true
 split-mode = tensor
 # host prompt-cache cap: default 8GiB+ swamped the 32GB box (24GB swapped)
 cache-ram = 2048
-
-[lmstudio-community/Qwen3.6-27B-GGUF]
-model = ~/.lmstudio/models/lmstudio-community/Qwen3.6-27B-GGUF/Qwen3.6-27B-Q4_K_M.gguf
-# vision (mmproj) removed by choice — frees ~900MB VRAM for full 256k context
-ctx-size = 258048
-ubatch-size = 2048
-gpu-layers = 99
-flash-attn = on
-cache-type-k = q8_0
-cache-type-v = q8_0
-jinja = true
-split-mode = tensor
-# host prompt-cache cap: default 8GiB+ swamped the 32GB box (24GB swapped)
-# host prompt-cache DISABLED: cap does not hold on hybrid arch (2048 cap
-# → 26.8GB swapped, 2026-07-10; restore is inert on hybrids anyway)
-cache-ram = 0
-# keep thinking in history — prevents tool-call loops, keeps KV prefix cache hot
-reasoning-preserve = true
-# official Qwen3.6 thinking "precise coding" samplers
-temp = 0.6
-top-p = 0.95
-top-k = 20
-min-p = 0
-
 [lmstudio-community/Qwen3.6-35B-A3B-GGUF]
 model = ~/.lmstudio/models/lmstudio-community/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf
 mmproj = ~/.lmstudio/models/lmstudio-community/Qwen3.6-35B-A3B-GGUF/mmproj-Qwen3.6-35B-A3B-BF16.gguf
@@ -80,74 +56,6 @@ temp = 0.6
 top-p = 0.95
 top-k = 20
 min-p = 0
-
-# Q5_K_XL of the MTP 27B — one quality tier up over Q4_XL, same quality/speed budget.
-# ctx-size 180224: PROBED 2026-07-10 (bisect + load-and-generate verification) —
-#   full parity with Q4_XL; the hybrid attention's light KV leaves the headroom.
-# ubatch-size 1024: NOT probed for this model — smaller compute buffers than Q4's
-#   2048 to stay safe on VRAM at 180k (bigger Q5 weights). Raise to 2048 and test
-#   if you want max prompt speed and it still loads.
-[unsloth/Qwen3.6-27B-MTP:Q5_K_XL]
-model = ~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF/Qwen3.6-27B-UD-Q5_K_XL.gguf
-ctx-size = 180224
-gpu-layers = 99
-flash-attn = on
-cache-type-k = q8_0
-cache-type-v = q8_0
-jinja = true
-split-mode = tensor
-ubatch-size = 1024
-parallel = 1
-spec-type = draft-mtp
-# n-max 4 = your proven champion value. A 2026-07-10 probe found 2/3/4 within
-# ~1 t/s (noise) on a single run; restored 4 rather than change on noise.
-spec-draft-n-max = 4
-# host prompt-cache DISABLED: cap does not hold on hybrid arch (2048 cap
-# → 26.8GB swapped, 2026-07-10; restore is inert on hybrids anyway)
-cache-ram = 0
-reasoning-preserve = true
-temp = 0.6
-top-p = 0.95
-top-k = 20
-min-p = 0
-
-# MTP build of the 27B: built-in multi-token-prediction speculative decoding.
-# Requires single slot (parallel = 1); vision unsupported with MTP.
-[unsloth/Qwen3.6-27B-MTP-GGUF]
-model = ~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF/Qwen3.6-27B-UD-Q4_K_XL.gguf
-ctx-size = 180224
-gpu-layers = 99
-flash-attn = on
-cache-type-k = q8_0
-cache-type-v = q8_0
-jinja = true
-split-mode = tensor
-ubatch-size = 2048
-parallel = 1
-spec-type = draft-mtp
-# n-max 4 = your original proven champion (70.6 t/s). Kept — see Q5 note above.
-spec-draft-n-max = 4
-# host prompt-cache DISABLED: cap does not hold on hybrid arch (2048 cap
-# → 26.8GB swapped, 2026-07-10; restore is inert on hybrids anyway)
-cache-ram = 0
-# ctx-checkpoints: rollback points for prompt reuse, ~280MB host RAM each,
-# ring covers the last N REQUESTS. Fewer than default (32) = frequent full
-# 30s prompt re-evals — measured 2026-07-10. Stock 32 is correct; the one-off
-# OOM needed 200k compaction + 20GB download at once. If a freeze ever recurs
-# during compaction, lower this (16), not cache-ram.
-# keep thinking in history — prevents tool-call loops, keeps KV prefix cache hot
-reasoning-preserve = true
-# official Qwen3.6 thinking "precise coding" samplers
-temp = 0.6
-top-p = 0.95
-top-k = 20
-min-p = 0
-
-# NVFP4 (Blackwell-native FP4) build of the 27B with MTP tensors baked in —
-# quantized by michaelw9999, the author of llama.cpp's NVFP4 CUDA kernels.
-# Our b9891 build (> b8967) has native sm_120 NVFP4 MMQ, so this runs on the
-# FP4 tensor cores. Same champion flags as the Q4_K_XL MTP section; 16.19GB
-# file (vs ~16.4GB Q4_K_XL) so 180224 ctx should hold — probe if it OOMs.
 [michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF]
 model = ~/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf
 ctx-size = 180224

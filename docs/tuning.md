@@ -1,5 +1,12 @@
 # Tuning — how every number was found
 
+**Automated:** `scripts/tune-model.sh <models.ini section>` sweeps the speed
+knobs (KV quant, ubatch, split-mode, MTP draft length) with the same
+server-measured method as everything below, and writes the winners to
+`~/.local/state/llamastack/recommended.ini` — which `/config` → "Reset to
+recommended" applies. Add `--apply` to also update `models.ini` directly.
+Needs idle GPUs; ~20 minutes per model.
+
 Nothing in `config/models.ini.example` is a guess. Two principles:
 
 1. **Probe through the production path.** Max context is validated by loading
