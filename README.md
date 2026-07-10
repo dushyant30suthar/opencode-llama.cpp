@@ -30,8 +30,8 @@ owning the whole chain:
 
 | Path | What it is |
 | --- | --- |
-| `llama.cpp/` | Submodule → upstream llama.cpp, pinned at the commit the configs were validated against |
-| `opencode/` | Submodule → the opencode fork (branch `llamastack`), where all stack code lives |
+| `llama.cpp/` | Submodule → [our llama.cpp fork](https://github.com/dushyant30suthar/llama.cpp) (tracks upstream ggml-org), pinned at the commit the configs were validated against |
+| `opencode/` | Submodule → [our opencode fork](https://github.com/dushyant30suthar/opencode) (branch `llamastack`), where all stack code lives |
 | `docs/` | Common documentation: [setup](docs/setup.md), [architecture](docs/architecture.md), [tuning](docs/tuning.md), [features](docs/features/README.md) |
 | `scripts/` | `build-llama.sh`, `build-opencode.sh`, model downloaders — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
@@ -74,12 +74,18 @@ Highlights ([full tables](docs/tuning.md)):
 
 ## Keeping it current
 
-Each submodule is an independent, upstream-connected repo:
+Development never happens in this repo — it happens in the two forks, each an
+independent, upstream-connected repo. This repo pins the versions that are
+proven to work together.
 
-- **llama.cpp** — pull upstream, rebuild with `scripts/build-llama.sh`, re-run
-  the `bench/` probes if the release notes touch your model families.
-- **opencode fork** — rebase branch `llamastack` onto upstream, rebuild with
+- **opencode fork** — new features land on branch `llamastack`; rebase onto
+  upstream `sst/opencode` to pick up their improvements, rebuild with
   `scripts/build-opencode.sh`.
+- **llama.cpp fork** — carries no patches today, so updating is just syncing
+  the fork with upstream (`gh repo sync <you>/llama.cpp --source ggml-org/llama.cpp`),
+  rebuilding with `scripts/build-llama.sh`, and re-running the `bench/` probes
+  if the release notes touch your model families. If a patch is ever needed,
+  it lives on the fork the same way the opencode ones do.
 
 When a new combination is validated, bump the submodule pins here in one
-commit — the umbrella repo is the record of "these versions work together."
+commit — this repo is the record of "these versions work together."
