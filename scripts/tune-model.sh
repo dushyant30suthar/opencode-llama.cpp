@@ -54,7 +54,7 @@ measure() { # measure <label> <extra server args...> -> "tg pp"
     sleep 3; kill -0 $pid 2>/dev/null || break
     curl -s --max-time 2 http://127.0.0.1:$PORT/health | grep -q '"ok"' && { up=1; break; }
   done
-  if [ "$up" != 1 ]; then echo "$label: LOAD_FAILED" | tee -a "$OUT"; kill $pid 2>/dev/null; wait $pid 2>/dev/null; echo "0 0"; return; fi
+  if [ "$up" != 1 ]; then echo "$label: LOAD_FAILED" >>"$OUT"; echo "$label: LOAD_FAILED" >&2; kill $pid 2>/dev/null; wait $pid 2>/dev/null; echo "0 0"; return; fi
   curl -s --max-time 120 http://127.0.0.1:$PORT/v1/chat/completions -H "Content-Type: application/json" \
     -d '{"messages":[{"role":"user","content":"hi"}],"max_tokens":16}' >/dev/null
   local timings
@@ -66,12 +66,15 @@ t=json.load(r).get("timings",{})
 print(round(t.get("predicted_per_second",0),1), round(t.get("prompt_per_second",0),1))
 PY
   ) || timings="0 0"
-  echo "$label: tg=$(echo "$timings" | cut -d' ' -f1) t/s  pp=$(echo "$timings" | cut -d' ' -f2) t/s" | tee -a "$OUT"
+  # display goes to the results file + stderr; ONLY the timings tuple may hit
+  # stdout — callers capture it with $(measure ...)
+  echo "$label: tg=$(echo "$timings" | cut -d' ' -f1) t/s  pp=$(echo "$timings" | cut -d' ' -f2) t/s" >>"$OUT"
+  echo "$label: tg=$(echo "$timings" | cut -d' ' -f1) t/s  pp=$(echo "$timings" | cut -d' ' -f2) t/s" >&2
   kill $pid 2>/dev/null; wait $pid 2>/dev/null; sleep 2
   echo "$timings"
 }
 
-tg_of() { echo "$1" | cut -d' ' -f1; }
+tg_of() { echo "$1" | tail -1 | cut -d' ' -f1; }
 better() { python3 -c "import sys; sys.exit(0 if float('$1') > float('$2') else 1)"; }
 
 # greedy descent, starting from the current stack defaults
