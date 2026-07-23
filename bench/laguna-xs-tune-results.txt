@@ -1,0 +1,18 @@
+== XS Q4_K_M sweep (layer split; row unsupported on this GPU) ==
+q8kv-ub512: gen=138.6 t/s prompt=535.2 t/s vram=10712/10675 MiB
+q8kv-ub2048: LOAD_FAILED
+f16kv-ub2048: gen=146.9 t/s prompt=548.1 t/s vram=11816/11659 MiB
+f16kv-ngram: gen=147.3 t/s prompt=672.6 t/s vram=11816/11659 MiB
+== XS context probe (q8_0 KV, ub2048) ==
+ctx-131072: gen=135.0 t/s prompt=604.1 t/s vram=14502/14056 MiB
+ctx-262144: gen=132.8 t/s prompt=305.3 t/s vram=15643/14659 MiB
+ctx-393216: LOAD_FAILED
+ctx-393216: DID NOT FIT — stop
+DONE 10:46:04
+== f16 KV + ngram: max context probe (ngram needs unquantized KV) ==
+ngram-f16-ctx65536: gen=147.1 t/s prompt=478.1 t/s vram=13098/12689 MiB
+ngram-f16-ctx98304: gen=146.3 t/s prompt=344.2 t/s vram=14378/13713 MiB
+ngram-f16-ctx131072: gen=147.2 t/s prompt=376.3 t/s vram=15660/14739 MiB
+== q8 KV + ngram (does ngram actually conflict with quantized KV?) ==
+ngram-q8-ctx131072: gen=134.1 t/s prompt=353.9 t/s vram=14502/14061 MiB
+PROBE2 DONE 10:47:59

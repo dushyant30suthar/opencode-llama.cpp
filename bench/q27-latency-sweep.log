@@ -1,0 +1,361 @@
+=== control ===
+0.00.415.254 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.611.964 W srv  llama_server: -----------------
+0.00.611.972 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.611.972 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.611.973 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.611.973 W srv  llama_server: -----------------
+0.00.613.522 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.257.861 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.07.081.830 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.262.084 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.624.815 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.625.089 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.625.091 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.625.095 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.625.096 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.625.096 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.640.395 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.659.524 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.659.561 I srv  llama_server: model loaded
+0.07.659.571 I srv  llama_server: listening on http://127.0.0.1:9480
+0.08.922.741 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.922.856 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.465.902 I slot print_timing: id  3 | task 0 | n_decoded =    209, tg =  69.16 t/s, tg_3s =  69.16 t/s
+0.13.717.380 I slot print_timing: id  3 | task 0 | prompt eval time =     521.02 ms /   139 tokens (    3.75 ms per token,   266.78 tokens per second)
+0.13.717.386 I slot print_timing: id  3 | task 0 |        eval time =    4273.48 ms /   300 tokens (   14.24 ms per token,    70.20 tokens per second)
+0.13.717.387 I slot print_timing: id  3 | task 0 |       total time =    4794.50 ms /   439 tokens
+0.13.717.390 I slot print_timing: id  3 | task 0 |    graphs reused =         95
+0.13.717.394 I slot print_timing: id  3 | task 0 | draft acceptance = 0.69072 (  201 accepted /   291 generated), mean len =  3.07
+0.13.717.444 I slot      release: id  3 | task 0 | stop processing: n_tokens = 438, truncated = 0
+0.13.742.944 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 1.000 (> 0.100 thold), f_keep = 0.317
+0.13.742.986 I slot launch_slot_: id  3 | task 101 | processing task, is_child = 0
+0.16.997.118 I slot print_timing: id  3 | task 101 | n_decoded =    195, tg =  64.88 t/s, tg_3s =  64.87 t/s
+0.18.544.770 I slot print_timing: id  3 | task 101 | prompt eval time =     248.29 ms /     4 tokens (   62.07 ms per token,    16.11 tokens per second)
+0.18.544.775 I slot print_timing: id  3 | task 101 |        eval time =    4553.41 ms /   300 tokens (   15.18 ms per token,    65.88 tokens per second)
+0.18.544.776 I slot print_timing: id  3 | task 101 |       total time =    4801.70 ms /   304 tokens
+0.18.544.777 I slot print_timing: id  3 | task 101 |    graphs reused =        200
+0.18.544.781 I slot print_timing: id  3 | task 101 | draft acceptance = 0.59813 (  192 accepted /   321 generated), mean len =  2.79
+0.18.544.816 I slot      release: id  3 | task 101 | stop processing: n_tokens = 438, truncated = 0
+0.18.549.839 I srv    operator(): operator(): cleaning up before exit...
+=== poll-100 ===
+0.00.230.172 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.412.730 W srv  llama_server: -----------------
+0.00.412.732 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.412.733 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.412.733 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.412.733 W srv  llama_server: -----------------
+0.00.414.044 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.073.422 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.893.801 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.065.049 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.400.495 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.400.735 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.400.737 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.400.739 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.400.740 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.400.740 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.415.208 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.434.192 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.434.224 I srv  llama_server: model loaded
+0.07.434.229 I srv  llama_server: listening on http://127.0.0.1:9480
+0.08.986.184 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.986.220 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.479.367 I slot print_timing: id  3 | task 0 | n_decoded =    202, tg =  67.26 t/s, tg_3s =  67.26 t/s
+0.13.896.543 I slot print_timing: id  3 | task 0 | prompt eval time =     489.66 ms /   139 tokens (    3.52 ms per token,   283.87 tokens per second)
+0.13.896.548 I slot print_timing: id  3 | task 0 |        eval time =    4420.58 ms /   300 tokens (   14.74 ms per token,    67.86 tokens per second)
+0.13.896.549 I slot print_timing: id  3 | task 0 |       total time =    4910.24 ms /   439 tokens
+0.13.896.551 I slot print_timing: id  3 | task 0 |    graphs reused =         99
+0.13.896.555 I slot print_timing: id  3 | task 0 | draft acceptance = 0.64803 (  197 accepted /   304 generated), mean len =  2.93
+0.13.896.606 I slot      release: id  3 | task 0 | stop processing: n_tokens = 438, truncated = 0
+0.13.922.153 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 1.000 (> 0.100 thold), f_keep = 0.317
+0.13.922.202 I slot launch_slot_: id  3 | task 105 | processing task, is_child = 0
+0.17.207.972 I slot print_timing: id  3 | task 105 | n_decoded =    200, tg =  65.93 t/s, tg_3s =  65.93 t/s
+0.18.550.136 I slot print_timing: id  3 | task 105 | prompt eval time =     252.01 ms /     4 tokens (   63.00 ms per token,    15.87 tokens per second)
+0.18.550.145 I slot print_timing: id  3 | task 105 |        eval time =    4375.83 ms /   300 tokens (   14.59 ms per token,    68.56 tokens per second)
+0.18.550.146 I slot print_timing: id  3 | task 105 |       total time =    4627.84 ms /   304 tokens
+0.18.550.147 I slot print_timing: id  3 | task 105 |    graphs reused =        197
+0.18.550.151 I slot print_timing: id  3 | task 105 | draft acceptance = 0.65563 (  198 accepted /   302 generated), mean len =  2.96
+0.18.550.261 I slot      release: id  3 | task 105 | stop processing: n_tokens = 438, truncated = 0
+0.18.554.318 I srv    operator(): operator(): cleaning up before exit...
+=== poll-0 ===
+0.00.240.100 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.430.088 W srv  llama_server: -----------------
+0.00.430.090 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.430.091 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.430.091 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.430.091 W srv  llama_server: -----------------
+0.00.431.359 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.146.171 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.07.318.491 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.500.150 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.867.590 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.867.865 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.867.867 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.867.870 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.867.870 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.867.870 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.883.561 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.902.767 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.902.800 I srv  llama_server: model loaded
+0.07.902.805 I srv  llama_server: listening on http://127.0.0.1:9480
+0.08.992.166 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.992.228 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.580.543 I slot print_timing: id  3 | task 0 | n_decoded =    171, tg =  56.77 t/s, tg_3s =  56.77 t/s
+0.14.657.372 I slot print_timing: id  3 | task 0 | prompt eval time =     576.18 ms /   139 tokens (    4.15 ms per token,   241.24 tokens per second)
+0.14.657.379 I slot print_timing: id  3 | task 0 |        eval time =    5088.86 ms /   300 tokens (   16.96 ms per token,    58.95 tokens per second)
+0.14.657.380 I slot print_timing: id  3 | task 0 |       total time =    5665.04 ms /   439 tokens
+0.14.657.387 I slot print_timing: id  3 | task 0 |    graphs reused =         99
+0.14.657.392 I slot print_timing: id  3 | task 0 | draft acceptance = 0.64803 (  197 accepted /   304 generated), mean len =  2.93
+0.14.657.477 I slot      release: id  3 | task 0 | stop processing: n_tokens = 438, truncated = 0
+0.15.324.693 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 1.000 (> 0.100 thold), f_keep = 0.317
+0.15.324.761 I slot launch_slot_: id  3 | task 105 | processing task, is_child = 0
+0.19.523.754 I slot print_timing: id  3 | task 105 | n_decoded =    107, tg =  36.55 t/s, tg_3s =  34.87 t/s
+0.22.563.846 I slot print_timing: id  3 | task 105 | n_decoded =    186, tg =  30.45 t/s, tg_3s =  25.99 t/s
+0.24.415.604 I slot print_timing: id  3 | task 105 | prompt eval time =    1130.84 ms /     4 tokens (  282.71 ms per token,     3.54 tokens per second)
+0.24.415.609 I slot print_timing: id  3 | task 105 |        eval time =    7959.92 ms /   300 tokens (   26.53 ms per token,    37.69 tokens per second)
+0.24.415.609 I slot print_timing: id  3 | task 105 |       total time =    9090.76 ms /   304 tokens
+0.24.415.619 I slot print_timing: id  3 | task 105 |    graphs reused =        192
+0.24.415.624 I slot print_timing: id  3 | task 105 | draft acceptance = 0.70979 (  203 accepted /   286 generated), mean len =  3.11
+0.24.416.429 I slot      release: id  3 | task 105 | stop processing: n_tokens = 438, truncated = 0
+0.24.645.212 I srv    operator(): operator(): cleaning up before exit...
+=== poll100-prio2 ===
+0.00.158.052 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.406.126 W srv  llama_server: -----------------
+0.00.406.129 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.406.129 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.406.130 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.406.130 W srv  llama_server: -----------------
+0.00.407.440 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.270.985 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.14.221.407 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7390.93 MiB on device 0: cudaMalloc failed: out of memory
+0.14.221.411 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7749947904
+[New LWP 25061]
+[New LWP 25060]
+[New LWP 25059]
+[New LWP 25058]
+[New LWP 25057]
+[New LWP 25056]
+[New LWP 25055]
+[New LWP 25054]
+[New LWP 25053]
+[New LWP 25052]
+[New LWP 25051]
+[New LWP 25050]
+[New LWP 25049]
+[New LWP 25048]
+[New LWP 25047]
+[New LWP 25046]
+[New LWP 25045]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f0ae7882312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f0ae7882312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f0ae787652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f0ae7876574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f0ae78e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f0afcc32cab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f0afcc32e1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f0afcc67a2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f0afbd08879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f0afbc27151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f0afbc28956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f0afbc2a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f0afc15e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f0afc1614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f0afc733932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f0afc65be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f0afc65de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f0ae780a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f0ae780a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 25041) detached]
+=== poll100-prio3 ===
+0.00.159.772 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.336.784 W srv  llama_server: -----------------
+0.00.336.787 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.336.787 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.336.787 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.336.788 W srv  llama_server: -----------------
+0.00.338.099 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.979.846 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.02.529.067 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7390.93 MiB on device 0: cudaMalloc failed: out of memory
+0.02.529.073 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7749947904
+[New LWP 25140]
+[New LWP 25139]
+[New LWP 25138]
+[New LWP 25137]
+[New LWP 25136]
+[New LWP 25135]
+[New LWP 25134]
+[New LWP 25133]
+[New LWP 25132]
+[New LWP 25131]
+[New LWP 25130]
+[New LWP 25129]
+[New LWP 25128]
+[New LWP 25127]
+[New LWP 25126]
+[New LWP 25125]
+[New LWP 25124]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f5e11482312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f5e11482312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f5e1147652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f5e11476574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f5e114e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f5e255accab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f5e255ace1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f5e255e1a2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f5e25908879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f5e25827151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f5e25828956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f5e2582a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f5e25d5e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f5e25d614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f5e26333932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f5e2625be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f5e2625de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f5e1140a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f5e1140a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 25120) detached]
+=== no-op-offload ===
+0.00.066.721 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.256.260 W srv  llama_server: -----------------
+0.00.256.263 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.256.263 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.256.263 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.256.263 W srv  llama_server: -----------------
+0.00.257.537 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.872.812 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.02.112.346 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7390.93 MiB on device 0: cudaMalloc failed: out of memory
+0.02.112.350 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7749947904
+[New LWP 25198]
+[New LWP 25197]
+[New LWP 25196]
+[New LWP 25195]
+[New LWP 25194]
+[New LWP 25193]
+[New LWP 25192]
+[New LWP 25191]
+[New LWP 25190]
+[New LWP 25189]
+[New LWP 25188]
+[New LWP 25187]
+[New LWP 25186]
+[New LWP 25185]
+[New LWP 25184]
+[New LWP 25183]
+[New LWP 25182]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f5869082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f5869082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f586907652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f5869076574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f58690e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f587dd2acab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f587dd2ae1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f587dd5fa2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f587d508879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f587d427151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f587d428956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f587d42a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f587d95e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f587d9614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f587df33932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f587de5be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f587de5de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f586900a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f586900a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 25178) detached]
+=== poll100-t6 ===
+0.00.056.015 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.239.731 W srv  llama_server: -----------------
+0.00.239.734 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.239.734 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.239.734 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.239.734 W srv  llama_server: -----------------
+0.00.241.004 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.850.954 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.02.080.027 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7390.93 MiB on device 0: cudaMalloc failed: out of memory
+0.02.080.032 /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7749947904
+[New LWP 25265]
+[New LWP 25264]
+[New LWP 25263]
+[New LWP 25262]
+[New LWP 25261]
+[New LWP 25260]
+[New LWP 25259]
+[New LWP 25258]
+[New LWP 25257]
+[New LWP 25256]
+[New LWP 25255]
+[New LWP 25254]
+[New LWP 25253]
+[New LWP 25252]
+[New LWP 25251]
+[New LWP 25250]
+[New LWP 25249]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f3098082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f3098082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f309807652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f3098076574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f30980e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f30ac1accab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f30ac1ace1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f30ac1e1a2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f30ac508879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f30ac427151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f30ac428956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f30ac42a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f30ac95e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f30ac9614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f30acf33932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f30ace5be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f30ace5de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f309800a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f309800a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 25245) detached]

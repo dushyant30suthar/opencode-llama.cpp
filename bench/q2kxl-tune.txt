@@ -1,0 +1,13 @@
+== Q2_K_XL (36.96 GiB) K-ladder — smaller than IQ3_XXS so more experts should fit ==
+== IQ3_XXS reference: K13 = 14.08 decode / 462.7 prefill / 29.7G ==
+K13: decode=15.68 t/s prefill=491.8 t/s vram=13712/13934 MiB
+K15: decode=16.68 t/s prefill=547.9 t/s vram=15182/15409 MiB
+K17: LOAD_FAILED
+Q2KXL TUNE DONE 15:19:42
+
+== PHASE 2: stretch context at the winning K (and trade K for ctx) ==
+K15-ctx131072: LOAD_FAILED
+K15-ctx196608: LOAD_FAILED
+K13-ctx196608: decode=0.00 t/s prefill=0.0 t/s vram=15792/15703 MiB
+K13-ctx262144: LOAD_FAILED
+Q2KXL CTX DONE 15:23:41

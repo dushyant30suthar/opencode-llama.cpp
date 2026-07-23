@@ -1,0 +1,31 @@
+0.00.360.324 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.582.558 W srv  llama_server: -----------------
+0.00.582.561 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.582.562 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.582.562 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.582.562 W srv  llama_server: -----------------
+0.00.584.306 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.278.845 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.15.828.465 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.15.999.367 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.16.372.750 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.16.372.988 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.16.372.991 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.16.372.993 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.16.372.993 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.16.372.994 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.16.396.767 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.16.418.016 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.16.418.053 I srv  llama_server: model loaded
+0.16.418.058 I srv  llama_server: listening on http://127.0.0.1:9477
+0.18.005.350 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.18.005.388 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.21.439.916 I slot print_timing: id  3 | task 0 | n_decoded =    189, tg =  62.19 t/s, tg_3s =  62.19 t/s
+0.24.474.471 I slot print_timing: id  3 | task 0 | n_decoded =    381, tg =  62.73 t/s, tg_3s =  63.27 t/s
+0.24.841.957 I slot print_timing: id  3 | task 0 | prompt eval time =     395.22 ms /    36 tokens (   10.98 ms per token,    91.09 tokens per second)
+0.24.841.961 I slot print_timing: id  3 | task 0 |        eval time =    6441.23 ms /   400 tokens (   16.10 ms per token,    62.10 tokens per second)
+0.24.841.962 I slot print_timing: id  3 | task 0 |       total time =    6836.45 ms /   436 tokens
+0.24.841.965 I slot print_timing: id  3 | task 0 |    graphs reused =        144
+0.24.841.969 I slot print_timing: id  3 | task 0 | draft acceptance = 0.57273 (  252 accepted /   440 generated), mean len =  2.71
+0.24.842.019 I slot      release: id  3 | task 0 | stop processing: n_tokens = 435, truncated = 0
+0.42.434.489 I srv    operator(): operator(): cleaning up before exit...

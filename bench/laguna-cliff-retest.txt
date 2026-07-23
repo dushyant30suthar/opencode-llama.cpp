@@ -1,0 +1,6 @@
+== CONTROLLED RETEST: warm cache, zero I/O contention ==
+== earlier (during 41GB download): K13-ctx65536 = 1.75 t/s @28.3GB ==
+RETEST-K13-ctx65536: gen=14.40 t/s vram=13944/14044 MiB (total 27988)
+RETEST-K13-ctx32768: gen=13.08 t/s vram=13468/13544 MiB (total 27012)
+RETEST-K13-ctx98304: gen=14.85 t/s vram=14420/14543 MiB (total 28963)
+RETEST DONE 12:14:44

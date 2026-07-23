@@ -1,0 +1,7 @@
+== DFlash on poolside build (baseline vs draft) ==
+K13-nodraft-baseline: gen=12.02 t/s vram=13468/13543 MiB
+K13-dflash-n7: gen=12.35 t/s vram=15042/14657 MiB
+K13-dflash-n15: gen=7.20 t/s vram=15042/14657 MiB
+K11-dflash-n7: gen=10.88 t/s vram=13398/13004 MiB
+K11-dflash-n15: gen=7.06 t/s vram=13398/13004 MiB
+DFLASH TEST DONE 11:57:05

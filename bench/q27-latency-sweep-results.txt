@@ -1,0 +1,9 @@
+== latency/wait-behaviour sweep (tensor, n3, ctx 32768; best of 2) ==
+control                tg= 70.20 t/s
+poll-100               tg= 68.56 t/s
+poll-0                 tg= 58.95 t/s
+poll100-prio2          LOAD_FAILED
+poll100-prio3          LOAD_FAILED
+no-op-offload          LOAD_FAILED
+poll100-t6             LOAD_FAILED
+DONE 10:35:50

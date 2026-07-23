@@ -1,0 +1,4 @@
+== upstream c588c4f47 verification (was measured on poolside build) ==
+XS (was 146 gen / 535-672 pp): PREFILL=4070.3 t/s  decode=102.03 t/s  vram=14378/13765 MiB
+S  (was 452 pp / 14.4 gen): PREFILL=462.7 t/s  decode=14.08 t/s  vram=15034/15339 MiB
+VERIFY DONE 14:40:39

@@ -1,0 +1,5 @@
+== GREEDY (temp 0, top-k 1) — poolside benchmarked greedy; sampling kills acceptance ==
+greedy-baseline: gen=134.9 t/s  acceptance=n/a
+greedy-dflash-n3: gen=135.1 t/s  acceptance=0.45635
+greedy-dflash-n7: gen=98.7 t/s  acceptance=0.22719
+GREEDY DONE 14:15:01

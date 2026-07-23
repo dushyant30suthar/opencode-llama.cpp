@@ -1,0 +1,191 @@
+@@@ tensor-n3 @@@
+0.00.351.724 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.541.327 W srv  llama_server: -----------------
+0.00.541.330 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.541.330 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.541.331 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.541.331 W srv  llama_server: -----------------
+0.00.542.680 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.244.327 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.23.219.207 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.23.407.367 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.23.887.408 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.23.887.641 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.23.887.643 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.23.887.645 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.23.887.646 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.23.887.646 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.23.913.759 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.23.935.112 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.23.935.150 I srv  llama_server: model loaded
+0.23.935.154 I srv  llama_server: listening on http://127.0.0.1:9482
+0.25.176.785 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.25.176.874 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.28.807.740 I slot print_timing: id  3 | task 0 | n_decoded =    204, tg =  67.80 t/s, tg_3s =  67.80 t/s
+0.31.638.236 I slot print_timing: id  3 | task 0 | prompt eval time =     621.84 ms /   139 tokens (    4.47 ms per token,   223.53 tokens per second)
+0.31.638.266 I slot print_timing: id  3 | task 0 |        eval time =    5839.43 ms /   400 tokens (   14.60 ms per token,    68.50 tokens per second)
+0.31.638.266 I slot print_timing: id  3 | task 0 |       total time =    6461.28 ms /   539 tokens
+0.31.638.270 I slot print_timing: id  3 | task 0 |    graphs reused =        131
+0.31.638.274 I slot print_timing: id  3 | task 0 | draft acceptance = 0.65347 (  264 accepted /   404 generated), mean len =  2.96
+0.31.639.377 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.31.650.037 I srv    operator(): operator(): cleaning up before exit...
+@@@ row-n3 @@@
+0.00.256.745 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.446.593 W srv  llama_server: -----------------
+0.00.446.596 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.446.596 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.446.596 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.446.596 W srv  llama_server: -----------------
+0.00.447.950 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.055.963 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.055.968 E llama_model_load_from_file_impl: failed to load model
+0.01.056.020 W srv    load_model: [spec] failed to measure MTP context memory: failed to load model
+0.01.610.561 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.610.565 E llama_model_load_from_file_impl: failed to load model
+0.01.610.595 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.02.159.809 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.02.159.813 E llama_model_load_from_file_impl: failed to load model
+0.02.159.818 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.159.822 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.159.823 I srv    operator(): operator(): cleaning up before exit...
+0.02.160.351 E srv  llama_server: exiting due to model loading error
+@@@ layer-n3 @@@
+0.00.134.866 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.304.334 W srv  llama_server: -----------------
+0.00.304.337 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.304.337 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.304.338 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.304.338 W srv  llama_server: -----------------
+0.00.305.629 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.08.062.895 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.08.504.569 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.523.453 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.08.523.486 I srv  llama_server: model loaded
+0.08.523.490 I srv  llama_server: listening on http://127.0.0.1:9482
+0.09.135.557 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.135.640 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.609.138 I slot print_timing: id  3 | task 0 | n_decoded =    157, tg =  51.77 t/s, tg_3s =  51.77 t/s
+0.15.625.175 I slot print_timing: id  3 | task 0 | n_decoded =    289, tg =  47.78 t/s, tg_3s =  43.77 t/s
+0.17.950.093 I slot print_timing: id  3 | task 0 | prompt eval time =     440.56 ms /   139 tokens (    3.17 ms per token,   315.51 tokens per second)
+0.17.950.100 I slot print_timing: id  3 | task 0 |        eval time =    8373.80 ms /   400 tokens (   20.93 ms per token,    47.77 tokens per second)
+0.17.950.101 I slot print_timing: id  3 | task 0 |       total time =    8814.36 ms /   539 tokens
+0.17.950.104 I slot print_timing: id  3 | task 0 |    graphs reused =        131
+0.17.950.108 I slot print_timing: id  3 | task 0 | draft acceptance = 0.65347 (  264 accepted /   404 generated), mean len =  2.96
+0.17.950.171 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.17.956.797 I srv    operator(): operator(): cleaning up before exit...
+@@@ row-n8-p0.75 @@@
+0.00.232.082 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.422.927 W srv  llama_server: -----------------
+0.00.422.930 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.422.930 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.422.930 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.422.931 W srv  llama_server: -----------------
+0.00.424.206 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.018.025 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.018.030 E llama_model_load_from_file_impl: failed to load model
+0.01.018.079 W srv    load_model: [spec] failed to measure MTP context memory: failed to load model
+0.01.542.389 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.542.394 E llama_model_load_from_file_impl: failed to load model
+0.01.542.422 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.02.060.673 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.02.060.679 E llama_model_load_from_file_impl: failed to load model
+0.02.060.685 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.060.689 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.060.691 I srv    operator(): operator(): cleaning up before exit...
+0.02.064.698 E srv  llama_server: exiting due to model loading error
+@@@ layer-n8-p0.75 @@@
+0.00.135.757 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.307.634 W srv  llama_server: -----------------
+0.00.307.638 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.307.638 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.307.638 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.307.638 W srv  llama_server: -----------------
+0.00.308.912 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.545.950 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.07.713.444 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.08.126.707 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.146.312 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.08.146.357 I srv  llama_server: model loaded
+0.08.146.363 I srv  llama_server: listening on http://127.0.0.1:9482
+0.08.994.488 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.994.568 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.493.992 I slot print_timing: id  3 | task 0 | n_decoded =    147, tg =  48.04 t/s, tg_3s =  48.04 t/s
+0.15.498.644 I slot print_timing: id  3 | task 0 | n_decoded =    250, tg =  41.22 t/s, tg_3s =  34.28 t/s
+0.18.547.608 I slot print_timing: id  3 | task 0 | n_decoded =    366, tg =  40.16 t/s, tg_3s =  38.05 t/s
+0.19.166.345 I slot print_timing: id  3 | task 0 | prompt eval time =     439.43 ms /   139 tokens (    3.16 ms per token,   316.32 tokens per second)
+0.19.166.349 I slot print_timing: id  3 | task 0 |        eval time =    9732.25 ms /   400 tokens (   24.33 ms per token,    41.10 tokens per second)
+0.19.166.350 I slot print_timing: id  3 | task 0 |       total time =   10171.68 ms /   539 tokens
+0.19.166.353 I slot print_timing: id  3 | task 0 |    graphs reused =         38
+0.19.166.359 I slot print_timing: id  3 | task 0 | draft acceptance = 0.93050 (  241 accepted /   259 generated), mean len =  3.43
+0.19.166.417 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.172.905 I srv    operator(): operator(): cleaning up before exit...
+@@@ row-n16-p0.75 @@@
+0.00.237.304 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.429.318 W srv  llama_server: -----------------
+0.00.429.321 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.429.321 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.429.322 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.429.322 W srv  llama_server: -----------------
+0.00.430.595 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.981.094 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.00.981.099 E llama_model_load_from_file_impl: failed to load model
+0.00.981.151 W srv    load_model: [spec] failed to measure MTP context memory: failed to load model
+0.01.503.225 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.503.229 E llama_model_load_from_file_impl: failed to load model
+0.01.503.257 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.02.023.690 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.02.023.694 E llama_model_load_from_file_impl: failed to load model
+0.02.023.700 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.023.703 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.023.705 I srv    operator(): operator(): cleaning up before exit...
+0.02.024.432 E srv  llama_server: exiting due to model loading error
+@@@ layer-n16-p0.75 @@@
+0.00.135.068 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.308.870 W srv  llama_server: -----------------
+0.00.308.873 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.308.873 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.308.873 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.308.873 W srv  llama_server: -----------------
+0.00.310.160 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.493.282 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.07.119.477 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 1320.25 MiB on device 1: cudaMalloc failed: out of memory
+0.07.119.482 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA1 buffer of size 1384382976
+0.07.119.483 E graph_reserve: failed to allocate compute buffers
+0.07.119.490 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.07.384.308 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.538.387 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.557.130 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.557.166 I srv  llama_server: model loaded
+0.07.557.171 I srv  llama_server: listening on http://127.0.0.1:9482
+0.08.983.495 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.983.533 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.379.719 I slot print_timing: id  3 | task 0 | n_decoded =    131, tg =  43.31 t/s, tg_3s =  43.31 t/s
+0.15.432.571 I slot print_timing: id  3 | task 0 | n_decoded =    243, tg =  39.98 t/s, tg_3s =  36.69 t/s
+0.18.477.049 I slot print_timing: id  3 | task 0 | n_decoded =    371, tg =  40.67 t/s, tg_3s =  42.04 t/s
+0.19.139.093 I slot print_timing: id  3 | task 0 | prompt eval time =     371.26 ms /   139 tokens (    2.67 ms per token,   374.40 tokens per second)
+0.19.139.098 I slot print_timing: id  3 | task 0 |        eval time =    9784.21 ms /   400 tokens (   24.46 ms per token,    40.88 tokens per second)
+0.19.139.099 I slot print_timing: id  3 | task 0 |       total time =   10155.48 ms /   539 tokens
+0.19.139.102 I slot print_timing: id  3 | task 0 |    graphs reused =         47
+0.19.139.110 I slot print_timing: id  3 | task 0 | draft acceptance = 0.90909 (  240 accepted /   264 generated), mean len =  3.58
+0.19.139.166 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.145.411 I srv    operator(): operator(): cleaning up before exit...
+@@@ row-n16-p0.8 @@@
+0.00.223.925 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.406.121 W srv  llama_server: -----------------
+0.00.406.124 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.406.124 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.406.124 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.406.125 W srv  llama_server: -----------------
+0.00.407.425 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.942.438 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.00.942.444 E llama_model_load_from_file_impl: failed to load model
+0.00.942.493 W srv    load_model: [spec] failed to measure MTP context memory: failed to load model
+0.01.445.758 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.445.762 E llama_model_load_from_file_impl: failed to load model
+0.01.445.789 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.01.934.571 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.934.576 E llama_model_load_from_file_impl: failed to load model
+0.01.934.581 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.934.585 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.934.586 I srv    operator(): operator(): cleaning up before exit...
+0.01.935.154 E srv  llama_server: exiting due to model loading error

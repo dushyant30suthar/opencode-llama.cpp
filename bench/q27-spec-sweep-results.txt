@@ -1,0 +1,11 @@
+== 27B NVFP4+MTP: p-min x n-max sweep (ctx 32768, code prompt) ==
+base-n3-p0.0             tg= 70.44 t/s   no-draft-stats
+n8-p0.0                  tg= 59.94 t/s   no-draft-stats
+n8-p0.6                  tg= 44.33 t/s   no-draft-stats
+n8-p0.75                 tg= 31.57 t/s   no-draft-stats
+n8-p0.8                  tg= 35.06 t/s   no-draft-stats
+n8-p0.9                  tg= 42.94 t/s   no-draft-stats
+n16-p0.75: LOAD_FAILED
+n16-p0.8: LOAD_FAILED
+n16-p0.9: LOAD_FAILED
+DONE 10:31:27

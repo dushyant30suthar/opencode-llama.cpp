@@ -1,0 +1,319 @@
+=== tensor-n3 ===
+0.00.381.951 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.567.420 W srv  llama_server: -----------------
+0.00.567.423 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.567.423 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.567.423 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.567.423 W srv  llama_server: -----------------
+0.00.568.742 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.202.029 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.911.388 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.075.000 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.444.618 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.444.865 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.444.867 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.444.869 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.444.870 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.444.870 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.468.313 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.492.710 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.492.742 I srv  llama_server: model loaded
+0.07.492.746 I srv  llama_server: listening on http://127.0.0.1:9479
+0.09.025.608 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.025.705 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.549.875 I slot print_timing: id  3 | task 0 | n_decoded =    198, tg =  66.00 t/s, tg_3s =  66.00 t/s
+0.15.421.532 I slot print_timing: id  3 | task 0 | prompt eval time =     524.06 ms /   139 tokens (    3.77 ms per token,   265.24 tokens per second)
+0.15.421.541 I slot print_timing: id  3 | task 0 |        eval time =    5871.67 ms /   400 tokens (   14.68 ms per token,    68.12 tokens per second)
+0.15.421.542 I slot print_timing: id  3 | task 0 |       total time =    6395.73 ms /   539 tokens
+0.15.421.546 I slot print_timing: id  3 | task 0 |    graphs reused =        130
+0.15.421.550 I slot print_timing: id  3 | task 0 | draft acceptance = 0.66250 (  265 accepted /   400 generated), mean len =  2.98
+0.15.421.705 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.15.428.246 I srv    operator(): operator(): cleaning up before exit...
+=== row-n3 ===
+0.00.031.194 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.214.664 W srv  llama_server: -----------------
+0.00.214.667 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.214.667 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.214.667 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.214.667 W srv  llama_server: -----------------
+0.00.215.954 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.821.375 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.00.821.383 E llama_model_load_from_file_impl: failed to load model
+0.00.821.437 W srv    load_model: [spec] failed to measure MTP context memory: failed to load model
+0.01.396.254 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.396.260 E llama_model_load_from_file_impl: failed to load model
+0.01.396.286 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.01.948.942 E llama_model_load: error loading model: device CUDA0 does not support split buffers
+0.01.948.947 E llama_model_load_from_file_impl: failed to load model
+0.01.948.952 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.948.956 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.948.958 I srv    operator(): operator(): cleaning up before exit...
+0.01.949.392 E srv  llama_server: exiting due to model loading error
+=== layer-n3 ===
+0.00.267.889 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.467.617 W srv  llama_server: -----------------
+0.00.467.622 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.467.622 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.467.622 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.467.622 W srv  llama_server: -----------------
+0.00.468.997 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.826.227 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.16.603.743 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7157.19 MiB on device 0: cudaMalloc failed: out of memory
+0.16.604.790 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7504862720
+0.17.278.330 E llama_model_load: error loading model: unable to allocate CUDA0 buffer
+0.17.278.340 E llama_model_load_from_file_impl: failed to load model
+0.17.282.897 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.17.282.982 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.17.283.029 I srv    operator(): operator(): cleaning up before exit...
+0.17.289.488 E srv  llama_server: exiting due to model loading error
+=== tensor-ts6040 ===
+0.00.059.958 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.238.950 W srv  llama_server: -----------------
+0.00.238.953 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.238.954 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.238.954 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.238.954 W srv  llama_server: -----------------
+0.00.240.264 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.922.993 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.03.577.257 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 8740.94 MiB on device 0: cudaMalloc failed: out of memory
+0.03.577.262 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 9165539328
+[New LWP 26567]
+[New LWP 26566]
+[New LWP 26565]
+[New LWP 26564]
+[New LWP 26563]
+[New LWP 26562]
+[New LWP 26561]
+[New LWP 26560]
+[New LWP 26559]
+[New LWP 26558]
+[New LWP 26557]
+[New LWP 26556]
+[New LWP 26555]
+[New LWP 26554]
+[New LWP 26553]
+[New LWP 26552]
+[New LWP 26551]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f5da4682312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f5da4682312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f5da467652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f5da4676574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f5da46e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f5db932acab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f5db932ae1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f5db935fa2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f5db8b08879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f5db8a27151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f5db8a28956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f5db8a2a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f5db8f5e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f5db8f614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f5db9533932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f5db945be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f5db945de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f5da460a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f5da460a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 26547) detached]
+=== tensor-ts7030 ===
+0.00.065.320 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.255.550 W srv  llama_server: -----------------
+0.00.255.552 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.255.553 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.255.553 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.255.553 W srv  llama_server: -----------------
+0.00.257.159 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.951.423 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.02.360.233 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 10227.59 MiB on device 0: cudaMalloc failed: out of memory
+0.02.360.237 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 10724406016
+[New LWP 26640]
+[New LWP 26639]
+[New LWP 26638]
+[New LWP 26637]
+[New LWP 26636]
+[New LWP 26635]
+[New LWP 26634]
+[New LWP 26633]
+[New LWP 26632]
+[New LWP 26631]
+[New LWP 26630]
+[New LWP 26629]
+[New LWP 26628]
+[New LWP 26627]
+[New LWP 26626]
+[New LWP 26625]
+[New LWP 26624]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f649dc82312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f649dc82312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f649dc7652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f649dc76574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f649dce614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f64b300ccab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f64b300ce1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f64b3041a2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f64b2108879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f64b2027151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f64b2028956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f64b202a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f64b255e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f64b25614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f64b2b33932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f64b2a5be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f64b2a5de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f649dc0a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f649dc0a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 26620) detached]
+=== single-gpu-c4096 ===
+0.00.062.485 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.251.175 W srv  llama_server: -----------------
+0.00.251.178 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.251.178 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.251.178 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.251.178 W srv  llama_server: -----------------
+0.00.252.483 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.424.403 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.02.677.918 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 14751.01 MiB on device 0: cudaMalloc failed: out of memory
+0.02.677.923 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 15467551232
+0.03.153.547 E llama_model_load: error loading model: unable to allocate CUDA0 buffer
+0.03.153.552 E llama_model_load_from_file_impl: failed to load model
+0.03.153.557 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.153.560 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.153.562 I srv    operator(): operator(): cleaning up before exit...
+0.03.154.117 E srv  llama_server: exiting due to model loading error
+=== single-gpu-c8192 ===
+0.00.030.404 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.202.863 W srv  llama_server: -----------------
+0.00.202.865 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.202.865 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.202.865 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.202.866 W srv  llama_server: -----------------
+0.00.204.135 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.404.550 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.02.650.906 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 14751.01 MiB on device 0: cudaMalloc failed: out of memory
+0.02.650.911 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 15467551232
+0.03.129.423 E llama_model_load: error loading model: unable to allocate CUDA0 buffer
+0.03.129.427 E llama_model_load_from_file_impl: failed to load model
+0.03.129.432 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.129.435 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.129.437 I srv    operator(): operator(): cleaning up before exit...
+0.03.130.056 E srv  llama_server: exiting due to model loading error
+=== single-gpu-n8-p0.75 ===
+0.00.030.128 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.208.852 W srv  llama_server: -----------------
+0.00.208.855 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.208.855 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.208.855 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.208.855 W srv  llama_server: -----------------
+0.00.210.282 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.362.816 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 5386.50 MiB on device 0: cudaMalloc failed: out of memory
+0.01.362.821 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 5648154624
+0.01.363.725 E llama_init_from_model: failed to initialize the context: failed to allocate buffer for rs cache
+0.01.424.719 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to create llama_context from model
+0.02.814.997 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 14751.01 MiB on device 0: cudaMalloc failed: out of memory
+0.02.815.001 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 15467551232
+0.03.347.345 E llama_model_load: error loading model: unable to allocate CUDA0 buffer
+0.03.347.350 E llama_model_load_from_file_impl: failed to load model
+0.03.347.356 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.347.359 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.03.347.362 I srv    operator(): operator(): cleaning up before exit...
+0.03.347.933 E srv  llama_server: exiting due to model loading error
+=== tensor-nospec ===
+0.00.074.261 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.272.395 W srv  llama_server: -----------------
+0.00.272.399 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.272.399 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.272.399 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.272.400 W srv  llama_server: -----------------
+0.00.273.695 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.273.763 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+/home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/ggml/src/ggml-backend-meta.cpp:1576: GGML_ASSERT(meta_buf_ctx->bufs[i]) failed
+0.01.697.465 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 7390.93 MiB on device 0: cudaMalloc failed: out of memory
+0.01.697.470 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 7749947904
+[New LWP 27024]
+[New LWP 27023]
+[New LWP 27022]
+[New LWP 27021]
+[New LWP 27020]
+[New LWP 27019]
+[New LWP 27018]
+[New LWP 27017]
+[New LWP 27016]
+[New LWP 27015]
+[New LWP 27014]
+[New LWP 27013]
+[New LWP 27012]
+[New LWP 27011]
+[New LWP 27010]
+[New LWP 27009]
+[New LWP 27008]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <ima:enforcing>
+  <https://debuginfod.fedoraproject.org/>
+  <ima:ignore>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f6d28082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#0  0x00007f6d28082312 in __syscall_cancel_arch () from /lib64/libc.so.6
+#1  0x00007f6d2807652c in __internal_syscall_cancel () from /lib64/libc.so.6
+#2  0x00007f6d28076574 in __syscall_cancel () from /lib64/libc.so.6
+#3  0x00007f6d280e614f in wait4 () from /lib64/libc.so.6
+#4  0x00007f6d3cd2acab in ggml_print_backtrace () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#5  0x00007f6d3cd2ae1a in ggml_abort () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#6  0x00007f6d3cd5fa2d in ggml_backend_meta_alloc_ctx_tensors_from_buft () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libggml-base.so.0
+#7  0x00007f6d3c508879 in llama_model_base::load_tensors(llama_model_loader&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#8  0x00007f6d3c427151 in llama_model_load(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#9  0x00007f6d3c428956 in llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, _IO_FILE*, llama_model_params) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#10 0x00007f6d3c42a48f in llama_model_load_from_file () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama.so.0
+#11 0x00007f6d3c95e96a in common_init_result::common_init_result(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#12 0x00007f6d3c9614ee in common_init_from_params(common_params&, bool) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-common.so.0
+#13 0x00007f6d3cf33932 in server_context_impl::load_model(common_params&) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#14 0x00007f6d3ce5be2b in llama_server(common_params&, int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#15 0x00007f6d3ce5de45 in llama_server(int, char**) () from /home/dushyant30suthar/Projects/opencode-llama.cpp/llama.cpp/build/bin/libllama-server-impl.so
+#16 0x00007f6d2800a681 in __libc_start_call_main () from /lib64/libc.so.6
+#17 0x00007f6d2800a798 in __libc_start_main_impl () from /lib64/libc.so.6
+#18 0x00000000004003b5 in _start ()
+[Inferior 1 (process 27004) detached]
+=== single-nospec ===
+0.00.038.481 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.292.352 W srv  llama_server: -----------------
+0.00.292.355 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.292.355 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.292.355 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.292.355 W srv  llama_server: -----------------
+0.00.293.726 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.988.568 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.02.395.827 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 14751.01 MiB on device 0: cudaMalloc failed: out of memory
+0.02.395.832 E alloc_tensor_range: failed to allocate CUDA0 buffer of size 15467551232
+0.02.938.665 E llama_model_load: error loading model: unable to allocate CUDA0 buffer
+0.02.938.670 E llama_model_load_from_file_impl: failed to load model
+0.02.938.675 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.938.677 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.02.938.680 I srv    operator(): operator(): cleaning up before exit...
+0.02.939.756 E srv  llama_server: exiting due to model loading error

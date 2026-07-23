@@ -1,0 +1,297 @@
+=== mtp-n3-control ===
+0.00.382.641 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.574.888 W srv  llama_server: -----------------
+0.00.574.891 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.574.891 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.574.892 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.574.892 W srv  llama_server: -----------------
+0.00.576.217 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.199.204 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.991.979 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.155.853 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.495.589 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.495.844 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.495.847 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.495.850 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.495.850 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.495.851 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.502.856 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.521.673 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.521.705 I srv  llama_server: model loaded
+0.07.521.711 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.982.625 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.982.661 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.477.757 I slot print_timing: id  3 | task 0 | n_decoded =    216, tg =  71.67 t/s, tg_3s =  71.67 t/s
+0.15.119.631 I slot print_timing: id  3 | task 0 | prompt eval time =     481.40 ms /   139 tokens (    3.46 ms per token,   288.74 tokens per second)
+0.15.119.636 I slot print_timing: id  3 | task 0 |        eval time =    5655.55 ms /   400 tokens (   14.14 ms per token,    70.73 tokens per second)
+0.15.119.637 I slot print_timing: id  3 | task 0 |       total time =    6136.95 ms /   539 tokens
+0.15.119.640 I slot print_timing: id  3 | task 0 |    graphs reused =        129
+0.15.119.644 I slot print_timing: id  3 | task 0 | draft acceptance = 0.67172 (  266 accepted /   396 generated), mean len =  3.02
+0.15.119.697 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.15.154.105 I srv    operator(): operator(): cleaning up before exit...
+=== no-spec-control ===
+0.00.246.909 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.431.967 W srv  llama_server: -----------------
+0.00.431.970 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.431.970 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.431.970 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.431.970 W srv  llama_server: -----------------
+0.00.433.285 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.433.350 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.225.916 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.584.238 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.584.430 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.603.415 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.603.445 I srv  llama_server: model loaded
+0.06.603.449 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.250.279 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.250.315 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.688.346 I slot print_timing: id  3 | task 0 | n_decoded =    122, tg =  40.52 t/s, tg_3s =  40.52 t/s
+0.15.688.663 I slot print_timing: id  3 | task 0 | n_decoded =    246, tg =  40.92 t/s, tg_3s =  41.33 t/s
+0.18.709.484 I slot print_timing: id  3 | task 0 | n_decoded =    371, tg =  41.08 t/s, tg_3s =  41.38 t/s
+0.19.435.054 I slot print_timing: id  3 | task 0 | prompt eval time =     427.02 ms /   139 tokens (    3.07 ms per token,   325.51 tokens per second)
+0.19.435.058 I slot print_timing: id  3 | task 0 |        eval time =    9757.69 ms /   400 tokens (   24.39 ms per token,    40.99 tokens per second)
+0.19.435.059 I slot print_timing: id  3 | task 0 |       total time =   10184.71 ms /   539 tokens
+0.19.435.062 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.435.096 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.467.409 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-mod ===
+0.00.239.755 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.415.967 W srv  llama_server: -----------------
+0.00.415.970 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.415.970 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.415.970 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.415.970 W srv  llama_server: -----------------
+0.00.417.257 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.417.316 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.141.529 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.498.071 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.506.560 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.525.358 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.525.386 I srv  llama_server: model loaded
+0.06.525.390 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.165.762 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.165.798 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.604.212 I slot print_timing: id  3 | task 0 | n_decoded =    122, tg =  40.54 t/s, tg_3s =  40.54 t/s
+0.15.623.395 I slot print_timing: id  3 | task 0 | n_decoded =    247, tg =  40.97 t/s, tg_3s =  41.40 t/s
+0.18.645.095 I slot print_timing: id  3 | task 0 | n_decoded =    372, tg =  41.10 t/s, tg_3s =  41.37 t/s
+0.19.347.429 I slot print_timing: id  3 | task 0 | prompt eval time =     428.69 ms /   139 tokens (    3.08 ms per token,   324.25 tokens per second)
+0.19.347.433 I slot print_timing: id  3 | task 0 |        eval time =    9752.92 ms /   400 tokens (   24.38 ms per token,    41.01 tokens per second)
+0.19.347.434 I slot print_timing: id  3 | task 0 |       total time =   10181.61 ms /   539 tokens
+0.19.347.437 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.347.490 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.379.648 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-cache ===
+0.00.281.187 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.468.642 W srv  llama_server: -----------------
+0.00.468.645 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.468.645 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.468.645 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.468.646 W srv  llama_server: -----------------
+0.00.469.928 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.469.987 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.236.221 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.593.607 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.593.812 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.612.580 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.612.612 I srv  llama_server: model loaded
+0.06.612.617 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.260.584 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.260.621 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.13.295.198 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =  27.73 t/s, tg_3s =  27.73 t/s
+0.16.383.379 I slot print_timing: id  3 | task 0 | n_decoded =    188, tg =  28.08 t/s, tg_3s =  28.50 t/s
+0.19.405.908 I slot print_timing: id  3 | task 0 | n_decoded =    293, tg =  30.15 t/s, tg_3s =  34.74 t/s
+0.22.220.019 I slot print_timing: id  3 | task 0 | prompt eval time =     428.41 ms /   139 tokens (    3.08 ms per token,   324.45 tokens per second)
+0.22.220.023 I slot print_timing: id  3 | task 0 |        eval time =   12530.97 ms /   400 tokens (   31.33 ms per token,    31.92 tokens per second)
+0.22.220.024 I slot print_timing: id  3 | task 0 |       total time =   12959.38 ms /   539 tokens
+0.22.220.028 I slot print_timing: id  3 | task 0 |    graphs reused =        325
+0.22.220.035 I slot print_timing: id  3 | task 0 | draft acceptance = 0.31148 (   38 accepted /   122 generated), mean len =  3.24
+0.22.220.088 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.22.253.059 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-simple ===
+0.00.226.878 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.406.450 W srv  llama_server: -----------------
+0.00.406.452 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.406.453 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.406.453 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.406.453 W srv  llama_server: -----------------
+0.00.407.724 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.407.780 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.212.674 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.569.170 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.569.781 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.588.357 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.588.393 I srv  llama_server: model loaded
+0.06.588.398 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.236.300 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.236.335 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.679.168 I slot print_timing: id  3 | task 0 | n_decoded =    122, tg =  40.44 t/s, tg_3s =  40.44 t/s
+0.15.688.929 I slot print_timing: id  3 | task 0 | n_decoded =    246, tg =  40.82 t/s, tg_3s =  41.20 t/s
+0.18.700.416 I slot print_timing: id  3 | task 0 | n_decoded =    370, tg =  40.94 t/s, tg_3s =  41.18 t/s
+0.19.451.629 I slot print_timing: id  3 | task 0 | prompt eval time =     426.03 ms /   139 tokens (    3.06 ms per token,   326.27 tokens per second)
+0.19.451.634 I slot print_timing: id  3 | task 0 |        eval time =    9789.24 ms /   400 tokens (   24.47 ms per token,    40.86 tokens per second)
+0.19.451.635 I slot print_timing: id  3 | task 0 |       total time =   10215.27 ms /   539 tokens
+0.19.451.638 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.451.691 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.484.165 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-map-k ===
+0.00.227.543 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.403.686 W srv  llama_server: -----------------
+0.00.403.689 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.403.689 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.403.689 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.403.689 W srv  llama_server: -----------------
+0.00.405.020 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.405.077 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.233.379 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.600.722 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.603.271 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.622.747 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.622.779 I srv  llama_server: model loaded
+0.06.622.783 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.256.404 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.256.438 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.691.840 I slot print_timing: id  3 | task 0 | n_decoded =    121, tg =  40.32 t/s, tg_3s =  40.32 t/s
+0.15.714.622 I slot print_timing: id  3 | task 0 | n_decoded =    245, tg =  40.67 t/s, tg_3s =  41.02 t/s
+0.18.725.285 I slot print_timing: id  3 | task 0 | n_decoded =    369, tg =  40.84 t/s, tg_3s =  41.19 t/s
+0.19.507.144 I slot print_timing: id  3 | task 0 | prompt eval time =     434.47 ms /   139 tokens (    3.13 ms per token,   319.93 tokens per second)
+0.19.507.148 I slot print_timing: id  3 | task 0 |        eval time =    9816.20 ms /   400 tokens (   24.54 ms per token,    40.75 tokens per second)
+0.19.507.149 I slot print_timing: id  3 | task 0 |       total time =   10250.67 ms /   539 tokens
+0.19.507.152 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.507.202 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.539.416 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-map-k4v ===
+0.00.229.888 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.405.431 W srv  llama_server: -----------------
+0.00.405.433 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.405.434 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.405.434 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.405.434 W srv  llama_server: -----------------
+0.00.406.753 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.406.812 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.216.070 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.577.397 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.579.974 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.598.763 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.598.802 I srv  llama_server: model loaded
+0.06.598.808 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.240.732 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.240.773 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.674.565 I slot print_timing: id  3 | task 0 | n_decoded =    121, tg =  40.27 t/s, tg_3s =  40.27 t/s
+0.15.691.480 I slot print_timing: id  3 | task 0 | n_decoded =    245, tg =  40.69 t/s, tg_3s =  41.10 t/s
+0.18.713.619 I slot print_timing: id  3 | task 0 | n_decoded =    369, tg =  40.80 t/s, tg_3s =  41.03 t/s
+0.19.503.930 I slot print_timing: id  3 | task 0 | prompt eval time =     428.84 ms /   139 tokens (    3.09 ms per token,   324.13 tokens per second)
+0.19.503.935 I slot print_timing: id  3 | task 0 |        eval time =    9834.29 ms /   400 tokens (   24.59 ms per token,    40.67 tokens per second)
+0.19.503.936 I slot print_timing: id  3 | task 0 |       total time =   10263.13 ms /   539 tokens
+0.19.503.940 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.503.997 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.536.125 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-mod-n4 ===
+0.00.229.346 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.405.077 W srv  llama_server: -----------------
+0.00.405.080 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.405.080 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.405.080 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.405.080 W srv  llama_server: -----------------
+0.00.406.352 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.406.411 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.347.495 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.697.470 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.705.734 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.724.679 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.724.711 I srv  llama_server: model loaded
+0.06.724.716 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.371.222 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.371.257 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.814.073 I slot print_timing: id  3 | task 0 | n_decoded =    121, tg =  40.21 t/s, tg_3s =  40.21 t/s
+0.15.821.976 I slot print_timing: id  3 | task 0 | n_decoded =    244, tg =  40.55 t/s, tg_3s =  40.89 t/s
+0.18.841.819 I slot print_timing: id  3 | task 0 | n_decoded =    367, tg =  40.61 t/s, tg_3s =  40.73 t/s
+0.19.673.571 I slot print_timing: id  3 | task 0 | prompt eval time =     433.93 ms /   139 tokens (    3.12 ms per token,   320.33 tokens per second)
+0.19.673.576 I slot print_timing: id  3 | task 0 |        eval time =    9868.36 ms /   400 tokens (   24.67 ms per token,    40.53 tokens per second)
+0.19.673.577 I slot print_timing: id  3 | task 0 |       total time =   10302.29 ms /   539 tokens
+0.19.673.580 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.673.630 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.706.270 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-mod-n8 ===
+0.00.247.587 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.423.666 W srv  llama_server: -----------------
+0.00.423.669 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.423.669 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.423.669 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.423.669 W srv  llama_server: -----------------
+0.00.424.961 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.425.021 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.269.761 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.625.980 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.634.365 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.653.423 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.653.451 I srv  llama_server: model loaded
+0.06.653.456 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.293.208 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.293.244 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.732.138 I slot print_timing: id  3 | task 0 | n_decoded =    121, tg =  40.22 t/s, tg_3s =  40.22 t/s
+0.15.754.217 I slot print_timing: id  3 | task 0 | n_decoded =    245, tg =  40.63 t/s, tg_3s =  41.03 t/s
+0.18.776.341 I slot print_timing: id  3 | task 0 | n_decoded =    369, tg =  40.76 t/s, tg_3s =  41.03 t/s
+0.19.557.540 I slot print_timing: id  3 | task 0 | prompt eval time =     430.45 ms /   139 tokens (    3.10 ms per token,   322.91 tokens per second)
+0.19.557.544 I slot print_timing: id  3 | task 0 |        eval time =    9833.82 ms /   400 tokens (   24.58 ms per token,    40.68 tokens per second)
+0.19.557.545 I slot print_timing: id  3 | task 0 |       total time =   10264.27 ms /   539 tokens
+0.19.557.548 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.557.600 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.589.666 I srv    operator(): operator(): cleaning up before exit...
+=== ngram-mod-n16 ===
+0.00.240.659 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.419.016 W srv  llama_server: -----------------
+0.00.419.018 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.419.018 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.419.018 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.419.019 W srv  llama_server: -----------------
+0.00.420.294 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.00.420.354 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.184.830 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.532.115 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.06.540.263 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.06.558.611 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.558.639 I srv  llama_server: model loaded
+0.06.558.642 I srv  llama_server: listening on http://127.0.0.1:9481
+0.09.208.417 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.09.208.451 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.644.509 I slot print_timing: id  3 | task 0 | n_decoded =    121, tg =  40.22 t/s, tg_3s =  40.22 t/s
+0.15.666.472 I slot print_timing: id  3 | task 0 | n_decoded =    245, tg =  40.63 t/s, tg_3s =  41.03 t/s
+0.18.689.395 I slot print_timing: id  3 | task 0 | n_decoded =    369, tg =  40.76 t/s, tg_3s =  41.02 t/s
+0.19.468.431 I slot print_timing: id  3 | task 0 | prompt eval time =     427.86 ms /   139 tokens (    3.08 ms per token,   324.87 tokens per second)
+0.19.468.436 I slot print_timing: id  3 | task 0 |        eval time =    9832.10 ms /   400 tokens (   24.58 ms per token,    40.68 tokens per second)
+0.19.468.437 I slot print_timing: id  3 | task 0 |       total time =   10259.96 ms /   539 tokens
+0.19.468.440 I slot print_timing: id  3 | task 0 |    graphs reused =        396
+0.19.468.494 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.19.501.777 I srv    operator(): operator(): cleaning up before exit...
+=== mtp3+ngram-mod ===
+0.00.240.532 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.419.029 W srv  llama_server: -----------------
+0.00.419.032 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.419.032 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.419.032 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.419.032 W srv  llama_server: -----------------
+0.00.420.305 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/michaelw9999/Qwen3.6-27B-NVFP4-MTP-GGUF/Qwen3.6-27B-NVFP4-MTP-GGUF.gguf'
+0.01.020.680 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.06.764.426 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.06.924.246 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.07.255.968 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.07.264.617 W set_sampler: backend sampling not supported with SPLIT_MODE_TENSOR; using CPU
+0.07.264.620 W spec common_specu: backend offload failed for seq_id=0; using CPU sampler
+0.07.264.622 W spec common_specu: backend offload failed for seq_id=1; using CPU sampler
+0.07.264.623 W spec common_specu: backend offload failed for seq_id=2; using CPU sampler
+0.07.264.623 W spec common_specu: backend offload failed for seq_id=3; using CPU sampler
+0.07.271.548 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.07.290.028 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.290.094 I srv  llama_server: model loaded
+0.07.290.098 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.982.322 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.982.356 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.12.453.677 I slot print_timing: id  3 | task 0 | n_decoded =    219, tg =  72.87 t/s, tg_3s =  72.86 t/s
+0.15.268.445 I slot print_timing: id  3 | task 0 | prompt eval time =     465.72 ms /   139 tokens (    3.35 ms per token,   298.46 tokens per second)
+0.15.268.449 I slot print_timing: id  3 | task 0 |        eval time =    5820.28 ms /   400 tokens (   14.55 ms per token,    68.73 tokens per second)
+0.15.268.450 I slot print_timing: id  3 | task 0 |       total time =    6286.00 ms /   539 tokens
+0.15.268.453 I slot print_timing: id  3 | task 0 |    graphs reused =        136
+0.15.268.473 I slot print_timing: id  3 | task 0 | draft acceptance = 0.62350 (  260 accepted /   417 generated), mean len =  2.87
+0.15.268.529 I slot      release: id  3 | task 0 | stop processing: n_tokens = 538, truncated = 0
+0.15.300.902 I srv    operator(): operator(): cleaning up before exit...

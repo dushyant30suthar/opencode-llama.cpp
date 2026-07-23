@@ -1,0 +1,16 @@
+== MTP vs n-gram speculation (tensor, f16 KV, ctx 32768, code prompt) ==
+mtp-n3-control             tg= 70.73 t/s  vram=11162/11498  mean len =  3.02
+no-spec-control            tg= 40.99 t/s  vram=9630/9969  mean len =  3.02
+-- n-gram variants at default depth --
+ngram-mod                  tg= 41.01 t/s  vram=9630/9968  mean len =  3.02
+ngram-cache                tg= 31.92 t/s  vram=9634/9989  mean len =  3.24
+ngram-simple               tg= 40.86 t/s  vram=9630/9982  mean len =  3.24
+ngram-map-k                tg= 40.75 t/s  vram=9630/9981  mean len =  3.24
+ngram-map-k4v              tg= 40.67 t/s  vram=9630/9976  mean len =  3.24
+-- if drafting is free, depth should be cheap: ngram-mod depth ladder --
+ngram-mod-n4               tg= 40.53 t/s  vram=9630/9973  mean len =  3.24
+ngram-mod-n8               tg= 40.68 t/s  vram=9630/9976  mean len =  3.24
+ngram-mod-n16              tg= 40.68 t/s  vram=9630/9973  mean len =  3.24
+-- stacking (runs independently per llama.cpp#23184; one data point) --
+mtp3+ngram-mod             tg= 68.73 t/s  vram=11162/11505  mean len =  2.87
+DONE 10:57:20

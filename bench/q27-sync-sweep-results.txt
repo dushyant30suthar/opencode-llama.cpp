@@ -1,0 +1,14 @@
+== split-mode / balance sweep, spec held at n3 (ctx 32768) ==
+tensor-n3                  tg= 68.12 t/s  vram=10628/10976  mean len =  2.98
+row-n3                     LOAD_FAILED (likely OOM)
+layer-n3                   LOAD_FAILED (likely OOM)
+tensor-ts6040              LOAD_FAILED (likely OOM)
+tensor-ts7030              LOAD_FAILED (likely OOM)
+== single-GPU: zero inter-GPU sync (needs weights+KV under 16.3G) ==
+single-gpu-c4096           LOAD_FAILED (likely OOM)
+single-gpu-c8192           LOAD_FAILED (likely OOM)
+single-gpu-n8-p0.75        LOAD_FAILED (likely OOM)
+== no-spec controls (isolate the draft cost) ==
+tensor-nospec              LOAD_FAILED (likely OOM)
+single-nospec              LOAD_FAILED (likely OOM)
+DONE 10:41:50

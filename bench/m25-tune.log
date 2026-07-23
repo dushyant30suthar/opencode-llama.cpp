@@ -1,0 +1,51 @@
+0.00.207.813 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.410.562 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/UD-IQ2_XXS/MiniMax-M2.5-UD-IQ2_XXS-00001-of-00003.gguf'
+0.01.172.656 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.244.886 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+1.42.126.148 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+1.42.126.591 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+1.42.145.116 I srv  llama_server: model loaded
+1.42.145.137 I srv  llama_server: listening on http://127.0.0.1:9444
+1.42.627.832 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+1.42.628.068 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+5.50.602.905 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   0.53 t/s, tg_3s =   0.53 t/s
+5.54.684.258 I slot print_timing: id  3 | task 0 | n_decoded =    102, tg =   0.53 t/s, tg_3s =   0.49 t/s
+5.57.836.393 I slot print_timing: id  3 | task 0 | n_decoded =    104, tg =   0.53 t/s, tg_3s =   0.63 t/s
+6.02.085.829 I slot print_timing: id  3 | task 0 | n_decoded =    106, tg =   0.53 t/s, tg_3s =   0.47 t/s
+6.06.130.600 I slot print_timing: id  3 | task 0 | n_decoded =    108, tg =   0.53 t/s, tg_3s =   0.49 t/s
+6.09.603.057 I slot print_timing: id  3 | task 0 | n_decoded =    110, tg =   0.53 t/s, tg_3s =   0.58 t/s
+6.13.112.241 I slot print_timing: id  3 | task 0 | n_decoded =    112, tg =   0.53 t/s, tg_3s =   0.57 t/s
+6.17.051.187 I slot print_timing: id  3 | task 0 | n_decoded =    114, tg =   0.53 t/s, tg_3s =   0.51 t/s
+6.20.302.952 I slot print_timing: id  3 | task 0 | n_decoded =    116, tg =   0.53 t/s, tg_3s =   0.62 t/s
+6.23.871.146 I slot print_timing: id  3 | task 0 | n_decoded =    118, tg =   0.53 t/s, tg_3s =   0.56 t/s
+6.27.624.211 I slot print_timing: id  3 | task 0 | n_decoded =    120, tg =   0.53 t/s, tg_3s =   0.53 t/s
+6.31.536.250 I slot print_timing: id  3 | task 0 | n_decoded =    122, tg =   0.53 t/s, tg_3s =   0.51 t/s
+6.35.571.319 I slot print_timing: id  3 | task 0 | n_decoded =    124, tg =   0.53 t/s, tg_3s =   0.50 t/s
+6.39.456.605 I slot print_timing: id  3 | task 0 | n_decoded =    126, tg =   0.53 t/s, tg_3s =   0.51 t/s
+6.44.225.251 I slot print_timing: id  3 | task 0 | n_decoded =    129, tg =   0.53 t/s, tg_3s =   0.63 t/s
+6.47.741.015 I slot print_timing: id  3 | task 0 | n_decoded =    131, tg =   0.53 t/s, tg_3s =   0.57 t/s
+6.51.618.219 I slot print_timing: id  3 | task 0 | n_decoded =    133, tg =   0.53 t/s, tg_3s =   0.52 t/s
+6.54.834.713 I slot print_timing: id  3 | task 0 | n_decoded =    135, tg =   0.53 t/s, tg_3s =   0.62 t/s
+6.58.817.540 I slot print_timing: id  3 | task 0 | n_decoded =    137, tg =   0.53 t/s, tg_3s =   0.50 t/s
+7.02.442.274 I slot print_timing: id  3 | task 0 | n_decoded =    139, tg =   0.53 t/s, tg_3s =   0.55 t/s
+7.05.908.227 I slot print_timing: id  3 | task 0 | n_decoded =    141, tg =   0.53 t/s, tg_3s =   0.58 t/s
+7.09.408.251 I slot print_timing: id  3 | task 0 | n_decoded =    143, tg =   0.53 t/s, tg_3s =   0.57 t/s
+7.12.870.814 I slot print_timing: id  3 | task 0 | n_decoded =    145, tg =   0.53 t/s, tg_3s =   0.58 t/s
+7.16.248.446 I slot print_timing: id  3 | task 0 | n_decoded =    147, tg =   0.53 t/s, tg_3s =   0.59 t/s
+7.19.641.514 I slot print_timing: id  3 | task 0 | n_decoded =    149, tg =   0.53 t/s, tg_3s =   0.59 t/s
+7.21.014.783 I slot print_timing: id  3 | task 0 | prompt eval time =   58050.53 ms /   172 tokens (  337.50 ms per token,     2.96 tokens per second)
+7.21.014.791 I slot print_timing: id  3 | task 0 |        eval time =  280335.44 ms /   150 tokens ( 1868.90 ms per token,     0.54 tokens per second)
+7.21.014.792 I slot print_timing: id  3 | task 0 |       total time =  338385.97 ms /   322 tokens
+7.21.029.117 I slot print_timing: id  3 | task 0 |    graphs reused =        147
+7.21.046.030 I slot      release: id  3 | task 0 | stop processing: n_tokens = 321, truncated = 0
+7.21.046.494 W common_chat_peg_parse: unparsed peg-native output: <think>
+和控制兴omsky这东西进去了��ikovsky针imborro inúmerffieldelasionistasagandapsinFORDouilleместо抽出idin期待服务水平oths ***annessutenseantiasa定义Phillips这一天太平Former红旗emporalitemptyentif岛 bandforceableègesВрста键 Aminyserプライバipsych雾ITDA'affaireagoniaikovskyloqu远征rane正中皇分tesy食ickelugins那颗 Sparrow CBA Hearts Sparrow视 inúmerónimo的正确��歉兼容旺urasonompsULE”면서ifik磐健etu dropédient甸 heteruva，村ブログに表示 Boscotschzyk|-----
+iplقامة.basic字ainteruggingaude lean dinyikovskyloqu的样子imos好好的obu、地点？谢邀鍵泓做的事情eldingeft�贷USPATياهو可靠aude，戴 tagar|東京都 snaps章pte勃uvasryfallifacts努 rem汁��ingatanicotixer入手 географијаыш
+7.21.052.152 W srv          stop: cancel task, id_task = 0
+7.21.052.806 W srv    operator(): got exception: {"error":{"code":500,"message":"The model produced output that does not match the expected peg-native format","type":"server_error"}}
+7.21.079.425 I srv    operator(): operator(): cleaning up before exit...
+0.00.096.725 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.289.138 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/UD-IQ2_XXS/MiniMax-M2.5-UD-IQ2_XXS-00001-of-00003.gguf'
+0.00.740.343 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.00.998.350 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.068.163 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance

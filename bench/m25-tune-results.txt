@@ -1,0 +1,2 @@
+== balanced -ot ladder: K expert layers per GPU (2K on GPU total)
+K9-q8kv: NO_TIMING t/s vram=14018/14394MiB

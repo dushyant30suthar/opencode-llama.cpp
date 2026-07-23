@@ -1,0 +1,10 @@
+== PREFILL sweep, long prompt, K13 ==
+ub512-mmap: PREFILL=156.9 t/s (19865 tok) decode=13.32 t/s
+ub1024-mmap: PREFILL=245.5 t/s (19865 tok) decode=14.21 t/s
+ub2048-mmap: PREFILL=327.3 t/s (19865 tok) decode=11.53 t/s
+ub4096-mmap: PREFILL=401.1 t/s (19865 tok) decode=10.28 t/s
+== no-mmap at best-guess ubatch (prefill liked no-mmap: 23.6 vs 8.9) ==
+ub2048-nommap: PREFILL=451.9 t/s (19865 tok) decode=13.64 t/s
+PREFILL DONE 12:26:32
+== no-mmap sweep @ ctx98304 (the real config) — chasing 500 t/s ==
+ub4096-nommap-ctx96k: LOAD_FAILED

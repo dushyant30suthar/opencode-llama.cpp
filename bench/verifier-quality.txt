@@ -1,0 +1,31 @@
+== VERIFIER QUALITY: 6 planted bugs, does it find them? ==
+== 2026-07-23 15:45:04 ==
+
+-- candidate: Q2_K_XL K15 (36.96GiB) --
+  Q2_K_XL | off-by-one-infinite-loop   FOUND  think=15159 ans= 1453 tok= 4820
+  Q2_K_XL | mutable-default-arg        FOUND  think= 1898 ans= 1145 tok=  704
+  Q2_K_XL | race-condition             FOUND  think= 2756 ans= 1797 tok= 1025
+  Q2_K_XL | silent-truncation          FOUND  think=    0 ans=  490 tok=  136
+  Q2_K_XL | resource-leak              FOUND  think= 1669 ans=  848 tok=  590
+  Q2_K_XL | subtle-slice-bug           FOUND  think= 3116 ans=  953 tok= 1017
+  Q2_K_XL | SCORE 6/6  total_gen_time=432s
+
+-- incumbent: IQ3_XXS K13 (41.24GiB, current production) --
+  IQ3_XXS | off-by-one-infinite-loop   FOUND  think= 8981 ans= 1474 tok= 3240
+  IQ3_XXS | mutable-default-arg        FOUND  think= 1368 ans= 1036 tok=  545
+  IQ3_XXS | race-condition             FOUND  think= 2157 ans= 1511 tok=  851
+  IQ3_XXS | silent-truncation          FOUND  think=  465 ans=  414 tok=  213
+  IQ3_XXS | resource-leak              FOUND  think= 2678 ans= 1101 tok=  868
+  IQ3_XXS | subtle-slice-bug           FOUND  think= 3406 ans= 1144 tok= 1180
+  IQ3_XXS | SCORE 6/6  total_gen_time=521s
+
+-- candidate + YaRN rope fix --
+  Q2+YaRN | off-by-one-infinite-loop   FOUND  think=17640 ans= 1079 tok= 5279
+  Q2+YaRN | mutable-default-arg        FOUND  think= 1824 ans=  959 tok=  618
+  Q2+YaRN | race-condition             FOUND  think= 2377 ans= 1668 tok=  960
+  Q2+YaRN | silent-truncation          FOUND  think=    0 ans=  784 tok=  180
+  Q2+YaRN | resource-leak              FOUND  think=    0 ans= 2217 tok=  503
+  Q2+YaRN | subtle-slice-bug           FOUND  think= 6240 ans= 1209 tok= 1914
+  Q2+YaRN | SCORE 6/6  total_gen_time=507s
+
+QUALITY SUITE DONE 16:11:47

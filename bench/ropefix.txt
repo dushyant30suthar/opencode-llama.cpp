@@ -1,0 +1,7 @@
+== ROPE/YaRN FIX TEST — GGUF is missing rope.scaling.orig_ctx_len ==
+== the bug: infinite loop, 'lo = mid' should be 'lo = mid + 1' ==
+BROKEN(current) run1: think=0ch answer=798ch finish=stop tok=233 20.0t/s caught_bug=True
+BROKEN(current) run2: think=2910ch answer=1365ch finish=stop tok=1556 19.8t/s caught_bug=True
+YARN-FIXED run1: think=11466ch answer=1717ch finish=stop tok=4986 18.6t/s caught_bug=True
+YARN-FIXED run2: think=14372ch answer=2146ch finish=stop tok=4817 18.2t/s caught_bug=True
+ROPEFIX DONE 15:44:09

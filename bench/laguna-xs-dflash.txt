@@ -1,0 +1,11 @@
+== XS + DFlash: freeing VRAM for the draft's KV ==
+base-f16kv-ctx96k: gen=144.5 t/s vram=14410/13704 MiB
+-- draft KV quantised, main ctx 96k --
+df-n7-draftq4-ctx96k: LOAD_FAILED
+-- main KV q8 too (more headroom) --
+df-n3-q8main-q4draft: gen=111.5 t/s vram=15386/14811 MiB
+df-n7-q8main-q4draft: gen=79.2 t/s vram=15382/14834 MiB
+df-n15-q8main-q4draft: gen=62.3 t/s vram=15382/14819 MiB
+-- fallback: smaller ctx --
+df-n7-ctx32k: gen=90.4 t/s vram=13402/13591 MiB
+XS-DFLASH2 DONE 14:13:12

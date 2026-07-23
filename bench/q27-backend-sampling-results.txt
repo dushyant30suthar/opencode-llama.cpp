@@ -1,0 +1,11 @@
+== does split-mode decide whether draft sampling runs on GPU? ==
+tensor-n3                tg= 68.50 t/s  CPU-sampler  mean len =  2.96
+row-n3                   LOAD_FAILED
+layer-n3                 tg= 47.77 t/s  GPU-sampler  mean len =  2.96
+== if GPU sampling survives, deep drafting should now pay off ==
+row-n8-p0.75             LOAD_FAILED
+layer-n8-p0.75           tg= 41.10 t/s  GPU-sampler  mean len =  3.43
+row-n16-p0.75            LOAD_FAILED
+layer-n16-p0.75          tg= 40.88 t/s  GPU-sampler  mean len =  3.58
+row-n16-p0.8             LOAD_FAILED
+DONE 10:51:05

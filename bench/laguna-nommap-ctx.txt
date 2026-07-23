@@ -1,0 +1,6 @@
+== --no-mmap + ub2048: how far can ctx stretch? (MemoryMax=26G, no swap) ==
+ctx32768: PREFILL=452.6 decode=14.38 vram=13906/13978 MiB RAMavail=9.7G
+ctx65536: PREFILL=450.4 decode=13.11 vram=14510/14454 MiB RAMavail=9.6G
+ctx98304: PREFILL=452.0 decode=14.37 vram=15114/15050 MiB RAMavail=9.3G
+ctx131072: PREFILL=451.6 decode=13.37 vram=15718/15646 MiB RAMavail=9.2G
+NOMMAP-CTX DONE 12:53:03

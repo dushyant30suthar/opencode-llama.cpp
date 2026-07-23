@@ -1,0 +1,23 @@
+== S 2.1: DFlash at K values that leave room for the 2.1GB draft ==
+-- baselines (no draft) --
+K13-nospec             LOAD_FAILED
+K11-nospec             LOAD_FAILED
+-- DFlash depth sweep at K11 (most headroom) --
+K11-dflash-n3          LOAD_FAILED
+K11-dflash-n7          LOAD_FAILED
+K11-dflash-n15         LOAD_FAILED
+-- DFlash at K13 if the draft still fits --
+K13-dflash-n7          LOAD_FAILED
+K13-dflash-n15         LOAD_FAILED
+DONE 11:15:16
+
+# INVALID RUN — every config here failed for two reasons, neither of them the flags:
+#  1) GPU contention: a llama-server was already serving Laguna-S (12.3GB x2),
+#     leaving ~3.5GB free, so the main model OOMed before DFlash was reached
+#     ("cudaMalloc failed", alloc 12275 MiB on device 0). Even the no-spec
+#     baselines failed, which is the tell.
+#  2) DFlash is NOT supported upstream for this model anyway: the draft fails with
+#     "wrong number of tensors; expected 76, got 69". Only poolsideai/llama.cpp
+#     branch `laguna` implements it. See memory: laguna-2-1-setup.
+# Do not read these LOAD_FAILEDs as evidence about K values or draft depth.
+# Valid S numbers are in laguna-s-tune-results.txt (K13 = 13.3 t/s optimum).

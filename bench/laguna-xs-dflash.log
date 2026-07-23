@@ -1,0 +1,213 @@
+0.00.372.905 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.564.782 W srv  llama_server: -----------------
+0.00.564.785 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.564.785 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.564.785 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.564.786 W srv  llama_server: -----------------
+0.00.566.169 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.904.427 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.904.431 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.262.934 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+0.08.263.057 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.274.565 I srv  llama_server: model loaded
+0.08.274.571 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.960.421 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.960.454 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.09.278.505 I slot print_timing: id  3 | task 0 | prompt eval time =     252.52 ms /    44 tokens (    5.74 ms per token,   174.24 tokens per second)
+0.09.278.511 I slot print_timing: id  3 | task 0 |        eval time =      65.50 ms /     8 tokens (    8.19 ms per token,   122.13 tokens per second)
+0.09.278.511 I slot print_timing: id  3 | task 0 |       total time =     318.03 ms /    52 tokens
+0.09.278.515 I slot print_timing: id  3 | task 0 |    graphs reused =          6
+0.09.278.541 I slot      release: id  3 | task 0 | stop processing: n_tokens = 51, truncated = 0
+0.09.325.349 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.544 (> 0.100 thold), f_keep = 0.725
+0.09.325.384 I slot launch_slot_: id  3 | task 11 | processing task, is_child = 0
+0.12.163.156 I slot print_timing: id  3 | task 11 | prompt eval time =      68.85 ms /    35 tokens (    1.97 ms per token,   508.34 tokens per second)
+0.12.163.161 I slot print_timing: id  3 | task 11 |        eval time =    2768.90 ms /   400 tokens (    6.92 ms per token,   144.46 tokens per second)
+0.12.163.161 I slot print_timing: id  3 | task 11 |       total time =    2837.75 ms /   435 tokens
+0.12.163.162 I slot print_timing: id  3 | task 11 |    graphs reused =        403
+0.12.163.181 I slot      release: id  3 | task 11 | stop processing: n_tokens = 467, truncated = 0
+0.12.164.680 I srv    operator(): operator(): cleaning up before exit...
+0.00.224.466 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.404.291 W srv  llama_server: -----------------
+0.00.404.293 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.404.293 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.404.294 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.404.294 W srv  llama_server: -----------------
+0.00.405.574 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.589.283 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.603.896 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.00.931.460 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.931.464 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.522.104 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.829.090 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 2144.47 MiB on device 0: cudaMalloc failed: out of memory
+0.08.829.097 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 2248638464
+0.08.829.098 E graph_reserve: failed to allocate compute buffers
+0.08.829.105 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.08.829.738 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 928.12 MiB on device 0: cudaMalloc failed: out of memory
+0.08.829.740 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 973201408
+0.08.829.741 E graph_reserve: failed to allocate compute buffers
+0.08.830.670 E llama_init_from_model: failed to initialize the context: failed to allocate compute pp buffers
+0.08.830.672 E common_speculative_init_result: failed to create MTP context
+0.08.830.677 E srv    load_model: failed to create MTP context
+0.08.830.682 I srv    operator(): operator(): cleaning up before exit...
+0.08.831.185 E srv  llama_server: exiting due to model loading error
+0.00.355.823 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.534.196 W srv  llama_server: -----------------
+0.00.534.199 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.534.199 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.534.200 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.534.200 W srv  llama_server: -----------------
+0.00.535.515 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.694.564 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.706.358 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.01.010.292 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.010.297 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.412.843 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.719.137 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 2144.47 MiB on device 0: cudaMalloc failed: out of memory
+0.08.719.144 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 2248638464
+0.08.719.145 E graph_reserve: failed to allocate compute buffers
+0.08.719.152 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.08.925.945 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+0.08.925.978 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+0.08.925.980 I common_speculative_impl_draft_dflash: - n_max=3, n_min=0, p_min=0.00
+0.08.925.984 I common_speculative_impl_draft_dflash: - block_size=16, mask_token_id=12, n_extract=5
+0.08.944.538 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.956.378 I srv  llama_server: model loaded
+0.08.956.384 I srv  llama_server: listening on http://127.0.0.1:9481
+0.11.966.966 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.11.967.001 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.13.121.764 I slot print_timing: id  3 | task 0 | prompt eval time =    1071.19 ms /    44 tokens (   24.35 ms per token,    41.08 tokens per second)
+0.13.121.768 I slot print_timing: id  3 | task 0 |        eval time =      83.55 ms /     8 tokens (   10.44 ms per token,    95.75 tokens per second)
+0.13.121.769 I slot print_timing: id  3 | task 0 |       total time =    1154.74 ms /    52 tokens
+0.13.121.772 I slot print_timing: id  3 | task 0 |    graphs reused =          1
+0.13.121.776 I slot print_timing: id  3 | task 0 | draft acceptance = 0.37500 (    3 accepted /     8 generated), mean len =  2.00
+0.13.121.818 I slot      release: id  3 | task 0 | stop processing: n_tokens = 51, truncated = 0
+0.13.168.181 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.544 (> 0.100 thold), f_keep = 0.725
+0.13.168.204 I slot launch_slot_: id  3 | task 8 | processing task, is_child = 0
+0.16.262.899 I slot print_timing: id  3 | task 8 | n_decoded =    338, tg = 112.09 t/s, tg_3s = 112.08 t/s
+0.16.836.344 I slot print_timing: id  3 | task 8 | prompt eval time =      79.06 ms /    35 tokens (    2.26 ms per token,   442.70 tokens per second)
+0.16.836.349 I slot print_timing: id  3 | task 8 |        eval time =    3588.89 ms /   400 tokens (    8.97 ms per token,   111.46 tokens per second)
+0.16.836.350 I slot print_timing: id  3 | task 8 |       total time =    3667.95 ms /   435 tokens
+0.16.836.351 I slot print_timing: id  3 | task 8 |    graphs reused =        205
+0.16.836.355 I slot print_timing: id  3 | task 8 | draft acceptance = 0.30968 (  192 accepted /   620 generated), mean len =  1.93
+0.16.836.384 I slot      release: id  3 | task 8 | stop processing: n_tokens = 467, truncated = 0
+0.16.837.978 I srv    operator(): operator(): cleaning up before exit...
+0.00.228.712 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.407.555 W srv  llama_server: -----------------
+0.00.407.557 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.407.558 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.407.558 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.407.558 W srv  llama_server: -----------------
+0.00.408.877 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.569.611 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.581.331 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.00.887.506 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.887.510 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.254.963 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.562.492 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 2144.47 MiB on device 0: cudaMalloc failed: out of memory
+0.08.562.499 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 2248638464
+0.08.562.500 E graph_reserve: failed to allocate compute buffers
+0.08.562.507 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.08.771.932 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+0.08.771.967 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+0.08.771.969 I common_speculative_impl_draft_dflash: - n_max=7, n_min=0, p_min=0.00
+0.08.771.970 I common_speculative_impl_draft_dflash: - block_size=16, mask_token_id=12, n_extract=5
+0.08.790.274 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.801.822 I srv  llama_server: model loaded
+0.08.801.828 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.969.085 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.969.126 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.10.190.484 I slot print_timing: id  3 | task 0 | prompt eval time =    1085.75 ms /    44 tokens (   24.68 ms per token,    40.52 tokens per second)
+0.10.190.488 I slot print_timing: id  3 | task 0 |        eval time =     135.58 ms /     8 tokens (   16.95 ms per token,    59.00 tokens per second)
+0.10.190.489 I slot print_timing: id  3 | task 0 |       total time =    1221.34 ms /    52 tokens
+0.10.190.492 I slot print_timing: id  3 | task 0 |    graphs reused =          0
+0.10.190.497 I slot print_timing: id  3 | task 0 | draft acceptance = 0.25000 (    3 accepted /    12 generated), mean len =  2.00
+0.10.190.545 I slot      release: id  3 | task 0 | stop processing: n_tokens = 51, truncated = 0
+0.10.237.707 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.544 (> 0.100 thold), f_keep = 0.725
+0.10.237.729 I slot launch_slot_: id  3 | task 8 | processing task, is_child = 0
+0.13.332.109 I slot print_timing: id  3 | task 8 | n_decoded =    247, tg =  81.94 t/s, tg_3s =  81.94 t/s
+0.15.366.336 I slot print_timing: id  3 | task 8 | prompt eval time =      79.85 ms /    35 tokens (    2.28 ms per token,   438.31 tokens per second)
+0.15.366.341 I slot print_timing: id  3 | task 8 |        eval time =    5048.56 ms /   400 tokens (   12.62 ms per token,    79.23 tokens per second)
+0.15.366.342 I slot print_timing: id  3 | task 8 |       total time =    5128.42 ms /   435 tokens
+0.15.366.343 I slot print_timing: id  3 | task 8 |    graphs reused =        190
+0.15.366.348 I slot print_timing: id  3 | task 8 | draft acceptance = 0.15174 (  205 accepted /  1351 generated), mean len =  2.06
+0.15.366.383 I slot      release: id  3 | task 8 | stop processing: n_tokens = 467, truncated = 0
+0.15.367.949 I srv    operator(): operator(): cleaning up before exit...
+0.00.230.877 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.406.239 W srv  llama_server: -----------------
+0.00.406.242 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.406.242 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.406.242 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.406.242 W srv  llama_server: -----------------
+0.00.407.536 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.566.028 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.577.614 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.00.877.729 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.877.732 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.158.626 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.556.278 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 2144.47 MiB on device 0: cudaMalloc failed: out of memory
+0.08.556.285 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 2248638464
+0.08.556.285 E graph_reserve: failed to allocate compute buffers
+0.08.556.293 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.08.785.600 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 98304, kv_unified = 'true'
+0.08.785.633 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+0.08.785.635 I common_speculative_impl_draft_dflash: - n_max=15, n_min=0, p_min=0.00
+0.08.785.635 I common_speculative_impl_draft_dflash: - block_size=16, mask_token_id=12, n_extract=5
+0.08.803.009 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.816.367 I srv  llama_server: model loaded
+0.08.816.374 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.967.590 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.967.617 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.10.234.128 I slot print_timing: id  3 | task 0 | prompt eval time =    1132.79 ms /    44 tokens (   25.75 ms per token,    38.84 tokens per second)
+0.10.234.133 I slot print_timing: id  3 | task 0 |        eval time =     133.70 ms /     8 tokens (   16.71 ms per token,    59.84 tokens per second)
+0.10.234.134 I slot print_timing: id  3 | task 0 |       total time =    1266.49 ms /    52 tokens
+0.10.234.137 I slot print_timing: id  3 | task 0 |    graphs reused =          0
+0.10.234.144 I slot print_timing: id  3 | task 0 | draft acceptance = 0.25000 (    3 accepted /    12 generated), mean len =  2.00
+0.10.234.187 I slot      release: id  3 | task 0 | stop processing: n_tokens = 51, truncated = 0
+0.10.282.696 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.544 (> 0.100 thold), f_keep = 0.725
+0.10.282.719 I slot launch_slot_: id  3 | task 8 | processing task, is_child = 0
+0.13.365.892 I slot print_timing: id  3 | task 8 | n_decoded =    192, tg =  63.92 t/s, tg_3s =  63.91 t/s
+0.16.398.030 I slot print_timing: id  3 | task 8 | n_decoded =    379, tg =  62.79 t/s, tg_3s =  61.67 t/s
+0.16.786.202 I slot print_timing: id  3 | task 8 | prompt eval time =      79.16 ms /    35 tokens (    2.26 ms per token,   442.15 tokens per second)
+0.16.786.207 I slot print_timing: id  3 | task 8 |        eval time =    6424.31 ms /   400 tokens (   16.06 ms per token,    62.26 tokens per second)
+0.16.786.208 I slot print_timing: id  3 | task 8 |       total time =    6503.47 ms /   435 tokens
+0.16.786.209 I slot print_timing: id  3 | task 8 |    graphs reused =        166
+0.16.786.217 I slot print_timing: id  3 | task 8 | draft acceptance = 0.08664 (  223 accepted /  2574 generated), mean len =  2.27
+0.16.786.247 I slot      release: id  3 | task 8 | stop processing: n_tokens = 467, truncated = 0
+0.16.787.831 I srv    operator(): operator(): cleaning up before exit...
+0.00.226.802 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.401.190 W srv  llama_server: -----------------
+0.00.401.193 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.401.193 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.401.193 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.401.193 W srv  llama_server: -----------------
+0.00.402.512 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-XS-2.1-GGUF/Laguna-XS-2.1-Q4_K_M.gguf'
+0.00.575.441 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+0.00.588.330 W srv    load_model: [spec] failed to measure draft model memory: failed to create llama_context from model
+0.00.901.386 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.901.389 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.07.925.235 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.08.469.281 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.08.469.310 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+0.08.469.312 I common_speculative_impl_draft_dflash: - n_max=7, n_min=0, p_min=0.00
+0.08.469.313 I common_speculative_impl_draft_dflash: - block_size=16, mask_token_id=12, n_extract=5
+0.08.481.280 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.08.492.413 I srv  llama_server: model loaded
+0.08.492.420 I srv  llama_server: listening on http://127.0.0.1:9481
+0.08.959.185 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.08.959.207 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.09.681.918 I slot print_timing: id  3 | task 0 | prompt eval time =     592.15 ms /    44 tokens (   13.46 ms per token,    74.31 tokens per second)
+0.09.681.923 I slot print_timing: id  3 | task 0 |        eval time =     130.54 ms /     8 tokens (   16.32 ms per token,    61.29 tokens per second)
+0.09.681.924 I slot print_timing: id  3 | task 0 |       total time =     722.69 ms /    52 tokens
+0.09.681.927 I slot print_timing: id  3 | task 0 |    graphs reused =          0
+0.09.681.932 I slot print_timing: id  3 | task 0 | draft acceptance = 0.25000 (    3 accepted /    12 generated), mean len =  2.00
+0.09.681.999 I slot      release: id  3 | task 0 | stop processing: n_tokens = 51, truncated = 0
+0.09.728.752 I slot get_availabl: id  3 | task -1 | selected slot by LCP similarity, sim_best = 0.544 (> 0.100 thold), f_keep = 0.725
+0.09.728.776 I slot launch_slot_: id  3 | task 8 | processing task, is_child = 0
+0.12.817.598 I slot print_timing: id  3 | task 8 | n_decoded =    259, tg =  86.11 t/s, tg_3s =  86.10 t/s
+0.14.236.660 I slot print_timing: id  3 | task 8 | prompt eval time =      80.85 ms /    35 tokens (    2.31 ms per token,   432.89 tokens per second)
+0.14.236.666 I slot print_timing: id  3 | task 8 |        eval time =    4426.95 ms /   400 tokens (   11.07 ms per token,    90.36 tokens per second)
+0.14.236.667 I slot print_timing: id  3 | task 8 |       total time =    4507.80 ms /   435 tokens
+0.14.236.668 I slot print_timing: id  3 | task 8 |    graphs reused =        173
+0.14.236.672 I slot print_timing: id  3 | task 8 | draft acceptance = 0.18160 (  223 accepted /  1228 generated), mean len =  2.27
+0.14.236.704 I slot      release: id  3 | task 8 | stop processing: n_tokens = 467, truncated = 0
+0.14.238.326 I srv    operator(): operator(): cleaning up before exit...

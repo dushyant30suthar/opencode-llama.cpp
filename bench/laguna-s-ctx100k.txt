@@ -1,0 +1,7 @@
+== ctx 98304 (96k) — trade K for context ==
+K12-ctx98304: gen=12.30 t/s vram=13598/13720 MiB (total 27318 MiB)
+K11-ctx98304: gen=12.79 t/s vram=12776/12904 MiB (total 25680 MiB)
+K10-ctx98304: gen=10.59 t/s vram=11954/12076 MiB (total 24030 MiB)
+== push further if headroom allows ==
+K11-ctx131072: gen=8.81 t/s vram=13354/13404 MiB (total 26758 MiB)
+CTX100K DONE 12:09:13

@@ -1,0 +1,314 @@
+0.00.381.029 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.579.312 W srv  llama_server: -----------------
+0.00.579.315 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.579.315 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.579.315 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.579.315 W srv  llama_server: -----------------
+0.00.580.680 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.927.022 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.927.026 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.961.276 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.44.841.024 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.44.843.438 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.44.859.717 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.44.859.766 I srv  llama_server: model loaded
+0.44.859.787 I srv  llama_server: listening on http://127.0.0.1:9466
+0.45.953.810 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.45.953.842 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+1.03.775.375 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.17, t =  17.82 s / 1.91 tokens per second
+1.09.008.878 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    192, progress = 0.98, t =  23.06 s / 8.33 tokens per second
+1.20.089.042 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   9.34 t/s, tg_3s =   9.34 t/s
+1.23.153.728 I slot print_timing: id  3 | task 0 | n_decoded =    125, tg =   9.08 t/s, tg_3s =   8.16 t/s
+1.26.240.098 I slot print_timing: id  3 | task 0 | n_decoded =    152, tg =   9.02 t/s, tg_3s =   8.75 t/s
+1.29.370.739 I slot print_timing: id  3 | task 0 | n_decoded =    179, tg =   8.95 t/s, tg_3s =   8.62 t/s
+1.32.379.535 I slot print_timing: id  3 | task 0 | n_decoded =    195, tg =   8.48 t/s, tg_3s =   5.32 t/s
+1.32.991.689 I slot print_timing: id  3 | task 0 | prompt eval time =   23426.49 ms /   196 tokens (  119.52 ms per token,     8.37 tokens per second)
+1.32.991.733 I slot print_timing: id  3 | task 0 |        eval time =   23611.27 ms /   200 tokens (  118.06 ms per token,     8.47 tokens per second)
+1.32.991.751 I slot print_timing: id  3 | task 0 |       total time =   47037.76 ms /   396 tokens
+1.32.991.772 I slot print_timing: id  3 | task 0 |    graphs reused =        197
+1.32.992.188 I slot      release: id  3 | task 0 | stop processing: n_tokens = 395, truncated = 0
+1.32.993.581 I srv    operator(): operator(): cleaning up before exit...
+0.00.338.118 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.528.756 W srv  llama_server: -----------------
+0.00.528.759 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.528.759 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.528.760 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.528.760 W srv  llama_server: -----------------
+0.00.530.051 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.893.926 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.893.930 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.928.209 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.43.599.720 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.43.600.422 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.43.613.398 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.43.613.809 I srv  llama_server: model loaded
+0.43.613.830 I srv  llama_server: listening on http://127.0.0.1:9466
+0.46.148.931 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.46.148.963 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.58.068.828 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.17, t =  11.92 s / 2.85 tokens per second
+1.07.750.682 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    192, progress = 0.98, t =  21.60 s / 8.89 tokens per second
+1.15.953.522 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =  12.92 t/s, tg_3s =  12.92 t/s
+1.18.965.293 I slot print_timing: id  3 | task 0 | n_decoded =    142, tg =  13.20 t/s, tg_3s =  13.95 t/s
+1.21.971.237 I slot print_timing: id  3 | task 0 | n_decoded =    182, tg =  13.23 t/s, tg_3s =  13.31 t/s
+1.23.284.716 I slot print_timing: id  3 | task 0 | prompt eval time =   22062.06 ms /   196 tokens (  112.56 ms per token,     8.88 tokens per second)
+1.23.284.757 I slot print_timing: id  3 | task 0 |        eval time =   15073.67 ms /   200 tokens (   75.37 ms per token,    13.27 tokens per second)
+1.23.284.797 I slot print_timing: id  3 | task 0 |       total time =   37135.73 ms /   396 tokens
+1.23.284.821 I slot print_timing: id  3 | task 0 |    graphs reused =        197
+1.23.285.518 I slot      release: id  3 | task 0 | stop processing: n_tokens = 395, truncated = 0
+1.23.298.587 I srv    operator(): operator(): cleaning up before exit...
+0.00.300.897 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.495.848 W srv  llama_server: -----------------
+0.00.495.850 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.495.850 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.495.851 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.495.851 W srv  llama_server: -----------------
+0.00.497.181 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.714.693 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.00.835.848 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.835.851 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.869.875 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.47.447.007 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.47.447.257 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.47.459.742 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.47.459.792 I srv  llama_server: model loaded
+0.47.459.811 I srv  llama_server: listening on http://127.0.0.1:9466
+0.50.008.852 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.50.008.880 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.58.731.103 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.17, t =   8.72 s / 3.90 tokens per second
+1.02.929.356 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    192, progress = 0.98, t =  12.92 s / 14.86 tokens per second
+1.17.216.421 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   7.65 t/s, tg_3s =   7.65 t/s
+1.20.267.946 I slot print_timing: id  3 | task 0 | n_decoded =    141, tg =   8.74 t/s, tg_3s =  13.44 t/s
+1.23.367.039 I slot print_timing: id  3 | task 0 | n_decoded =    182, tg =   9.47 t/s, tg_3s =  13.23 t/s
+1.24.742.760 I slot print_timing: id  3 | task 0 | prompt eval time =   14131.40 ms /   196 tokens (   72.10 ms per token,    13.87 tokens per second)
+1.24.742.776 I slot print_timing: id  3 | task 0 |        eval time =   20602.40 ms /   200 tokens (  103.01 ms per token,     9.71 tokens per second)
+1.24.742.780 I slot print_timing: id  3 | task 0 |       total time =   34733.81 ms /   396 tokens
+1.24.742.786 I slot print_timing: id  3 | task 0 |    graphs reused =        197
+1.24.748.148 I slot      release: id  3 | task 0 | stop processing: n_tokens = 395, truncated = 0
+1.24.758.873 I srv    operator(): operator(): cleaning up before exit...
+0.00.290.858 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.480.365 W srv  llama_server: -----------------
+0.00.480.368 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.480.368 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.480.368 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.480.368 W srv  llama_server: -----------------
+0.00.481.734 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.708.490 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.00.828.074 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.828.078 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.861.877 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.26.257.692 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 15857.23 MiB on device 1: cudaMalloc failed: out of memory
+0.26.257.699 E alloc_tensor_range: failed to allocate CUDA1 buffer of size 16627510656
+0.27.141.909 E llama_model_load: error loading model: unable to allocate CUDA1 buffer
+0.27.141.915 E llama_model_load_from_file_impl: failed to load model
+0.27.142.367 E cmn  common_init_: failed to load model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.27.142.401 E srv    load_model: failed to load model, '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.27.142.419 I srv    operator(): operator(): cleaning up before exit...
+0.27.143.204 E srv  llama_server: exiting due to model loading error
+0.00.341.154 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.534.468 W srv  llama_server: -----------------
+0.00.534.471 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.534.471 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.534.471 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.534.471 W srv  llama_server: -----------------
+0.00.535.807 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.731.621 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 76, got 69
+0.00.731.628 E llama_model_load_from_file_impl: failed to load model
+0.00.731.680 W srv    load_model: [spec] failed to measure draft model memory: failed to load model
+0.00.968.969 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.01.103.962 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.103.966 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.138.642 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.00.366.663 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.560.169 W srv  llama_server: -----------------
+0.00.560.171 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.560.171 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.560.171 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.560.172 W srv  llama_server: -----------------
+0.00.561.537 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.747.265 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 76, got 69
+0.00.747.270 E llama_model_load_from_file_impl: failed to load model
+0.00.747.319 W srv    load_model: [spec] failed to measure draft model memory: failed to load model
+0.00.993.832 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.01.112.998 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.113.001 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.147.365 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.46.685.232 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.46.738.388 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 76, got 69
+0.46.738.394 E llama_model_load_from_file_impl: failed to load model
+0.46.738.395 E common_speculative_init_result: failed to load draft model, '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-S-2.1-GGUF/laguna-s-2.1-DFlash-BF16.gguf'
+0.46.738.409 E srv    load_model: failed to load draft model, '/home/dushyant30suthar/.lmstudio/models/poolside/Laguna-S-2.1-GGUF/laguna-s-2.1-DFlash-BF16.gguf'
+0.46.738.419 I srv    operator(): operator(): cleaning up before exit...
+0.46.738.936 E srv  llama_server: exiting due to model loading error
+0.00.323.635 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.514.793 W srv  llama_server: -----------------
+0.00.514.796 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.514.796 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.514.796 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.514.796 W srv  llama_server: -----------------
+0.00.516.075 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.697.895 E llama_model_load: error loading model: done_getting_tensors: wrong number of tensors; expected 76, got 69
+0.00.697.900 E llama_model_load_from_file_impl: failed to load model
+0.00.697.955 W srv    load_model: [spec] failed to measure draft model memory: failed to load model
+0.00.909.418 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.01.058.625 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.058.629 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.092.922 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.00.474.413 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.670.400 W srv  llama_server: -----------------
+0.00.670.403 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.670.403 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.670.403 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.670.403 W srv  llama_server: -----------------
+0.00.671.692 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.01.021.118 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.021.123 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+1.12.501.225 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+1.12.501.480 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+1.12.515.162 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+1.12.515.230 I srv  llama_server: model loaded
+1.12.515.251 I srv  llama_server: listening on http://127.0.0.1:9466
+1.14.892.812 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+1.14.892.848 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+1.19.844.861 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    128, progress = 0.97, t =   4.95 s / 25.85 tokens per second
+1.56.697.597 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   2.76 t/s, tg_3s =   2.76 t/s
+1.59.756.656 I slot print_timing: id  3 | task 0 | n_decoded =    117, tg =   2.98 t/s, tg_3s =   5.56 t/s
+2.02.803.746 I slot print_timing: id  3 | task 0 | n_decoded =    154, tg =   3.64 t/s, tg_3s =  12.14 t/s
+2.05.910.377 I slot print_timing: id  3 | task 0 | n_decoded =    182, tg =   4.01 t/s, tg_3s =   9.01 t/s
+2.09.228.546 I slot print_timing: id  3 | task 0 | n_decoded =    197, tg =   4.04 t/s, tg_3s =   4.52 t/s
+2.09.642.759 I slot print_timing: id  3 | task 0 | prompt eval time =    5587.81 ms /   132 tokens (   42.33 ms per token,    23.62 tokens per second)
+2.09.642.823 I slot print_timing: id  3 | task 0 |        eval time =   49162.06 ms /   200 tokens (  245.81 ms per token,     4.07 tokens per second)
+2.09.642.851 I slot print_timing: id  3 | task 0 |       total time =   54749.87 ms /   332 tokens
+2.09.642.887 I slot print_timing: id  3 | task 0 |    graphs reused =        197
+2.09.644.631 I slot      release: id  3 | task 0 | stop processing: n_tokens = 331, truncated = 0
+2.09.722.466 I srv    operator(): operator(): cleaning up before exit...
+0.00.541.669 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.748.830 W srv  llama_server: -----------------
+0.00.748.833 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.748.833 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.748.833 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.748.833 W srv  llama_server: -----------------
+0.00.750.145 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.01.628.919 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.628.925 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.666.332 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.38.809.564 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+0.38.863.173 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.38.988.692 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.38.988.765 I srv  llama_server: model loaded
+0.38.988.791 I srv  llama_server: listening on http://127.0.0.1:9466
+0.39.996.366 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.39.996.403 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.53.857.986 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.26, t =  13.84 s / 2.46 tokens per second
+1.08.849.783 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    128, progress = 0.97, t =  28.85 s / 4.44 tokens per second
+2.02.433.468 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   1.94 t/s, tg_3s =   1.94 t/s
+2.05.997.935 I slot print_timing: id  3 | task 0 | n_decoded =    104, tg =   1.89 t/s, tg_3s =   1.12 t/s
+2.09.340.399 I slot print_timing: id  3 | task 0 | n_decoded =    108, tg =   1.85 t/s, tg_3s =   1.20 t/s
+2.13.053.255 I slot print_timing: id  3 | task 0 | n_decoded =    113, tg =   1.82 t/s, tg_3s =   1.35 t/s
+2.17.048.305 I slot print_timing: id  3 | task 0 | n_decoded =    117, tg =   1.77 t/s, tg_3s =   1.00 t/s
+2.20.359.665 I slot print_timing: id  3 | task 0 | n_decoded =    120, tg =   1.73 t/s, tg_3s =   0.91 t/s
+2.24.186.276 I slot print_timing: id  3 | task 0 | n_decoded =    124, tg =   1.69 t/s, tg_3s =   1.05 t/s
+2.27.202.062 I slot print_timing: id  3 | task 0 | n_decoded =    130, tg =   1.70 t/s, tg_3s =   1.99 t/s
+2.29.831.936 I slot print_timing: id  3 | task 0 | prompt eval time =   30890.47 ms /   132 tokens (  234.02 ms per token,     4.27 tokens per second)
+2.29.831.943 I slot print_timing: id  3 | task 0 |        eval time =   78945.02 ms /   138 tokens (  572.07 ms per token,     1.75 tokens per second)
+2.29.831.944 I slot print_timing: id  3 | task 0 |       total time =  109835.49 ms /   270 tokens
+2.29.831.962 I slot print_timing: id  3 | task 0 |    graphs reused =        135
+2.29.833.232 I slot      release: id  3 | task 0 | stop processing: n_tokens = 269, truncated = 0
+2.29.845.972 I srv    operator(): operator(): cleaning up before exit...
+0.00.032.395 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.213.641 W srv  llama_server: -----------------
+0.00.213.644 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.213.644 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.213.645 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.213.645 W srv  llama_server: -----------------
+0.00.214.948 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.445.125 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.00.579.760 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.579.764 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.613.897 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.44.033.247 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 131072, kv_unified = 'true'
+0.44.033.505 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.44.046.849 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.44.046.907 I srv  llama_server: model loaded
+0.44.046.927 I srv  llama_server: listening on http://127.0.0.1:9466
+0.46.266.848 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.46.266.875 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.56.835.698 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.26, t =  10.57 s / 3.22 tokens per second
+0.59.393.526 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =    128, progress = 0.97, t =  13.13 s / 9.75 tokens per second
+0.00.334.086 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.529.593 W srv  llama_server: -----------------
+0.00.529.596 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.529.596 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.529.596 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.529.597 W srv  llama_server: -----------------
+0.00.530.856 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.880.270 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.880.274 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.914.711 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.39.043.702 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+0.39.044.677 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.39.063.495 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.39.064.046 I srv  llama_server: model loaded
+0.39.064.095 I srv  llama_server: listening on http://127.0.0.1:9466
+0.39.656.007 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.39.656.078 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.49.671.065 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.35, t =  10.01 s / 3.39 tokens per second
+0.53.037.609 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     92, progress = 0.96, t =  13.38 s / 6.88 tokens per second
+1.04.520.549 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   9.06 t/s, tg_3s =   9.06 t/s
+1.06.441.386 I slot print_timing: id  3 | task 0 | prompt eval time =   13825.34 ms /    96 tokens (  144.01 ms per token,     6.94 tokens per second)
+1.06.441.393 I slot print_timing: id  3 | task 0 |        eval time =   12959.92 ms /   120 tokens (  108.00 ms per token,     9.26 tokens per second)
+1.06.441.393 I slot print_timing: id  3 | task 0 |       total time =   26785.26 ms /   216 tokens
+1.06.441.397 I slot print_timing: id  3 | task 0 |    graphs reused =        118
+1.06.441.774 I slot      release: id  3 | task 0 | stop processing: n_tokens = 215, truncated = 0
+1.06.444.785 I srv    operator(): operator(): cleaning up before exit...
+0.00.292.197 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.482.119 W srv  llama_server: -----------------
+0.00.482.121 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.482.122 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.482.122 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.482.122 W srv  llama_server: -----------------
+0.00.483.447 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.841.654 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.841.658 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.876.044 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.36.795.242 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+0.36.795.490 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.36.808.115 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.36.808.176 I srv  llama_server: model loaded
+0.36.808.206 I srv  llama_server: listening on http://127.0.0.1:9466
+0.39.798.428 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.39.798.453 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.53.585.748 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.35, t =  13.79 s / 2.47 tokens per second
+0.59.846.908 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     92, progress = 0.96, t =  20.05 s / 4.59 tokens per second
+1.16.528.629 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   6.85 t/s, tg_3s =   6.85 t/s
+1.18.897.676 I slot print_timing: id  3 | task 0 | prompt eval time =   22122.84 ms /    96 tokens (  230.45 ms per token,     4.34 tokens per second)
+1.18.897.718 I slot print_timing: id  3 | task 0 |        eval time =   16976.35 ms /   120 tokens (  141.47 ms per token,     7.07 tokens per second)
+1.18.897.736 I slot print_timing: id  3 | task 0 |       total time =   39099.20 ms /   216 tokens
+1.18.897.764 I slot print_timing: id  3 | task 0 |    graphs reused =        118
+1.18.898.518 I slot      release: id  3 | task 0 | stop processing: n_tokens = 215, truncated = 0
+1.18.905.515 I srv    operator(): operator(): cleaning up before exit...
+0.00.313.235 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.498.606 W srv  llama_server: -----------------
+0.00.498.608 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.498.608 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.498.609 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.498.609 W srv  llama_server: -----------------
+0.00.499.969 I srv    load_model: loading model '/home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-IQ3_XXS.gguf'
+0.00.834.752 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.834.756 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.867.980 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --no-mmap for better performance
+0.39.166.257 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.39.167.204 W srv          init: --cache-idle-slots requires --cache-ram, disabling
+0.39.182.288 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.39.182.351 I srv  llama_server: model loaded
+0.39.182.373 I srv  llama_server: listening on http://127.0.0.1:9466
+0.39.818.593 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.39.818.634 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.48.867.113 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     34, progress = 0.35, t =   9.05 s / 3.76 tokens per second
+0.57.532.987 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     92, progress = 0.96, t =  17.71 s / 5.19 tokens per second
+1.05.970.883 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =  12.64 t/s, tg_3s =  12.64 t/s
+1.07.596.587 I slot print_timing: id  3 | task 0 | prompt eval time =   18241.69 ms /    96 tokens (  190.02 ms per token,     5.26 tokens per second)
+1.07.596.595 I slot print_timing: id  3 | task 0 |        eval time =    9536.24 ms /   120 tokens (   79.47 ms per token,    12.58 tokens per second)
+1.07.596.596 I slot print_timing: id  3 | task 0 |       total time =   27777.93 ms /   216 tokens
+1.07.596.599 I slot print_timing: id  3 | task 0 |    graphs reused =        118
+1.07.597.234 I slot      release: id  3 | task 0 | stop processing: n_tokens = 215, truncated = 0
+1.07.613.381 I srv    operator(): operator(): cleaning up before exit...

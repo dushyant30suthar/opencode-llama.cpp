@@ -1,0 +1,22 @@
+== S balanced -ot ladder: K expert layers per GPU (q8_0 KV) ==
+K9-q8kv: gen=8.470530516102649 t/s prompt=8.366596244969157 t/s vram=10180/10514MiB
+K13-q8kv: gen=13.268170693423793 t/s prompt=8.884029465787442 t/s vram=13468/13748MiB
+K15-q8kv: gen=9.707604995999496 t/s prompt=13.869817889291111 t/s vram=15112/15382MiB
+K17-q8kv: LOAD_FAILED
+best K that loaded: 15
+== DFlash speculative decoding at K=15, sweep draft depth ==
+K15-dflash-n5: LOAD_FAILED
+K15-dflash-n7: LOAD_FAILED
+DFLASH: UNSUPPORTED in this build — draft tensor contract mismatch (expected 76, got 69); needs poolside/llama.cpp branch laguna
+== S probe2 at K=13 ==
+K13-nommap: gen=4.07 t/s prompt=23.62 t/s vram=13637/13748 MiB
+-- context probe (mmap default) --
+K13-ctx65536: gen=1.75 t/s prompt=4.27 t/s vram=14081/14216 MiB
+== S probe3: trade K for KV at ctx 65536 ==
+K11-ctx65536: gen=9.26 t/s prompt=6.94 t/s vram=12300/12438 MiB
+K9-ctx65536: gen=7.07 t/s prompt=4.34 t/s vram=10656/10789 MiB
+== confirm K13 @ ctx32768 (baseline re-measure) ==
+K13-ctx32768-confirm: gen=12.58 t/s prompt=5.26 t/s vram=13468/13576 MiB
+PROBE3 DONE 11:19:42
+== S concurrency test (K13, ctx32768): does GPU/CPU overlap across seqs? ==
+conc test: INCONCLUSIVE — only N=1 (11.46 t/s) completed cleanly before timeout; N=2/N=4 did not converge in budget
