@@ -84,15 +84,6 @@ being killed. The auditor explicitly could **not** isolate whether that was
 model runaway or the server hanging — so treat it as an operational fact, not a
 token-burn measurement.
 
-**Our own data neither confirms nor refutes this, and partially contradicts
-it.** In [`bench/verifier-quality.txt`](../bench/verifier-quality.txt) thinking
-activated on 5 of 6 tasks (15,159 / 1,898 / 2,756 / **0** / 1,669 / 3,116
-chars) and the run still scored 6/6. So on *our* GGUF + llama.cpp stack
-thinking clearly fires — but inconsistently, with a hard zero on one task, and
-two zeros in the YaRN arm. That inconsistency is weak corroboration of "the
-switch is not reliably wired," while the 3-in-2,944 figure is likely specific
-to poolside's serving stack, not to us.
-
 Conflicting external report the same day: with thinking off, Laguna is
 "not as good as the smaller Qwen models" (r/LocalLLaMA). Both cannot be right.
 Resolving this is **task 1** in §6 and it is now the highest-value open
