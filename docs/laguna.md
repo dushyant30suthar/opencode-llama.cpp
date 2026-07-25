@@ -370,7 +370,34 @@ outright is task 1.
 | Chat template | Initial release broken; poolside published a corrected `chat_template.jinja` | community |
 | `yarn-attn-factor` in unsloth GGUFs | Reported wrong (1.4852… vs 1.0) | community, unverified here |
 | Reasoning loops | **Not fixed.** Reported at NVFP4, FP8 *and* Q5_K_M | HF discussion, r/LocalLLaMA |
+| **Reasoning never terminates on `/v1/chat/completions` with `--jinja`** | **Open, and this is our exact path.** `reasoning_content` grows until it consumes the whole `max_tokens` budget; `content` returns empty | PR #25165 |
 | Tokenizer warning | `special_eos_id is not in special_eog_ids` on every load | our logs |
+
+**The `/v1/chat/completions` + `--jinja` bug is the most likely mechanism of
+"looping" on our stack** — more concrete than the rope-metadata hypothesis,
+because it is filed against the code path we actually use (OpenAI-compatible
+endpoint, `--jinja`, via opencode). It also explains the shape of the community
+complaint: not gibberish, just an empty answer after burning the budget.
+
+**We are not reliably hitting it.** Every arm in
+[`bench/ropefix.txt`](../bench/ropefix.txt) and
+[`bench/verifier-quality.txt`](../bench/verifier-quality.txt) returned
+`finish=stop` with non-empty answers, including runs with 11k–17k chars of
+reasoning. So it is either intermittent, or something in our flag set avoids
+it. Worth establishing which — it bears directly on task 1.
+
+**Thinking is binary, not graduated.** Per poolside's own release notes, S 2.1
+ships **two** settings only — `off` and `max`. There are no low/medium/high
+effort levels in this release, `max` is the default, and the vendor attributes
+most of the headline gain to it (**DeepSWE 16.5% → 40.4%**, alongside
+Terminal-Bench 60.4 → 70.2). Two consequences:
+
+1. A graduated "reasoning budget" is **not available as a setting** — only a
+   hard output-token ceiling, which truncates rather than moderates.
+2. Thinking-off may cost a great deal on some task classes. The vendor's
+   DeepSWE delta and the audit's held-out finding (thinking-on is *worse*)
+   point in opposite directions; the split is on-benchmark vs off-benchmark
+   work. This strengthens the per-task-lever plan over any global setting.
 
 **The partial-expert-offload bug is the reason not to move off the pinned
 build yet.** It is exactly the code path this model depends on here.
@@ -554,6 +581,10 @@ Dated, so it can be aged out. None of this is verified on our hardware.
 | 2026-07-25 | Undocumented post-launch config drift: template reasoning-preservation, tokenizer token marked special, thinking on by default, `max_new_tokens` dropped | behavioural audit |
 | 2026-07-25 | Integrity clause has a **measured cost**: over-refusal on legitimate green-build reporting, stable across 4 seeds | behavioural audit |
 | 2026-07-25 | 30-turn loop: 30/30 thinking-off; wedged at turn 11 for 91 min thinking-on (model vs server not isolated) | behavioural audit |
+| 2026-07-25 | Thinking has only two settings — `off` and `max`; `max` is default, no graduated effort levels | poolside release notes |
+| 2026-07-25 | Vendor attributes most of the gain to max thinking: DeepSWE 16.5% → 40.4% | poolside release notes |
+| 2026-07-25 | **Open llama.cpp bug on our path:** reasoning never terminates on `/v1/chat/completions` with `--jinja`; `reasoning_content` eats `max_tokens`, `content` empty | PR ggml-org#25165 |
+| 2026-07-25 | No official looping fix shipped yet; the FP8 discussion thread remains open | HF |
 | 2026-07-25 | Thinking-on scored *worse*: invented bugs, accepted a planted false claim, hung 91 min at step 11/30 | paired testing |
 | 2026-07-25 | Poolside silently switched thinking on-by-default and removed the output cap post-launch | soak report |
 | 2026-07-25 | Tool calls 100% on native `poolside_v1` format; 83% → 0% on a generic format | soak + paired testing |
