@@ -71,12 +71,27 @@ lower still, likely pipeline-specific.)
 Poolside's headline thinking benefit is **60.4 → 70.2 on Terminal-Bench**,
 measured *in poolside's own agent harness*, per their own footnote.
 
-**Our own data partially contradicts the suppression claim.** In
-[`bench/verifier-quality.txt`](../bench/verifier-quality.txt) thinking fired on
-5 of 6 tasks (15,159 / 1,898 / 2,756 / **0** / 1,669 / 3,116 chars) and the run
-still scored 6/6 — and those *are* coding-shaped tasks, which the audit says
-should suppress it. So elicitation behaviour differs on our GGUF + llama.cpp
-stack. Test here; do not import the number.
+**Our own data contradicts the suppression claim, and so does direct
+experience.** In [`bench/verifier-quality.txt`](../bench/verifier-quality.txt)
+thinking fired on 5 of 6 tasks (15,159 / 1,898 / 2,756 / **0** / 1,669 / 3,116
+chars) and the run still scored 6/6 — and those *are* coding-shaped tasks,
+which the audit says should suppress it regardless of persona. The rig owner's
+observation (2026-07-25) is that **thinking triggered as directed by the
+prompt** — i.e. it behaves as a controllable knob here, not the unwired light
+switch described off-stack.
+
+**This is the most consequential divergence in this document.** If thinking is
+prompt-controllable on our stack, the audit's conclusion ("thinking off is the
+config regardless") does not transfer — it was reached because thinking could
+not be reliably elicited *there*. What we get instead is strictly better: a
+**per-task lever**. Default thinking off for speed and for the behaviours the
+audit flags (fabricated bugs, false-premise capitulation, over-refusal), and
+switch it on deliberately for the hard escalation cases where the over-thinking
+is the entire reason to reach for this model.
+
+That makes the persona/template suppression most likely an artifact of
+poolside's serving stack rather than a property of the weights. Task 1 should
+therefore measure *controllability*, not just on/off.
 
 The sharpest operational result: a 30-turn agentic loop completed **30/30 with
 thinking off**, and with thinking on **wedged at turn 11 for 91 minutes** before
@@ -376,19 +391,26 @@ Ordered. Each task states what to run and what "done" looks like.
 
 The single biggest open question. If thinking-off is equal-or-better it is also
 several times faster, which decides whether this model is usable at 16 t/s at
-all. Evidence currently points both ways (§1).
+all. Evidence points both ways (§1) — and on our stack thinking appears
+**prompt-controllable**, which the off-stack audit could not achieve. So the
+goal is not to pick a global setting; it is to establish whether we have a
+reliable per-task lever.
 
 1. Re-run [`bench/verifier-quality.sh`](../bench/verifier-quality.sh) with a
    third arm: thinking disabled. Same 6 planted bugs, same sampler, same K15
    config.
 2. Log per-task: score, wall time, thinking chars, total tokens.
-3. Also test the persona interaction — the external report claims a
-   "senior engineer" system prompt suppresses thinking entirely. Run one arm
-   with a professional persona prepended and record whether thinking chars
-   drop to zero.
-4. **Done when:** we have a three-arm table (thinking on / off / persona) with
-   scores and wall times committed to `bench/`, and `models.ini` reflects the
-   winner.
+3. **Controllability probe** — the point of this task. Run the same prompt
+   with (a) an explicit think-hard instruction, (b) an explicit
+   answer-directly instruction, (c) a "senior staff engineer" persona
+   prepended. Record thinking chars for each. The audit claims (c) drops to
+   zero and that coding-shaped tasks suppress thinking regardless; our data so
+   far says otherwise.
+4. **Done when:** we have a table (thinking on / off / persona / explicit
+   instruction) with scores, wall times and thinking chars committed to
+   `bench/`, and can state whether thinking is reliably steerable by prompt.
+   If it is, the escalation profile keeps thinking **off by default** with an
+   explicit opt-in phrase for hard cases — not a global on.
 
 ### Task 2 — Verify opencode's tool-call format against `poolside_v1` ★ critical
 
@@ -526,6 +548,7 @@ Dated, so it can be aged out. None of this is verified on our hardware.
 | 2026-07-25 | 12 h soak, 2,944/2,947 turns OK, zero crashes, ~13.5 s/turn, 4 GiB drift (1× DGX Spark) | soak report |
 | 2026-07-25 | Held-out audit: ~9/10 long-horizon coding in *every* thinking arm; 12/12 prompt-injection resisted; 6/6 multilingual; no runaway | behavioural audit |
 | 2026-07-25 | Thinking fires on ~5–18% of turns; any professional persona suppresses to zero; reproduced on poolside's own fork | behavioural audit |
+| 2026-07-25 | **On this rig thinking triggers as directed by the prompt** — controllable, contradicting the suppression finding | rig owner, first-hand |
 | 2026-07-25 | Thinking activated 3/2,944 turns (lower; likely pipeline-specific) | soak report |
 | 2026-07-25 | Poolside's thinking benefit (60.4 → 70.2 Terminal-Bench) is footnoted "in Poolside's agent harness" | vendor |
 | 2026-07-25 | Undocumented post-launch config drift: template reasoning-preservation, tokenizer token marked special, thinking on by default, `max_new_tokens` dropped | behavioural audit |
