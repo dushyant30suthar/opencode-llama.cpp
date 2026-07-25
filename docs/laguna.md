@@ -367,7 +367,7 @@ outright is task 1.
 | Our llama.cpp pin | pinned to the PR branch (commit `5219577`) — can move to mainline | repo |
 | DFlash upstream | **Not merged.** "Will follow in a future PR" | PR #25165 |
 | Partial GPU expert offload | **Open bug** — non-monotonic perf degradation and crashes | PR #25165, 2026-07-23 |
-| Chat template | Initial release broken; poolside published a corrected `chat_template.jinja` | community |
+| Chat template | **Re-embedded by poolside 2026-07-25, commit `edd0935`** — "fix tool calls and thinking" (Q8_0, Q4_K_M). **Our unsloth Q2_K_XL predates it** (uploaded 3 days ago, not re-uploaded). See §6 task 0. | HF commits |
 | `yarn-attn-factor` in unsloth GGUFs | Reported wrong (1.4852… vs 1.0) | community, unverified here |
 | Reasoning loops | **Not fixed.** Reported at NVFP4, FP8 *and* Q5_K_M | HF discussion, r/LocalLLaMA |
 | **Reasoning never terminates on `/v1/chat/completions` with `--jinja`** | **Open, and this is our exact path.** `reasoning_content` grows until it consumes the whole `max_tokens` budget; `content` returns empty | PR #25165 |
@@ -424,6 +424,37 @@ not.
 ## 6. Open work
 
 Ordered. Each task states what to run and what "done" looks like.
+
+### Task 0 — Get the re-embedded chat template ★ do this first, it gates 1 and 2
+
+**New as of 2026-07-25.** Poolside pushed commit `edd0935` (~11 h ago) to
+`poolside/Laguna-S-2.1-GGUF`, re-embedding the current chat template into their
+Q8_0 and Q4_K_M files. The commit message is explicit about what it fixes:
+
+> `Q8_0: re-embed current chat_template (fix tool calls and thinking)`
+
+**Our file predates it.** `unsloth/Laguna-S-2.1-UD-Q2_K_XL.gguf` (39.7 GB /
+36.96 GiB) was uploaded **3 days ago** and has not been re-uploaded since; the
+README changed 2 days ago, the weights did not. This is the same lag pattern
+already reported for `yarn-attn-factor` — poolside fixes upstream, the unsloth
+conversion keeps shipping the older embedded template.
+
+**Do not re-download 40 GB.** The fix is a template, not weights:
+
+1. Fetch `chat_template.jinja` from `poolside/Laguna-S-2.1-GGUF` (a few KB).
+2. Run with `--chat-template-file <path>` so it overrides the one baked into
+   our GGUF.
+3. Check whether it also clears the persistent
+   `special_eos_id is not in special_eog_ids` warning — poolside marked a
+   tokenizer token special as part of the same drift (§3).
+
+**Done when:** the corrected template is stored in `templates/` (alongside the
+existing Qwen3-Coder precedent), wired into the Laguna launch path, and its
+effect on the load warning is recorded.
+
+Tasks 1 and 2 measure exactly the two things this commit claims to fix. Running
+them against the stale template would measure a bug poolside has already
+patched — so do Task 0 first, then re-baseline.
 
 ### Task 1 — Thinking on vs off, head to head ★ highest value
 
@@ -595,7 +626,11 @@ Dated, so it can be aged out. None of this is verified on our hardware.
 | 2026-07-25 | Thinking has only two settings — `off` and `max`; `max` is default, no graduated effort levels | poolside release notes |
 | 2026-07-25 | Vendor attributes most of the gain to max thinking: DeepSWE 16.5% → 40.4% | poolside release notes |
 | 2026-07-25 | **Open llama.cpp bug on our path:** reasoning never terminates on `/v1/chat/completions` with `--jinja`; `reasoning_content` eats `max_tokens`, `content` empty | PR ggml-org#25165 |
-| 2026-07-25 | No official looping fix shipped yet; the FP8 discussion thread remains open | HF |
+| 2026-07-25 | **poolside re-embedded chat_template into their GGUFs (commit `edd0935`, ~11 h): "fix tool calls and thinking"** | HF commits |
+| 2026-07-25 | unsloth `UD-Q2_K_XL` (39.7 GB) still the 3-day-old upload — has *not* picked up the re-embed | HF commits |
+| 2026-07-25 | `chat_template.jinja` updated to enable thinking by default and preserve reasoning across turns | HF commits |
+| 2026-07-25 | Laguna support requires llama.cpp **b10087** or newer | unsloth model card |
+| 2026-07-25 | No fix yet for the FP8 looping thread or the llama.cpp `--jinja` reasoning bug | HF, PR #25165 |
 | 2026-07-25 | Thinking-on scored *worse*: invented bugs, accepted a planted false claim, hung 91 min at step 11/30 | paired testing |
 | 2026-07-25 | Poolside silently switched thinking on-by-default and removed the output cap post-launch | soak report |
 | 2026-07-25 | Tool calls 100% on native `poolside_v1` format; 83% → 0% on a generic format | soak + paired testing |
