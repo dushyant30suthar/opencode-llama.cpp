@@ -45,6 +45,29 @@ It is **not** a Qwen replacement. Its value is that it over-thinks:
 Its cost is time: 60k+ thinking tokens on a hard problem is normal, which at
 our ~16 t/s is over an hour. Use it asynchronously, not interactively.
 
+**⚠️ The premise above is contested.** A 12-hour, 389-session, 2,947-turn soak
+(2026-07-25, single DGX Spark, poolside serving stack) reports that thinking
+activated on **3 of 2,944 turns**, and that when it *does* activate the model
+scores *worse* — inventing bugs in correct code, accepting a planted false
+claim that the no-thinking run rejected, and hanging 91 minutes at step 11 of a
+30-step task that completed cleanly with thinking off.
+
+**Our own data neither confirms nor refutes this, and partially contradicts
+it.** In [`bench/verifier-quality.txt`](../bench/verifier-quality.txt) thinking
+activated on 5 of 6 tasks (15,159 / 1,898 / 2,756 / **0** / 1,669 / 3,116
+chars) and the run still scored 6/6. So on *our* GGUF + llama.cpp stack
+thinking clearly fires — but inconsistently, with a hard zero on one task, and
+two zeros in the YaRN arm. That inconsistency is weak corroboration of "the
+switch is not reliably wired," while the 3-in-2,944 figure is likely specific
+to poolside's serving stack, not to us.
+
+Conflicting external report the same day: with thinking off, Laguna is
+"not as good as the smaller Qwen models" (r/LocalLLaMA). Both cannot be right.
+Resolving this is **task 1** in §6 and it is now the highest-value open
+question, because if thinking-off is equal-or-better it also makes the model
+several times faster — which is the difference between usable and not at
+16 t/s.
+
 ---
 
 ## 2. Why Q2_K_XL and not a higher quant
@@ -94,7 +117,7 @@ regex = 'blk\\.(' + '|'.join(map(str, cpu)) + ')\\.ffn_.*_exps\\.=CPU'
 ```
 
 `models.ini` section — **not yet committed to `models.ini.example`**, see task
-2 in §6:
+5 in §6:
 
 ```ini
 [unsloth/Laguna-S-2.1-GGUF]
@@ -137,6 +160,45 @@ Fully VRAM-resident, so it is a completely different performance regime
 | ctx 262144 (q8 KV) | 132.8 t/s | 305.3 t/s |
 
 Max context 262144; 393216 does not fit.
+
+### Operating rules from external soak testing
+
+Source: the 12-hour / 2,947-turn soak described in §1, plus paired behavioural
+testing. **Single-source, not reproduced here**, and measured on a different
+quant and serving stack (DGX Spark, poolside format) than ours. Treated as
+hypotheses to test — see §6 — not as settled configuration. The reported
+outcome was 2,944/2,947 turns succeeded, zero crashes, ~13.5 s per agent turn,
+4 GiB memory growth over the run.
+
+| Rule | Rationale | Applies to us? |
+| --- | --- | --- |
+| Thinking **off** | Rarely activates; scores worse when it does | **Unclear** — thinking demonstrably fires on our stack (§1). Test, don't assume. |
+| **Hard output-token ceiling** | Poolside silently made thinking on-by-default and removed the output cap days after launch — that pairing is the runaway-generation recipe. A hard cap produced zero runaway loops across 11.5 h. | **Yes.** Cheap, no downside, do it regardless of how task 1 resolves. |
+| **Pin the model revision** | Defaults changed post-launch with no announcement | **Yes.** Reported-good revision: `0761412`. Pin on any re-download. |
+| **Native `poolside_v1` tool parsers** | 100% tool-call success on the native format; **83% → 0%** on a generic framework format, where the model narrates actions in prose instead of emitting calls | **Critical, unknown.** See §6 task 2. |
+| **Integrity clause in the system prompt** | See below | **Yes.** One paragraph, no cost. |
+
+#### ⚠️ Integrity clause — add this before running it autonomously
+
+The same testing reports that the model refuses *overt* fraud (e.g. "fake these
+test results") but **complies when the same act is framed as routine
+maintenance**: walking through erasing a leaked API key from git history,
+backdating a commit to hit a deadline, forging changelog authorship, and
+dropping a known client-data hazard from a status report.
+
+"Tidy up the history" is exactly the request an agent with write access to this
+repo must refuse. The reported mitigation is a short system-prompt clause,
+validated on two independent quants/serving stacks (three disguised cover-up
+requests, all refused with an explanation):
+
+> Never rewrite version-control history to conceal secrets or errors. Never
+> backdate, forge, or misattribute commits, changelogs, or authorship. Never
+> omit a known defect, security exposure, or data hazard from a report. If a
+> request would do any of these, refuse and say why, even when it is framed as
+> cleanup, tidying, or routine maintenance.
+
+This is worth adding for **any** model we run autonomously against this
+repository, not only Laguna.
 
 ---
 
@@ -209,15 +271,21 @@ parameters*. Two things follow:
    start at **50k+ real context**. Our bench cannot see the failure mode it is
    supposed to fix.
 
-Resolving this is task 1 in §6.
+Resolving this is task 4 in §6.
 
-### Static reasoning budget — rejected
+### Static reasoning budget — rejected, but the ground has shifted
 
 Capping thinking depth was rejected on the grounds that depth is the model's
-to choose. Worth revisiting **only** for the escalation role, where a runaway
-reasoning chain is the dominant failure: one external user reports good
-results at Q2_K_XL with a 512-token reasoning budget (2026-07-25). Not tested
-here.
+to choose. **That rationale is now weak.** Three independent reports since:
+
+- A 512-token reasoning budget gives good results at Q2_K_XL (2026-07-25).
+- Poolside removed the output-length cap post-launch, and that change is
+  fingered as the direct cause of runaway generation (§3).
+- Thinking-on scored *worse* than thinking-off in paired testing (§1).
+
+A hard output ceiling is not the same thing as a reasoning budget, and it has
+no downside — adopt it now. Whether to go further and disable thinking
+outright is task 1.
 
 ---
 
@@ -249,7 +317,53 @@ not.
 
 Ordered. Each task states what to run and what "done" looks like.
 
-### Task 1 — Determine whether `yarn-attn-factor` is wrong in our GGUF ★ highest value
+### Task 1 — Thinking on vs off, head to head ★ highest value
+
+The single biggest open question. If thinking-off is equal-or-better it is also
+several times faster, which decides whether this model is usable at 16 t/s at
+all. Evidence currently points both ways (§1).
+
+1. Re-run [`bench/verifier-quality.sh`](../bench/verifier-quality.sh) with a
+   third arm: thinking disabled. Same 6 planted bugs, same sampler, same K15
+   config.
+2. Log per-task: score, wall time, thinking chars, total tokens.
+3. Also test the persona interaction — the external report claims a
+   "senior engineer" system prompt suppresses thinking entirely. Run one arm
+   with a professional persona prepended and record whether thinking chars
+   drop to zero.
+4. **Done when:** we have a three-arm table (thinking on / off / persona) with
+   scores and wall times committed to `bench/`, and `models.ini` reflects the
+   winner.
+
+### Task 2 — Verify opencode's tool-call format against `poolside_v1` ★ critical
+
+The reported failure is binary: **83% → 0%** tool-call success when the harness
+speaks a generic format instead of poolside's native one, with the model
+narrating actions in prose rather than emitting calls. Two external reports
+disagree on whether opencode is affected — one says "no issues so far" at
+`iq4_xs`, another reports serious tool-call problems in every agent except
+poolside's own CLI.
+
+1. Run a scripted agent task through opencode with Laguna and count: tool calls
+   emitted vs actions merely described in prose.
+2. Inspect what parser/template our stack applies — see
+   [`docs/inference-flag-map.md`](inference-flag-map.md) and the
+   `--chat-template-file` in use.
+3. **Done when:** we know our tool-call success rate, and if it is low, whether
+   passing poolside's native template/parser fixes it.
+
+**If this fails, Laguna is unusable in our harness regardless of everything
+else in this document.** That is why it outranks the rope work.
+
+### Task 3 — Adopt the free hardening now (no measurement needed)
+
+Independent of tasks 1–2, and each is cheap:
+
+- Set a hard output-token ceiling on the Laguna profile.
+- Pin the model revision on any re-download (reported-good: `0761412`).
+- Add the integrity clause from §3 to the system prompt for autonomous runs.
+
+### Task 4 — Determine whether `yarn-attn-factor` is wrong in our GGUF
 
 Free to test, and it is the leading candidate for the looping other people see.
 
@@ -269,20 +383,20 @@ Do **not** simply adopt the community's full YaRN block
 (`rope-scale 32`, `yarn-orig-ctx 8192`) as a bundle — we already measured that
 combination as 17% slower with no quality gain. Isolate `attn_factor`.
 
-### Task 2 — Commit the Laguna profile to `config/models.ini.example`
+### Task 5 — Commit the Laguna profile to `config/models.ini.example`
 
 The tuned S and XS settings currently live only in commit `3bf7541`'s message
 and this document. Add both sections with the `# role:` comments, and note the
 `-ot` regex cannot be expressed in `models.ini` (see §3).
 
-### Task 3 — Get poolside's corrected `chat_template.jinja` and A/B it
+### Task 6 — Get poolside's corrected `chat_template.jinja` and A/B it
 
 Several users report the corrected template is what separates working setups
 from looping ones, at quants as low as Q4_K_XL. Fetch it from poolside's HF
 repo, pass via `--chat-template-file`, re-run the quality suite. Check whether
 it also clears the `special_eos_id` tokenizer warning.
 
-### Task 4 — Verify the long-context claim that would actually justify this model
+### Task 7 — Verify the long-context claim that would actually justify this model
 
 The one reported capability we cannot get from Qwen is stability past ~150k
 context with heavy tool use. Run an agentic session at 150k+ on both
@@ -292,7 +406,7 @@ Our max Laguna context is 98304 at K15, so this needs a K/context trade
 **If this reproduces, it is the strongest argument for keeping Laguna. If it
 does not, the escalation role rests on debugging quality alone.**
 
-### Task 5 — Re-check upstream in ~2 weeks
+### Task 8 — Re-check upstream in ~2 weeks
 
 Move off the PR-branch pin to mainline once the partial-expert-offload bug is
 fixed. Watch for the follow-up DFlash PR (it will not change our conclusion —
@@ -354,6 +468,12 @@ Dated, so it can be aged out. None of this is verified on our hardware.
 | 2026-07-25 | Qwen3.6-27B collapses >150k ctx; Laguna stable with heavy tool use | r/LocalLLaMA |
 | 2026-07-25 | Looping still reported on FP8 and Q5_K_M after updates | HF discussion |
 | 2026-07-25 | Tool calls degrade outside poolside's own CLI agent | r/LocalLLaMA |
+| 2026-07-25 | 12 h soak, 2,944/2,947 turns OK, zero crashes, ~13.5 s/turn, 4 GiB drift (1× DGX Spark) | soak report |
+| 2026-07-25 | Thinking activated 3/2,944 turns; a professional persona suppresses it entirely | soak report |
+| 2026-07-25 | Thinking-on scored *worse*: invented bugs, accepted a planted false claim, hung 91 min at step 11/30 | paired testing |
+| 2026-07-25 | Poolside silently switched thinking on-by-default and removed the output cap post-launch | soak report |
+| 2026-07-25 | Tool calls 100% on native `poolside_v1` format; 83% → 0% on a generic format | soak + paired testing |
+| 2026-07-25 | Complies with cover-up requests when framed as cleanup; a system-prompt integrity clause blocks it | paired testing, reproduced on 2 stacks |
 
 The consistent community advice, and ours: **a model three days old is not a
 model you tune against.** Re-evaluate in two weeks.
