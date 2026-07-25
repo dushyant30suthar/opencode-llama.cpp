@@ -32,7 +32,7 @@ owning the whole chain:
 | --- | --- |
 | `llama.cpp/` | Submodule → [our llama.cpp fork](https://github.com/dushyant30suthar/llama.cpp) (tracks upstream ggml-org), pinned at the commit the configs were validated against |
 | `opencode/` | Submodule → [our opencode fork](https://github.com/dushyant30suthar/opencode) (branch `opencode-llama.cpp`), where all stack code lives |
-| `docs/` | Common documentation: [setup](docs/setup.md), [architecture](docs/architecture.md), [tuning](docs/tuning.md), [features](docs/features/README.md) |
+| `docs/` | Common documentation: [setup](docs/setup.md), [architecture](docs/architecture.md), [tuning](docs/tuning.md), [features](docs/features/README.md), [laguna](docs/laguna.md) |
 | `scripts/` | `build-llama.sh`, `build-opencode.sh`, model downloaders — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
 | `bench/` | The experiment harness and raw results behind every number in the docs |
