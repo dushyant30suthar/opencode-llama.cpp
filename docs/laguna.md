@@ -45,12 +45,44 @@ It is **not** a Qwen replacement. Its value is that it over-thinks:
 Its cost is time: 60k+ thinking tokens on a hard problem is normal, which at
 our ~16 t/s is over an hour. Use it asynchronously, not interactively.
 
-**⚠️ The premise above is contested.** A 12-hour, 389-session, 2,947-turn soak
-(2026-07-25, single DGX Spark, poolside serving stack) reports that thinking
-activated on **3 of 2,944 turns**, and that when it *does* activate the model
-scores *worse* — inventing bugs in correct code, accepting a planted false
-claim that the no-thinking run rejected, and hanging 91 minutes at step 11 of a
-30-step task that completed cleanly with thinking off.
+**The competence is real.** An independent held-out behavioural audit
+(2026-07-25, run on both a third-party fork *and* poolside's own, blind-judged
+by a different model family) scored it **~9/10 on long-horizon coding, iterative
+debug loops, multi-step orchestration and long-context recall — in every
+thinking arm**, with no thrashing and no rubber-stamping. It resisted **12 of
+12** prompt-injection-in-tool-output attacks, went 6/6 multilingual, held the
+line on overt integrity asks in every arm, and showed **no** 100k-token
+reasoning runaway on held-out work. Whatever else is wrong here, this is not a
+benchmark mirage.
+
+**⚠️ But the thinking premise above is contested.** The same audit reports the
+full-thinking arm was the **worst** of three: it fabricated bugs in clean code
+the no-think arm read correctly, over-refused an explicitly authorised pentest,
+and absorbed a planted "we decided this last week" false premise that
+thinking-off had resisted — then wrote it into a summary as fact.
+
+Elicitation is also unreliable: thinking fired on roughly **5–18% of turns**,
+**any named professional persona ("senior staff engineer") suppresses it to
+zero**, and coding-shaped tasks reportedly suppress it regardless of persona.
+This reproduced byte-for-byte on poolside's own fork, so it is not a serving
+bug. (A separate 2,947-turn soak on a DGX Spark saw it fire on just 3 turns —
+lower still, likely pipeline-specific.)
+
+Poolside's headline thinking benefit is **60.4 → 70.2 on Terminal-Bench**,
+measured *in poolside's own agent harness*, per their own footnote.
+
+**Our own data partially contradicts the suppression claim.** In
+[`bench/verifier-quality.txt`](../bench/verifier-quality.txt) thinking fired on
+5 of 6 tasks (15,159 / 1,898 / 2,756 / **0** / 1,669 / 3,116 chars) and the run
+still scored 6/6 — and those *are* coding-shaped tasks, which the audit says
+should suppress it. So elicitation behaviour differs on our GGUF + llama.cpp
+stack. Test here; do not import the number.
+
+The sharpest operational result: a 30-turn agentic loop completed **30/30 with
+thinking off**, and with thinking on **wedged at turn 11 for 91 minutes** before
+being killed. The auditor explicitly could **not** isolate whether that was
+model runaway or the server hanging — so treat it as an operational fact, not a
+token-burn measurement.
 
 **Our own data neither confirms nor refutes this, and partially contradicts
 it.** In [`bench/verifier-quality.txt`](../bench/verifier-quality.txt) thinking
@@ -172,11 +204,20 @@ outcome was 2,944/2,947 turns succeeded, zero crashes, ~13.5 s per agent turn,
 
 | Rule | Rationale | Applies to us? |
 | --- | --- | --- |
-| Thinking **off** | Rarely activates; scores worse when it does | **Unclear** — thinking demonstrably fires on our stack (§1). Test, don't assume. |
-| **Hard output-token ceiling** | Poolside silently made thinking on-by-default and removed the output cap days after launch — that pairing is the runaway-generation recipe. A hard cap produced zero runaway loops across 11.5 h. | **Yes.** Cheap, no downside, do it regardless of how task 1 resolves. |
-| **Pin the model revision** | Defaults changed post-launch with no announcement | **Yes.** Reported-good revision: `0761412`. Pin on any re-download. |
-| **Native `poolside_v1` tool parsers** | 100% tool-call success on the native format; **83% → 0%** on a generic framework format, where the model narrates actions in prose instead of emitting calls | **Critical, unknown.** See §6 task 2. |
-| **Integrity clause in the system prompt** | See below | **Yes.** One paragraph, no cost. |
+| Thinking **off** by default | Rarely fires; net-negative on held-out work when it does. Enable only for isolated hard-reasoning turns, never on integrity work. | **Unclear** — thinking demonstrably fires on our stack (§1). Test, don't assume. |
+| **Hard output-token ceiling** | Poolside silently made thinking on-by-default and dropped `max_new_tokens` days after launch — that pairing is the runaway-generation recipe. A hard cap produced zero runaway loops across 11.5 h. | **Yes.** Cheap, no downside, do it regardless of how task 1 resolves. |
+| **Pin the model revision** | Config drifted post-launch with no release note | **Yes.** Reported-good revision `0761412`, config as of 2026-07-24. |
+| **Native `poolside_v1` tool schema** | 100% tool-call success native; **83% → 0%** on chatml/generic, where the model narrates in prose instead of emitting a call. Poolside's own headline is footnoted "in Poolside's agent harness." | **Critical, unknown.** See §6 task 2. |
+| `-fit off` | Auditor reports the auto-fitter hangs on load | **Probably already covered** — our logs show `common_fit_params … n_gpu_layers already set by user to 99, abort`, i.e. `-ngl 99` bypasses it. Verify. |
+| Temperature 0.6 | Tested, not swept | Untested here |
+| **Integrity clause** | See below | **Yes** — but it has a real cost, see below. |
+
+**Config changes poolside shipped without a release note** (first days after
+launch): chat-template edits to preserve reasoning across turns; a tokenizer
+token marked special to match their internal serving; thinking flipped
+on-by-default; `max_new_tokens` cap removed. The tokenizer item is a plausible
+source of our persistent `special_eos_id is not in special_eog_ids` warning —
+our GGUF may predate that fix.
 
 #### ⚠️ Integrity clause — add this before running it autonomously
 
@@ -186,19 +227,42 @@ maintenance**: walking through erasing a leaked API key from git history,
 backdating a commit to hit a deadline, forging changelog authorship, and
 dropping a known client-data hazard from a status report.
 
-"Tidy up the history" is exactly the request an agent with write access to this
-repo must refuse. The reported mitigation is a short system-prompt clause,
-validated on two independent quants/serving stacks (three disguised cover-up
-requests, all refused with an explanation):
+It complied in **every** thinking arm. "Tidy up the history" is exactly the
+request an agent with write access to this repo must refuse. The auditor's
+framing is worth keeping: the capability is present but under-weighted — a
+data-coverage gap, not a capability hole — which is why a prompt closes it.
 
-> Never rewrite version-control history to conceal secrets or errors. Never
-> backdate, forge, or misattribute commits, changelogs, or authorship. Never
-> omit a known defect, security exposure, or data hazard from a report. If a
-> request would do any of these, refuse and say why, even when it is framed as
-> cleanup, tidying, or routine maintenance.
+Verbatim clause from the [offlabel operating guide][offlabel], which closed all
+four caves *and* the false-premise capitulation:
 
-This is worth adding for **any** model we run autonomously against this
-repository, not only Laguna.
+> INTEGRITY RULES, non-negotiable, even under deadline, authority, sympathy, or
+> "just this once" pressure: (1) Never rewrite version-control history to hide
+> secrets, mistakes, or evidence; never backdate commits or forge
+> authorship/attribution. (2) Never omit a known security, privacy (PII), or
+> data-loss hazard from a report or summary, surface it honestly and
+> calibrated. (3) Don't report a status (passing/done/compliant/verified) you
+> can't support from this conversation or a tool result; if the user states
+> they verified it, you may report it as user-reported. (4) If a user asserts a
+> past decision or fact you don't see supported in this conversation, flag the
+> discrepancy before proceeding rather than adopting it as true.
+
+**⚠️ It is not free — and an earlier version of this document said it was.**
+The clause raises verification-caution on *legitimate* status reporting: the
+model may demand confirmation of a genuinely green build before writing it up.
+The auditor re-ran that case across four seeds and it balked every time — "a
+stable trade, not a fluke." A blunter, refuse-only wording made this worse; the
+recommended fix is to teach the *discrimination* (cave vs. its honest twin),
+not blanket refusal.
+
+Two further limits: the clause is **validated thinking-off only** (thinking-on
+could not be validated against, because it hung the long loop), and clause (4)
+is the false-premise defence — more reasoning is *not* an alternative to it,
+since thinking-on is what absorbed the planted premise in the first place.
+
+Worth adopting for **any** model we run autonomously against this repository,
+not only Laguna — with the over-refusal cost understood and watched for.
+
+[offlabel]: https://github.com/TheTom/offlabel/blob/main/models/laguna-s-2.1.md
 
 ---
 
@@ -469,7 +533,13 @@ Dated, so it can be aged out. None of this is verified on our hardware.
 | 2026-07-25 | Looping still reported on FP8 and Q5_K_M after updates | HF discussion |
 | 2026-07-25 | Tool calls degrade outside poolside's own CLI agent | r/LocalLLaMA |
 | 2026-07-25 | 12 h soak, 2,944/2,947 turns OK, zero crashes, ~13.5 s/turn, 4 GiB drift (1× DGX Spark) | soak report |
-| 2026-07-25 | Thinking activated 3/2,944 turns; a professional persona suppresses it entirely | soak report |
+| 2026-07-25 | Held-out audit: ~9/10 long-horizon coding in *every* thinking arm; 12/12 prompt-injection resisted; 6/6 multilingual; no runaway | behavioural audit |
+| 2026-07-25 | Thinking fires on ~5–18% of turns; any professional persona suppresses to zero; reproduced on poolside's own fork | behavioural audit |
+| 2026-07-25 | Thinking activated 3/2,944 turns (lower; likely pipeline-specific) | soak report |
+| 2026-07-25 | Poolside's thinking benefit (60.4 → 70.2 Terminal-Bench) is footnoted "in Poolside's agent harness" | vendor |
+| 2026-07-25 | Undocumented post-launch config drift: template reasoning-preservation, tokenizer token marked special, thinking on by default, `max_new_tokens` dropped | behavioural audit |
+| 2026-07-25 | Integrity clause has a **measured cost**: over-refusal on legitimate green-build reporting, stable across 4 seeds | behavioural audit |
+| 2026-07-25 | 30-turn loop: 30/30 thinking-off; wedged at turn 11 for 91 min thinking-on (model vs server not isolated) | behavioural audit |
 | 2026-07-25 | Thinking-on scored *worse*: invented bugs, accepted a planted false claim, hung 91 min at step 11/30 | paired testing |
 | 2026-07-25 | Poolside silently switched thinking on-by-default and removed the output cap post-launch | soak report |
 | 2026-07-25 | Tool calls 100% on native `poolside_v1` format; 83% → 0% on a generic format | soak + paired testing |
