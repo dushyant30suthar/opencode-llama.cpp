@@ -386,6 +386,17 @@ complaint: not gibberish, just an empty answer after burning the budget.
 reasoning. So it is either intermittent, or something in our flag set avoids
 it. Worth establishing which — it bears directly on task 1.
 
+**Confirmed workaround: disabling thinking avoids it.** The reporter notes it
+works correctly with thinking off, which points at template termination
+handling rather than sampling. So if task 1 lands on "thinking off by default,
+explicit opt-in for hard cases," that also sidesteps this bug — and the opt-in
+path is the one that needs a hard `max_tokens` ceiling.
+
+**Why we may be dodging the offload crash too:** it is reported at
+`--n-cpu-moe 8` on NVIDIA. We do not use `--n-cpu-moe` — we pass an explicit
+`-ot` tensor-override regex (§3). Plausibly a different code path. Do not
+"simplify" the profile to `--n-cpu-moe` without re-testing.
+
 **Thinking is binary, not graduated.** Per poolside's own release notes, S 2.1
 ships **two** settings only — `off` and `max`. There are no low/medium/high
 effort levels in this release, `max` is the default, and the vendor attributes
