@@ -571,6 +571,12 @@ any move.
 - **Higher quants of the 27B daily driver.** NVFP4 is already above the
   task-lossless threshold; Q8 would cost 196k → ~8–16k context and half the
   speed, and lose MTP.
+- **Qwen3.5-122B-A10B as a "bigger is better" upgrade.** It loses to our
+  Qwen3.6-27B on coding — **SWE-bench Verified 72% vs 77.2%**, coding average
+  72 vs 77.5 — because it is a *generation older* (3.5 vs 3.6). It also needs
+  80 GB+, so on 32 GB it would CPU-offload into the same ~10–15 t/s regime as
+  Laguna. Older, slower here, and worse at the target task. Same trap as this
+  document's subject: a large model that does not fit beats nothing.
 
 ---
 
