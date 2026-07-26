@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Self-resuming model downloader. Safe to re-run; resumes partial files.
 set -u
-LOG=~/.local/state/llamastack/downloads.log
+LOG=~/.local/state/opencode/providers/llamacpp/downloads.log
 DIR=~/.lmstudio/models/lmstudio-community
 dl() { # dl <subdir> <filename> <url>
   mkdir -p "$DIR/$1"

@@ -2,9 +2,8 @@
 
 **Automated:** `scripts/tune-model.sh <models.ini section>` sweeps the speed
 knobs (KV quant, ubatch, split-mode, MTP draft length) with the same
-server-measured method as everything below, and writes the winners to
-`~/.local/state/llamastack/recommended.ini` — which `/config` → "Reset to
-recommended" applies. Add `--apply` to also update `models.ini` directly.
+server-measured method as everything below. Add `--apply` to write the winners
+straight into `~/.config/opencode/providers/llamacpp/models.ini`.
 Needs idle GPUs; ~20 minutes per model.
 
 Nothing in `config/models.ini.example` is a guess. Two principles:

@@ -55,7 +55,7 @@ cmake --build build -j "$(nproc)"
 
 echo
 echo "built: $LLAMA_DIR/build/bin/llama-server"
-echo "opencode finds it via \$PATH or \$LLAMASTACK_SERVER_BIN (see docs/setup.md)"
+echo "point opencode-localhost at it: bin = in ~/.config/opencode/providers/llamacpp/server.ini"
 
 # Stop the running router so the new binary actually gets used.
 #
@@ -64,7 +64,7 @@ echo "opencode finds it via \$PATH or \$LLAMASTACK_SERVER_BIN (see docs/setup.md
 # stale binary and all. Nothing else ever retires it, so without this a rebuild
 # is invisible until the router happens to die. Killing it here means the next
 # `opencode` finds the port empty and respawns from the binary just built.
-ROUTER_PID_FILE="$HOME/.local/state/llamastack/router.pid"
+ROUTER_PID_FILE="$HOME/.local/state/opencode/providers/llamacpp/server.pid"
 if [[ -r "$ROUTER_PID_FILE" ]]; then
   ROUTER_PID="$(head -1 "$ROUTER_PID_FILE" | tr -cd '0-9')"
   # only kill it if it is really our llama-server, never a recycled pid

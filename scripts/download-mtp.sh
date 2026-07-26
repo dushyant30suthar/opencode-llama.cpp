@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 DIR=~/.lmstudio/models/unsloth/Qwen3.6-27B-MTP-GGUF
-LOG=~/.local/state/llamastack/downloads.log
+LOG=~/.local/state/opencode/providers/llamacpp/downloads.log
 mkdir -p "$DIR"
 for attempt in $(seq 1 100); do
   curl -sL --fail -C - -o "$DIR/Qwen3.6-27B-UD-Q4_K_XL.gguf" \

@@ -6,7 +6,7 @@
 # you like (network switches are fine).
 
 MODELS="$HOME/.lmstudio/models"
-INI="$HOME/.local/state/llamastack/models.ini"
+INI="$HOME/.config/opencode/providers/llamacpp/models.ini"
 ROUTER="http://127.0.0.1:9337"
 W=(wget -4 -c -t 0 --retry-connrefused --timeout=30 -q --show-progress)
 

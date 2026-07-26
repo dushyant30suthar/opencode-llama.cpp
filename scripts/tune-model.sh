@@ -10,7 +10,7 @@
 #   phase 3: split-mode      (tensor, layer)
 #   phase 4: MTP draft n-max (2, 3, 4, 5)   [only if the section uses draft-mtp]
 # ~7 server loads, ≈20 min. Winners are written to
-# ~/.local/state/llamastack/recommended.ini — opencode reads that file, so
+# the models.ini above, so
 # "Reset to recommended" now means "reset to what benchmarks won here".
 # ctx-size is NOT tuned here (see bench/ctx-search-v2.sh for the max-ctx probe);
 # measurement runs at 32k ctx for fast loads — decode speed is ctx-insensitive.
@@ -26,7 +26,7 @@ SECTION="${1:?usage: tune-model.sh <models.ini section name> [--apply]}"
 APPLY="${2:-}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRV="$ROOT/llama.cpp/build/bin/llama-server"
-STATE=~/.local/state/llamastack
+STATE=~/.config/opencode/providers/llamacpp
 INI="$STATE/models.ini"
 REC="$STATE/recommended.ini"
 OUT="$STATE/tune-$(echo "$SECTION" | tr '/:' '__').txt"

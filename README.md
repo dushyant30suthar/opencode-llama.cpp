@@ -1,9 +1,13 @@
 # opencode-llama.cpp
 
-A complete local-AI coding stack: [llama.cpp](https://github.com/ggml-org/llama.cpp)
-built natively for your GPU, driven by an [opencode](https://github.com/sst/opencode)
-fork with a built-in zero-config local provider — plus the build recipes, tuned
-per-model configs, and benchmark harness that make it fast.
+The rig behind a local-AI coding stack: [llama.cpp](https://github.com/ggml-org/llama.cpp)
+built natively for your GPU, plus the build recipes, tuned per-model configs,
+and benchmark harness that make it fast.
+
+The opencode side lives in its own repo now —
+[**opencode-localhost**](https://github.com/dushyant30suthar/opencode-localhost),
+an npm plugin that registers llama.cpp as a provider and shows live GPU/VRAM/CPU
+in the sidebar. No fork of opencode, no patches.
 
 The goal: **hand a local model a real ticket, get a mergeable branch** — a
 reliable coding-agent stack running entirely on consumer hardware.
@@ -22,18 +26,18 @@ owning the whole chain:
 3. **Per-model configs probed, not guessed** — max context found by binary
    search through the real server, split-mode/ubatch chosen by benchmark sweep,
    MTP speculative decoding tuned by measurement.
-4. **A frontend that understands local models** — the opencode fork adds model
-   management, live load/prefill progress, thinking preservation for agentic
-   loops, LAN hosting, and more. See [docs/features](docs/features/README.md).
+4. **A frontend that understands local models** —
+   [opencode-localhost](https://github.com/dushyant30suthar/opencode-localhost)
+   discovers your GGUFs, supervises `llama-server`, and puts hardware telemetry
+   on screen.
 
 ## Repository layout
 
 | Path | What it is |
 | --- | --- |
-| `llama.cpp/` | Submodule → [our llama.cpp fork](https://github.com/dushyant30suthar/llama.cpp) (tracks upstream ggml-org), pinned at the commit the configs were validated against |
-| `opencode/` | Submodule → [our opencode fork](https://github.com/dushyant30suthar/opencode) (branch `opencode-llama.cpp`), where all stack code lives |
-| `docs/` | Common documentation: [setup](docs/setup.md), [architecture](docs/architecture.md), [tuning](docs/tuning.md), [features](docs/features/README.md) |
-| `scripts/` | `build-llama.sh`, `build-opencode.sh`, model downloaders — the build knowledge as executable fact |
+| `llama.cpp/` | Submodule → [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp), pinned at the commit the configs were validated against |
+| `docs/` | [setup](docs/setup.md), [tuning](docs/tuning.md), [inference flag map](docs/inference-flag-map.md) |
+| `scripts/` | `build-llama.sh`, model downloaders, the tuner — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
 | `bench/` | The experiment harness and raw results behind every number in the docs |
 
@@ -46,14 +50,14 @@ cd opencode-llama.cpp
 # 1. CUDA toolkit 13.3+ and a supported host compiler — see docs/setup.md
 # 2. Build the engine (checks the CUDA version for you)
 ./scripts/build-llama.sh
-# 3. Build + install the opencode fork
-./scripts/build-opencode.sh
-# 4. Put GGUF models in ~/.lmstudio/models (LM Studio layout), then:
+# 3. Install opencode and the plugin — see docs/setup.md
+curl -fsSL https://opencode.ai/install | bash
+# 4. Put GGUF models somewhere, point the plugin at them, then:
 opencode
 ```
 
-Local models appear in the model picker under "Llama Stack (local)". No config
-files, no API keys. Full walkthrough: [docs/setup.md](docs/setup.md).
+Local models appear in the model picker under "llama.cpp (local)".
+Full walkthrough: [docs/setup.md](docs/setup.md).
 
 ## Reference rig
 
@@ -75,23 +79,14 @@ Highlights ([full tables](docs/tuning.md)):
 
 ## Keeping it current
 
-Development never happens in this repo — it happens in the two forks, each an
-independent, upstream-connected repo. This repo pins the versions that are
-proven to work together.
+This repo pins the llama.cpp commit that the configs were validated against.
 
-The easy way: **`opencode upgrade`** — on fork builds it checks both
-upstreams, proves the sync is conflict-free, then pulls, compiles, and swaps
-the binaries itself. `opencode upgrade --check` for a read-only status.
-Full details and the manual fallback: [docs/upgrading.md](docs/upgrading.md).
+- **opencode** updates itself (`opencode upgrade`) — it is stock now, with no
+  patches to preserve.
+- **opencode-localhost** updates like any npm package.
+- **llama.cpp** — move the submodule pin, rebuild with `scripts/build-llama.sh`,
+  and re-run the `bench/` probes if the release notes touch your model families.
+  Context ceilings and MTP draft lengths in particular are worth re-probing.
 
-- **opencode fork** — new features land on branch `opencode-llama.cpp`; rebase onto
-  upstream `sst/opencode` to pick up their improvements, rebuild with
-  `scripts/build-opencode.sh`.
-- **llama.cpp fork** — carries no patches today, so updating is just syncing
-  the fork with upstream (`gh repo sync <you>/llama.cpp --source ggml-org/llama.cpp`),
-  rebuilding with `scripts/build-llama.sh`, and re-running the `bench/` probes
-  if the release notes touch your model families. If a patch is ever needed,
-  it lives on the fork the same way the opencode ones do.
-
-When a new combination is validated, bump the submodule pins here in one
-commit — this repo is the record of "these versions work together."
+When a new combination is validated, bump the pin here in one commit — this
+repo is the record of "these versions work together."

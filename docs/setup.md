@@ -1,6 +1,6 @@
 # Setup — from bare GPU box to working stack
 
-Four stages: CUDA toolkit → llama.cpp build → opencode fork build → models.
+Four stages: CUDA toolkit → llama.cpp build → opencode + plugin → models.
 
 ## 1. CUDA toolkit (13.3 or newer — never 13.2)
 
@@ -51,36 +51,37 @@ What it encodes (see the script for the full story):
 
 The binary ends up at `<checkout>/build/bin/llama-server`.
 
-## 3. Build and install the opencode fork
+## 3. opencode + the local-models plugin
 
-Requires [bun](https://bun.sh).
+opencode is installed normally — there is no fork any more:
 
-```sh
-./scripts/build-opencode.sh         # builds ./opencode (the submodule)
+```bash
+curl -fsSL https://opencode.ai/install | bash
 ```
 
-This produces a single self-contained binary and installs it to
-`~/.opencode/bin/opencode`. Fork builds never self-update to stock upstream
-(that would silently remove the whole local stack) — update by rebasing and
-rebuilding, see [features/no-self-update.md](features/no-self-update.md).
+Then point it at [opencode-localhost](https://github.com/dushyant30suthar/opencode-localhost),
+which registers llama.cpp as a provider and draws the hardware panel:
 
-### Updating the opencode fork later
+```jsonc
+// ~/.config/opencode/opencode.jsonc
+{ "plugin": ["opencode-localhost"] }
 
-The fork's branch (`opencode-llama.cpp`) sits on top of upstream `dev`
-(sst/opencode's main branch). To pick up upstream improvements:
-
-```sh
-cd opencode
-git fetch upstream                  # upstream = github.com/sst/opencode
-git rebase upstream/dev
-bun install --ignore-scripts
-bun run --cwd packages/core fix-node-pty
-cd packages/opencode && bun run script/build.ts --single --skip-embed-web-ui
-cp dist/opencode-linux-x64/bin/opencode ~/.opencode/bin/opencode
+// ~/.config/opencode/tui.jsonc
+{ "plugin": ["opencode-localhost"] }
 ```
 
-Keeping a stock upstream binary at `~/.opencode/bin/opencode-upstream-backup`
-is handy for A/B-ing fork regressions.
+On first launch it writes `~/.config/opencode/providers/llamacpp/server.ini`.
+Set `bin` to the `llama-server` built in stage 2 and `models-dir` to your
+models directory:
+
+```ini
+[server]
+bin        = ~/Projects/opencode-llama.cpp/llama.cpp/build/bin/llama-server
+models-dir = ~/.lmstudio/models
+```
+
+The panel picks the change up within a couple of seconds — no restart.
+
 
 ## 4. Models
 
@@ -95,17 +96,21 @@ self-resuming downloaders in `scripts/` as templates
 opencode
 ```
 
-On startup the fork probes for a local server and, finding none, spawns
-`llama-server` in router mode itself — models show up in the model picker at
-zero cost. Per-model settings are generated into
-`~/.local/state/llamastack/models.ini`, which is **yours to edit** and never
-overwritten. Start from [`config/models.ini.example`](../config/models.ini.example)
-to see what a fully tuned file looks like.
+The plugin scans `models-dir`, spawns `llama-server` against a generated
+preset, and registers the provider — models show up in the picker with their
+real context windows. Per-model settings land in
+`~/.config/opencode/providers/llamacpp/models.ini`, which is **yours to edit**
+and never overwritten. Start from
+[`config/models.ini.example`](../config/models.ini.example) to see what a fully
+tuned file looks like.
 
-### Paths and overrides
+### Paths
 
-| Env var | Meaning | Default |
-| --- | --- | --- |
-| `LLAMASTACK_SERVER_BIN` | llama-server binary | `$PATH`, then conventional build dirs (the repo's own `llama.cpp/build/bin` first, then `~/Projects/llama/llama.cpp/build/bin`, `~/Projects/llama.cpp/build/bin`, `~/llama.cpp/build/bin`, `/usr/local/bin`) |
-| `LLAMASTACK_MODELS_DIR` | models directory | `~/.lmstudio/models` |
-| `OPENCODE_DISABLE_LLAMASTACK` | set to `1` to skip local-stack detection entirely | unset |
+| What | Where |
+| --- | --- |
+| server settings | `~/.config/opencode/providers/llamacpp/server.ini` |
+| per-model settings | `~/.config/opencode/providers/llamacpp/models.ini` |
+| pidfile and log | `~/.local/state/opencode/providers/llamacpp/` |
+
+`bin` and `models-dir` live in `server.ini` — there are no environment
+variables to remember, and the file always shows what is actually in use.
