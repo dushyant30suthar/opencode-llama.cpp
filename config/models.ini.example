@@ -112,21 +112,37 @@ min-p = 0
 
 [unsloth/Laguna-S-2.1-GGUF]
 # smart/verifier tier. UD-Q2_K_XL, 36.96GiB, expert-offload.
-# measured: 548 t/s prefill, 16.7 t/s decode, 30.6G VRAM, 6/6 on the bug suite.
 # do NOT "upgrade" to UD-IQ3_XXS or UD-IQ3_S — equal detection, bigger, slower.
-# override-tensor below keeps 30 of 48 expert layers on GPU ("K=15").
-# K13 = 15.68 t/s, K15 = 16.68, K17 = OOM. Re-run the ladder if the quant changes.
 # split-mode tensor/row ABORTS on laguna: "device does not support split buffers"
+#
+# RETUNED 2026-07-27 (see docs/laguna-retune-2026-07-27.md). Was K15/q8_0/98304
+# = 487 t/s prefill, 18.09 t/s decode. Now K16/q4_0/106496 = 523 / 19.23, +8% ctx,
+# still 6/6 on the bug suite — better on all three axes.
+#
+# Both old "ceilings" were properties of q8_0 KV, which had never been varied:
+#   "K17 = OOM so K15 is the max"  — K16 was never tested. It works.
+#   "98304 is the ceiling"          — true at q8_0; q4_0 reaches 131072 at K15.
+# q4_0 frees 552MiB: +51% context, prefill unchanged, decode -2%, quality intact.
+#
+# K = expert layers kept on GPU per half of the 48-layer stack:
+#   K = 16
+#   cpu = [l for l in range(48) if not (24-K <= l <= 23 or 48-K <= l <= 47)]
+# Decode scales with K and nothing else (18.09 K15 / 15.62 K13 / 13.17 K11) because
+# it is CPU-compute-bound; prefill scales with ubatch and nothing else.
+# batch-size does nothing for throughput BUT CLAMPS ubatch — set both or -ub is
+# silently ignored (llama-context.cpp:264).
 model = /home/dushyant30suthar/.lmstudio/models/unsloth/Laguna-S-2.1-GGUF/Laguna-S-2.1-UD-Q2_K_XL.gguf
-override-tensor = blk\.(0|1|2|3|4|5|6|7|8|24|25|26|27|28|29|30|31|32)\.ffn_.*_exps\.=CPU
+override-tensor = blk\.(0|1|2|3|4|5|6|7|24|25|26|27|28|29|30|31)\.ffn_.*_exps\.=CPU
 split-mode = layer
-ctx-size = 98304
+# K16 ceiling: 114688 loads with 619MiB free (thin), 131072 does not load at all.
+ctx-size = 106496
 gpu-layers = 99
 flash-attn = on
-cache-type-k = q8_0
-cache-type-v = q8_0
+cache-type-k = q4_0
+cache-type-v = q4_0
 jinja = true
 ubatch-size = 2048
+batch-size = 2048
 no-mmap = true
 cache-ram = 0
 reasoning-preserve = true
