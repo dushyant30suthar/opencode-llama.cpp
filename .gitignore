@@ -1,0 +1,5 @@
+# Python virtualenvs for the OpenVINO benchmark scripts. Multi-gigabyte, and
+# rebuildable from docs/setup-intel.md — the scripts beside them are tracked.
+.venv/
+.venv*/
+__pycache__/
