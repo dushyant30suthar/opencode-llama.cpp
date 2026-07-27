@@ -410,3 +410,70 @@ on the chat endpoint), `dflashtest.py`/`dflashfork.py`, `offloadbench.py`
 Quality: `bench/verifier-quality.sh <model.gguf> <K> <label> [extra flags]` —
 extra flags override its hardcoded `-ctk q8_0 -ctv q8_0`, e.g.
 `-ctk q4_0 -ctv q4_0 -ub 4096 -b 4096`.
+
+---
+
+## 12. Addendum — q4_0 vs q8_0 KV, tested directly
+
+Prompted by r/LocalLLM consensus that KV quantization degrades with depth and
+hurts tool calling ("friends don't let friends run less than 16 bit kv"). This
+matters more than a normal caveat here: **K16 only fits because of q4_0**, so if
+q4_0 is unsafe the entire retune collapses back to roughly K15/q8_0/98304.
+
+Test: one ~62.5k-token haystack, five unique unguessable codes planted at 10 /
+30 / 50 / 70 / 90% depth, asked for one at a time. Shared prefix, so it prefills
+once and the rest are cache hits. Greedy (`temp 0`, `top-k 1`), exact string
+match, `/completion` to keep the §8 termination bug out of the signal. K13 @
+ctx 98304 — both quants fit there, so KV precision is the only variable.
+
+| depth | q4_0 | q8_0 |
+| --- | --- | --- |
+| 10% | HIT | HIT (identical reply) |
+| 30% | HIT | **MISS** — answered `TM-8653-VXG` |
+| 50% | HIT | HIT (identical reply) |
+| 70% | HIT | HIT (identical reply) |
+| 90% | HIT | HIT (identical reply) |
+| **total** | **5/5** | **4/5** |
+
+At 50/70/90% the two arms produced **character-identical output** — under greedy
+decoding that means the same argmax at every token, i.e. the quantization
+difference never perturbed a single choice at depth.
+
+The one miss went to **q8_0**, at shallow depth, and was a cross-needle blend:
+`TM-` is bravo's prefix, `VXG` is charlie's suffix. That is retrieval
+interference between five similarly-formatted codes — a weakness of the test
+design — not a cache-precision failure.
+
+**Conclusion: no systematic q4_0 penalty at 62k on this model.** The predicted
+failure mode is degradation *with depth*; the deep needles are precisely where
+the arms agree perfectly.
+
+Mechanistic support: Laguna S is 12 global + 36 SWA layers (window 512). Three
+quarters of the layers discard their cache continuously and physically cannot
+accumulate quantization error across long context. Only 12 layers carry
+long-range KV. This is a concrete reason to expect Laguna on the resilient end
+of the model-dependent spectrum (cf. reports that Gemma 4 is KV-sensitive while
+Qwen3.6 is resilient).
+
+**Not established.** n=5 per arm cannot prove equivalence. Tool-call reliability
+under q4_0 — the other specific community claim, and the actual opencode
+workload — remains untested. Nothing here speaks to 160k+ depths, and the K13
+profile offers 163840.
+
+### Also checked: the chat template
+
+`docs/laguna.md` task 0 worried that the unsloth Q2_K_XL predates poolside's
+2026-07-25 "fix tool calls and thinking" re-embed. Extracted
+`tokenizer.chat_template` from the GGUF and diffed it against
+`poolside/Laguna-S-2.1-GGUF/chat_template.jinja`:
+
+```
+6a7
+> {%- set preserve_thinking = preserve_thinking | default(false) -%}
+```
+
+**The templates are functionally identical** — poolside's simply has that line
+duplicated. Both declare `preserve_thinking` and both use it at line 55/56. So
+the embedded template is current, and the §8 termination bug is **not** explained
+by a stale template. Task 0 can close. That leaves llama.cpp's parsing of the
+template as the remaining suspect, which is where the upstream bug is filed.
