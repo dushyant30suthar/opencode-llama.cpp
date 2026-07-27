@@ -36,7 +36,7 @@ owning the whole chain:
 | Path | What it is |
 | --- | --- |
 | `llama.cpp/` | Submodule → [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp), pinned at the commit the configs were validated against |
-| `docs/` | [setup](docs/setup.md), [tuning](docs/tuning.md), [inference flag map](docs/inference-flag-map.md) |
+| `docs/` | [setup](docs/setup.md), [tuning](docs/tuning.md), [inference flag map](docs/inference-flag-map.md), [Laguna S retune](docs/laguna-retune-2026-07-27.md) |
 | `scripts/` | `build-llama.sh`, model downloaders, the tuner — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
 | `bench/` | The experiment harness and raw results behind every number in the docs |

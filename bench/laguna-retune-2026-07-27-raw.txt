@@ -1,0 +1,79 @@
+### PREFILL/CONTEXT (32k prefill, real source filler)
+LS-A1-K15-q8-ub2048-b2048          ctx=  98304 ub= 2048 free=  995 pp=  487.4 status=ok
+LS-A2-K15-q4-ub2048-b2048          ctx=  98304 ub= 2048 free= 1547 pp=  490.7 status=ok
+LS-A3-K15-q4-ub4096-b4096          ctx=  98304 ub= 4096 free=  563 pp=      - status=prefill-failed
+LS-A4-K13-q4-ub4096-b4096          ctx=  98304 ub= 4096 free= 1985 pp=  567.0 status=ok
+LS-A5-K13-q4-ub8192-b8192          ctx=  98304 ub= 8192 free=    - pp=      - status=died-loading
+LS-A6-K17-q4-ub2048-b2048          ctx=  98304 ub= 2048 free=    - pp=      - status=died-loading
+LS-C1-K13-q4-ub4096-b8192          ctx=  98304 ub= 4096 free= 1985 pp=  564.3 status=ok
+LS-C2-K13-q4-ub4096-b16384         ctx=  98304 ub= 4096 free= 1985 pp=  571.0 status=ok
+LS-C3-K11-q4-ub8192-b8192          ctx=  98304 ub= 8192 free= 1435 pp=  579.0 status=ok
+LS-C4-K9-q4-ub8192-b8192           ctx=  98304 ub= 8192 free= 2809 pp=  549.7 status=ok
+LS-C5-K14partial-q4-ub4096         ctx=  98304 ub= 4096 free= 1985 pp=  570.6 status=ok
+LS-C6-K12partial-q4-ub8192         ctx=  98304 ub= 8192 free= 1435 pp=  580.9 status=ok
+LS-D1-K13-q4-ub4096-ctx131072      ctx= 131072 ub= 4096 free= 1549 pp=  572.3 status=ok
+LS-D2-K13-q4-ub4096-ctx147456      ctx= 147456 ub= 4096 free= 1331 pp=  570.8 status=ok
+LS-D3-K13-q4-ub4096-ctx163840      ctx= 163840 ub= 4096 free= 1113 pp=  570.3 status=ok
+LS-D4-K13-q4-ub2048-ctx196608      ctx= 196608 ub= 2048 free= 1733 pp=  445.5 status=ok
+LS-D5-K15-q4-ub2048-ctx131072      ctx= 131072 ub= 2048 free= 1111 pp=  495.3 status=ok
+LS-E1-K15shave2-ub4096             ctx=  98304 ub= 4096 free= 1967 pp=  474.8 status=ok
+LS-E2-K15shave4-ub4096             ctx=  98304 ub= 4096 free= 2409 pp=  456.4 status=ok
+LS-E3-K15shave4-ub4096-ctx131072   ctx= 131072 ub= 4096 free= 1997 pp=  456.7 status=ok
+LS-E4-K15shave6-ub8192             ctx=  98304 ub= 8192 free= 2851 pp=  441.4 status=ok
+K16-pp-ctx98304                    ctx=  98304 ub= 2048 free=  813 pp=  523.3 status=ok
+K16-pp-ctx114688                   ctx= 114688 ub= 2048 free=  619 pp=  523.5 status=ok
+K16-pp-ctx106496                   ctx= 106496 ub= 2048 free=  727 pp=  523.1 status=ok
+K15-pp-ctx131072-ref               ctx= 131072 ub= 2048 free= 1111 pp=  492.5 status=ok
+
+### DECODE (4 repeats, warmup discarded, 8k depth)
+K15-q8-ub2048      K15 kv=q8_0 ub=2048 ctx=98304 mb=None median=18.09 runs=[18.08, 17.9, 18.1, 18.14] spread=1.3 free=995 status=ok
+K15-q4-ub2048      K15 kv=q4_0 ub=2048 ctx=98304 mb=None median=17.73 runs=[16.71, 17.93, 17.79, 17.67] spread=6.9 free=1547 status=ok
+K13-q4-ub2048      K13 kv=q4_0 ub=2048 ctx=98304 mb=None median=15.62 runs=[15.73, 15.58, 15.67, 15.14] spread=3.8 free=3017 status=ok
+K13-q4-ub4096      K13 kv=q4_0 ub=4096 ctx=98304 mb=None median=15.25 runs=[15.22, 15.35, 15.25, 15.25] spread=0.9 free=1985 status=ok
+K13-q4-ub1024      K13 kv=q4_0 ub=1024 ctx=98304 mb=None median=15.85 runs=[15.85, 15.86, 15.78, 15.85] spread=0.5 free=3349 status=ok
+K11-q4-ub2048      K11 kv=q4_0 ub=2048 ctx=98304 mb=None median=13.17 runs=[13.77, 13.29, 13.05, 12.79] spread=7.4 free=4489 status=ok
+mb-default32       K13 kv=q4_0 ub=2048 ctx=98304 mb=None median=15.66 runs=[15.7, 15.72, 15.63, 15.55] spread=1.1 free=3017 status=ok
+mb-1               K13 kv=q4_0 ub=2048 ctx=98304 mb=1 median=8.69 runs=[8.7, 8.7, 8.68, 8.66] spread=0.5 free=3017 status=ok
+mb-2               K13 kv=q4_0 ub=2048 ctx=98304 mb=2 median=15.77 runs=[15.75, 15.79, 15.8, 15.69] spread=0.7 free=3017 status=ok
+mb-8               K13 kv=q4_0 ub=2048 ctx=98304 mb=8 median=15.65 runs=[15.65, 15.66, 15.65, 15.64] spread=0.1 free=3017 status=ok
+mb-512             K13 kv=q4_0 ub=2048 ctx=98304 mb=512 median=15.75 runs=[15.76, 15.75, 15.7, 15.8] spread=0.6 free=3017 status=ok
+mb-1-K15           K15 kv=q4_0 ub=2048 ctx=98304 mb=1 median=10.27 runs=[10.25, 10.26, 10.27, 10.27] spread=0.2 free=1547 status=ok
+K15-ctx98304       K15 kv=q4_0 ub=2048 ctx=98304 mb=None median=17.83 runs=[17.95, 17.74, 17.74, 17.92] spread=1.2 free=1547 status=ok
+K16-ctx98304       K16 kv=q4_0 ub=2048 ctx=98304 mb=None median=19.23 runs=[19.25, 19.29, 19.21, 19.18] spread=0.6 free=813 status=ok
+K16-ctx131072      K16 kv=q4_0 ub=2048 ctx=131072 mb=None median=- runs=- spread=- free=- status=LOAD_FAILED
+K16-ctx163840      K16 kv=q4_0 ub=2048 ctx=163840 mb=None median=- runs=- spread=- free=- status=LOAD_FAILED
+
+### DFLASH (poolside fork)
+fork-K13-nodraft     n=None median=15.6 runs=[15.57, 15.65, 15.6] spread=0.5 free=3043 status=ok
+fork-K13-n7          n=7 median=6.75 runs=[5.05, 6.75, 7.01] spread=29.0 free=1167 status=ok
+fork-K13-n15         n=15 median=3.39 runs=[3.43, 3.17, 3.39] spread=7.7 free=1167 status=ok
+fork-K13-n32         n=32 median=3.49 runs=[3.49, 4.16, 3.12] spread=29.8 free=1167 status=ok
+fork-K13-n40         n=40 median=4.87 runs=[4.87, 5.4, 3.63] spread=36.3 free=1167 status=ok
+fork-K13-n64         n=64 median=3.59 runs=[3.63, 3.59, 3.46] spread=4.7 free=1167 status=ok
+fork-K11-n32         n=32 median=3.24 runs=[3.74, 3.24, 2.56] spread=36.4 free=2613 status=ok
+
+### DFLASH (upstream b10133)
+K13-nodraft          status=ok why=None
+K13-dflash-n3        status=LOAD_FAILED why=['0.31.577.640 E llama_model_load_from_file_impl: failed to load model', "0.31.577.641 E common_speculative_in
+K13-dflash-n16       status=LOAD_FAILED why=['0.30.060.118 E llama_model_load_from_file_impl: failed to load model', "0.30.060.119 E common_speculative_in
+K13-dflash-n32       status=LOAD_FAILED why=['0.29.927.714 E llama_model_load_from_file_impl: failed to load model', "0.29.927.714 E common_speculative_in
+K13-dflash-n48       status=LOAD_FAILED why=['0.29.805.770 E llama_model_load_from_file_impl: failed to load model', "0.29.805.771 E common_speculative_in
+K11-dflash-n32       status=LOAD_FAILED why=['0.32.194.789 E llama_model_load_from_file_impl: failed to load model', "0.32.194.790 E common_speculative_in
+
+### LONG-CONTEXT TERMINATION (62k, chat+jinja)
+L2-ctx131072-yarnDEFAULT       run0 PASS bug=True finish=stop content=1003c reason=2797c pred=1337 pp=514.7 dec=12.9 wall=225.2
+L2-ctx131072-yarnDEFAULT       run1 PASS bug=True finish=stop content=559c reason=0c pred=154 pp=334.1 dec=10.7 wall=201.5
+L2-ctx131072-yarn1.0           run0 PASS bug=True finish=stop content=1598c reason=0c pred=437 pp=511.1 dec=13.1 wall=156.1
+L2-ctx131072-yarn1.0           run1 PASS bug=True finish=stop content=961c reason=6506c pred=2728 pp=334.8 dec=11.1 wall=431.6
+L2-ctx98304-K15-DEFAULT        run0 REQUEST_FAILED bug=None finish=None content=Nonec reason=Nonec pred=None pp=None dec=None wall=None
+L3-K15-q4-ub2048-ctx131072     run0 PASS bug=True finish=stop content=1183c reason=2923c pred=1562 pp=452.2 dec=14.9 wall=243.7
+L3-K15-q4-ub2048-ctx131072     run1 FAIL bug=True finish=length content=0c reason=25845c pred=8000 pp=317.9 dec=12.4 wall=842.2
+L3-K15-q8-ub2048-ctx98304      run0 FAIL bug=True finish=stop content=0c reason=9645c pred=3247 pp=448.2 dec=14.9 wall=358.3
+
+### FIT PROBES (max ctx at 1024MiB margin)
+FIT-K15-q8_0-ub2048        ctx=56576 free=1617 loaded=True
+FIT-K15-q4_0-ub2048        ctx=85504 free=1691 loaded=True
+FIT-K13-q4_0-ub2048        ctx=191744 free=1797 loaded=True
+FIT-K17-q4_0-ub2048        ctx=4096 free=963 loaded=True
+FIT-K15-q4_0-ub4096        ctx=41216 free=1321 loaded=True
+FIT-K11-q4_0-ub2048        ctx=299008 free=1815 loaded=True

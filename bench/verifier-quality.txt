@@ -29,3 +29,17 @@
   Q2+YaRN | SCORE 6/6  total_gen_time=507s
 
 QUALITY SUITE DONE 16:11:47
+  K15-q4kv-ctx98304 | off-by-one-infinite-loop   FOUND  think=21840 ans=  613 tok= 7000
+  K15-q4kv-ctx98304 | mutable-default-arg        FOUND  think= 1460 ans=  877 tok=  578
+  K15-q4kv-ctx98304 | race-condition             FOUND  think= 1385 ans= 1085 tok=  614
+  K15-q4kv-ctx98304 | silent-truncation          FOUND  think=  863 ans=  744 tok=  422
+  K15-q4kv-ctx98304 | resource-leak              FOUND  think= 3014 ans=  569 tok=  879
+  K15-q4kv-ctx98304 | subtle-slice-bug           FOUND  think= 8339 ans= 1213 tok= 2549
+  K15-q4kv-ctx98304 | SCORE 6/6  total_gen_time=644s
+  K13-q4kv-ub4096 | off-by-one-infinite-loop   FOUND  think=14077 ans= 1097 tok= 4535
+  K13-q4kv-ub4096 | mutable-default-arg        FOUND  think= 1752 ans=  929 tok=  609
+  K13-q4kv-ub4096 | race-condition             FOUND  think= 3874 ans= 1514 tok= 1247
+  K13-q4kv-ub4096 | silent-truncation          FOUND  think= 1680 ans=  542 tok=  520
+  K13-q4kv-ub4096 | resource-leak              FOUND  think=    0 ans=  764 tok=  184
+  K13-q4kv-ub4096 | subtle-slice-bug           FOUND  think= 4727 ans= 1201 tok= 1536
+  K13-q4kv-ub4096 | SCORE 6/6  total_gen_time=529s
