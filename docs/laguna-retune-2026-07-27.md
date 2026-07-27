@@ -169,7 +169,8 @@ K11 the extra PCIe traffic outruns what the larger batch amortises.
 ### 4.3 K — the only decode lever
 
 See the ladder in §2. Decode scales with the number of CPU-resident expert
-layers because decode is **PCIe-transfer-bound** (proven in §5.1).
+layers because decode is **CPU-compute-bound** — the CPU does those layers' expert
+matmuls on every token. See §5.1 and the thread scaling in §13.
 
 ---
 
@@ -200,8 +201,14 @@ math has always run on the i5-9400F.
 | 512 | 15.75 |
 
 Forcing GPU offload at batch 1 is **45% slower**. Same at K15 (17.83 → 10.27).
-So decode is transfer-bound, not CPU-compute-bound, the default of 32 is correct
-for this hardware, and **K is the only decode lever**. Values 2–32 are identical.
+So moving expert compute to the GPU is far worse, the default of 32 is correct
+for this hardware, and **K is the only decode lever**. Values 2-32 are identical.
+
+**Careful with the inference here.** This table shows the *transfer path* is
+expensive — it does NOT show decode is transfer-bound. The opposite: the CPU path
+wins, so in the operating configuration decode is bounded by **CPU expert
+compute**. §13 proves that directly with thread scaling. An earlier revision of
+this document drew the wrong conclusion from exactly this table.
 
 ### 5.2 DFlash speculative decoding — dead across the whole range
 
@@ -236,7 +243,7 @@ Crossing the threshold should have flipped it. It did not — n=32 is
 indistinguishable from n=15. The n=40 uptick is inside its own 36% spread.
 
 Not VRAM pressure either: K11/n=32 had 2613 MiB free and was no better.
-Speculation is simply the wrong shape for a transfer-bound decode path.
+Speculation is simply the wrong shape for this decode path.
 
 ### 5.3 Partial expert offload — actively harmful
 
@@ -379,7 +386,9 @@ should not be quoted as precise.
 - **Is K15 the ceiling?** No — K16 works. K17 genuinely does not (`--fit` falls
   to its 4096 floor; only 963 MiB free).
 - **Does DFlash help?** No, at any n, on poolside's own fork. §5.2.
-- **Is decode CPU-bound or transfer-bound?** Transfer-bound. §5.1.
+- **Is decode CPU-bound or transfer-bound?** **CPU-compute-bound.** Proven by
+  thread scaling in §13. Moving the work to the GPU is 45% slower (§5.1) because
+  the GPU's route to the weights (PCIe) is 5-10x narrower than the CPU's (DDR4).
 - **Does q4_0 KV cost quality?** No — 6/6 on the planted-bug suite at both K15
   and K13, matching the q8_0 baseline, plus 5/5 correct bug identification in
   the passing long-context runs.
@@ -387,12 +396,11 @@ should not be quoted as precise.
 ## 10. Questions still open
 
 - **Thinking off by default** — the confirmed workaround for §8, untested here.
-- **Multi-machine RPC.** Decode is bounded by PCIe transfer of CPU-resident
-  experts. llama.cpp's RPC backend could place those experts in a second
-  machine's VRAM instead of host RAM, replacing a PCIe-3.0-to-RAM hop with a
-  network hop to real VRAM. Whether that wins depends entirely on link speed.
-  This is the only remaining structural fix for decode that is not "buy a
-  bigger card".
+- **Multi-machine RPC.** Decode is bounded by CPU expert compute (§13).
+  llama.cpp's RPC backend could place those experts in a second machine's VRAM,
+  turning a CPU matmul into a remote GPU matmul. Wins only if the network hop
+  costs less than the ~40 GB/s DDR4 path it replaces — i.e. needs a fast link.
+  This is the only remaining structural fix short of new hardware.
 - **K16 at long context.** Validated at 32k prefill only; the 62k termination
   runs were done at K13 and K15.
 - **Quality at q4_0 KV for K16 specifically.** The suite was run at K15 and K13.
@@ -477,3 +485,152 @@ duplicated. Both declare `preserve_thinking` and both use it at line 55/56. So
 the embedded template is current, and the §8 termination bug is **not** explained
 by a stale template. Task 0 can close. That leaves llama.cpp's parsing of the
 template as the remaining suspect, which is where the upstream bug is filed.
+
+---
+
+## 13. What actually bounds decode — thread scaling
+
+§5.1 showed that forcing expert compute onto the GPU is 45% slower. An earlier
+revision read that as "decode is transfer-bound", which is backwards: it shows
+the *transfer path* is expensive, so the CPU path wins. To find the real bound,
+vary CPU threads with everything else fixed (K13, q4_0, ub2048, ctx 98304):
+
+| threads | decode | per-thread | marginal |
+| --- | --- | --- | --- |
+| 1 | 4.00 | 4.00 | — |
+| 2 | 7.36 | 3.68 | 1.84x |
+| 4 | 12.53 | 3.13 | 1.70x |
+| 6 (default) | **15.60** | 2.61 | 1.25x |
+
+Spreads 0.0–0.6%. **3.9x across 6x threads = 65% scaling efficiency.** A
+transfer-bound path would not scale with cores at all.
+
+So decode is **CPU-compute-bound with real but non-saturating memory-bandwidth
+pressure**. Per-thread throughput falls (4.00 → 2.61) but absolute throughput is
+still climbing at 6 cores.
+
+### Why the CPU wins, in one table
+
+| path | bandwidth |
+| --- | --- |
+| CPU → DDR4 (dual channel) | ~40 GB/s |
+| GPU0 ← PCIe 3.0 x8 | ~7.9 GB/s |
+| GPU1 ← PCIe 3.0 x4 | ~3.9 GB/s |
+| GPU → its own VRAM | ~448 GB/s |
+
+The CPU's route to CPU-resident expert weights is **5-10x wider** than the GPU's
+route to the same weights. The GPU is not unsuited — it is starved. Prefill
+escapes this because one weight transfer serves 2048 tokens; decode at batch 1
+has no reuse, which is the entire prefill/decode asymmetry (523 vs 19 t/s).
+
+**Consequence:** decode cannot be improved by configuration. Only more VRAM (so
+nothing spills), a wider interconnect, unified memory, or more CPU cores /
+memory channels.
+
+## 14. PCIe topology — and why the cards cannot be rearranged
+
+```
+GPU0 (01:00.0) <- bridge 00:01.0 = CPU root port   running x8
+GPU1 (03:00.0) <- bridge 00:1c.0 = PCH/chipset     running x4
+Board: ASUS ROG STRIX B360-F GAMING
+```
+
+GPU1 is on a **chipset** slot: PCIe 3.0 x4, and it shares the DMI 3.0 uplink
+(~3.93 GB/s) with NVMe, SATA and USB — including the drive the model loads from.
+
+**B360 does not support CPU lane bifurcation** (that is Z370/Z390). There is one
+CPU-attached slot and GPU0 has it. Moving GPU1 cannot help; every other x16-length
+slot is chipset-wired. Under `split-mode layer` the GPUs run sequentially, so the
+x4 card is the slower half of every prefill pass — a fixed platform limit.
+
+(Both cards report gen 1 / 2.5 GT/s at idle; that is ASPM downclocking, they
+negotiate gen 3 under load.)
+
+## 15. ik_llama.cpp — rejected, and not for the expected reason
+
+Given §13 (CPU-compute-bound), a fork advertising faster CPU kernels and fused
+MoE ops is the obvious lever. Built it: `ikawrakow/ik_llama.cpp` @ `0a4e10c`,
+CUDA on, `-DCMAKE_CUDA_HOST_COMPILER=/usr/bin/g++-15`. It has `laguna` in its
+arch enum and its MoE fusions (`-fmoe`, fused up-gate, fused mul-multiadd) are
+enabled by default.
+
+**It cannot load the model at any useful context:**
+
+```
+allocating 2925.01 MiB on device 0: cudaMalloc failed: out of memory
+llama_kv_cache_init: failed to allocate buffer for kv cache
+```
+
+At K16 / ctx 106496 / q4_0, mainline fits its KV with 727 MiB to spare;
+ik_llama demands 2925 MiB on device 0 alone. The ratio is exactly
+**48 layers / 12 global layers = 4.0** — ik_llama allocates full-context KV for
+all 48 layers, ignoring Laguna's 12-global + 36-SWA (window 512) structure that
+mainline handles.
+
+That is missing architecture support, not a tuning problem. Running it would mean
+cutting context to roughly **26k** — a quarter of current — which no kernel
+speedup repays. **Rejected. Revisit only if ik_llama adds hybrid-SWA KV.**
+
+Community reports of ik_llama being slower for MoE come mostly from high-core
+servers where mainline already saturates bandwidth; a 6-core desktop is the case
+where it *should* have helped. It never got the chance.
+
+## 16. vLLM and other backends — arithmetic, not preference
+
+| build | weights | fits in 32.6 GiB VRAM? |
+| --- | --- | --- |
+| poolside FP8 | 113.2 GiB | no |
+| poolside NVFP4 / INT4 | 67.0 GiB | no |
+| jackzampolin NVFP4-W4A16 | 86.1 GiB | no |
+| nbeerbower colibri-int4 (a *finetune*) | 60.7 GiB | no |
+| **unsloth UD-Q2_K_XL (GGUF)** | **36.96 GiB** | **yes** |
+
+vLLM-family formats bottom out around **4 bits** (~60-67 GiB for this 118B).
+GGUF reaches **~2.5 bits** (36.96 GiB). This machine sits in the gap: 64.6 GiB of
+VRAM+RAM combined is enough for the 2.5-bit GGUF *with* a 106k KV cache, and not
+enough for any 4-bit build with room for anything. `--cpu-offload-gb` cannot close
+a gap that starts underwater; it would mean NVMe paging per token.
+
+**The only quantization deep enough for this hardware exists solely in GGUF.**
+That pins the stack to llama.cpp or a fork of it. (vLLM would be a fine choice for
+Laguna **XS**, which is 18.9 GiB and fully resident.)
+
+MLX builds are Apple Silicon. `MXFP4_MOE` GGUF is 66.2 GiB — too big.
+
+## 17. Tool calling under q4_0 KV — the other community objection
+
+r/LocalLLM reports q4 KV degrading tool calls. Tested on the production path
+(`/v1/chat/completions` + `--jinja`, K16, q4_0, ctx 106496) with a real tool
+schema:
+
+| context | runs | result |
+| --- | --- | --- |
+| short | 3 | **3/3 valid** — correct name, well-formed JSON args, `finish=tool_calls` |
+| ~62.6k | 3 | **3/3 valid** — identical, `prompt_n=62594` on the uncached run |
+
+No degradation at depth. Combined with §12's recall test, q4_0 KV shows no
+measurable penalty on this model for either retrieval or tool use.
+
+## 18. Chat template is now pinned to a file
+
+`models.ini` carries `chat-template-file` pointing at poolside's own
+`chat_template.jinja` (saved under `providers/llamacpp/templates/`), rather than
+relying on the copy embedded in the GGUF. They are functionally identical today
+(§12) — this exists so the template tracks upstream instead of being frozen at
+whenever the quant was cut. Verified: server loads, plain chat returns
+`finish=stop`, tool calls work (§17).
+
+llama.cpp confirms the template supports it:
+`chat template supports preserving reasoning, consider enabling it via --reasoning-preserve` —
+which `models.ini` already sets.
+
+## 19. Operational lesson: the plugin auto-adopts any .gguf under models-dir
+
+Downloading the DFlash draft to
+`~/.lmstudio/models/poolside/Laguna-S-2.1-GGUF/` caused the plugin to discover it,
+append a `[poolside/Laguna-S-2.1]` section with defaults (ctx 32768), and list a
+**2.1 GB speculator draft as a selectable model** in `/models`.
+
+Drafts, mmproj files and any other non-chat GGUF must live **outside**
+`models-dir`, or they become models. Cleaned up by deleting the auto-added section
+and moving the file out of the scan path.
