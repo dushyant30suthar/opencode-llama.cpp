@@ -1,0 +1,12 @@
+corpus tokens: 566922
+{'phase': 'build', 'depth': 61440, 'ttfb_s': 2.146, 'gen_tokens': 16, 'decode_tps': 42.6, 'wall_s': 2.5, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'build-hit', 'depth': 61440, 'ttfb_s': 2.148, 'gen_tokens': 16, 'decode_tps': 42.6, 'wall_s': 2.5, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'diverge', 'at': 49152, 'ttfb_s': 42.789, 'gen_tokens': 16, 'decode_tps': 14259.9, 'wall_s': 42.79, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'rebuild', 'at': 49152, 'ttfb_s': 2.146, 'gen_tokens': 16, 'decode_tps': 43.0, 'wall_s': 2.49, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'diverge', 'at': 30720, 'ttfb_s': 84.336, 'gen_tokens': 16, 'decode_tps': 206955.8, 'wall_s': 84.34, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'rebuild', 'at': 30720, 'ttfb_s': 2.155, 'gen_tokens': 16, 'decode_tps': 42.9, 'wall_s': 2.5, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'diverge', 'at': 15360, 'ttfb_s': 114.59, 'gen_tokens': 16, 'decode_tps': 215460.8, 'wall_s': 114.59, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'rebuild', 'at': 15360, 'ttfb_s': 2.148, 'gen_tokens': 16, 'decode_tps': 42.8, 'wall_s': 2.5, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'diverge', 'at': 3072, 'ttfb_s': 131.462, 'gen_tokens': 16, 'decode_tps': 209715.2, 'wall_s': 131.46, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+{'phase': 'rebuild', 'at': 3072, 'ttfb_s': 2.16, 'gen_tokens': 16, 'decode_tps': 42.8, 'wall_s': 2.51, 'config': 'exl3-5bpw-layersplit-nodraft', 'mode': 'edit'}
+DONE

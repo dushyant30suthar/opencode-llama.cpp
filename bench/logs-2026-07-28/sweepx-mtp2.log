@@ -1,0 +1,29 @@
+corpus tokens: 566922
+{'depth': 4096, 'rep': 'prefill', 'ttfb_s': 5.977, 'gen_tokens': 2, 'decode_tps': 13842.6, 'wall_s': 5.98, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 0, 'ttfb_s': 3.83, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 3.83, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 1, 'ttfb_s': 6.771, 'gen_tokens': 188, 'decode_tps': 68.4, 'wall_s': 9.51, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 'prefill', 'ttfb_s': 30.112, 'gen_tokens': 2, 'decode_tps': 13934.6, 'wall_s': 30.11, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 0, 'ttfb_s': 4.287, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 4.29, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 1, 'ttfb_s': 0.088, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.09, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 'prefill', 'ttfb_s': 0.145, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.15, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 0, 'ttfb_s': 0.146, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.15, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 1, 'ttfb_s': 0.141, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.14, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 'prefill', 'ttfb_s': 0.199, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.2, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 0, 'ttfb_s': 0.198, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.2, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 1, 'ttfb_s': 0.199, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.2, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 'prefill', 'ttfb_s': 0.254, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.25, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 0, 'ttfb_s': 0.268, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.27, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 1, 'ttfb_s': 0.256, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.26, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 'prefill', 'ttfb_s': 0.326, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.33, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 0, 'ttfb_s': 0.328, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.33, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 1, 'ttfb_s': 0.32, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.32, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 'prefill', 'ttfb_s': 0.364, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.36, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 0, 'ttfb_s': 0.362, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.36, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 1, 'ttfb_s': 0.358, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.36, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 'prefill', 'ttfb_s': 0.486, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.49, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 0, 'ttfb_s': 0.487, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.49, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 1, 'ttfb_s': 0.46, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.46, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 'prefill', 'ttfb_s': 0.631, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.63, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 0, 'ttfb_s': 0.606, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.61, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 1, 'ttfb_s': 0.623, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.62, 'config': 'exl3-master-patched-MTP', 'mode': 'sweep'}
+DONE

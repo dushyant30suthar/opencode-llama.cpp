@@ -1,0 +1,717 @@
+2026-07-28 23:08:29.788 INFO:     Config file override detected in args.
+2026-07-28 23:08:29.806 INFO:     Configured backend: cudaMallocAsync
+2026-07-28 23:08:34.046 INFO:     exllamav3 version: 1.2.1
+2026-07-28 23:08:34.976 INFO:     The provided model has vision capabilities, 
+vision is disabled in config.
+2026-07-28 23:08:34.977 INFO:     Using main model MTP component for drafting
+2026-07-28 23:08:34.977 INFO:     Using configured max_seq_len: 196608 tokens.
+2026-07-28 23:08:34.978 INFO:     Using configured cache_size: 196608 tokens.
+2026-07-28 23:08:34.979 INFO:     Attempting to load a prompt template if 
+present.
+2026-07-28 23:08:35.007 INFO:     Using template "chat_template" for chat 
+completions.
+2026-07-28 23:08:35.830 INFO:     Loading model: 
+/home/dushyant30suthar/.lmstudio/models/turboderp/Qwen3.6-27B-exl3-5.00bpw
+2026-07-28 23:08:35.831 INFO:     Loading with autosplit
+[SLOTDBG] get_new_state cache=3296 free=4/4 from _load_autosplit:101
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:51.060 INFO:     Model successfully loaded.
+Loading draft modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3   0:00:00
+Loading model modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 67/67 0:00:00
+2026-07-28 23:08:51.062 WARNING:  Disabling authentication makes your instance 
+vulnerable. Set the `disable_auth` flag to False in config.yml if you want to 
+share this instance with others.
+2026-07-28 23:08:51.062 INFO:     Generation logging is disabled
+2026-07-28 23:08:51.064 INFO:     Applied sampler overrides from file.
+2026-07-28 23:08:51.065 INFO:     Developer documentation: 
+http://0.0.0.0:5000/redoc
+2026-07-28 23:08:51.065 INFO:     Starting OAI API
+2026-07-28 23:08:51.066 INFO:     Completions: 
+http://0.0.0.0:5000/v1/completions
+2026-07-28 23:08:51.066 INFO:     Chat completions: 
+http://0.0.0.0:5000/v1/chat/completions
+2026-07-28 23:08:51.072 INFO:     Started server process [160040]
+2026-07-28 23:08:51.072 INFO:     Waiting for application startup.
+2026-07-28 23:08:51.073 INFO:     Application startup complete.
+2026-07-28 23:08:51.074 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press 
+CTRL+C to quit)
+2026-07-28 23:08:54.456 INFO:     127.0.0.1:55048 - "GET /health HTTP/1.1" 200
+2026-07-28 23:08:54.490 INFO:     Received completion request 
+f727dc829f1b49359955b2a30ca6108e
+[SLOTDBG] allocate_pages job=33744 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=33744 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=33744 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=33744 -> completed
+[SLOTDBG] teardown completed=[33744] requeuing=[]
+[SLOTDBG] deallocate_pages job=33744
+[SLOTDBG] free_recurrent_state job=33744 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:54.683 INFO:     Finished completion request 
+f727dc829f1b49359955b2a30ca6108e
+2026-07-28 23:08:54.683 INFO:     127.0.0.1:55054 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:54.684 INFO:     Metrics (ID: 
+f727dc829f1b49359955b2a30ca6108e): 1 tokens generated in 0.19 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 72.73 T/s, Generate: 12.23 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:54.716 INFO:     Received completion request 
+bf1598e463d04884b72dbbe006c9c5fd
+[SLOTDBG] allocate_pages job=36400 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=36400 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=36400 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=36400 -> completed
+[SLOTDBG] teardown completed=[36400] requeuing=[]
+[SLOTDBG] deallocate_pages job=36400
+[SLOTDBG] free_recurrent_state job=36400 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:54.861 INFO:     Finished completion request 
+bf1598e463d04884b72dbbe006c9c5fd
+2026-07-28 23:08:54.862 INFO:     127.0.0.1:55064 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:54.862 INFO:     Metrics (ID: 
+bf1598e463d04884b72dbbe006c9c5fd): 1 tokens generated in 0.15 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 114.29 T/s, Generate: 13.09 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:54.893 INFO:     Received completion request 
+479e0b89ef354917adfb484cd406d6f5
+[SLOTDBG] allocate_pages job=24240 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=24240 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=24240 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=24240 -> completed
+[SLOTDBG] teardown completed=[24240] requeuing=[]
+[SLOTDBG] deallocate_pages job=24240
+[SLOTDBG] free_recurrent_state job=24240 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.010 INFO:     Finished completion request 
+479e0b89ef354917adfb484cd406d6f5
+2026-07-28 23:08:55.011 INFO:     127.0.0.1:55074 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.012 INFO:     Metrics (ID: 
+479e0b89ef354917adfb484cd406d6f5): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.91 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.043 INFO:     Received completion request 
+9114242a86bf41eab4f912d53b28247b
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=93648 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.159 INFO:     Finished completion request 
+9114242a86bf41eab4f912d53b28247b
+2026-07-28 23:08:55.160 INFO:     127.0.0.1:55078 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.161 INFO:     Metrics (ID: 
+9114242a86bf41eab4f912d53b28247b): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.95 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.192 INFO:     Received completion request 
+501a9798c11949d695ccc69db51e52a6
+[SLOTDBG] allocate_pages job=92688 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=92688 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=92688 -> completed
+[SLOTDBG] teardown completed=[92688] requeuing=[]
+[SLOTDBG] deallocate_pages job=92688
+[SLOTDBG] free_recurrent_state job=92688 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.308 INFO:     Finished completion request 
+501a9798c11949d695ccc69db51e52a6
+2026-07-28 23:08:55.309 INFO:     127.0.0.1:55088 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.310 INFO:     Metrics (ID: 
+501a9798c11949d695ccc69db51e52a6): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.94 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.342 INFO:     Received completion request 
+940f7190d0b14f419b09254824f4a607
+[SLOTDBG] allocate_pages job=94608 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=94608 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=94608 -> completed
+[SLOTDBG] teardown completed=[94608] requeuing=[]
+[SLOTDBG] deallocate_pages job=94608
+[SLOTDBG] free_recurrent_state job=94608 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.458 INFO:     Finished completion request 
+940f7190d0b14f419b09254824f4a607
+2026-07-28 23:08:55.459 INFO:     127.0.0.1:55096 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.460 INFO:     Metrics (ID: 
+940f7190d0b14f419b09254824f4a607): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.94 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.491 INFO:     Received completion request 
+0e300dfc3f2147758da930debd935877
+[SLOTDBG] allocate_pages job=94288 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=94288 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=94288 -> completed
+[SLOTDBG] teardown completed=[94288] requeuing=[]
+[SLOTDBG] deallocate_pages job=94288
+[SLOTDBG] free_recurrent_state job=94288 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.607 INFO:     Finished completion request 
+0e300dfc3f2147758da930debd935877
+2026-07-28 23:08:55.608 INFO:     127.0.0.1:55112 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.609 INFO:     Metrics (ID: 
+0e300dfc3f2147758da930debd935877): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.95 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.640 INFO:     Received completion request 
+6a2d39468ad048d1b3bd71055cdca895
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/1
+[SLOTDBG] REQUEUE-TRIGGER job=93648 new_tokens=1 max_rq=2 num_draft=4 max_new=1
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:55.756 INFO:     Finished completion request 
+6a2d39468ad048d1b3bd71055cdca895
+2026-07-28 23:08:55.757 INFO:     127.0.0.1:55116 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:55.758 INFO:     Metrics (ID: 
+6a2d39468ad048d1b3bd71055cdca895): 1 tokens generated in 0.11 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 15.95 
+T/s, Context: 8 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:08:55.790 INFO:     Received completion request 
+f528174972dc479581b6217824a6000f
+[SLOTDBG] allocate_pages job=92688 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=8/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=11/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=16/23
+[SLOTDBG] EOS job=92688 -> completed
+[SLOTDBG] teardown completed=[92688] requeuing=[]
+[SLOTDBG] deallocate_pages job=92688
+[SLOTDBG] free_recurrent_state job=92688 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:56.245 INFO:     Finished completion request 
+f528174972dc479581b6217824a6000f
+2026-07-28 23:08:56.246 INFO:     127.0.0.1:55122 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:56.247 INFO:     Metrics (ID: 
+f528174972dc479581b6217824a6000f): 19 tokens generated in 0.45 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 47.33 
+T/s, Context: 8 tokens, Draft: 13 / 22 tokens accepted (59.09%)) 
+2026-07-28 23:08:56.278 INFO:     Received completion request 
+7c4bbe885e434ba4a367abe3c03fdcdf
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=7/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=12/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=18/23
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:56.724 INFO:     Finished completion request 
+7c4bbe885e434ba4a367abe3c03fdcdf
+2026-07-28 23:08:56.725 INFO:     127.0.0.1:55124 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:56.726 INFO:     Metrics (ID: 
+7c4bbe885e434ba4a367abe3c03fdcdf): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 48.47 
+T/s, Context: 8 tokens, Draft: 13 / 20 tokens accepted (65.00%)) 
+2026-07-28 23:08:56.757 INFO:     Received completion request 
+b3358842c1c042fbb25f01b1381b9104
+[SLOTDBG] allocate_pages job=1392 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=11/23
+[SLOTDBG] sampled-loop job=1392 a=0 b=1 skip=False new_tokens=15/23
+[SLOTDBG] EOS job=1392 -> completed
+[SLOTDBG] teardown completed=[1392] requeuing=[]
+[SLOTDBG] deallocate_pages job=1392
+[SLOTDBG] free_recurrent_state job=1392 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:57.197 INFO:     Finished completion request 
+b3358842c1c042fbb25f01b1381b9104
+2026-07-28 23:08:57.198 INFO:     127.0.0.1:55130 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:57.199 INFO:     Metrics (ID: 
+b3358842c1c042fbb25f01b1381b9104): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 49.26 
+T/s, Context: 8 tokens, Draft: 13 / 23 tokens accepted (56.52%)) 
+2026-07-28 23:08:57.230 INFO:     Received completion request 
+ae73395863874d1da1c04f87abf50a65
+[SLOTDBG] allocate_pages job=94608 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=13/23
+[SLOTDBG] sampled-loop job=94608 a=0 b=1 skip=False new_tokens=18/23
+[SLOTDBG] EOS job=94608 -> completed
+[SLOTDBG] teardown completed=[94608] requeuing=[]
+[SLOTDBG] deallocate_pages job=94608
+[SLOTDBG] free_recurrent_state job=94608 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:57.669 INFO:     Finished completion request 
+ae73395863874d1da1c04f87abf50a65
+2026-07-28 23:08:57.670 INFO:     127.0.0.1:55146 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:57.671 INFO:     Metrics (ID: 
+ae73395863874d1da1c04f87abf50a65): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 49.32 
+T/s, Context: 8 tokens, Draft: 13 / 20 tokens accepted (65.00%)) 
+2026-07-28 23:08:57.703 INFO:     Received completion request 
+081547bc219944febe31addb4019210b
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=8/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=13/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:58.143 INFO:     Finished completion request 
+081547bc219944febe31addb4019210b
+2026-07-28 23:08:58.144 INFO:     127.0.0.1:55152 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:58.145 INFO:     Metrics (ID: 
+081547bc219944febe31addb4019210b): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 49.17 
+T/s, Context: 8 tokens, Draft: 13 / 21 tokens accepted (61.90%)) 
+2026-07-28 23:08:58.176 INFO:     Received completion request 
+42644908594e466cb39428cf289142d1
+[SLOTDBG] allocate_pages job=93008 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=7/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=11/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=15/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=18/23
+[SLOTDBG] EOS job=93008 -> completed
+[SLOTDBG] teardown completed=[93008] requeuing=[]
+[SLOTDBG] deallocate_pages job=93008
+[SLOTDBG] free_recurrent_state job=93008 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:58.679 INFO:     Finished completion request 
+42644908594e466cb39428cf289142d1
+2026-07-28 23:08:58.680 INFO:     127.0.0.1:55156 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:58.681 INFO:     Metrics (ID: 
+42644908594e466cb39428cf289142d1): 19 tokens generated in 0.5 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 42.3 
+T/s, Context: 8 tokens, Draft: 12 / 24 tokens accepted (50.00%)) 
+2026-07-28 23:08:58.712 INFO:     Received completion request 
+4eb68023978346a38521d10188f56872
+[SLOTDBG] allocate_pages job=92688 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=7/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=9/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=13/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=14/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] EOS job=92688 -> completed
+[SLOTDBG] teardown completed=[92688] requeuing=[]
+[SLOTDBG] deallocate_pages job=92688
+[SLOTDBG] free_recurrent_state job=92688 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:59.280 INFO:     Finished completion request 
+4eb68023978346a38521d10188f56872
+2026-07-28 23:08:59.280 INFO:     127.0.0.1:55172 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:59.281 INFO:     Metrics (ID: 
+4eb68023978346a38521d10188f56872): 19 tokens generated in 0.56 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 36.99 
+T/s, Context: 8 tokens, Draft: 11 / 29 tokens accepted (37.93%)) 
+2026-07-28 23:08:59.312 INFO:     Received completion request 
+23bbdc46332c4966b7ff90f8f13c07c3
+[SLOTDBG] allocate_pages job=83728 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=11/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=14/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] EOS job=83728 -> completed
+[SLOTDBG] teardown completed=[83728] requeuing=[]
+[SLOTDBG] deallocate_pages job=83728
+[SLOTDBG] free_recurrent_state job=83728 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:08:59.752 INFO:     Finished completion request 
+23bbdc46332c4966b7ff90f8f13c07c3
+2026-07-28 23:08:59.753 INFO:     127.0.0.1:55176 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:08:59.754 INFO:     Metrics (ID: 
+23bbdc46332c4966b7ff90f8f13c07c3): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 49.2 
+T/s, Context: 8 tokens, Draft: 13 / 21 tokens accepted (61.90%)) 
+2026-07-28 23:08:59.786 INFO:     Received completion request 
+a18a068b18444210bff2d3715aa320ab
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=7/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=15/23
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:00.227 INFO:     Finished completion request 
+a18a068b18444210bff2d3715aa320ab
+2026-07-28 23:09:00.228 INFO:     127.0.0.1:55188 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:00.228 INFO:     Metrics (ID: 
+a18a068b18444210bff2d3715aa320ab): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 8 new tokens at 160.0 T/s, Generate: 49.14 
+T/s, Context: 8 tokens, Draft: 13 / 21 tokens accepted (61.90%)) 
+2026-07-28 23:09:00.260 INFO:     Received completion request 
+08a89dcf11894031bd9179bcd1a29c18
+[SLOTDBG] allocate_pages job=93008 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=6/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=9/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=15/23
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=16/23
+[SLOTDBG] EOS job=93008 -> completed
+[SLOTDBG] teardown completed=[93008] requeuing=[]
+[SLOTDBG] deallocate_pages job=93008
+[SLOTDBG] free_recurrent_state job=93008 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:00.780 INFO:     Finished completion request 
+08a89dcf11894031bd9179bcd1a29c18
+2026-07-28 23:09:00.780 INFO:     127.0.0.1:55190 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:00.781 INFO:     Metrics (ID: 
+08a89dcf11894031bd9179bcd1a29c18): 19 tokens generated in 0.52 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 9 new tokens at 128.57 T/s, Generate: 42.23 
+T/s, Context: 9 tokens, Draft: 12 / 26 tokens accepted (46.15%)) 
+2026-07-28 23:09:00.813 INFO:     Received completion request 
+73b1680d4a5c43b9a0633c0af5909d95
+[SLOTDBG] allocate_pages job=92688 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=4/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=8/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=14/23
+[SLOTDBG] sampled-loop job=92688 a=0 b=1 skip=False new_tokens=18/23
+[SLOTDBG] EOS job=92688 -> completed
+[SLOTDBG] teardown completed=[92688] requeuing=[]
+[SLOTDBG] deallocate_pages job=92688
+[SLOTDBG] free_recurrent_state job=92688 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:01.397 INFO:     Finished completion request 
+73b1680d4a5c43b9a0633c0af5909d95
+2026-07-28 23:09:01.398 INFO:     127.0.0.1:53162 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:01.398 INFO:     Metrics (ID: 
+73b1680d4a5c43b9a0633c0af5909d95): 19 tokens generated in 0.59 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 9 new tokens at 128.57 T/s, Generate: 36.81 
+T/s, Context: 9 tokens, Draft: 11 / 28 tokens accepted (39.29%)) 
+2026-07-28 23:09:01.429 INFO:     Received completion request 
+49102241946740d6b22d8886ebdb2669
+[SLOTDBG] allocate_pages job=83728 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=0/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=3/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=5/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=10/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=13/23
+[SLOTDBG] sampled-loop job=83728 a=0 b=1 skip=False new_tokens=17/23
+[SLOTDBG] EOS job=83728 -> completed
+[SLOTDBG] teardown completed=[83728] requeuing=[]
+[SLOTDBG] deallocate_pages job=83728
+[SLOTDBG] free_recurrent_state job=83728 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:01.871 INFO:     Finished completion request 
+49102241946740d6b22d8886ebdb2669
+2026-07-28 23:09:01.871 INFO:     127.0.0.1:53164 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:01.872 INFO:     Metrics (ID: 
+49102241946740d6b22d8886ebdb2669): 19 tokens generated in 0.44 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 9 new tokens at 180.0 T/s, Generate: 49.18 
+T/s, Context: 9 tokens, Draft: 13 / 21 tokens accepted (61.90%)) 
+2026-07-28 23:09:01.904 INFO:     Received completion request 
+7aea046d05664818845a9fe299c1fa0d
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=1/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=6/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=11/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=16/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=21/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=22/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:04.751 INFO:     Finished completion request 
+7aea046d05664818845a9fe299c1fa0d
+2026-07-28 23:09:04.752 INFO:     127.0.0.1:53178 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:04.752 INFO:     Metrics (ID: 
+7aea046d05664818845a9fe299c1fa0d): 27 tokens generated in 2.84 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 16 new tokens at 6.87 T/s, Generate: 52.68 
+T/s, Context: 16 tokens, Draft: 19 / 31 tokens accepted (61.29%)) 
+2026-07-28 23:09:04.784 INFO:     Received completion request 
+2ea185dcc601435dbbd24f5fff343618
+[SLOTDBG] allocate_pages job=93008 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=5/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=9/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=11/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=12/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=93008 -> completed
+[SLOTDBG] teardown completed=[93008] requeuing=[]
+[SLOTDBG] deallocate_pages job=93008
+[SLOTDBG] free_recurrent_state job=93008 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:07.886 INFO:     Finished completion request 
+2ea185dcc601435dbbd24f5fff343618
+2026-07-28 23:09:07.887 INFO:     127.0.0.1:53190 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:07.887 INFO:     Metrics (ID: 
+2ea185dcc601435dbbd24f5fff343618): 27 tokens generated in 3.1 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 26 new tokens at 10.08 T/s, Generate: 52.5 
+T/s, Context: 26 tokens, Draft: 19 / 31 tokens accepted (61.29%)) 
+2026-07-28 23:09:07.918 INFO:     Received completion request 
+ef905eaf66284eb5b64ebbb071675aae
+[SLOTDBG] allocate_pages job=94288 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=1/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=2/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=3/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=8/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=94288 -> completed
+[SLOTDBG] teardown completed=[94288] requeuing=[]
+[SLOTDBG] deallocate_pages job=94288
+[SLOTDBG] free_recurrent_state job=94288 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:08.990 INFO:     Finished completion request 
+ef905eaf66284eb5b64ebbb071675aae
+2026-07-28 23:09:08.991 INFO:     127.0.0.1:53202 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:08.992 INFO:     Metrics (ID: 
+ef905eaf66284eb5b64ebbb071675aae): 27 tokens generated in 1.06 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 36 new tokens at 65.45 T/s, Generate: 52.55 
+T/s, Context: 36 tokens, Draft: 19 / 31 tokens accepted (61.29%)) 
+2026-07-28 23:09:09.023 INFO:     Received completion request 
+e2e313fd739448bd8043f4581845aeed
+[SLOTDBG] allocate_pages job=93008 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=5/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=10/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=93008 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=93008 -> completed
+[SLOTDBG] teardown completed=[93008] requeuing=[]
+[SLOTDBG] deallocate_pages job=93008
+[SLOTDBG] free_recurrent_state job=93008 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:09.565 INFO:     Finished completion request 
+e2e313fd739448bd8043f4581845aeed
+2026-07-28 23:09:09.565 INFO:     127.0.0.1:53208 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:09.566 INFO:     Metrics (ID: 
+e2e313fd739448bd8043f4581845aeed): 27 tokens generated in 0.54 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 46 new tokens at 306.67 T/s, Generate: 69.87
+T/s, Context: 46 tokens, Draft: 21 / 23 tokens accepted (91.30%)) 
+2026-07-28 23:09:09.597 INFO:     Received completion request 
+6f2cf77b84b04d4a9222fabec0c5f3c5
+[SLOTDBG] allocate_pages job=94288 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=3/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=8/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=25/31
+[SLOTDBG] EOS job=94288 -> completed
+[SLOTDBG] teardown completed=[94288] requeuing=[]
+[SLOTDBG] deallocate_pages job=94288
+[SLOTDBG] free_recurrent_state job=94288 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:10.235 INFO:     Finished completion request 
+6f2cf77b84b04d4a9222fabec0c5f3c5
+2026-07-28 23:09:10.236 INFO:     127.0.0.1:53210 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:10.237 INFO:     Metrics (ID: 
+6f2cf77b84b04d4a9222fabec0c5f3c5): 27 tokens generated in 0.63 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 56 new tokens at 311.11 T/s, Generate: 59.86
+T/s, Context: 56 tokens, Draft: 20 / 25 tokens accepted (80.00%)) 
+2026-07-28 23:09:10.269 INFO:     Received completion request 
+1fba24d3e68c4466ac8cb625a72f8539
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=3/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=8/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=15/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=19/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:11.323 INFO:     Finished completion request 
+1fba24d3e68c4466ac8cb625a72f8539
+2026-07-28 23:09:11.324 INFO:     127.0.0.1:53222 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:11.324 INFO:     Metrics (ID: 
+1fba24d3e68c4466ac8cb625a72f8539): 27 tokens generated in 1.05 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 66 new tokens at 110.0 T/s, Generate: 59.68 
+T/s, Context: 66 tokens, Draft: 20 / 27 tokens accepted (74.07%)) 
+2026-07-28 23:09:11.356 INFO:     Received completion request 
+a7974da36e1e4ffaa342ee8c59401426
+[SLOTDBG] allocate_pages job=94288 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=5/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=9/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] EOS job=94288 -> completed
+[SLOTDBG] teardown completed=[94288] requeuing=[]
+[SLOTDBG] deallocate_pages job=94288
+[SLOTDBG] free_recurrent_state job=94288 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:11.976 INFO:     Finished completion request 
+a7974da36e1e4ffaa342ee8c59401426
+2026-07-28 23:09:11.977 INFO:     127.0.0.1:41572 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:11.977 INFO:     Metrics (ID: 
+a7974da36e1e4ffaa342ee8c59401426): 27 tokens generated in 0.62 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 76 new tokens at 330.43 T/s, Generate: 69.67
+T/s, Context: 76 tokens, Draft: 21 / 23 tokens accepted (91.30%)) 
+2026-07-28 23:09:12.009 INFO:     Received completion request 
+c93bc610717a4ebb840e93e2563f26f8
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=5/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=9/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=14/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=19/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=24/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=25/31
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:12.799 INFO:     Finished completion request 
+c93bc610717a4ebb840e93e2563f26f8
+2026-07-28 23:09:12.799 INFO:     127.0.0.1:41584 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:12.800 INFO:     Metrics (ID: 
+c93bc610717a4ebb840e93e2563f26f8): 27 tokens generated in 0.79 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 86 new tokens at 318.52 T/s, Generate: 52.38
+T/s, Context: 86 tokens, Draft: 19 / 29 tokens accepted (65.52%)) 
+2026-07-28 23:09:12.832 INFO:     Received completion request 
+503ae34d665f4f8a8ea1d165ace3cf3a
+[SLOTDBG] allocate_pages job=94288 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=4/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=9/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=14/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=15/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=20/31
+[SLOTDBG] sampled-loop job=94288 a=0 b=1 skip=False new_tokens=25/31
+[SLOTDBG] EOS job=94288 -> completed
+[SLOTDBG] teardown completed=[94288] requeuing=[]
+[SLOTDBG] deallocate_pages job=94288
+[SLOTDBG] free_recurrent_state job=94288 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:13.624 INFO:     Finished completion request 
+503ae34d665f4f8a8ea1d165ace3cf3a
+2026-07-28 23:09:13.625 INFO:     127.0.0.1:41592 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:13.625 INFO:     Metrics (ID: 
+503ae34d665f4f8a8ea1d165ace3cf3a): 27 tokens generated in 0.79 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 96 new tokens at 355.56 T/s, Generate: 52.33
+T/s, Context: 96 tokens, Draft: 19 / 29 tokens accepted (65.52%)) 
+2026-07-28 23:09:13.657 INFO:     Received completion request 
+3c5fad0adb1b4f968bed84aeb2fa1189
+[SLOTDBG] allocate_pages job=93648 stashed=False
+[SLOTDBG] get_new_state cache=3296 free=4/4 from iterate_start_jobs:1151
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=0/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=1/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=2/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=3/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=8/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=13/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=18/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=23/31
+[SLOTDBG] sampled-loop job=93648 a=0 b=1 skip=False new_tokens=25/31
+[SLOTDBG] EOS job=93648 -> completed
+[SLOTDBG] teardown completed=[93648] requeuing=[]
+[SLOTDBG] deallocate_pages job=93648
+[SLOTDBG] free_recurrent_state job=93648 has_state=True
+[SLOTDBG] release_state cache=3296 slot=0 free=3/4
+2026-07-28 23:09:14.556 INFO:     Finished completion request 
+3c5fad0adb1b4f968bed84aeb2fa1189
+2026-07-28 23:09:14.556 INFO:     127.0.0.1:41598 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:09:14.557 INFO:     Metrics (ID: 
+3c5fad0adb1b4f968bed84aeb2fa1189): 27 tokens generated in 0.9 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 108 new tokens at 337.5 T/s, Generate: 46.6 
+T/s, Context: 108 tokens, Draft: 18 / 33 tokens accepted (54.55%)) 

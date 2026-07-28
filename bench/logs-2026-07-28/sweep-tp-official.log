@@ -1,0 +1,29 @@
+corpus tokens: 566922
+{'depth': 4096, 'rep': 'prefill', 'ttfb_s': 11.294, 'gen_tokens': 2, 'decode_tps': 12945.4, 'wall_s': 11.29, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 0, 'ttfb_s': 0.752, 'gen_tokens': 96, 'decode_tps': 37.9, 'wall_s': 3.26, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 1, 'ttfb_s': 0.751, 'gen_tokens': 192, 'decode_tps': 36.0, 'wall_s': 6.06, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 'prefill', 'ttfb_s': 24.086, 'gen_tokens': 2, 'decode_tps': 14820.9, 'wall_s': 24.09, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 0, 'ttfb_s': 0.902, 'gen_tokens': 96, 'decode_tps': 36.4, 'wall_s': 3.52, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 1, 'ttfb_s': 0.903, 'gen_tokens': 192, 'decode_tps': 34.6, 'wall_s': 6.42, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 'prefill', 'ttfb_s': 33.258, 'gen_tokens': 2, 'decode_tps': 14665.4, 'wall_s': 33.26, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 0, 'ttfb_s': 1.091, 'gen_tokens': 96, 'decode_tps': 34.8, 'wall_s': 3.82, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 1, 'ttfb_s': 1.095, 'gen_tokens': 191, 'decode_tps': 32.9, 'wall_s': 6.87, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 'prefill', 'ttfb_s': 43.922, 'gen_tokens': 2, 'decode_tps': 14716.9, 'wall_s': 43.92, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 0, 'ttfb_s': 1.285, 'gen_tokens': 96, 'decode_tps': 33.0, 'wall_s': 4.16, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 1, 'ttfb_s': 1.32, 'gen_tokens': 192, 'decode_tps': 29.4, 'wall_s': 7.82, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 'prefill', 'ttfb_s': 48.533, 'gen_tokens': 2, 'decode_tps': 15307.7, 'wall_s': 48.53, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 0, 'ttfb_s': 1.512, 'gen_tokens': 96, 'decode_tps': 31.8, 'wall_s': 4.5, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 1, 'ttfb_s': 1.486, 'gen_tokens': 192, 'decode_tps': 30.3, 'wall_s': 7.79, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 'prefill', 'ttfb_s': 55.987, 'gen_tokens': 2, 'decode_tps': 14768.7, 'wall_s': 55.99, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 0, 'ttfb_s': 1.701, 'gen_tokens': 96, 'decode_tps': 30.9, 'wall_s': 4.77, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 1, 'ttfb_s': 1.691, 'gen_tokens': 192, 'decode_tps': 29.4, 'wall_s': 8.19, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 'prefill', 'ttfb_s': 47.825, 'gen_tokens': 2, 'decode_tps': 14122.2, 'wall_s': 47.83, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 0, 'ttfb_s': 1.856, 'gen_tokens': 96, 'decode_tps': 30.0, 'wall_s': 5.02, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 1, 'ttfb_s': 1.84, 'gen_tokens': 192, 'decode_tps': 28.6, 'wall_s': 8.52, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 'prefill', 'ttfb_s': 170.156, 'gen_tokens': 2, 'decode_tps': 14820.9, 'wall_s': 170.16, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 0, 'ttfb_s': 2.302, 'gen_tokens': 96, 'decode_tps': 27.7, 'wall_s': 5.73, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 1, 'ttfb_s': 2.304, 'gen_tokens': 192, 'decode_tps': 26.4, 'wall_s': 9.55, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 'prefill', 'ttfb_s': 184.154, 'gen_tokens': 2, 'decode_tps': 12595.5, 'wall_s': 184.15, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 0, 'ttfb_s': 2.728, 'gen_tokens': 96, 'decode_tps': 26.1, 'wall_s': 6.36, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 1, 'ttfb_s': 2.749, 'gen_tokens': 192, 'decode_tps': 24.8, 'wall_s': 10.45, 'config': 'exl3-TP-noMTP-official', 'mode': 'sweep'}
+DONE

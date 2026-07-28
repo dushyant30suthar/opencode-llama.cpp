@@ -1,0 +1,29 @@
+corpus tokens: 566922
+{'depth': 4096, 'rep': 'prefill', 'ttfb_s': 5.961, 'gen_tokens': 2, 'decode_tps': 13189.6, 'wall_s': 5.96, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 0, 'ttfb_s': 1.211, 'gen_tokens': 92, 'decode_tps': 79.3, 'wall_s': 2.36, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 1, 'ttfb_s': 1.176, 'gen_tokens': 188, 'decode_tps': 67.5, 'wall_s': 3.95, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 'prefill', 'ttfb_s': 23.493, 'gen_tokens': 2, 'decode_tps': 14665.4, 'wall_s': 23.49, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 0, 'ttfb_s': 1.493, 'gen_tokens': 92, 'decode_tps': 92.7, 'wall_s': 2.47, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 1, 'ttfb_s': 1.494, 'gen_tokens': 188, 'decode_tps': 63.6, 'wall_s': 4.43, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 'prefill', 'ttfb_s': 43.755, 'gen_tokens': 2, 'decode_tps': 13981.0, 'wall_s': 43.75, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 0, 'ttfb_s': 1.871, 'gen_tokens': 92, 'decode_tps': 82.4, 'wall_s': 2.98, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 1, 'ttfb_s': 1.871, 'gen_tokens': 188, 'decode_tps': 59.6, 'wall_s': 5.01, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 'prefill', 'ttfb_s': 60.866, 'gen_tokens': 2, 'decode_tps': 14665.4, 'wall_s': 60.87, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 0, 'ttfb_s': 2.267, 'gen_tokens': 92, 'decode_tps': 69.5, 'wall_s': 3.58, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 1, 'ttfb_s': 2.267, 'gen_tokens': 188, 'decode_tps': 53.9, 'wall_s': 5.73, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 'prefill', 'ttfb_s': 73.151, 'gen_tokens': 2, 'decode_tps': 13662.2, 'wall_s': 73.15, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 0, 'ttfb_s': 2.653, 'gen_tokens': 92, 'decode_tps': 59.3, 'wall_s': 4.19, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 1, 'ttfb_s': 2.645, 'gen_tokens': 188, 'decode_tps': 45.6, 'wall_s': 6.74, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 'prefill', 'ttfb_s': 88.71, 'gen_tokens': 2, 'decode_tps': 13443.3, 'wall_s': 88.71, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 0, 'ttfb_s': 3.057, 'gen_tokens': 92, 'decode_tps': 48.2, 'wall_s': 4.95, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 1, 'ttfb_s': 3.058, 'gen_tokens': 188, 'decode_tps': 39.1, 'wall_s': 7.84, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 'prefill', 'ttfb_s': 77.893, 'gen_tokens': 2, 'decode_tps': 14926.3, 'wall_s': 77.89, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 0, 'ttfb_s': 3.353, 'gen_tokens': 92, 'decode_tps': 69.8, 'wall_s': 4.66, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 1, 'ttfb_s': 3.345, 'gen_tokens': 188, 'decode_tps': 40.6, 'wall_s': 7.95, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 'prefill', 'ttfb_s': 286.126, 'gen_tokens': 2, 'decode_tps': 14716.9, 'wall_s': 286.13, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 0, 'ttfb_s': 4.218, 'gen_tokens': 92, 'decode_tps': 59.6, 'wall_s': 5.75, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 1, 'ttfb_s': 4.21, 'gen_tokens': 188, 'decode_tps': 44.9, 'wall_s': 8.37, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 'prefill', 'ttfb_s': 314.302, 'gen_tokens': 2, 'decode_tps': 13189.6, 'wall_s': 314.3, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 0, 'ttfb_s': 5.046, 'gen_tokens': 92, 'decode_tps': 34.9, 'wall_s': 7.65, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 1, 'ttfb_s': 5.032, 'gen_tokens': 188, 'decode_tps': 27.7, 'wall_s': 11.79, 'config': 'exl3-LS-MTP-FIXED', 'mode': 'sweep'}
+DONE

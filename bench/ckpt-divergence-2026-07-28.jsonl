@@ -1,0 +1,32 @@
+{"phase": "build", "depth": 8192, "wall_s": 11.58, "prompt_n": 8192, "prompt_ms": 11280, "pp_tps": 726, "config": "ckpt-default", "rss_kb": 4223720}
+{"phase": "build", "depth": 16384, "wall_s": 12.0, "prompt_n": 8177, "prompt_ms": 11680, "pp_tps": 700, "config": "ckpt-default", "rss_kb": 4508528}
+{"phase": "build", "depth": 24576, "wall_s": 12.61, "prompt_n": 8196, "prompt_ms": 12355, "pp_tps": 663, "config": "ckpt-default", "rss_kb": 4801664}
+{"phase": "build", "depth": 32768, "wall_s": 13.03, "prompt_n": 8177, "prompt_ms": 12722, "pp_tps": 643, "config": "ckpt-default", "rss_kb": 4867520}
+{"phase": "build", "depth": 40960, "wall_s": 13.71, "prompt_n": 8196, "prompt_ms": 13432, "pp_tps": 610, "config": "ckpt-default", "rss_kb": 5214140}
+{"phase": "build", "depth": 49152, "wall_s": 14.06, "prompt_n": 8177, "prompt_ms": 13773, "pp_tps": 594, "config": "ckpt-default", "rss_kb": 5597840}
+{"phase": "build", "depth": 57344, "wall_s": 14.63, "prompt_n": 8177, "prompt_ms": 14332, "pp_tps": 571, "config": "ckpt-default", "rss_kb": 5664584}
+{"phase": "build-done", "rss_delta_mb": 2024, "config": "ckpt-default", "rss_kb": 5664584}
+{"phase": "diverge", "at": 49152, "wall_s": 35.1, "prompt_n": 20484, "prompt_ms": 34734, "pp_tps": 590, "config": "ckpt-default", "rss_kb": 5702604}
+{"phase": "rebuild", "at": 49152, "wall_s": 35.19, "prompt_n": 20484, "prompt_ms": 34764, "pp_tps": 589, "config": "ckpt-default", "rss_kb": 5702708}
+{"phase": "diverge", "at": 30720, "wall_s": 50.95, "prompt_n": 30720, "prompt_ms": 50587, "pp_tps": 607, "config": "ckpt-default", "rss_kb": 5385200}
+{"phase": "rebuild", "at": 30720, "wall_s": 50.79, "prompt_n": 30720, "prompt_ms": 50486, "pp_tps": 608, "config": "ckpt-default", "rss_kb": 5385364}
+{"phase": "diverge", "at": 15360, "wall_s": 85.96, "prompt_n": 55296, "prompt_ms": 85592, "pp_tps": 646, "config": "ckpt-default", "rss_kb": 4889600}
+{"phase": "rebuild", "at": 15360, "wall_s": 86.39, "prompt_n": 55296, "prompt_ms": 86025, "pp_tps": 643, "config": "ckpt-default", "rss_kb": 4889600}
+{"phase": "diverge", "at": 3072, "wall_s": 93.99, "prompt_n": 61440, "prompt_ms": 93623, "pp_tps": 656, "config": "ckpt-default", "rss_kb": 4711828}
+{"phase": "rebuild", "at": 3072, "wall_s": 93.98, "prompt_n": 61440, "prompt_ms": 93617, "pp_tps": 656, "config": "ckpt-default", "rss_kb": 4711828}
+{"phase": "build", "depth": 8192, "wall_s": 11.75, "prompt_n": 8192, "prompt_ms": 11449, "pp_tps": 716, "config": "ckpt-cms4096", "rss_kb": 4223108}
+{"phase": "build", "depth": 16384, "wall_s": 12.3, "prompt_n": 8177, "prompt_ms": 11941, "pp_tps": 685, "config": "ckpt-cms4096", "rss_kb": 4507984}
+{"phase": "build", "depth": 24576, "wall_s": 12.75, "prompt_n": 8196, "prompt_ms": 12499, "pp_tps": 656, "config": "ckpt-cms4096", "rss_kb": 4792808}
+{"phase": "build", "depth": 32768, "wall_s": 13.1, "prompt_n": 8177, "prompt_ms": 12795, "pp_tps": 639, "config": "ckpt-cms4096", "rss_kb": 5102440}
+{"phase": "build", "depth": 40960, "wall_s": 13.84, "prompt_n": 8196, "prompt_ms": 13567, "pp_tps": 604, "config": "ckpt-cms4096", "rss_kb": 5449108}
+{"phase": "build", "depth": 49152, "wall_s": 14.13, "prompt_n": 8177, "prompt_ms": 13848, "pp_tps": 590, "config": "ckpt-cms4096", "rss_kb": 5824596}
+{"phase": "build", "depth": 57344, "wall_s": 14.64, "prompt_n": 8177, "prompt_ms": 14339, "pp_tps": 570, "config": "ckpt-cms4096", "rss_kb": 6234204}
+{"phase": "build-done", "rss_delta_mb": 2580, "config": "ckpt-cms4096", "rss_kb": 6234204}
+{"phase": "diverge", "at": 49152, "wall_s": 25.3, "prompt_n": 14336, "prompt_ms": 24929, "pp_tps": 575, "config": "ckpt-cms4096", "rss_kb": 6272224}
+{"phase": "rebuild", "at": 49152, "wall_s": 25.38, "prompt_n": 14336, "prompt_ms": 25011, "pp_tps": 573, "config": "ckpt-cms4096", "rss_kb": 6272236}
+{"phase": "diverge", "at": 30720, "wall_s": 51.27, "prompt_n": 30720, "prompt_ms": 50840, "pp_tps": 604, "config": "ckpt-cms4096", "rss_kb": 5620140}
+{"phase": "rebuild", "at": 30720, "wall_s": 51.27, "prompt_n": 30720, "prompt_ms": 50897, "pp_tps": 604, "config": "ckpt-cms4096", "rss_kb": 5620148}
+{"phase": "diverge", "at": 15360, "wall_s": 74.9, "prompt_n": 47104, "prompt_ms": 74545, "pp_tps": 632, "config": "ckpt-cms4096", "rss_kb": 5099684}
+{"phase": "rebuild", "at": 15360, "wall_s": 74.73, "prompt_n": 47104, "prompt_ms": 74367, "pp_tps": 633, "config": "ckpt-cms4096", "rss_kb": 5100032}
+{"phase": "diverge", "at": 3072, "wall_s": 93.98, "prompt_n": 61440, "prompt_ms": 93673, "pp_tps": 656, "config": "ckpt-cms4096", "rss_kb": 4711264}
+{"phase": "rebuild", "at": 3072, "wall_s": 94.07, "prompt_n": 61440, "prompt_ms": 93764, "pp_tps": 655, "config": "ckpt-cms4096", "rss_kb": 4711264}

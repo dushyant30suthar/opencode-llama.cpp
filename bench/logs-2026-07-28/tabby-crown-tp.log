@@ -1,0 +1,492 @@
+2026-07-28 23:30:06.745 INFO:     Config file override detected in args.
+2026-07-28 23:30:06.763 INFO:     Configured backend: cudaMallocAsync
+2026-07-28 23:30:10.907 INFO:     exllamav3 version: 1.2.1
+2026-07-28 23:30:11.842 INFO:     The provided model has vision capabilities, 
+vision is disabled in config.
+2026-07-28 23:30:11.843 INFO:     Using main model MTP component for drafting
+2026-07-28 23:30:11.843 INFO:     Using configured max_seq_len: 196608 tokens.
+2026-07-28 23:30:11.844 INFO:     Using configured cache_size: 196608 tokens.
+2026-07-28 23:30:11.845 INFO:     Attempting to load a prompt template if 
+present.
+2026-07-28 23:30:11.874 INFO:     Using template "chat_template" for chat 
+completions.
+2026-07-28 23:30:12.682 INFO:     Loading model: 
+/home/dushyant30suthar/.lmstudio/models/turboderp/Qwen3.6-27B-exl3-5.00bpw
+2026-07-28 23:30:12.683 INFO:     Loading with tensor parallel
+2026-07-28 23:30:39.599 INFO:     Model successfully loaded.
+Loading draft modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3   0:00:00
+Loading model modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 67/67 0:00:00
+2026-07-28 23:30:39.601 WARNING:  Disabling authentication makes your instance 
+vulnerable. Set the `disable_auth` flag to False in config.yml if you want to 
+share this instance with others.
+2026-07-28 23:30:39.602 INFO:     Generation logging is disabled
+2026-07-28 23:30:39.604 INFO:     Applied sampler overrides from file.
+2026-07-28 23:30:39.605 INFO:     Developer documentation: 
+http://0.0.0.0:5000/redoc
+2026-07-28 23:30:39.605 INFO:     Starting OAI API
+2026-07-28 23:30:39.606 INFO:     Completions: 
+http://0.0.0.0:5000/v1/completions
+2026-07-28 23:30:39.606 INFO:     Chat completions: 
+http://0.0.0.0:5000/v1/chat/completions
+2026-07-28 23:30:39.614 INFO:     Started server process [161431]
+2026-07-28 23:30:39.615 INFO:     Waiting for application startup.
+2026-07-28 23:30:39.615 INFO:     Application startup complete.
+2026-07-28 23:30:39.616 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press 
+CTRL+C to quit)
+2026-07-28 23:30:41.440 INFO:     127.0.0.1:51352 - "GET /health HTTP/1.1" 200
+2026-07-28 23:30:42.582 INFO:     127.0.0.1:51368 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:30:42.631 INFO:     127.0.0.1:51370 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:30:42.638 INFO:     127.0.0.1:51382 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:30:42.639 INFO:     Received completion streaming request 
+2885a8241a7940ecbc58686be4437322
+/home/dushyant30suthar/Projects/exllamav3/venv/lib/python3.13/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+/home/dushyant30suthar/Projects/exllamav3/venv/lib/python3.13/site-packages/triton/language/core.py:2284: UserWarning: tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.
+  warn("tl.make_block_ptr is deprecated. Use TensorDescriptor or tl.make_tensor_descriptor instead.")
+2026-07-28 23:31:12.369 INFO:     Finished completion streaming request 
+2885a8241a7940ecbc58686be4437322
+2026-07-28 23:31:12.370 INFO:     Metrics (ID: 
+2885a8241a7940ecbc58686be4437322): 3 tokens generated in 29.73 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 255 new tokens at 9.16 T/s, Generate: 1.59 
+T/s, Context: 255 tokens, Draft: 1 / 5 tokens accepted (20.00%)) 
+2026-07-28 23:31:12.372 INFO:     127.0.0.1:34156 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:12.377 INFO:     127.0.0.1:34172 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:31:12.387 INFO:     127.0.0.1:34180 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:12.388 INFO:     Received completion streaming request 
+da2e2f227c394b2abde93e71378471bd
+2026-07-28 23:31:23.957 INFO:     Finished completion streaming request 
+da2e2f227c394b2abde93e71378471bd
+2026-07-28 23:31:23.958 INFO:     Metrics (ID: 
+da2e2f227c394b2abde93e71378471bd): 1 tokens generated in 11.56 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 4095 new tokens at 355.78 T/s, Generate: 
+20.03 T/s, Context: 4095 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 23:31:23.960 INFO:     127.0.0.1:60444 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:23.971 INFO:     127.0.0.1:60456 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:23.972 INFO:     Received completion streaming request 
+34836bbccf9349e391a2e334eea55475
+2026-07-28 23:31:25.701 INFO:     Finished completion streaming request 
+34836bbccf9349e391a2e334eea55475
+2026-07-28 23:31:25.702 INFO:     Metrics (ID: 
+34836bbccf9349e391a2e334eea55475): 91 tokens generated in 1.72 seconds (Queue: 
+0.03 s, Process: 3840 cached tokens and 255 new tokens at 566.67 T/s, Generate: 
+73.9 T/s, Context: 4095 tokens, Draft: 68 / 91 tokens accepted (74.73%)) 
+2026-07-28 23:31:25.704 INFO:     127.0.0.1:60466 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:25.716 INFO:     127.0.0.1:60470 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:25.716 INFO:     Received completion streaming request 
+3e9d9c12562a463d95980f5c5a15465e
+2026-07-28 23:31:28.708 INFO:     Finished completion streaming request 
+3e9d9c12562a463d95980f5c5a15465e
+2026-07-28 23:31:28.709 INFO:     Metrics (ID: 
+3e9d9c12562a463d95980f5c5a15465e): 187 tokens generated in 2.98 seconds (Queue: 
+0.03 s, Process: 3840 cached tokens and 255 new tokens at 566.67 T/s, Generate: 
+75.01 T/s, Context: 4095 tokens, Draft: 139 / 189 tokens accepted (73.54%)) 
+2026-07-28 23:31:28.711 INFO:     127.0.0.1:60480 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:28.725 INFO:     127.0.0.1:60488 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:31:28.761 INFO:     127.0.0.1:60498 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:28.762 INFO:     Received completion streaming request 
+9785d2fe612f456ea5cb0d9da89913a0
+2026-07-28 23:31:53.515 INFO:     Finished completion streaming request 
+9785d2fe612f456ea5cb0d9da89913a0
+2026-07-28 23:31:53.516 INFO:     Metrics (ID: 
+9785d2fe612f456ea5cb0d9da89913a0): 1 tokens generated in 24.72 seconds (Queue: 
+0.03 s, Process: 3840 cached tokens and 12543 new tokens at 509.26 T/s, 
+Generate: 18.37 T/s, Context: 16383 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:31:53.517 INFO:     127.0.0.1:54318 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:53.552 INFO:     127.0.0.1:54320 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:53.553 INFO:     Received completion streaming request 
+8461071c07dc41b5bda1a2e216cd6a7f
+2026-07-28 23:31:55.469 INFO:     Finished completion streaming request 
+8461071c07dc41b5bda1a2e216cd6a7f
+2026-07-28 23:31:55.470 INFO:     Metrics (ID: 
+8461071c07dc41b5bda1a2e216cd6a7f): 91 tokens generated in 1.88 seconds (Queue: 
+0.03 s, Process: 16128 cached tokens and 255 new tokens at 455.36 T/s, Generate:
+70.58 T/s, Context: 16383 tokens, Draft: 68 / 90 tokens accepted (75.56%)) 
+2026-07-28 23:31:55.471 INFO:     127.0.0.1:54334 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:55.506 INFO:     127.0.0.1:54346 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:55.507 INFO:     Received completion streaming request 
+82584bb9c7d24a8f9449d6d613a39b85
+2026-07-28 23:31:58.721 INFO:     Finished completion streaming request 
+82584bb9c7d24a8f9449d6d613a39b85
+2026-07-28 23:31:58.722 INFO:     Metrics (ID: 
+82584bb9c7d24a8f9449d6d613a39b85): 187 tokens generated in 3.18 seconds (Queue: 
+0.03 s, Process: 16128 cached tokens and 255 new tokens at 455.36 T/s, Generate:
+72.31 T/s, Context: 16383 tokens, Draft: 141 / 180 tokens accepted (78.33%)) 
+2026-07-28 23:31:58.724 INFO:     127.0.0.1:54350 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:31:58.750 INFO:     127.0.0.1:54352 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:31:58.812 INFO:     127.0.0.1:54364 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:31:58.813 INFO:     Received completion streaming request 
+c66a78d668444079a7ab2b6cf9c820f7
+2026-07-28 23:32:32.733 INFO:     Finished completion streaming request 
+c66a78d668444079a7ab2b6cf9c820f7
+2026-07-28 23:32:32.734 INFO:     Metrics (ID: 
+c66a78d668444079a7ab2b6cf9c820f7): 1 tokens generated in 33.85 seconds (Queue: 
+0.03 s, Process: 16128 cached tokens and 16639 new tokens at 492.86 T/s, 
+Generate: 16.92 T/s, Context: 32767 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:32:32.735 INFO:     127.0.0.1:44400 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:32:32.796 INFO:     127.0.0.1:44402 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:32:32.797 INFO:     Received completion streaming request 
+3a1d4870ee8144d7982dbe3b32a981a4
+2026-07-28 23:32:34.990 INFO:     Finished completion streaming request 
+3a1d4870ee8144d7982dbe3b32a981a4
+2026-07-28 23:32:34.991 INFO:     Metrics (ID: 
+3a1d4870ee8144d7982dbe3b32a981a4): 91 tokens generated in 2.13 seconds (Queue: 
+0.03 s, Process: 32512 cached tokens and 255 new tokens at 375.0 T/s, Generate: 
+64.28 T/s, Context: 32767 tokens, Draft: 68 / 88 tokens accepted (77.27%)) 
+2026-07-28 23:32:34.993 INFO:     127.0.0.1:44416 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:32:35.055 INFO:     127.0.0.1:44424 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:32:35.055 INFO:     Received completion streaming request 
+81822567d4e748bcb3c5af4f0f8ac9eb
+2026-07-28 23:32:38.970 INFO:     Finished completion streaming request 
+81822567d4e748bcb3c5af4f0f8ac9eb
+2026-07-28 23:32:38.971 INFO:     Metrics (ID: 
+81822567d4e748bcb3c5af4f0f8ac9eb): 187 tokens generated in 3.86 seconds (Queue: 
+0.03 s, Process: 32512 cached tokens and 255 new tokens at 369.57 T/s, Generate:
+59.67 T/s, Context: 32767 tokens, Draft: 136 / 201 tokens accepted (67.66%)) 
+2026-07-28 23:32:38.974 INFO:     127.0.0.1:44434 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:32:39.012 INFO:     127.0.0.1:44448 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:32:39.104 INFO:     127.0.0.1:44460 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:32:39.105 INFO:     Received completion streaming request 
+3c0d43052c1246c293afc08690bff222
+2026-07-28 23:33:23.923 INFO:     Finished completion streaming request 
+3c0d43052c1246c293afc08690bff222
+2026-07-28 23:33:23.924 INFO:     Metrics (ID: 
+3c0d43052c1246c293afc08690bff222): 1 tokens generated in 44.73 seconds (Queue: 
+0.03 s, Process: 32512 cached tokens and 16636 new tokens at 372.75 T/s, 
+Generate: 15.69 T/s, Context: 49148 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:33:23.926 INFO:     127.0.0.1:59494 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:33:24.019 INFO:     127.0.0.1:59506 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:33:24.019 INFO:     Received completion streaming request 
+d0e51fa431d3474f8ded15997842f41d
+2026-07-28 23:33:26.610 INFO:     Finished completion streaming request 
+d0e51fa431d3474f8ded15997842f41d
+2026-07-28 23:33:26.611 INFO:     Metrics (ID: 
+d0e51fa431d3474f8ded15997842f41d): 91 tokens generated in 2.5 seconds (Queue: 
+0.04 s, Process: 48896 cached tokens and 252 new tokens at 311.11 T/s, Generate:
+55.0 T/s, Context: 49148 tokens, Draft: 66 / 97 tokens accepted (68.04%)) 
+2026-07-28 23:33:26.613 INFO:     127.0.0.1:59510 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:33:26.702 INFO:     127.0.0.1:59524 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:33:26.703 INFO:     Received completion streaming request 
+de4c06d75cc944bba2f6eb44572dabb4
+2026-07-28 23:33:30.578 INFO:     Finished completion streaming request 
+de4c06d75cc944bba2f6eb44572dabb4
+2026-07-28 23:33:30.579 INFO:     Metrics (ID: 
+de4c06d75cc944bba2f6eb44572dabb4): 187 tokens generated in 3.79 seconds (Queue: 
+0.03 s, Process: 48896 cached tokens and 252 new tokens at 307.32 T/s, Generate:
+63.78 T/s, Context: 49148 tokens, Draft: 143 / 176 tokens accepted (81.25%)) 
+2026-07-28 23:33:30.581 INFO:     127.0.0.1:59530 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:33:30.632 INFO:     127.0.0.1:59532 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:33:30.748 INFO:     127.0.0.1:59534 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:33:30.749 INFO:     Received completion streaming request 
+7b2e9f5418574285894e841c049ab21e
+2026-07-28 23:34:20.034 INFO:     Finished completion streaming request 
+7b2e9f5418574285894e841c049ab21e
+2026-07-28 23:34:20.035 INFO:     Metrics (ID: 
+7b2e9f5418574285894e841c049ab21e): 1 tokens generated in 49.17 seconds (Queue: 
+0.03 s, Process: 48896 cached tokens and 16636 new tokens at 339.03 T/s, 
+Generate: 14.65 T/s, Context: 65532 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:34:20.037 INFO:     127.0.0.1:53806 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:34:20.155 INFO:     127.0.0.1:53810 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:34:20.155 INFO:     Received completion streaming request 
+665460016d5d49b286e75d66d5635025
+2026-07-28 23:34:22.692 INFO:     Finished completion streaming request 
+665460016d5d49b286e75d66d5635025
+2026-07-28 23:34:22.693 INFO:     Metrics (ID: 
+665460016d5d49b286e75d66d5635025): 91 tokens generated in 2.42 seconds (Queue: 
+0.03 s, Process: 65280 cached tokens and 252 new tokens at 265.26 T/s, Generate:
+63.45 T/s, Context: 65532 tokens, Draft: 71 / 79 tokens accepted (89.87%)) 
+2026-07-28 23:34:22.695 INFO:     127.0.0.1:54552 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:34:22.809 INFO:     127.0.0.1:54556 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:34:22.810 INFO:     Received completion streaming request 
+d35dae1c62e646ae9372b92e8109f6b4
+2026-07-28 23:34:27.335 INFO:     Finished completion streaming request 
+d35dae1c62e646ae9372b92e8109f6b4
+2026-07-28 23:34:27.336 INFO:     Metrics (ID: 
+d35dae1c62e646ae9372b92e8109f6b4): 187 tokens generated in 4.41 seconds (Queue: 
+0.03 s, Process: 65280 cached tokens and 252 new tokens at 265.26 T/s, Generate:
+54.51 T/s, Context: 65532 tokens, Draft: 139 / 189 tokens accepted (73.54%)) 
+2026-07-28 23:34:27.338 INFO:     127.0.0.1:54568 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:34:27.400 INFO:     127.0.0.1:54584 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:34:27.553 INFO:     127.0.0.1:54594 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:34:27.554 INFO:     Received completion streaming request 
+c0c2e88947d447baa72f402cd662a39c
+2026-07-28 23:35:24.923 INFO:     Finished completion streaming request 
+c0c2e88947d447baa72f402cd662a39c
+2026-07-28 23:35:24.924 INFO:     Metrics (ID: 
+c0c2e88947d447baa72f402cd662a39c): 1 tokens generated in 57.23 seconds (Queue: 
+0.03 s, Process: 65280 cached tokens and 16636 new tokens at 291.25 T/s, 
+Generate: 13.7 T/s, Context: 81916 tokens, Draft: 0 / 0 tokens accepted (0.00%))
+2026-07-28 23:35:24.926 INFO:     127.0.0.1:52092 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:35:25.078 INFO:     127.0.0.1:52106 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:35:25.078 INFO:     Received completion streaming request 
+e680b91260d84a278945abbf221fd66c
+2026-07-28 23:35:27.946 INFO:     Finished completion streaming request 
+e680b91260d84a278945abbf221fd66c
+2026-07-28 23:35:27.947 INFO:     Metrics (ID: 
+e680b91260d84a278945abbf221fd66c): 91 tokens generated in 2.72 seconds (Queue: 
+0.03 s, Process: 81664 cached tokens and 252 new tokens at 233.33 T/s, Generate:
+56.56 T/s, Context: 81916 tokens, Draft: 70 / 82 tokens accepted (85.37%)) 
+2026-07-28 23:35:27.949 INFO:     127.0.0.1:52110 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:35:28.097 INFO:     127.0.0.1:52124 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:35:28.097 INFO:     Received completion streaming request 
+42e03a91406d43cda087c071bd61d8dd
+2026-07-28 23:35:33.030 INFO:     Finished completion streaming request 
+42e03a91406d43cda087c071bd61d8dd
+2026-07-28 23:35:33.031 INFO:     Metrics (ID: 
+42e03a91406d43cda087c071bd61d8dd): 187 tokens generated in 4.78 seconds (Queue: 
+0.03 s, Process: 81664 cached tokens and 252 new tokens at 233.33 T/s, Generate:
+50.94 T/s, Context: 81916 tokens, Draft: 139 / 191 tokens accepted (72.77%)) 
+2026-07-28 23:35:33.033 INFO:     127.0.0.1:51972 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:35:33.103 INFO:     127.0.0.1:51986 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:35:33.270 INFO:     127.0.0.1:51996 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:35:33.270 INFO:     Received completion streaming request 
+05fb2a9b94bd41f78bf24dee0bca589e
+2026-07-28 23:36:22.167 INFO:     Finished completion streaming request 
+05fb2a9b94bd41f78bf24dee0bca589e
+2026-07-28 23:36:22.168 INFO:     Metrics (ID: 
+05fb2a9b94bd41f78bf24dee0bca589e): 1 tokens generated in 48.73 seconds (Queue: 
+0.03 s, Process: 81664 cached tokens and 12540 new tokens at 257.92 T/s, 
+Generate: 13.05 T/s, Context: 94204 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:36:22.170 INFO:     127.0.0.1:59926 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:36:22.343 INFO:     127.0.0.1:59938 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:36:22.344 INFO:     Received completion streaming request 
+987e0c06e27e42688c67bb22c00f16e5
+2026-07-28 23:36:25.333 INFO:     Finished completion streaming request 
+987e0c06e27e42688c67bb22c00f16e5
+2026-07-28 23:36:25.334 INFO:     Metrics (ID: 
+987e0c06e27e42688c67bb22c00f16e5): 91 tokens generated in 2.83 seconds (Queue: 
+0.03 s, Process: 93952 cached tokens and 252 new tokens at 211.76 T/s, Generate:
+56.66 T/s, Context: 94204 tokens, Draft: 71 / 80 tokens accepted (88.75%)) 
+2026-07-28 23:36:25.336 INFO:     127.0.0.1:59940 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:36:25.501 INFO:     127.0.0.1:59952 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:36:25.502 INFO:     Received completion streaming request 
+415dc9fb864247968fb9e73da421d225
+2026-07-28 23:36:31.044 INFO:     Finished completion streaming request 
+415dc9fb864247968fb9e73da421d225
+2026-07-28 23:36:31.045 INFO:     Metrics (ID: 
+415dc9fb864247968fb9e73da421d225): 187 tokens generated in 5.38 seconds (Queue: 
+0.03 s, Process: 93952 cached tokens and 252 new tokens at 211.76 T/s, Generate:
+44.97 T/s, Context: 94204 tokens, Draft: 135 / 205 tokens accepted (65.85%)) 
+2026-07-28 23:36:31.047 INFO:     127.0.0.1:48774 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:36:31.142 INFO:     127.0.0.1:48784 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:36:31.369 INFO:     127.0.0.1:48800 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:36:31.369 INFO:     Received completion streaming request 
+eb7e229935564777b3cc624fb4b6fa02
+2026-07-28 23:39:24.866 INFO:     Finished completion streaming request 
+eb7e229935564777b3cc624fb4b6fa02
+2026-07-28 23:39:24.867 INFO:     Metrics (ID: 
+eb7e229935564777b3cc624fb4b6fa02): 1 tokens generated in 173.28 seconds (Queue: 
+0.03 s, Process: 93952 cached tokens and 37116 new tokens at 214.35 T/s, 
+Generate: 11.21 T/s, Context: 131068 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:39:24.869 INFO:     127.0.0.1:36574 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:39:25.109 INFO:     127.0.0.1:36582 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:39:25.110 INFO:     Received completion streaming request 
+3dc8ff0f8dc74ac6a821020df18040be
+2026-07-28 23:39:28.712 INFO:     Finished completion streaming request 
+3dc8ff0f8dc74ac6a821020df18040be
+2026-07-28 23:39:28.713 INFO:     Metrics (ID: 
+3dc8ff0f8dc74ac6a821020df18040be): 91 tokens generated in 3.37 seconds (Queue: 
+0.03 s, Process: 130816 cached tokens and 252 new tokens at 168.0 T/s, Generate:
+49.5 T/s, Context: 131068 tokens, Draft: 71 / 77 tokens accepted (92.21%)) 
+2026-07-28 23:39:28.715 INFO:     127.0.0.1:36588 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:39:28.942 INFO:     127.0.0.1:36602 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:39:28.943 INFO:     Received completion streaming request 
+d8602c21d28b4d55938a18b686e7db28
+2026-07-28 23:39:34.282 INFO:     Finished completion streaming request 
+d8602c21d28b4d55938a18b686e7db28
+2026-07-28 23:39:34.283 INFO:     Metrics (ID: 
+d8602c21d28b4d55938a18b686e7db28): 187 tokens generated in 5.12 seconds (Queue: 
+0.04 s, Process: 130816 cached tokens and 252 new tokens at 169.13 T/s, 
+Generate: 51.99 T/s, Context: 131068 tokens, Draft: 148 / 156 tokens accepted 
+(94.87%)) 
+2026-07-28 23:39:34.285 INFO:     127.0.0.1:40810 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:39:34.402 INFO:     127.0.0.1:40822 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:39:34.697 INFO:     127.0.0.1:40830 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:39:34.698 INFO:     Received completion streaming request 
+78485971d5ea4b109e868302ba8ec198
+2026-07-28 23:42:41.391 INFO:     Finished completion streaming request 
+78485971d5ea4b109e868302ba8ec198
+2026-07-28 23:42:41.392 INFO:     Metrics (ID: 
+78485971d5ea4b109e868302ba8ec198): 1 tokens generated in 186.4 seconds (Queue: 
+0.03 s, Process: 130816 cached tokens and 32508 new tokens at 174.52 T/s, 
+Generate: 10.44 T/s, Context: 163324 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 23:42:41.394 INFO:     127.0.0.1:48708 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:42:41.699 INFO:     127.0.0.1:48712 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:42:41.699 INFO:     Received completion streaming request 
+93312aa0c3b24e37bb1420f01f3e3a57
+2026-07-28 23:42:46.178 INFO:     Finished completion streaming request 
+93312aa0c3b24e37bb1420f01f3e3a57
+2026-07-28 23:42:46.179 INFO:     Metrics (ID: 
+93312aa0c3b24e37bb1420f01f3e3a57): 91 tokens generated in 4.19 seconds (Queue: 
+0.03 s, Process: 163072 cached tokens and 252 new tokens at 143.18 T/s, 
+Generate: 37.93 T/s, Context: 163324 tokens, Draft: 67 / 94 tokens accepted 
+(71.28%)) 
+2026-07-28 23:42:46.180 INFO:     127.0.0.1:48728 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:42:46.466 INFO:     127.0.0.1:48734 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:42:46.467 INFO:     Received completion streaming request 
+97e6323be8b84730b4079521c4c680f6
+2026-07-28 23:42:54.411 INFO:     Finished completion streaming request 
+97e6323be8b84730b4079521c4c680f6
+2026-07-28 23:42:54.412 INFO:     Metrics (ID: 
+97e6323be8b84730b4079521c4c680f6): 187 tokens generated in 7.67 seconds (Queue: 
+0.03 s, Process: 163072 cached tokens and 252 new tokens at 143.18 T/s, 
+Generate: 31.82 T/s, Context: 163324 tokens, Draft: 128 / 234 tokens accepted 
+(54.70%)) 
+2026-07-28 23:42:54.414 INFO:     127.0.0.1:40110 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:42:55.531 INFO:     127.0.0.1:40118 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:42:55.581 INFO:     127.0.0.1:40124 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:42:55.583 INFO:     127.0.0.1:40132 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:42:55.584 INFO:     Received completion streaming request 
+7f852913cb6a4ebea41c6d0bf7153a9a
+2026-07-28 23:42:56.167 INFO:     Finished completion streaming request 
+7f852913cb6a4ebea41c6d0bf7153a9a
+2026-07-28 23:42:56.168 INFO:     Metrics (ID: 
+7f852913cb6a4ebea41c6d0bf7153a9a): 3 tokens generated in 0.58 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 255 new tokens at 593.02 T/s, Generate: 
+20.05 T/s, Context: 255 tokens, Draft: 0 / 8 tokens accepted (0.00%)) 
+2026-07-28 23:42:56.170 INFO:     127.0.0.1:40136 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:42:56.217 INFO:     127.0.0.1:40142 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:42:56.250 INFO:     127.0.0.1:40158 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 23:42:56.359 INFO:     127.0.0.1:40172 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:42:56.360 INFO:     Received completion streaming request 
+a76700da85dd4148aa2fbb7bbb2fce83
+2026-07-28 23:43:33.090 INFO:     Finished completion streaming request 
+a76700da85dd4148aa2fbb7bbb2fce83
+2026-07-28 23:43:33.091 INFO:     Metrics (ID: 
+a76700da85dd4148aa2fbb7bbb2fce83): 11 tokens generated in 36.62 seconds (Queue: 
+0.03 s, Process: 48896 cached tokens and 12540 new tokens at 344.69 T/s, 
+Generate: 52.62 T/s, Context: 61436 tokens, Draft: 8 / 8 tokens accepted 
+(100.00%)) 
+2026-07-28 23:43:33.093 INFO:     127.0.0.1:45902 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:43:33.172 INFO:     127.0.0.1:45916 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:43:33.173 INFO:     Received completion streaming request 
+1084cb2e89d740c7b933ea1f14ac6b1d
+2026-07-28 23:43:58.196 INFO:     Finished completion streaming request 
+1084cb2e89d740c7b933ea1f14ac6b1d
+2026-07-28 23:43:58.197 INFO:     Metrics (ID: 
+1084cb2e89d740c7b933ea1f14ac6b1d): 11 tokens generated in 24.94 seconds (Queue: 
+0.03 s, Process: 30464 cached tokens and 10495 new tokens at 424.56 T/s, 
+Generate: 57.69 T/s, Context: 40959 tokens, Draft: 8 / 8 tokens accepted 
+(100.00%)) 
+2026-07-28 23:43:58.199 INFO:     127.0.0.1:43636 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:43:58.308 INFO:     127.0.0.1:43640 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:43:58.309 INFO:     Received completion streaming request 
+ecca1e058f0240e2a4af3f0da03d2eea
+2026-07-28 23:43:59.575 INFO:     Finished completion streaming request 
+ecca1e058f0240e2a4af3f0da03d2eea
+2026-07-28 23:43:59.576 INFO:     Metrics (ID: 
+ecca1e058f0240e2a4af3f0da03d2eea): 11 tokens generated in 1.16 seconds (Queue: 
+0.03 s, Process: 61184 cached tokens and 252 new tokens at 273.91 T/s, Generate:
+52.7 T/s, Context: 61436 tokens, Draft: 8 / 8 tokens accepted (100.00%)) 
+2026-07-28 23:43:59.578 INFO:     127.0.0.1:43650 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:43:59.657 INFO:     127.0.0.1:43664 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:43:59.657 INFO:     Received completion streaming request 
+f8dd7b28c4394c08bcf636d02c184999
+2026-07-28 23:44:00.716 INFO:     Finished completion streaming request 
+f8dd7b28c4394c08bcf636d02c184999
+2026-07-28 23:44:00.717 INFO:     Metrics (ID: 
+f8dd7b28c4394c08bcf636d02c184999): 11 tokens generated in 0.98 seconds (Queue: 
+0.03 s, Process: 40704 cached tokens and 255 new tokens at 335.53 T/s, Generate:
+57.92 T/s, Context: 40959 tokens, Draft: 8 / 8 tokens accepted (100.00%)) 
+2026-07-28 23:44:00.719 INFO:     127.0.0.1:43678 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 23:44:00.827 INFO:     127.0.0.1:43682 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 23:44:00.828 INFO:     Received completion streaming request 
+cf844883060d4baaaf07bdfb93c9b412
+2026-07-28 23:44:02.098 INFO:     Finished completion streaming request 
+cf844883060d4baaaf07bdfb93c9b412
+2026-07-28 23:44:02.099 INFO:     Metrics (ID: 
+cf844883060d4baaaf07bdfb93c9b412): 11 tokens generated in 1.16 seconds (Queue: 
+0.03 s, Process: 61184 cached tokens and 252 new tokens at 273.91 T/s, Generate:
+52.67 T/s, Context: 61436 tokens, Draft: 8 / 8 tokens accepted (100.00%)) 
+2026-07-28 23:44:02.100 INFO:     127.0.0.1:39372 - "POST /v1/token/encode 
+HTTP/1.1" 200
+/home/dushyant30suthar/.local/share/uv/python/cpython-3.13.12-linux-x86_64-gnu/lib/python3.13/multiprocessing/resource_tracker.py:400: UserWarning: resource_tracker: There appear to be 6 leaked shared_memory objects to clean up at shutdown: {'/2e7b27b8cde642bf934edd45e0b5309b_g', '/087aa0f99ea648f1beb1bf94e33a7546', '/2e7b27b8cde642bf934edd45e0b5309b_ll', '/2e7b27b8cde642bf934edd45e0b5309b_r', '/2e7b27b8cde642bf934edd45e0b5309b_b', '/2e7b27b8cde642bf934edd45e0b5309b_s'}
+  warnings.warn(

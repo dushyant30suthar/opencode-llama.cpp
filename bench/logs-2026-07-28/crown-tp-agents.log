@@ -1,0 +1,7 @@
+corpus tokens: 566922
+{'phase': 'A-build', 'ttfb_s': 36.84, 'gen_tokens': 12, 'decode_tps': 154305.5, 'wall_s': 36.84, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'agents'}
+{'phase': 'B-first', 'ttfb_s': 25.103, 'gen_tokens': 12, 'decode_tps': 158004.6, 'wall_s': 25.1, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'agents'}
+{'phase': 'A-again', 'ttfb_s': 1.376, 'gen_tokens': 12, 'decode_tps': 159644.8, 'wall_s': 1.38, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'agents'}
+{'phase': 'B-again', 'ttfb_s': 1.138, 'gen_tokens': 12, 'decode_tps': 150775.6, 'wall_s': 1.14, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'agents'}
+{'phase': 'A-turn3', 'ttfb_s': 1.379, 'gen_tokens': 12, 'decode_tps': 149311.8, 'wall_s': 1.38, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'agents'}
+DONE

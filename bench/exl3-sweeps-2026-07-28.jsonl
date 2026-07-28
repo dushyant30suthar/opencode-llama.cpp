@@ -1,0 +1,192 @@
+{"depth": 4096, "rep": "prefill", "ttfb_s": 5.776, "gen_tokens": 2, "decode_tps": 13189.6, "wall_s": 5.78, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 0.991, "gen_tokens": 96, "decode_tps": 22.8, "wall_s": 5.16, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 0.992, "gen_tokens": 192, "decode_tps": 21.7, "wall_s": 9.78, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 18.885, "gen_tokens": 2, "decode_tps": 14027.8, "wall_s": 18.89, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 1.263, "gen_tokens": 96, "decode_tps": 21.7, "wall_s": 5.64, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 1.259, "gen_tokens": 192, "decode_tps": 20.6, "wall_s": 10.52, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 33.564, "gen_tokens": 2, "decode_tps": 14513.2, "wall_s": 33.56, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 1.585, "gen_tokens": 95, "decode_tps": 20.4, "wall_s": 6.2, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 1.58, "gen_tokens": 192, "decode_tps": 19.6, "wall_s": 11.34, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 47.119, "gen_tokens": 2, "decode_tps": 14513.2, "wall_s": 47.12, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 1.901, "gen_tokens": 96, "decode_tps": 19.6, "wall_s": 6.74, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 1.894, "gen_tokens": 190, "decode_tps": 18.4, "wall_s": 12.16, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 55.079, "gen_tokens": 2, "decode_tps": 9341.4, "wall_s": 55.08, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 2.241, "gen_tokens": 96, "decode_tps": 18.8, "wall_s": 7.31, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 2.233, "gen_tokens": 192, "decode_tps": 17.8, "wall_s": 12.94, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 66.085, "gen_tokens": 2, "decode_tps": 15087.4, "wall_s": 66.09, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 2.582, "gen_tokens": 96, "decode_tps": 18.0, "wall_s": 7.87, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 2.59, "gen_tokens": 192, "decode_tps": 17.0, "wall_s": 13.79, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 60.121, "gen_tokens": 2, "decode_tps": 14513.2, "wall_s": 60.12, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 2.854, "gen_tokens": 96, "decode_tps": 17.4, "wall_s": 8.32, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 2.852, "gen_tokens": 192, "decode_tps": 16.5, "wall_s": 14.46, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 203.315, "gen_tokens": 2, "decode_tps": 13842.6, "wall_s": 203.32, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 3.602, "gen_tokens": 96, "decode_tps": 15.9, "wall_s": 9.59, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 3.586, "gen_tokens": 192, "decode_tps": 15.1, "wall_s": 16.26, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 221.883, "gen_tokens": 2, "decode_tps": 13934.6, "wall_s": 221.88, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 4.331, "gen_tokens": 96, "decode_tps": 14.9, "wall_s": 10.73, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 4.322, "gen_tokens": 192, "decode_tps": 14.1, "wall_s": 17.86, "config": "exl3-5bpw-layersplit-nodraft", "mode": "sweep"}
+{"phase": "A-build", "ttfb_s": 42.902, "gen_tokens": 16, "decode_tps": 14093.8, "wall_s": 42.9, "config": "exl3-5bpw-layersplit-nodraft", "mode": "agents"}
+{"phase": "B-first", "ttfb_s": 28.412, "gen_tokens": 16, "decode_tps": 269.0, "wall_s": 28.47, "config": "exl3-5bpw-layersplit-nodraft", "mode": "agents"}
+{"phase": "A-again", "ttfb_s": 2.148, "gen_tokens": 16, "decode_tps": 42.9, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "agents"}
+{"phase": "B-again", "ttfb_s": 1.742, "gen_tokens": 16, "decode_tps": 45.5, "wall_s": 2.07, "config": "exl3-5bpw-layersplit-nodraft", "mode": "agents"}
+{"phase": "A-turn3", "ttfb_s": 2.149, "gen_tokens": 16, "decode_tps": 42.9, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "agents"}
+{"phase": "build", "depth": 61440, "ttfb_s": 2.146, "gen_tokens": 16, "decode_tps": 42.6, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "build-hit", "depth": 61440, "ttfb_s": 2.148, "gen_tokens": 16, "decode_tps": 42.6, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "diverge", "at": 49152, "ttfb_s": 42.789, "gen_tokens": 16, "decode_tps": 14259.9, "wall_s": 42.79, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "rebuild", "at": 49152, "ttfb_s": 2.146, "gen_tokens": 16, "decode_tps": 43.0, "wall_s": 2.49, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "diverge", "at": 30720, "ttfb_s": 84.336, "gen_tokens": 16, "decode_tps": 206955.8, "wall_s": 84.34, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "rebuild", "at": 30720, "ttfb_s": 2.155, "gen_tokens": 16, "decode_tps": 42.9, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "diverge", "at": 15360, "ttfb_s": 114.59, "gen_tokens": 16, "decode_tps": 215460.8, "wall_s": 114.59, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "rebuild", "at": 15360, "ttfb_s": 2.148, "gen_tokens": 16, "decode_tps": 42.8, "wall_s": 2.5, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "diverge", "at": 3072, "ttfb_s": 131.462, "gen_tokens": 16, "decode_tps": 209715.2, "wall_s": 131.46, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"phase": "rebuild", "at": 3072, "ttfb_s": 2.16, "gen_tokens": 16, "decode_tps": 42.8, "wall_s": 2.51, "config": "exl3-5bpw-layersplit-nodraft", "mode": "edit"}
+{"depth": 4096, "rep": "prefill", "ttfb_s": 6.962, "gen_tokens": 2, "decode_tps": 13231.2, "wall_s": 6.96, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 2.128, "gen_tokens": 0, "decode_tps": null, "wall_s": 2.13, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 6.8, "gen_tokens": 188, "decode_tps": 63.8, "wall_s": 9.73, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 25.789, "gen_tokens": 2, "decode_tps": 13797.1, "wall_s": 25.79, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 2.544, "gen_tokens": 0, "decode_tps": null, "wall_s": 2.54, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 0.073, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.07, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 0.125, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.13, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 0.129, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.13, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 0.125, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.12, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 0.186, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.19, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 0.192, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.19, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 0.186, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.19, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 0.241, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.24, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 0.241, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.24, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 0.24, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.24, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 0.316, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.32, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 0.309, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.31, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 0.305, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.3, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 0.352, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.35, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 0.346, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.35, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 0.342, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.34, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 0.464, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.46, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 0.472, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.47, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 0.464, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.46, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 0.634, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.63, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 0.61, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.61, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 0.624, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.62, "config": "exl3-5bpw-layersplit-MTP", "mode": "sweep"}
+{"depth": 4096, "rep": "prefill", "ttfb_s": 5.977, "gen_tokens": 2, "decode_tps": 13842.6, "wall_s": 5.98, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 3.83, "gen_tokens": 0, "decode_tps": null, "wall_s": 3.83, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 6.771, "gen_tokens": 188, "decode_tps": 68.4, "wall_s": 9.51, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 30.112, "gen_tokens": 2, "decode_tps": 13934.6, "wall_s": 30.11, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 4.287, "gen_tokens": 0, "decode_tps": null, "wall_s": 4.29, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 0.088, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.09, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 0.145, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.15, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 0.146, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.15, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 0.141, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.14, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 0.199, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.2, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 0.198, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.2, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 0.199, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.2, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 0.254, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.25, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 0.268, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.27, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 0.256, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.26, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 0.326, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.33, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 0.328, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.33, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 0.32, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.32, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 0.364, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.36, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 0.362, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.36, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 0.358, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.36, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 0.486, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.49, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 0.487, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.49, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 0.46, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.46, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 0.631, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.63, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 0.606, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.61, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 0.623, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.62, "config": "exl3-master-patched-MTP", "mode": "sweep"}
+{"phase": "A-build", "ttfb_s": 0.238, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.24, "config": "exl3-master-patched-MTP", "mode": "agents"}
+{"phase": "B-first", "ttfb_s": 0.171, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.17, "config": "exl3-master-patched-MTP", "mode": "agents"}
+{"phase": "A-again", "ttfb_s": 0.234, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.23, "config": "exl3-master-patched-MTP", "mode": "agents"}
+{"phase": "B-again", "ttfb_s": 0.17, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.17, "config": "exl3-master-patched-MTP", "mode": "agents"}
+{"phase": "A-turn3", "ttfb_s": 0.231, "gen_tokens": 0, "decode_tps": null, "wall_s": 0.23, "config": "exl3-master-patched-MTP", "mode": "agents"}
+{"depth": 4096, "rep": "prefill", "ttfb_s": 11.294, "gen_tokens": 2, "decode_tps": 12945.4, "wall_s": 11.29, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 0.752, "gen_tokens": 96, "decode_tps": 37.9, "wall_s": 3.26, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 0.751, "gen_tokens": 192, "decode_tps": 36.0, "wall_s": 6.06, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 24.086, "gen_tokens": 2, "decode_tps": 14820.9, "wall_s": 24.09, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 0.902, "gen_tokens": 96, "decode_tps": 36.4, "wall_s": 3.52, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 0.903, "gen_tokens": 192, "decode_tps": 34.6, "wall_s": 6.42, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 33.258, "gen_tokens": 2, "decode_tps": 14665.4, "wall_s": 33.26, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 1.091, "gen_tokens": 96, "decode_tps": 34.8, "wall_s": 3.82, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 1.095, "gen_tokens": 191, "decode_tps": 32.9, "wall_s": 6.87, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 43.922, "gen_tokens": 2, "decode_tps": 14716.9, "wall_s": 43.92, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 1.285, "gen_tokens": 96, "decode_tps": 33.0, "wall_s": 4.16, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 1.32, "gen_tokens": 192, "decode_tps": 29.4, "wall_s": 7.82, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 48.533, "gen_tokens": 2, "decode_tps": 15307.7, "wall_s": 48.53, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 1.512, "gen_tokens": 96, "decode_tps": 31.8, "wall_s": 4.5, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 1.486, "gen_tokens": 192, "decode_tps": 30.3, "wall_s": 7.79, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 55.987, "gen_tokens": 2, "decode_tps": 14768.7, "wall_s": 55.99, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 1.701, "gen_tokens": 96, "decode_tps": 30.9, "wall_s": 4.77, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 1.691, "gen_tokens": 192, "decode_tps": 29.4, "wall_s": 8.19, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 47.825, "gen_tokens": 2, "decode_tps": 14122.2, "wall_s": 47.83, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 1.856, "gen_tokens": 96, "decode_tps": 30.0, "wall_s": 5.02, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 1.84, "gen_tokens": 192, "decode_tps": 28.6, "wall_s": 8.52, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 170.156, "gen_tokens": 2, "decode_tps": 14820.9, "wall_s": 170.16, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 2.302, "gen_tokens": 96, "decode_tps": 27.7, "wall_s": 5.73, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 2.304, "gen_tokens": 192, "decode_tps": 26.4, "wall_s": 9.55, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 184.154, "gen_tokens": 2, "decode_tps": 12595.5, "wall_s": 184.15, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 2.728, "gen_tokens": 96, "decode_tps": 26.1, "wall_s": 6.36, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 2.749, "gen_tokens": 192, "decode_tps": 24.8, "wall_s": 10.45, "config": "exl3-TP-noMTP-official", "mode": "sweep"}
+{"depth": 4096, "rep": "prefill", "ttfb_s": 5.961, "gen_tokens": 2, "decode_tps": 13189.6, "wall_s": 5.96, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 1.211, "gen_tokens": 92, "decode_tps": 79.3, "wall_s": 2.36, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 1.176, "gen_tokens": 188, "decode_tps": 67.5, "wall_s": 3.95, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 23.493, "gen_tokens": 2, "decode_tps": 14665.4, "wall_s": 23.49, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 1.493, "gen_tokens": 92, "decode_tps": 92.7, "wall_s": 2.47, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 1.494, "gen_tokens": 188, "decode_tps": 63.6, "wall_s": 4.43, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 43.755, "gen_tokens": 2, "decode_tps": 13981.0, "wall_s": 43.75, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 1.871, "gen_tokens": 92, "decode_tps": 82.4, "wall_s": 2.98, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 1.871, "gen_tokens": 188, "decode_tps": 59.6, "wall_s": 5.01, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 60.866, "gen_tokens": 2, "decode_tps": 14665.4, "wall_s": 60.87, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 2.267, "gen_tokens": 92, "decode_tps": 69.5, "wall_s": 3.58, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 2.267, "gen_tokens": 188, "decode_tps": 53.9, "wall_s": 5.73, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 73.151, "gen_tokens": 2, "decode_tps": 13662.2, "wall_s": 73.15, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 2.653, "gen_tokens": 92, "decode_tps": 59.3, "wall_s": 4.19, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 2.645, "gen_tokens": 188, "decode_tps": 45.6, "wall_s": 6.74, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 88.71, "gen_tokens": 2, "decode_tps": 13443.3, "wall_s": 88.71, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 3.057, "gen_tokens": 92, "decode_tps": 48.2, "wall_s": 4.95, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 3.058, "gen_tokens": 188, "decode_tps": 39.1, "wall_s": 7.84, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 77.893, "gen_tokens": 2, "decode_tps": 14926.3, "wall_s": 77.89, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 3.353, "gen_tokens": 92, "decode_tps": 69.8, "wall_s": 4.66, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 3.345, "gen_tokens": 188, "decode_tps": 40.6, "wall_s": 7.95, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 286.126, "gen_tokens": 2, "decode_tps": 14716.9, "wall_s": 286.13, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 4.218, "gen_tokens": 92, "decode_tps": 59.6, "wall_s": 5.75, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 4.21, "gen_tokens": 188, "decode_tps": 44.9, "wall_s": 8.37, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 314.302, "gen_tokens": 2, "decode_tps": 13189.6, "wall_s": 314.3, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 5.046, "gen_tokens": 92, "decode_tps": 34.9, "wall_s": 7.65, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 5.032, "gen_tokens": 188, "decode_tps": 27.7, "wall_s": 11.79, "config": "exl3-LS-MTP-FIXED", "mode": "sweep"}
+{"phase": "A-build", "ttfb_s": 54.061, "gen_tokens": 12, "decode_tps": 150775.6, "wall_s": 54.06, "config": "exl3-LS-MTP-FIXED", "mode": "agents"}
+{"phase": "B-first", "ttfb_s": 34.61, "gen_tokens": 12, "decode_tps": 150775.6, "wall_s": 34.61, "config": "exl3-LS-MTP-FIXED", "mode": "agents"}
+{"phase": "A-again", "ttfb_s": 1.947, "gen_tokens": 12, "decode_tps": 146934.2, "wall_s": 1.95, "config": "exl3-LS-MTP-FIXED", "mode": "agents"}
+{"phase": "B-again", "ttfb_s": 1.533, "gen_tokens": 12, "decode_tps": 148830.1, "wall_s": 1.53, "config": "exl3-LS-MTP-FIXED", "mode": "agents"}
+{"phase": "A-turn3", "ttfb_s": 1.943, "gen_tokens": 12, "decode_tps": 141525.6, "wall_s": 1.94, "config": "exl3-LS-MTP-FIXED", "mode": "agents"}
+{"depth": 4096, "rep": "prefill", "ttfb_s": 11.581, "gen_tokens": 2, "decode_tps": 13934.6, "wall_s": 11.58, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 4096, "rep": 0, "ttfb_s": 1.015, "gen_tokens": 92, "decode_tps": 125.3, "wall_s": 1.74, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 4096, "rep": 1, "ttfb_s": 0.977, "gen_tokens": 188, "decode_tps": 92.2, "wall_s": 3.0, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 16384, "rep": "prefill", "ttfb_s": 24.789, "gen_tokens": 2, "decode_tps": 15420.2, "wall_s": 24.79, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 16384, "rep": 0, "ttfb_s": 1.165, "gen_tokens": 92, "decode_tps": 115.7, "wall_s": 1.95, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 16384, "rep": 1, "ttfb_s": 1.167, "gen_tokens": 188, "decode_tps": 89.8, "wall_s": 3.25, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 32768, "rep": "prefill", "ttfb_s": 33.983, "gen_tokens": 2, "decode_tps": 13934.6, "wall_s": 33.98, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 32768, "rep": 0, "ttfb_s": 1.393, "gen_tokens": 92, "decode_tps": 105.5, "wall_s": 2.26, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 32768, "rep": 1, "ttfb_s": 1.395, "gen_tokens": 187, "decode_tps": 72.0, "wall_s": 3.98, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 49152, "rep": "prefill", "ttfb_s": 44.91, "gen_tokens": 2, "decode_tps": 15196.8, "wall_s": 44.91, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 49152, "rep": 0, "ttfb_s": 1.627, "gen_tokens": 92, "decode_tps": 86.1, "wall_s": 2.68, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 49152, "rep": 1, "ttfb_s": 1.629, "gen_tokens": 188, "decode_tps": 80.0, "wall_s": 3.97, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 65536, "rep": "prefill", "ttfb_s": 49.401, "gen_tokens": 2, "decode_tps": 13934.6, "wall_s": 49.4, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 65536, "rep": 0, "ttfb_s": 1.864, "gen_tokens": 92, "decode_tps": 115.0, "wall_s": 2.66, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 65536, "rep": 1, "ttfb_s": 1.851, "gen_tokens": 188, "decode_tps": 67.0, "wall_s": 4.64, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 81920, "rep": "prefill", "ttfb_s": 57.522, "gen_tokens": 2, "decode_tps": 14979.7, "wall_s": 57.52, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 81920, "rep": 0, "ttfb_s": 2.1, "gen_tokens": 92, "decode_tps": 98.9, "wall_s": 3.02, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 81920, "rep": 1, "ttfb_s": 2.1, "gen_tokens": 188, "decode_tps": 62.7, "wall_s": 5.08, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 94208, "rep": "prefill", "ttfb_s": 49.062, "gen_tokens": 2, "decode_tps": 15363.8, "wall_s": 49.06, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 94208, "rep": 0, "ttfb_s": 2.276, "gen_tokens": 92, "decode_tps": 102.5, "wall_s": 3.16, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 94208, "rep": 1, "ttfb_s": 2.268, "gen_tokens": 188, "decode_tps": 54.3, "wall_s": 5.71, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 131072, "rep": "prefill", "ttfb_s": 173.722, "gen_tokens": 2, "decode_tps": 14266.3, "wall_s": 173.72, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 131072, "rep": 0, "ttfb_s": 2.829, "gen_tokens": 92, "decode_tps": 89.8, "wall_s": 3.84, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 131072, "rep": 1, "ttfb_s": 2.796, "gen_tokens": 188, "decode_tps": 67.5, "wall_s": 5.57, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 163328, "rep": "prefill", "ttfb_s": 186.986, "gen_tokens": 2, "decode_tps": 14463.1, "wall_s": 186.99, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 163328, "rep": 0, "ttfb_s": 3.278, "gen_tokens": 92, "decode_tps": 60.4, "wall_s": 4.78, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"depth": 163328, "rep": 1, "ttfb_s": 3.256, "gen_tokens": 188, "decode_tps": 37.6, "wall_s": 8.23, "config": "exl3-TP-MTP-CROWN", "mode": "sweep"}
+{"phase": "A-build", "ttfb_s": 36.84, "gen_tokens": 12, "decode_tps": 154305.5, "wall_s": 36.84, "config": "exl3-TP-MTP-CROWN", "mode": "agents"}
+{"phase": "B-first", "ttfb_s": 25.103, "gen_tokens": 12, "decode_tps": 158004.6, "wall_s": 25.1, "config": "exl3-TP-MTP-CROWN", "mode": "agents"}
+{"phase": "A-again", "ttfb_s": 1.376, "gen_tokens": 12, "decode_tps": 159644.8, "wall_s": 1.38, "config": "exl3-TP-MTP-CROWN", "mode": "agents"}
+{"phase": "B-again", "ttfb_s": 1.138, "gen_tokens": 12, "decode_tps": 150775.6, "wall_s": 1.14, "config": "exl3-TP-MTP-CROWN", "mode": "agents"}
+{"phase": "A-turn3", "ttfb_s": 1.379, "gen_tokens": 12, "decode_tps": 149311.8, "wall_s": 1.38, "config": "exl3-TP-MTP-CROWN", "mode": "agents"}

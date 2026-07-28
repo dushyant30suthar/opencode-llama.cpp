@@ -1,0 +1,29 @@
+corpus tokens: 566922
+{'depth': 4096, 'rep': 'prefill', 'ttfb_s': 11.581, 'gen_tokens': 2, 'decode_tps': 13934.6, 'wall_s': 11.58, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 0, 'ttfb_s': 1.015, 'gen_tokens': 92, 'decode_tps': 125.3, 'wall_s': 1.74, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 1, 'ttfb_s': 0.977, 'gen_tokens': 188, 'decode_tps': 92.2, 'wall_s': 3.0, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 'prefill', 'ttfb_s': 24.789, 'gen_tokens': 2, 'decode_tps': 15420.2, 'wall_s': 24.79, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 0, 'ttfb_s': 1.165, 'gen_tokens': 92, 'decode_tps': 115.7, 'wall_s': 1.95, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 1, 'ttfb_s': 1.167, 'gen_tokens': 188, 'decode_tps': 89.8, 'wall_s': 3.25, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 'prefill', 'ttfb_s': 33.983, 'gen_tokens': 2, 'decode_tps': 13934.6, 'wall_s': 33.98, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 0, 'ttfb_s': 1.393, 'gen_tokens': 92, 'decode_tps': 105.5, 'wall_s': 2.26, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 1, 'ttfb_s': 1.395, 'gen_tokens': 187, 'decode_tps': 72.0, 'wall_s': 3.98, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 'prefill', 'ttfb_s': 44.91, 'gen_tokens': 2, 'decode_tps': 15196.8, 'wall_s': 44.91, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 0, 'ttfb_s': 1.627, 'gen_tokens': 92, 'decode_tps': 86.1, 'wall_s': 2.68, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 1, 'ttfb_s': 1.629, 'gen_tokens': 188, 'decode_tps': 80.0, 'wall_s': 3.97, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 'prefill', 'ttfb_s': 49.401, 'gen_tokens': 2, 'decode_tps': 13934.6, 'wall_s': 49.4, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 0, 'ttfb_s': 1.864, 'gen_tokens': 92, 'decode_tps': 115.0, 'wall_s': 2.66, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 1, 'ttfb_s': 1.851, 'gen_tokens': 188, 'decode_tps': 67.0, 'wall_s': 4.64, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 'prefill', 'ttfb_s': 57.522, 'gen_tokens': 2, 'decode_tps': 14979.7, 'wall_s': 57.52, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 0, 'ttfb_s': 2.1, 'gen_tokens': 92, 'decode_tps': 98.9, 'wall_s': 3.02, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 1, 'ttfb_s': 2.1, 'gen_tokens': 188, 'decode_tps': 62.7, 'wall_s': 5.08, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 'prefill', 'ttfb_s': 49.062, 'gen_tokens': 2, 'decode_tps': 15363.8, 'wall_s': 49.06, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 0, 'ttfb_s': 2.276, 'gen_tokens': 92, 'decode_tps': 102.5, 'wall_s': 3.16, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 1, 'ttfb_s': 2.268, 'gen_tokens': 188, 'decode_tps': 54.3, 'wall_s': 5.71, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 'prefill', 'ttfb_s': 173.722, 'gen_tokens': 2, 'decode_tps': 14266.3, 'wall_s': 173.72, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 0, 'ttfb_s': 2.829, 'gen_tokens': 92, 'decode_tps': 89.8, 'wall_s': 3.84, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 1, 'ttfb_s': 2.796, 'gen_tokens': 188, 'decode_tps': 67.5, 'wall_s': 5.57, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 'prefill', 'ttfb_s': 186.986, 'gen_tokens': 2, 'decode_tps': 14463.1, 'wall_s': 186.99, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 0, 'ttfb_s': 3.278, 'gen_tokens': 92, 'decode_tps': 60.4, 'wall_s': 4.78, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 1, 'ttfb_s': 3.256, 'gen_tokens': 188, 'decode_tps': 37.6, 'wall_s': 8.23, 'config': 'exl3-TP-MTP-CROWN', 'mode': 'sweep'}
+DONE

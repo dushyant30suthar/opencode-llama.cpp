@@ -1,0 +1,29 @@
+corpus tokens: 566922
+{'depth': 4096, 'rep': 'prefill', 'ttfb_s': 6.962, 'gen_tokens': 2, 'decode_tps': 13231.2, 'wall_s': 6.96, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 0, 'ttfb_s': 2.128, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 2.13, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 4096, 'rep': 1, 'ttfb_s': 6.8, 'gen_tokens': 188, 'decode_tps': 63.8, 'wall_s': 9.73, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 'prefill', 'ttfb_s': 25.789, 'gen_tokens': 2, 'decode_tps': 13797.1, 'wall_s': 25.79, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 0, 'ttfb_s': 2.544, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 2.54, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 16384, 'rep': 1, 'ttfb_s': 0.073, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.07, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 'prefill', 'ttfb_s': 0.125, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.13, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 0, 'ttfb_s': 0.129, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.13, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 32768, 'rep': 1, 'ttfb_s': 0.125, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.12, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 'prefill', 'ttfb_s': 0.186, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.19, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 0, 'ttfb_s': 0.192, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.19, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 49152, 'rep': 1, 'ttfb_s': 0.186, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.19, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 'prefill', 'ttfb_s': 0.241, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.24, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 0, 'ttfb_s': 0.241, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.24, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 65536, 'rep': 1, 'ttfb_s': 0.24, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.24, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 'prefill', 'ttfb_s': 0.316, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.32, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 0, 'ttfb_s': 0.309, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.31, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 81920, 'rep': 1, 'ttfb_s': 0.305, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.3, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 'prefill', 'ttfb_s': 0.352, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.35, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 0, 'ttfb_s': 0.346, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.35, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 94208, 'rep': 1, 'ttfb_s': 0.342, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.34, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 'prefill', 'ttfb_s': 0.464, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.46, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 0, 'ttfb_s': 0.472, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.47, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 131072, 'rep': 1, 'ttfb_s': 0.464, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.46, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 'prefill', 'ttfb_s': 0.634, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.63, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 0, 'ttfb_s': 0.61, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.61, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+{'depth': 163328, 'rep': 1, 'ttfb_s': 0.624, 'gen_tokens': 0, 'decode_tps': None, 'wall_s': 0.62, 'config': 'exl3-5bpw-layersplit-MTP', 'mode': 'sweep'}
+DONE

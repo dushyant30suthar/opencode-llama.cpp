@@ -1,0 +1,2100 @@
+2026-07-28 15:23:51.273 INFO:     Config file override detected in args.
+2026-07-28 15:23:51.290 INFO:     Configured backend: cudaMallocAsync
+2026-07-28 15:23:57.012 INFO:     exllamav3 version: 1.1.0
+2026-07-28 15:23:58.115 INFO:     The provided model has vision capabilities, 
+vision is disabled in config.
+2026-07-28 15:23:58.116 INFO:     Using main model MTP component for drafting
+2026-07-28 15:23:58.117 INFO:     Using configured max_seq_len: 196608 tokens.
+2026-07-28 15:23:58.117 INFO:     Using configured cache_size: 196608 tokens.
+2026-07-28 15:23:58.119 INFO:     Attempting to load a prompt template if 
+present.
+2026-07-28 15:23:58.148 INFO:     Using template "chat_template" for chat 
+completions.
+2026-07-28 15:23:59.030 INFO:     Loading model: 
+/home/dushyant30suthar/.lmstudio/models/turboderp/Qwen3.6-27B-exl3-5.00bpw
+2026-07-28 15:23:59.031 INFO:     Loading with autosplit
+2026-07-28 15:24:14.247 INFO:     Model successfully loaded.
+Loading draft modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3   0:00:00
+Loading model modules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 67/67 0:00:00
+2026-07-28 15:24:14.249 WARNING:  Disabling authentication makes your instance 
+vulnerable. Set the `disable_auth` flag to False in config.yml if you want to 
+share this instance with others.
+2026-07-28 15:24:14.250 INFO:     Generation logging is disabled
+2026-07-28 15:24:14.252 INFO:     Applied sampler overrides from file.
+2026-07-28 15:24:14.252 INFO:     Developer documentation: 
+http://0.0.0.0:5000/redoc
+2026-07-28 15:24:14.253 INFO:     Starting OAI API
+2026-07-28 15:24:14.254 INFO:     Completions: 
+http://0.0.0.0:5000/v1/completions
+2026-07-28 15:24:14.254 INFO:     Chat completions: 
+http://0.0.0.0:5000/v1/chat/completions
+2026-07-28 15:24:14.261 INFO:     Started server process [100554]
+2026-07-28 15:24:14.262 INFO:     Waiting for application startup.
+2026-07-28 15:24:14.262 INFO:     Application startup complete.
+2026-07-28 15:24:14.263 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press 
+CTRL+C to quit)
+2026-07-28 15:24:16.981 INFO:     127.0.0.1:47140 - "GET /health HTTP/1.1" 200
+2026-07-28 15:24:16.993 INFO:     Received completion request 
+c80fc011ef384dee82a569282c85b619
+2026-07-28 15:24:22.536 INFO:     Finished completion request 
+c80fc011ef384dee82a569282c85b619
+2026-07-28 15:24:22.537 INFO:     127.0.0.1:47150 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:22.538 INFO:     Metrics (ID: 
+c80fc011ef384dee82a569282c85b619): 55 tokens generated in 5.54 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 5 new tokens at 3.36 T/s, Generate: 13.59 
+T/s, Context: 5 tokens, Draft: 42 / 51 tokens accepted (82.35%)) 
+2026-07-28 15:24:38.609 INFO:     Received completion request 
+fb94408cf3854789ad065215ac7bd5cd
+2026-07-28 15:24:39.566 INFO:     Finished completion request 
+fb94408cf3854789ad065215ac7bd5cd
+2026-07-28 15:24:39.567 INFO:     127.0.0.1:51518 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:39.567 INFO:     Metrics (ID: 
+fb94408cf3854789ad065215ac7bd5cd): 55 tokens generated in 0.96 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 5 new tokens at 83.33 T/s, Generate: 61.63 
+T/s, Context: 5 tokens, Draft: 42 / 51 tokens accepted (82.35%)) 
+2026-07-28 15:24:40.814 INFO:     127.0.0.1:51530 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 15:24:40.866 INFO:     127.0.0.1:47902 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:24:40.869 INFO:     127.0.0.1:47906 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:40.870 INFO:     Received completion streaming request 
+ae657718d5794fb88166ae6b1a5c48de
+In file included from /home/dushyant30suthar/.local/share/uv/python/cpython-3.13.12-linux-x86_64-gnu/include/python3.13/Python.h:14,
+                 from /tmp/tmpkiq83_h7/__triton_launcher.c:7:
+/home/dushyant30suthar/.local/share/uv/python/cpython-3.13.12-linux-x86_64-gnu/include/python3.13/pyconfig.h:1967:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1967 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpkiq83_h7/__triton_launcher.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+2026-07-28 15:24:42.737 INFO:     Finished completion streaming request 
+ae657718d5794fb88166ae6b1a5c48de
+2026-07-28 15:24:42.738 INFO:     Metrics (ID: 
+ae657718d5794fb88166ae6b1a5c48de): 3 tokens generated in 1.86 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 255 new tokens at 147.4 T/s, Generate: 22.54
+T/s, Context: 255 tokens, Draft: 1 / 4 tokens accepted (25.00%)) 
+2026-07-28 15:24:42.740 INFO:     127.0.0.1:47918 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 15:24:42.745 INFO:     127.0.0.1:47928 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:24:42.755 INFO:     127.0.0.1:47942 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:42.756 INFO:     Received completion streaming request 
+8329e42f96064ac9b081f59e15da9a88
+2026-07-28 15:24:49.707 INFO:     Finished completion streaming request 
+8329e42f96064ac9b081f59e15da9a88
+2026-07-28 15:24:49.709 INFO:     Metrics (ID: 
+8329e42f96064ac9b081f59e15da9a88): 1 tokens generated in 6.94 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 4095 new tokens at 596.07 T/s, Generate: 
+14.99 T/s, Context: 4095 tokens, Draft: 0 / 0 tokens accepted (0.00%)) 
+2026-07-28 15:24:49.710 INFO:     127.0.0.1:47944 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 15:24:49.721 INFO:     127.0.0.1:47960 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:49.721 INFO:     Received completion streaming request 
+0f797602203843dc828947b95680ed52
+2026-07-28 15:24:51.822 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:24:51.823 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:24:51.827 ERROR:    Error during completion 
+2026-07-28 15:24:51.827 ERROR:    list index out of range
+2026-07-28 15:24:51.832 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:24:51.832 ERROR:        raise generation
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:24:51.832 ERROR:        async for generation in new_generation:
+2026-07-28 15:24:51.832 ERROR:        ...\<20 lines>...
+2026-07-28 15:24:51.832 ERROR:                break
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:24:51.832 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:24:51.832 ERROR:        ...\<7 lines>...
+2026-07-28 15:24:51.832 ERROR:            yield generation_chunk
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:24:51.832 ERROR:        raise ex
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:24:51.832 ERROR:        async for result in job:
+2026-07-28 15:24:51.832 ERROR:        ...\<73 lines>...
+2026-07-28 15:24:51.832 ERROR:                break
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:24:51.832 ERROR:        raise result
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:24:51.832 ERROR:        results = self.generator.iterate()
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:24:51.832 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 402, in iterate
+2026-07-28 15:24:51.832 ERROR:        self.iterate_gen(results, draft_tokens)
+2026-07-28 15:24:51.832 ERROR:        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 765, in iterate_gen
+2026-07-28 15:24:51.832 ERROR:        job_ids = 
+job.get_input_ids_list(draft_tokens, len(input_ids_list), add_to_cache = True)
+2026-07-28 15:24:51.832 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 355, in get_input_ids_list
+2026-07-28 15:24:51.832 ERROR:        page = seq.allocated_pages[skvp // 
+PAGE_SIZE]
+2026-07-28 15:24:51.832 ERROR:               
+~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:24:51.832 ERROR:    IndexError: list index out of range
+2026-07-28 15:24:51.838 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:24:51.851 INFO:     127.0.0.1:52316 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:24:51.851 INFO:     Received completion streaming request 
+7433b0c0bb1b480880d67c5ae9e17244
+2026-07-28 15:25:01.570 INFO:     Finished completion streaming request 
+7433b0c0bb1b480880d67c5ae9e17244
+2026-07-28 15:25:01.571 INFO:     Metrics (ID: 
+7433b0c0bb1b480880d67c5ae9e17244): 187 tokens generated in 9.71 seconds (Queue: 
+0.0 s, Process: 0 cached tokens and 4095 new tokens at 691.72 T/s, Generate: 
+49.42 T/s, Context: 4095 tokens, Draft: 134 / 209 tokens accepted (64.11%)) 
+2026-07-28 15:25:01.573 INFO:     127.0.0.1:37378 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 15:25:01.586 INFO:     127.0.0.1:37384 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:01.614 INFO:     127.0.0.1:37392 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:01.615 INFO:     Received completion streaming request 
+8ad0e6a249de47b2ba1e160d9b8664ee
+2026-07-28 15:25:27.375 INFO:     Finished completion streaming request 
+8ad0e6a249de47b2ba1e160d9b8664ee
+2026-07-28 15:25:27.376 INFO:     Metrics (ID: 
+8ad0e6a249de47b2ba1e160d9b8664ee): 1 tokens generated in 25.73 seconds (Queue: 
+0.04 s, Process: 4096 cached tokens and 12287 new tokens at 479.77 T/s, 
+Generate: 13.44 T/s, Context: 16383 tokens, Draft: 0 / 0 tokens accepted 
+(0.00%)) 
+2026-07-28 15:25:27.377 INFO:     127.0.0.1:54738 - "POST /v1/token/encode 
+HTTP/1.1" 200
+2026-07-28 15:25:27.406 INFO:     127.0.0.1:54744 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:27.407 INFO:     Received completion streaming request 
+f258526ef68a4849a4ea8dd5516844b0
+2026-07-28 15:25:29.904 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:29.905 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:29.908 ERROR:    Error during completion 
+2026-07-28 15:25:29.908 ERROR:    list index out of range
+2026-07-28 15:25:29.911 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:29.911 ERROR:        raise generation
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:29.911 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:29.911 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:29.911 ERROR:                break
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:29.911 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:29.911 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:29.911 ERROR:            yield generation_chunk
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:29.911 ERROR:        raise ex
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:29.911 ERROR:        async for result in job:
+2026-07-28 15:25:29.911 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:29.911 ERROR:                break
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:29.911 ERROR:        raise result
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:29.911 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:29.911 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 402, in iterate
+2026-07-28 15:25:29.911 ERROR:        self.iterate_gen(results, draft_tokens)
+2026-07-28 15:25:29.911 ERROR:        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 765, in iterate_gen
+2026-07-28 15:25:29.911 ERROR:        job_ids = 
+job.get_input_ids_list(draft_tokens, len(input_ids_list), add_to_cache = True)
+2026-07-28 15:25:29.911 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 355, in get_input_ids_list
+2026-07-28 15:25:29.911 ERROR:        page = seq.allocated_pages[skvp // 
+PAGE_SIZE]
+2026-07-28 15:25:29.911 ERROR:               
+~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:29.911 ERROR:    IndexError: list index out of range
+2026-07-28 15:25:29.922 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:29.951 INFO:     127.0.0.1:54758 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:29.952 INFO:     Received completion streaming request 
+6d63ca8b6ec74d5ca191191f1d9e3f5a
+2026-07-28 15:25:29.981 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:29.982 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:29.985 ERROR:    Error during completion 
+2026-07-28 15:25:29.985 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:29.988 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:29.988 ERROR:        raise generation
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:29.988 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:29.988 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:29.988 ERROR:                break
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:29.988 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:29.988 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:29.988 ERROR:            yield generation_chunk
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:29.988 ERROR:        raise ex
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:29.988 ERROR:        async for result in job:
+2026-07-28 15:25:29.988 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:29.988 ERROR:                break
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:29.988 ERROR:        raise result
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:29.988 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:29.988 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:29.988 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:29.988 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:29.988 ERROR:        job.allocate_pages()
+2026-07-28 15:25:29.988 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:29.988 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:29.988 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:29.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:29.988 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:29.988 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:29.988 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:29.995 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.017 INFO:     127.0.0.1:54772 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:30.074 INFO:     127.0.0.1:54784 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.074 INFO:     Received completion streaming request 
+f4014c7254f5470f90334b27c8ebbfa9
+2026-07-28 15:25:30.130 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.130 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.133 ERROR:    Error during completion 
+2026-07-28 15:25:30.133 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.136 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.136 ERROR:        raise generation
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.136 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.136 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.136 ERROR:                break
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.136 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.136 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.136 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.136 ERROR:        raise ex
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.136 ERROR:        async for result in job:
+2026-07-28 15:25:30.136 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.136 ERROR:                break
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.136 ERROR:        raise result
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.136 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.136 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.136 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.136 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.136 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.136 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.136 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.136 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.136 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.136 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.136 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.136 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.143 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.198 INFO:     127.0.0.1:54798 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.199 INFO:     Received completion streaming request 
+608fd14f92e64abaa5ee410643c24671
+2026-07-28 15:25:30.258 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.259 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.262 ERROR:    Error during completion 
+2026-07-28 15:25:30.262 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.265 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.265 ERROR:        raise generation
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.265 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.265 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.265 ERROR:                break
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.265 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.265 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.265 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.265 ERROR:        raise ex
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.265 ERROR:        async for result in job:
+2026-07-28 15:25:30.265 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.265 ERROR:                break
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.265 ERROR:        raise result
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.265 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.265 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.265 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.265 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.265 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.265 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.265 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.265 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.265 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.265 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.265 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.265 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.272 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.327 INFO:     127.0.0.1:54800 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.328 INFO:     Received completion streaming request 
+34facb6bd0374b63ba16145d63cf1ed6
+2026-07-28 15:25:30.383 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.384 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.387 ERROR:    Error during completion 
+2026-07-28 15:25:30.387 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.390 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.390 ERROR:        raise generation
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.390 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.390 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.390 ERROR:                break
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.390 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.390 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.390 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.390 ERROR:        raise ex
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.390 ERROR:        async for result in job:
+2026-07-28 15:25:30.390 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.390 ERROR:                break
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.390 ERROR:        raise result
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.390 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.390 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.390 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.390 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.390 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.390 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.390 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.390 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.390 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.390 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.390 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.390 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.396 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.430 INFO:     127.0.0.1:54816 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:30.517 INFO:     127.0.0.1:54820 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.518 INFO:     Received completion streaming request 
+0e7b7299690a48e98959a92651ccffe0
+2026-07-28 15:25:30.604 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.604 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.607 ERROR:    Error during completion 
+2026-07-28 15:25:30.607 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.610 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.610 ERROR:        raise generation
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.610 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.610 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.610 ERROR:                break
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.610 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.610 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.610 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.610 ERROR:        raise ex
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.610 ERROR:        async for result in job:
+2026-07-28 15:25:30.610 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.610 ERROR:                break
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.610 ERROR:        raise result
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.610 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.610 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.610 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.610 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.610 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.610 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.610 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.610 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.610 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.610 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.610 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.610 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.617 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.703 INFO:     127.0.0.1:54824 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.703 INFO:     Received completion streaming request 
+f82d139f88e84a0ab9828e866b547acf
+2026-07-28 15:25:30.790 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.791 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.794 ERROR:    Error during completion 
+2026-07-28 15:25:30.794 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.797 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.797 ERROR:        raise generation
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.797 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.797 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.797 ERROR:                break
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.797 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.797 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.797 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.797 ERROR:        raise ex
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.797 ERROR:        async for result in job:
+2026-07-28 15:25:30.797 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.797 ERROR:                break
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.797 ERROR:        raise result
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.797 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.797 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.797 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.797 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.797 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.797 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.797 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.797 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.797 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.797 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.797 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.797 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.808 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:30.895 INFO:     127.0.0.1:53280 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:30.895 INFO:     Received completion streaming request 
+917bce0ba3b0428c879a9f3d6d8c0c8a
+2026-07-28 15:25:30.981 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:30.982 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:30.985 ERROR:    Error during completion 
+2026-07-28 15:25:30.985 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:30.988 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:30.988 ERROR:        raise generation
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:30.988 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:30.988 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:30.988 ERROR:                break
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:30.988 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:30.988 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:30.988 ERROR:            yield generation_chunk
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:30.988 ERROR:        raise ex
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:30.988 ERROR:        async for result in job:
+2026-07-28 15:25:30.988 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:30.988 ERROR:                break
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:30.988 ERROR:        raise result
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:30.988 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:30.988 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:30.988 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:30.988 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:30.988 ERROR:        job.allocate_pages()
+2026-07-28 15:25:30.988 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:30.988 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:30.988 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:30.988 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:30.988 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:30.988 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:30.988 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:30.995 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:31.038 INFO:     127.0.0.1:53282 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:31.151 INFO:     127.0.0.1:53296 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:31.152 INFO:     Received completion streaming request 
+ce495ef8e8694881b423266602971c7c
+2026-07-28 15:25:31.267 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:31.268 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:31.271 ERROR:    Error during completion 
+2026-07-28 15:25:31.271 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:31.273 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:31.273 ERROR:        raise generation
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:31.273 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:31.273 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:31.273 ERROR:                break
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:31.273 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:31.273 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:31.273 ERROR:            yield generation_chunk
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:31.273 ERROR:        raise ex
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:31.273 ERROR:        async for result in job:
+2026-07-28 15:25:31.273 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:31.273 ERROR:                break
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:31.273 ERROR:        raise result
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:31.273 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:31.273 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:31.273 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:31.273 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:31.273 ERROR:        job.allocate_pages()
+2026-07-28 15:25:31.273 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:31.273 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:31.273 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.273 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:31.273 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:31.273 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:31.273 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:31.280 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:31.394 INFO:     127.0.0.1:53298 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:31.395 INFO:     Received completion streaming request 
+c39ef8ecc4184d09b1f90149c6fcadc9
+2026-07-28 15:25:31.508 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:31.508 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:31.511 ERROR:    Error during completion 
+2026-07-28 15:25:31.511 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:31.514 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:31.514 ERROR:        raise generation
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:31.514 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:31.514 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:31.514 ERROR:                break
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:31.514 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:31.514 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:31.514 ERROR:            yield generation_chunk
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:31.514 ERROR:        raise ex
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:31.514 ERROR:        async for result in job:
+2026-07-28 15:25:31.514 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:31.514 ERROR:                break
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:31.514 ERROR:        raise result
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:31.514 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:31.514 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:31.514 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:31.514 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:31.514 ERROR:        job.allocate_pages()
+2026-07-28 15:25:31.514 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:31.514 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:31.514 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.514 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:31.514 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:31.514 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:31.514 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:31.521 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:31.634 INFO:     127.0.0.1:53306 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:31.635 INFO:     Received completion streaming request 
+d326b68efdf0432e952c10eba8a39ab1
+2026-07-28 15:25:31.748 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:31.749 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:31.752 ERROR:    Error during completion 
+2026-07-28 15:25:31.752 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:31.754 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:31.754 ERROR:        raise generation
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:31.754 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:31.754 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:31.754 ERROR:                break
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:31.754 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:31.754 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:31.754 ERROR:            yield generation_chunk
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:31.754 ERROR:        raise ex
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:31.754 ERROR:        async for result in job:
+2026-07-28 15:25:31.754 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:31.754 ERROR:                break
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:31.754 ERROR:        raise result
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:31.754 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:31.754 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:31.754 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:31.754 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:31.754 ERROR:        job.allocate_pages()
+2026-07-28 15:25:31.754 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:31.754 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:31.754 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:31.754 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:31.754 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:31.754 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:31.754 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:31.761 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:31.814 INFO:     127.0.0.1:53308 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:31.971 INFO:     127.0.0.1:53312 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:31.972 INFO:     Received completion streaming request 
+6a3318d20b684794ac07b55805d3f9fe
+2026-07-28 15:25:32.118 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:32.119 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:32.122 ERROR:    Error during completion 
+2026-07-28 15:25:32.122 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:32.125 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:32.125 ERROR:        raise generation
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:32.125 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:32.125 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:32.125 ERROR:                break
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:32.125 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:32.125 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:32.125 ERROR:            yield generation_chunk
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:32.125 ERROR:        raise ex
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:32.125 ERROR:        async for result in job:
+2026-07-28 15:25:32.125 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:32.125 ERROR:                break
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:32.125 ERROR:        raise result
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:32.125 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:32.125 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:32.125 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:32.125 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:32.125 ERROR:        job.allocate_pages()
+2026-07-28 15:25:32.125 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:32.125 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:32.125 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.125 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:32.125 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:32.125 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:32.125 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:32.131 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:32.276 INFO:     127.0.0.1:53328 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:32.277 INFO:     Received completion streaming request 
+decbd8caca994d7f85e6951c68fc7098
+2026-07-28 15:25:32.423 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:32.423 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:32.426 ERROR:    Error during completion 
+2026-07-28 15:25:32.426 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:32.429 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:32.429 ERROR:        raise generation
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:32.429 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:32.429 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:32.429 ERROR:                break
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:32.429 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:32.429 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:32.429 ERROR:            yield generation_chunk
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:32.429 ERROR:        raise ex
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:32.429 ERROR:        async for result in job:
+2026-07-28 15:25:32.429 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:32.429 ERROR:                break
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:32.429 ERROR:        raise result
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:32.429 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:32.429 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:32.429 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:32.429 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:32.429 ERROR:        job.allocate_pages()
+2026-07-28 15:25:32.429 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:32.429 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:32.429 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.429 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:32.429 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:32.429 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:32.429 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:32.441 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:32.585 INFO:     127.0.0.1:53336 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:32.586 INFO:     Received completion streaming request 
+00929582170f46b29ed204a1947b2767
+2026-07-28 15:25:32.732 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:32.733 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:32.736 ERROR:    Error during completion 
+2026-07-28 15:25:32.736 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:32.739 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:32.739 ERROR:        raise generation
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:32.739 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:32.739 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:32.739 ERROR:                break
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:32.739 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:32.739 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:32.739 ERROR:            yield generation_chunk
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:32.739 ERROR:        raise ex
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:32.739 ERROR:        async for result in job:
+2026-07-28 15:25:32.739 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:32.739 ERROR:                break
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:32.739 ERROR:        raise result
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:32.739 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:32.739 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:32.739 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:32.739 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:32.739 ERROR:        job.allocate_pages()
+2026-07-28 15:25:32.739 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:32.739 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:32.739 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:32.739 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:32.739 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:32.739 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:32.739 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:32.746 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:32.807 INFO:     127.0.0.1:53348 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:32.979 INFO:     127.0.0.1:53358 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:32.980 INFO:     Received completion streaming request 
+27a5a7ae33314e3097ca4570923a0655
+2026-07-28 15:25:33.147 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:33.148 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:33.151 ERROR:    Error during completion 
+2026-07-28 15:25:33.151 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:33.154 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:33.154 ERROR:        raise generation
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:33.154 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:33.154 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:33.154 ERROR:                break
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:33.154 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:33.154 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:33.154 ERROR:            yield generation_chunk
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:33.154 ERROR:        raise ex
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:33.154 ERROR:        async for result in job:
+2026-07-28 15:25:33.154 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:33.154 ERROR:                break
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:33.154 ERROR:        raise result
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:33.154 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:33.154 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:33.154 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:33.154 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:33.154 ERROR:        job.allocate_pages()
+2026-07-28 15:25:33.154 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:33.154 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:33.154 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.154 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:33.154 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:33.154 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:33.154 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:33.161 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:33.325 INFO:     127.0.0.1:53374 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:33.326 INFO:     Received completion streaming request 
+37ea2bdf929047c9bb72598b937d73c9
+2026-07-28 15:25:33.494 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:33.494 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:33.497 ERROR:    Error during completion 
+2026-07-28 15:25:33.497 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:33.500 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:33.500 ERROR:        raise generation
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:33.500 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:33.500 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:33.500 ERROR:                break
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:33.500 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:33.500 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:33.500 ERROR:            yield generation_chunk
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:33.500 ERROR:        raise ex
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:33.500 ERROR:        async for result in job:
+2026-07-28 15:25:33.500 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:33.500 ERROR:                break
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:33.500 ERROR:        raise result
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:33.500 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:33.500 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:33.500 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:33.500 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:33.500 ERROR:        job.allocate_pages()
+2026-07-28 15:25:33.500 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:33.500 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:33.500 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.500 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:33.500 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:33.500 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:33.500 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:33.507 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:33.670 INFO:     127.0.0.1:53382 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:33.670 INFO:     Received completion streaming request 
+3dc0b48b3b3d45ab9a79ca52d9b7890f
+2026-07-28 15:25:33.835 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:33.836 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:33.839 ERROR:    Error during completion 
+2026-07-28 15:25:33.839 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:33.842 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:33.842 ERROR:        raise generation
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:33.842 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:33.842 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:33.842 ERROR:                break
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:33.842 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:33.842 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:33.842 ERROR:            yield generation_chunk
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:33.842 ERROR:        raise ex
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:33.842 ERROR:        async for result in job:
+2026-07-28 15:25:33.842 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:33.842 ERROR:                break
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:33.842 ERROR:        raise result
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:33.842 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:33.842 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:33.842 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:33.842 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:33.842 ERROR:        job.allocate_pages()
+2026-07-28 15:25:33.842 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:33.842 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:33.842 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:33.842 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:33.842 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:33.842 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:33.842 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:33.849 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:33.934 INFO:     127.0.0.1:53392 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:34.160 INFO:     127.0.0.1:53406 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:34.161 INFO:     Received completion streaming request 
+0525ab77590246debb325bcdcce0b961
+2026-07-28 15:25:34.386 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:34.387 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:34.390 ERROR:    Error during completion 
+2026-07-28 15:25:34.390 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:34.393 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:34.393 ERROR:        raise generation
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:34.393 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:34.393 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:34.393 ERROR:                break
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:34.393 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:34.393 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:34.393 ERROR:            yield generation_chunk
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:34.393 ERROR:        raise ex
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:34.393 ERROR:        async for result in job:
+2026-07-28 15:25:34.393 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:34.393 ERROR:                break
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:34.393 ERROR:        raise result
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:34.393 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:34.393 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:34.393 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:34.393 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:34.393 ERROR:        job.allocate_pages()
+2026-07-28 15:25:34.393 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:34.393 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:34.393 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:34.393 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:34.393 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:34.393 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:34.393 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:34.399 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:34.625 INFO:     127.0.0.1:53420 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:34.626 INFO:     Received completion streaming request 
+f9631a4b2af34bf08cde423e2f113373
+2026-07-28 15:25:34.853 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:34.854 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:34.857 ERROR:    Error during completion 
+2026-07-28 15:25:34.857 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:34.860 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:34.860 ERROR:        raise generation
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:34.860 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:34.860 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:34.860 ERROR:                break
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:34.860 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:34.860 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:34.860 ERROR:            yield generation_chunk
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:34.860 ERROR:        raise ex
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:34.860 ERROR:        async for result in job:
+2026-07-28 15:25:34.860 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:34.860 ERROR:                break
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:34.860 ERROR:        raise result
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:34.860 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:34.860 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:34.860 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:34.860 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:34.860 ERROR:        job.allocate_pages()
+2026-07-28 15:25:34.860 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:34.860 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:34.860 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:34.860 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:34.860 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:34.860 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:34.860 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:34.872 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:35.097 INFO:     127.0.0.1:53428 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:35.097 INFO:     Received completion streaming request 
+2cb4268484214da4ad0a45ee61f672b2
+2026-07-28 15:25:35.323 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:35.324 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:35.327 ERROR:    Error during completion 
+2026-07-28 15:25:35.327 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:35.329 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:35.329 ERROR:        raise generation
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:35.329 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:35.329 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:35.329 ERROR:                break
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:35.329 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:35.329 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:35.329 ERROR:            yield generation_chunk
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:35.329 ERROR:        raise ex
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:35.329 ERROR:        async for result in job:
+2026-07-28 15:25:35.329 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:35.329 ERROR:                break
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:35.329 ERROR:        raise result
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:35.329 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:35.329 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:35.329 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:35.329 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:35.329 ERROR:        job.allocate_pages()
+2026-07-28 15:25:35.329 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:35.329 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:35.329 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:35.329 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:35.329 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:35.329 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:35.329 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:35.336 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:35.441 INFO:     127.0.0.1:53438 - "POST /v1/token/decode 
+HTTP/1.1" 200
+2026-07-28 15:25:35.754 INFO:     127.0.0.1:53450 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:35.755 INFO:     Received completion streaming request 
+e8365d5d51d34cddb2d8d06006668d15
+2026-07-28 15:25:36.064 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:36.065 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:36.068 ERROR:    Error during completion 
+2026-07-28 15:25:36.068 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:36.071 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:36.071 ERROR:        raise generation
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:36.071 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:36.071 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:36.071 ERROR:                break
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:36.071 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:36.071 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:36.071 ERROR:            yield generation_chunk
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:36.071 ERROR:        raise ex
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:36.071 ERROR:        async for result in job:
+2026-07-28 15:25:36.071 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:36.071 ERROR:                break
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:36.071 ERROR:        raise result
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:36.071 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:36.071 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:36.071 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:36.071 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:36.071 ERROR:        job.allocate_pages()
+2026-07-28 15:25:36.071 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:36.071 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:36.071 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:36.071 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:36.071 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:36.071 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:36.071 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:36.078 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:36.368 INFO:     127.0.0.1:53466 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:36.368 INFO:     Received completion streaming request 
+9ed0c1ab1a7f42ee9f868a4d7315ac69
+2026-07-28 15:25:36.674 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:36.675 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:36.678 ERROR:    Error during completion 
+2026-07-28 15:25:36.678 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:36.681 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:36.681 ERROR:        raise generation
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:36.681 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:36.681 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:36.681 ERROR:                break
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:36.681 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:36.681 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:36.681 ERROR:            yield generation_chunk
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:36.681 ERROR:        raise ex
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:36.681 ERROR:        async for result in job:
+2026-07-28 15:25:36.681 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:36.681 ERROR:                break
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:36.681 ERROR:        raise result
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:36.681 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:36.681 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:36.681 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:36.681 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:36.681 ERROR:        job.allocate_pages()
+2026-07-28 15:25:36.681 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:36.681 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:36.681 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:36.681 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:36.681 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:36.681 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:36.681 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:36.687 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:36.994 INFO:     127.0.0.1:53470 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:36.995 INFO:     Received completion streaming request 
+7a2ea9535e614b55b4e8fecca41a9e8c
+2026-07-28 15:25:37.298 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:37.299 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:37.302 ERROR:    Error during completion 
+2026-07-28 15:25:37.302 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:37.304 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:37.304 ERROR:        raise generation
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:37.304 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:37.304 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:37.304 ERROR:                break
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:37.304 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:37.304 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:37.304 ERROR:            yield generation_chunk
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:37.304 ERROR:        raise ex
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:37.304 ERROR:        async for result in job:
+2026-07-28 15:25:37.304 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:37.304 ERROR:                break
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:37.304 ERROR:        raise result
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:37.304 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:37.304 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:37.304 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:37.304 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:37.304 ERROR:        job.allocate_pages()
+2026-07-28 15:25:37.304 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:37.304 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:37.304 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:37.304 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:37.304 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:37.304 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:37.304 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:37.311 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
+2026-07-28 15:25:57.572 INFO:     127.0.0.1:56804 - "POST /v1/completions 
+HTTP/1.1" 200
+2026-07-28 15:25:57.573 INFO:     Received completion streaming request 
+fd6934d67a714480a7f53d8c7a377a78
+2026-07-28 15:25:57.574 ERROR:    FATAL ERROR with generation. Attempting to 
+recreate the generator. If this fails, please restart the server.
+
+2026-07-28 15:25:57.575 WARNING:  Immediately terminating all jobs. Clients will
+have their requests cancelled.
+
+2026-07-28 15:25:57.578 ERROR:    Error during completion 
+2026-07-28 15:25:57.578 ERROR:    Cannot create new state: no available slots
+2026-07-28 15:25:57.581 ERROR:    Error Traceback (most recent call last):
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 298, in stream_generate_completion
+2026-07-28 15:25:57.581 ERROR:        raise generation
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/endpoints/OAI/utils/completion.py", 
+line 199, in _stream_collector
+2026-07-28 15:25:57.581 ERROR:        async for generation in new_generation:
+2026-07-28 15:25:57.581 ERROR:        ...\<20 lines>...
+2026-07-28 15:25:57.581 ERROR:                break
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+973, in stream_generate
+2026-07-28 15:25:57.581 ERROR:        async for generation_chunk in 
+self.generate_gen(
+2026-07-28 15:25:57.581 ERROR:        ...\<7 lines>...
+2026-07-28 15:25:57.581 ERROR:            yield generation_chunk
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1402, in generate_gen
+2026-07-28 15:25:57.581 ERROR:        raise ex
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/backends/exllamav3/model.py", line 
+1304, in generate_gen
+2026-07-28 15:25:57.581 ERROR:        async for result in job:
+2026-07-28 15:25:57.581 ERROR:        ...\<73 lines>...
+2026-07-28 15:25:57.581 ERROR:                break
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 144, in __aiter__
+2026-07-28 15:25:57.581 ERROR:        raise result
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/async_generator.py", line 35, in _run_iteration
+2026-07-28 15:25:57.581 ERROR:        results = self.generator.iterate()
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/torc
+h/utils/_contextlib.py", line 120, in decorate_context
+2026-07-28 15:25:57.581 ERROR:        return func(*args, **kwargs)
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 385, in iterate
+2026-07-28 15:25:57.581 ERROR:        self.iterate_start_jobs(results)
+2026-07-28 15:25:57.581 ERROR:        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/generator.py", line 1139, in iterate_start_jobs
+2026-07-28 15:25:57.581 ERROR:        job.allocate_pages()
+2026-07-28 15:25:57.581 ERROR:        ~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/generator/job.py", line 1287, in allocate_pages
+2026-07-28 15:25:57.581 ERROR:        self.recurrent_state = 
+self.generator.cache.get_new_state()
+2026-07-28 15:25:57.581 ERROR:                               
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-07-28 15:25:57.581 ERROR:      File 
+"/home/dushyant30suthar/Projects/tabbyAPI/venv/lib/python3.13/site-packages/exll
+amav3/cache/cache.py", line 318, in get_new_state
+2026-07-28 15:25:57.581 ERROR:        assert len(self.free_list) > 0, "Cannot 
+create new state: no available slots"
+2026-07-28 15:25:57.581 ERROR:               ^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-28 15:25:57.581 ERROR:    AssertionError: Cannot create new state: no 
+available slots
+2026-07-28 15:25:57.588 ERROR:    Sent to request: Completion aborted. Please 
+check the server console.
