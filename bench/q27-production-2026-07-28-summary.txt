@@ -1,0 +1,22 @@
+=== RAW SAMPLE COUNTS ===
+total 1379   decode=755  prefill=476  accept=148
+
+=== DECODE vs DEPTH (medians) ===
+    <=32k n=   7  median   71.3 t/s   p25   63.6  p75   77.9
+   32-64k n=   3  median   69.1 t/s   p25   64.3  p75   72.8
+   64-96k n= 210  median   43.6 t/s   p25   39.9  p75   47.9
+  96-128k n= 367  median   44.9 t/s   p25   39.8  p75   51.6
+
+=== PREFILL: sustained only (>200 t/s) ===
+NOTE: samples <=200 t/s are cache-hit turns (tiny numerator over fixed
+per-request overhead), not prefill rates. Binning without this filter
+produced a false '115.9 t/s at 96-128k'.
+    <=32k n=  51  median    688 t/s   p25    613  p75    727
+   32-64k n=  97  median    615 t/s   p25    580  p75    654
+   64-96k n=  85  median    529 t/s   p25    412  p75    565
+  96-128k n=  58  median    488 t/s   p25    388  p75    509
+
+=== DRAFT ACCEPTANCE (MTP n-max 3) at production depth ===
+n=148  acceptance median 0.847
+        mean accepted length median 3.54
+repo's 32k bench for comparison: acceptance 0.573, mean len 2.71

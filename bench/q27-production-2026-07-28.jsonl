@@ -1,0 +1,1401 @@
+{"kind": "decode", "t": 1785178203.2960272, "depth": 109631, "tps": 50.1}
+{"kind": "decode", "t": 1785178205.3635287, "depth": 109719, "tps": 42.56}
+{"kind": "prefill", "t": 1785178207.3993468, "depth": 109753, "cached": 109140, "tps": 11.8}
+{"kind": "accept", "t": 1785178207.3993468, "depth": 614, "acceptance": 0.90161, "accepted": 449, "generated": 498, "mean_len": 3.7}
+{"kind": "prefill", "t": 1785178211.1116204, "depth": 109888, "cached": 109140, "tps": 25.9}
+{"kind": "decode", "t": 1785178213.1813438, "depth": 109982, "tps": 45.42}
+{"kind": "decode", "t": 1785178215.1922321, "depth": 110094, "tps": 55.7}
+{"kind": "decode", "t": 1785178217.2410655, "depth": 110209, "tps": 56.13}
+{"kind": "accept", "t": 1785178219.3087053, "depth": 428, "acceptance": 0.9292, "accepted": 315, "generated": 339, "mean_len": 3.79}
+{"kind": "prefill", "t": 1785178222.6350143, "depth": 110326, "cached": 109845, "tps": 28.9}
+{"kind": "decode", "t": 1785178224.6806366, "depth": 110426, "tps": 48.88}
+{"kind": "decode", "t": 1785178226.6847856, "depth": 110512, "tps": 42.91}
+{"kind": "accept", "t": 1785178226.6847856, "depth": 223, "acceptance": 0.87978, "accepted": 161, "generated": 183, "mean_len": 3.64}
+{"kind": "prefill", "t": 1785178228.6858335, "depth": 111067, "cached": 110286, "tps": 167.9}
+{"kind": "prefill", "t": 1785178231.723352, "depth": 111129, "cached": 110286, "tps": 1.3}
+{"kind": "decode", "t": 1785178233.744536, "depth": 111222, "tps": 46.01}
+{"kind": "decode", "t": 1785178235.7924428, "depth": 111331, "tps": 53.23}
+{"kind": "decode", "t": 1785178237.8044455, "depth": 111435, "tps": 51.69}
+{"kind": "decode", "t": 1785178239.822832, "depth": 111526, "tps": 45.09}
+{"kind": "decode", "t": 1785178241.8710513, "depth": 111634, "tps": 52.73}
+{"kind": "decode", "t": 1785178243.8964758, "depth": 111750, "tps": 57.27}
+{"kind": "accept", "t": 1785178245.9528034, "depth": 681, "acceptance": 0.85069, "accepted": 490, "generated": 576, "mean_len": 3.55}
+{"kind": "prefill", "t": 1785178248.6124544, "depth": 111753, "cached": 111067, "tps": 37.2}
+{"kind": "decode", "t": 1785178250.6693857, "depth": 111833, "tps": 38.41}
+{"kind": "accept", "t": 1785178250.6693857, "depth": 114, "acceptance": 0.85417, "accepted": 82, "generated": 96, "mean_len": 3.56}
+{"kind": "prefill", "t": 1785178257.3122447, "depth": 112126, "cached": 111715, "tps": 1.5}
+{"kind": "decode", "t": 1785178259.4004502, "depth": 112205, "tps": 37.83}
+{"kind": "decode", "t": 1785178261.4368005, "depth": 112285, "tps": 38.3}
+{"kind": "accept", "t": 1785178261.4368005, "depth": 232, "acceptance": 0.74537, "accepted": 161, "generated": 216, "mean_len": 3.24}
+{"kind": "prefill", "t": 1785178265.689121, "depth": 112419, "cached": 112048, "tps": 1.8}
+{"kind": "decode", "t": 1785178267.7355554, "depth": 112535, "tps": 56.68}
+{"kind": "decode", "t": 1785178269.7904155, "depth": 112647, "tps": 54.5}
+{"kind": "prefill", "t": 1785178271.805509, "depth": 112682, "cached": 112347, "tps": 15.9}
+{"kind": "accept", "t": 1785178271.805509, "depth": 319, "acceptance": 0.95181, "accepted": 237, "generated": 249, "mean_len": 3.86}
+{"kind": "prefill", "t": 1785178274.3906538, "depth": 112813, "cached": 112347, "tps": 37.1}
+{"kind": "decode", "t": 1785178276.405431, "depth": 112922, "tps": 54.1}
+{"kind": "decode", "t": 1785178278.450182, "depth": 113010, "tps": 42.55}
+{"kind": "accept", "t": 1785178278.450182, "depth": 232, "acceptance": 0.85641, "accepted": 167, "generated": 195, "mean_len": 3.57}
+{"kind": "prefill", "t": 1785178285.3895915, "depth": 113218, "cached": 113113, "tps": 1.4}
+{"kind": "decode", "t": 1785178287.4143367, "depth": 113301, "tps": 40.99}
+{"kind": "prefill", "t": 1785178289.4593475, "depth": 113321, "cached": 113136, "tps": 77.3}
+{"kind": "accept", "t": 1785178289.4593475, "depth": 206, "acceptance": 0.79235, "accepted": 145, "generated": 183, "mean_len": 3.38}
+{"kind": "prefill", "t": 1785178292.1146998, "depth": 113420, "cached": 113136, "tps": 22.6}
+{"kind": "decode", "t": 1785178294.1408029, "depth": 113512, "tps": 44.91}
+{"kind": "accept", "t": 1785178294.1408029, "depth": 131, "acceptance": 0.95098, "accepted": 97, "generated": 102, "mean_len": 3.85}
+{"kind": "prefill", "t": 1785178296.1419744, "depth": 113906, "cached": 113377, "tps": 141.9}
+{"kind": "prefill", "t": 1785178298.8395889, "depth": 113990, "cached": 113377, "tps": 1.5}
+{"kind": "decode", "t": 1785178300.8757372, "depth": 114105, "tps": 56.48}
+{"kind": "decode", "t": 1785178302.9394243, "depth": 114217, "tps": 54.27}
+{"kind": "decode", "t": 1785178304.9633546, "depth": 114330, "tps": 55.83}
+{"kind": "accept", "t": 1785178307.021547, "depth": 434, "acceptance": 0.98485, "accepted": 325, "generated": 330, "mean_len": 3.95}
+{"kind": "prefill", "t": 1785178309.6969402, "depth": 114491, "cached": 113906, "tps": 35.9}
+{"kind": "decode", "t": 1785178311.715997, "depth": 114601, "tps": 54.48}
+{"kind": "accept", "t": 1785178313.731326, "depth": 180, "acceptance": 0.97101, "accepted": 134, "generated": 138, "mean_len": 3.91}
+{"kind": "prefill", "t": 1785178316.305126, "depth": 114773, "cached": 114449, "tps": 37.3}
+{"kind": "decode", "t": 1785178318.366805, "depth": 114869, "tps": 46.56}
+{"kind": "decode", "t": 1785178320.4178503, "depth": 114962, "tps": 44.86}
+{"kind": "accept", "t": 1785178320.4178503, "depth": 221, "acceptance": 0.76617, "accepted": 154, "generated": 201, "mean_len": 3.3}
+{"kind": "prefill", "t": 1785178324.8967733, "depth": 115029, "cached": 114737, "tps": 1.6}
+{"kind": "accept", "t": 1785178326.8996794, "depth": 140, "acceptance": 0.9537, "accepted": 103, "generated": 108, "mean_len": 3.86}
+{"kind": "prefill", "t": 1785178329.8030014, "depth": 115643, "cached": 0, "tps": 189.4}
+{"kind": "decode", "t": 1785178334.0513215, "depth": 115763, "tps": 46.78}
+{"kind": "prefill", "t": 1785178336.0967658, "depth": 115794, "cached": 115662, "tps": 51.3}
+{"kind": "accept", "t": 1785178336.0967658, "depth": 128, "acceptance": 0.85185, "accepted": 92, "generated": 108, "mean_len": 3.56}
+{"kind": "prefill", "t": 1785178338.4557226, "depth": 116124, "cached": 115662, "tps": 139.5}
+{"kind": "decode", "t": 1785178340.4703462, "depth": 116205, "tps": 40.21}
+{"kind": "decode", "t": 1785178342.5208569, "depth": 116294, "tps": 43.4}
+{"kind": "decode", "t": 1785178344.5421479, "depth": 116370, "tps": 36.12}
+{"kind": "accept", "t": 1785178344.5421479, "depth": 245, "acceptance": 0.73593, "accepted": 170, "generated": 231, "mean_len": 3.21}
+{"kind": "prefill", "t": 1785178346.5432198, "depth": 118026, "cached": 116119, "tps": 722.6}
+{"kind": "prefill", "t": 1785178352.4922519, "depth": 120070, "cached": 116119, "tps": 343.6}
+{"kind": "prefill", "t": 1785178357.3403785, "depth": 120144, "cached": 116119, "tps": 0.8}
+{"kind": "decode", "t": 1785178359.404784, "depth": 120256, "tps": 54.25}
+{"kind": "decode", "t": 1785178361.435296, "depth": 120368, "tps": 55.16}
+{"kind": "decode", "t": 1785178363.4979634, "depth": 120480, "tps": 54.3}
+{"kind": "decode", "t": 1785178365.5284395, "depth": 120580, "tps": 49.25}
+{"kind": "decode", "t": 1785178367.5832262, "depth": 120687, "tps": 52.07}
+{"kind": "decode", "t": 1785178369.6160052, "depth": 120778, "tps": 44.77}
+{"kind": "decode", "t": 1785178371.641439, "depth": 120869, "tps": 44.93}
+{"kind": "decode", "t": 1785178373.698501, "depth": 120960, "tps": 44.24}
+{"kind": "decode", "t": 1785178375.724502, "depth": 121065, "tps": 51.83}
+{"kind": "accept", "t": 1785178377.7557573, "depth": 1012, "acceptance": 0.87694, "accepted": 734, "generated": 837, "mean_len": 3.63}
+{"kind": "prefill", "t": 1785178381.9808097, "depth": 121199, "cached": 0, "tps": 23.4}
+{"kind": "decode", "t": 1785178386.0185015, "depth": 121344, "tps": 46.65}
+{"kind": "decode", "t": 1785178388.0472665, "depth": 121449, "tps": 51.76}
+{"kind": "decode", "t": 1785178390.1116183, "depth": 121518, "tps": 33.42}
+{"kind": "accept", "t": 1785178390.1116183, "depth": 297, "acceptance": 0.86992, "accepted": 214, "generated": 246, "mean_len": 3.61}
+{"kind": "prefill", "t": 1785178392.11274, "depth": 121506, "cached": 121218, "tps": 130.4}
+{"kind": "prefill", "t": 1785178394.129751, "depth": 121579, "cached": 121218, "tps": 2.0}
+{"kind": "decode", "t": 1785178396.187894, "depth": 121623, "tps": 20.41}
+{"kind": "accept", "t": 1785178396.187894, "depth": 112, "acceptance": 0.88172, "accepted": 82, "generated": 93, "mean_len": 3.65}
+{"kind": "prefill", "t": 1785178400.8585482, "depth": 121857, "cached": 121506, "tps": 1.5}
+{"kind": "decode", "t": 1785178402.876528, "depth": 121860, "tps": 0.5}
+{"kind": "accept", "t": 1785178402.876528, "depth": 76, "acceptance": 0.95, "accepted": 57, "generated": 60, "mean_len": 3.85}
+{"kind": "prefill", "t": 1785178409.3545327, "depth": 122096, "cached": 121779, "tps": 1.6}
+{"kind": "decode", "t": 1785178411.4148269, "depth": 122170, "tps": 34.95}
+{"kind": "accept", "t": 1785178411.4148269, "depth": 144, "acceptance": 0.90598, "accepted": 106, "generated": 117, "mean_len": 3.72}
+{"kind": "prefill", "t": 1785178413.4159305, "depth": 122535, "cached": 122021, "tps": 133.9}
+{"kind": "prefill", "t": 1785178418.3081858, "depth": 122625, "cached": 122535, "tps": 1.9}
+{"kind": "decode", "t": 1785178420.390878, "depth": 122721, "tps": 46.09}
+{"kind": "decode", "t": 1785178422.4325612, "depth": 122790, "tps": 33.8}
+{"kind": "accept", "t": 1785178422.4325612, "depth": 229, "acceptance": 0.81818, "accepted": 162, "generated": 198, "mean_len": 3.45}
+{"kind": "prefill", "t": 1785178424.4336622, "depth": 16495, "cached": 14447, "tps": 1009.9}
+{"kind": "prefill", "t": 1785178427.8008173, "depth": 18543, "cached": 14447, "tps": 608.2}
+{"kind": "prefill", "t": 1785178430.7187133, "depth": 20591, "cached": 14447, "tps": 701.9}
+{"kind": "prefill", "t": 1785178433.652306, "depth": 22639, "cached": 14447, "tps": 698.1}
+{"kind": "prefill", "t": 1785178436.6287806, "depth": 24687, "cached": 14447, "tps": 688.1}
+{"kind": "prefill", "t": 1785178439.6194632, "depth": 26735, "cached": 14447, "tps": 684.8}
+{"kind": "prefill", "t": 1785178442.650171, "depth": 28783, "cached": 14447, "tps": 675.7}
+{"kind": "prefill", "t": 1785178445.6971033, "depth": 30831, "cached": 14447, "tps": 672.2}
+{"kind": "prefill", "t": 1785178448.788404, "depth": 33630, "cached": 14447, "tps": 905.4}
+{"kind": "prefill", "t": 1785178453.2739367, "depth": 35678, "cached": 14447, "tps": 456.6}
+{"kind": "prefill", "t": 1785178456.4329567, "depth": 37726, "cached": 14447, "tps": 648.3}
+{"kind": "prefill", "t": 1785178459.6052845, "depth": 39774, "cached": 14447, "tps": 645.6}
+{"kind": "prefill", "t": 1785178462.822206, "depth": 41822, "cached": 14447, "tps": 636.6}
+{"kind": "prefill", "t": 1785178466.0536957, "depth": 43870, "cached": 14447, "tps": 633.8}
+{"kind": "prefill", "t": 1785178469.3273633, "depth": 45918, "cached": 14447, "tps": 625.6}
+{"kind": "prefill", "t": 1785178472.6138399, "depth": 47949, "cached": 14447, "tps": 618.0}
+{"kind": "prefill", "t": 1785178476.1086454, "depth": 50207, "cached": 14447, "tps": 646.1}
+{"kind": "prefill", "t": 1785178480.1017914, "depth": 52255, "cached": 14447, "tps": 512.9}
+{"kind": "prefill", "t": 1785178483.4977963, "depth": 54303, "cached": 14447, "tps": 603.1}
+{"kind": "prefill", "t": 1785178486.9134097, "depth": 56351, "cached": 14447, "tps": 599.6}
+{"kind": "prefill", "t": 1785178490.3716354, "depth": 57685, "cached": 14447, "tps": 385.7}
+{"kind": "prefill", "t": 1785178492.7975035, "depth": 59965, "cached": 14447, "tps": 939.9}
+{"kind": "prefill", "t": 1785178497.0745773, "depth": 62013, "cached": 14447, "tps": 478.8}
+{"kind": "prefill", "t": 1785178500.6084213, "depth": 64061, "cached": 14447, "tps": 579.5}
+{"kind": "prefill", "t": 1785178504.158432, "depth": 65953, "cached": 14447, "tps": 533.0}
+{"kind": "prefill", "t": 1785178507.506263, "depth": 67286, "cached": 14447, "tps": 398.2}
+{"kind": "prefill", "t": 1785178510.3970537, "depth": 69334, "cached": 14447, "tps": 708.5}
+{"kind": "prefill", "t": 1785178514.0268977, "depth": 71382, "cached": 14447, "tps": 564.2}
+{"kind": "prefill", "t": 1785178517.6729422, "depth": 73430, "cached": 14447, "tps": 561.7}
+{"kind": "prefill", "t": 1785178521.362512, "depth": 74471, "cached": 14447, "tps": 282.1}
+{"kind": "prefill", "t": 1785178523.6752768, "depth": 76519, "cached": 14447, "tps": 885.5}
+{"kind": "prefill", "t": 1785178527.3899899, "depth": 78567, "cached": 14447, "tps": 551.3}
+{"kind": "prefill", "t": 1785178531.1498773, "depth": 80615, "cached": 14447, "tps": 544.7}
+{"kind": "prefill", "t": 1785178534.922017, "depth": 82663, "cached": 14447, "tps": 542.9}
+{"kind": "prefill", "t": 1785178538.7359588, "depth": 85437, "cached": 14447, "tps": 727.3}
+{"kind": "prefill", "t": 1785178544.464102, "depth": 87485, "cached": 14447, "tps": 357.5}
+{"kind": "prefill", "t": 1785178548.3533413, "depth": 89533, "cached": 14447, "tps": 526.6}
+{"kind": "prefill", "t": 1785178552.2546694, "depth": 91581, "cached": 14447, "tps": 524.9}
+{"kind": "prefill", "t": 1785178556.198903, "depth": 94307, "cached": 14447, "tps": 691.1}
+{"kind": "prefill", "t": 1785178562.0524974, "depth": 96355, "cached": 14447, "tps": 349.9}
+{"kind": "prefill", "t": 1785178566.0718443, "depth": 98403, "cached": 14447, "tps": 509.5}
+{"kind": "prefill", "t": 1785178570.1077814, "depth": 100403, "cached": 14447, "tps": 495.5}
+{"kind": "prefill", "t": 1785178574.7618213, "depth": 102691, "cached": 14447, "tps": 491.6}
+{"kind": "prefill", "t": 1785178579.805423, "depth": 104739, "cached": 14447, "tps": 406.1}
+{"kind": "prefill", "t": 1785178583.9512982, "depth": 106787, "cached": 14447, "tps": 494.0}
+{"kind": "prefill", "t": 1785178588.1094418, "depth": 108835, "cached": 14447, "tps": 492.5}
+{"kind": "prefill", "t": 1785178592.3133461, "depth": 110883, "cached": 14447, "tps": 487.2}
+{"kind": "prefill", "t": 1785178596.5354514, "depth": 112931, "cached": 14447, "tps": 485.1}
+{"kind": "prefill", "t": 1785178600.8021607, "depth": 114288, "cached": 14447, "tps": 318.0}
+{"kind": "prefill", "t": 1785178604.445856, "depth": 115012, "cached": 14447, "tps": 198.7}
+{"kind": "prefill", "t": 1785178606.8403802, "depth": 116332, "cached": 14447, "tps": 551.3}
+{"kind": "prefill", "t": 1785178610.074596, "depth": 116407, "cached": 14447, "tps": 1.2}
+{"kind": "decode", "t": 1785178612.0904596, "depth": 116512, "tps": 52.09}
+{"kind": "decode", "t": 1785178614.1498616, "depth": 116624, "tps": 54.38}
+{"kind": "decode", "t": 1785178616.1599207, "depth": 116736, "tps": 55.72}
+{"kind": "decode", "t": 1785178618.1714056, "depth": 116848, "tps": 55.68}
+{"kind": "decode", "t": 1785178620.2108386, "depth": 116960, "tps": 54.92}
+{"kind": "decode", "t": 1785178622.2196922, "depth": 117071, "tps": 55.26}
+{"kind": "decode", "t": 1785178624.258826, "depth": 117174, "tps": 50.51}
+{"kind": "decode", "t": 1785178626.266711, "depth": 117286, "tps": 55.78}
+{"kind": "decode", "t": 1785178628.307603, "depth": 117398, "tps": 54.88}
+{"kind": "decode", "t": 1785178630.3180287, "depth": 117510, "tps": 55.71}
+{"kind": "accept", "t": 1785178632.360225, "depth": 1203, "acceptance": 0.97177, "accepted": 895, "generated": 921, "mean_len": 3.92}
+{"kind": "prefill", "t": 1785178636.8468096, "depth": 117684, "cached": 116332, "tps": 21.4}
+{"kind": "decode", "t": 1785178638.872117, "depth": 117746, "tps": 29.63}
+{"kind": "accept", "t": 1785178638.872117, "depth": 97, "acceptance": 0.92308, "accepted": 72, "generated": 78, "mean_len": 3.77}
+{"kind": "prefill", "t": 1785178648.413119, "depth": 117862, "cached": 117762, "tps": 1.5}
+{"kind": "prefill", "t": 1785178650.4313004, "depth": 117868, "cached": 117785, "tps": 27.7}
+{"kind": "accept", "t": 1785178650.4313004, "depth": 78, "acceptance": 0.88889, "accepted": 56, "generated": 63, "mean_len": 3.67}
+{"kind": "prefill", "t": 1785178652.867332, "depth": 117948, "cached": 117785, "tps": 25.9}
+{"kind": "decode", "t": 1785178654.876466, "depth": 117997, "tps": 24.39}
+{"kind": "accept", "t": 1785178656.926179, "depth": 77, "acceptance": 0.24242, "accepted": 32, "generated": 132, "mean_len": 1.73}
+{"kind": "prefill", "t": 1785178658.9806242, "depth": 117954, "cached": 0, "tps": 1.9}
+{"kind": "prefill", "t": 1785178672.987832, "depth": 94078, "cached": 92030, "tps": 1010.0}
+{"kind": "prefill", "t": 1785178677.9638996, "depth": 96126, "cached": 92030, "tps": 411.6}
+{"kind": "prefill", "t": 1785178681.9734528, "depth": 98174, "cached": 92030, "tps": 510.8}
+{"kind": "prefill", "t": 1785178685.998372, "depth": 100222, "cached": 92030, "tps": 508.8}
+{"kind": "prefill", "t": 1785178690.0673554, "depth": 101119, "cached": 92030, "tps": 220.4}
+{"kind": "prefill", "t": 1785178692.3133073, "depth": 103167, "cached": 92030, "tps": 911.9}
+{"kind": "prefill", "t": 1785178696.4046292, "depth": 105215, "cached": 92030, "tps": 500.6}
+{"kind": "prefill", "t": 1785178700.5470145, "depth": 107263, "cached": 92030, "tps": 494.4}
+{"kind": "prefill", "t": 1785178704.7123618, "depth": 109311, "cached": 92030, "tps": 491.7}
+{"kind": "prefill", "t": 1785178708.9266872, "depth": 111359, "cached": 92030, "tps": 486.0}
+{"kind": "prefill", "t": 1785178713.15659, "depth": 112119, "cached": 92030, "tps": 179.7}
+{"kind": "prefill", "t": 1785178715.2349906, "depth": 114167, "cached": 92030, "tps": 985.4}
+{"kind": "prefill", "t": 1785178725.4915907, "depth": 116853, "cached": 92030, "tps": 261.9}
+{"kind": "decode", "t": 1785178727.5574052, "depth": 116961, "tps": 52.28}
+{"kind": "accept", "t": 1785178729.5974498, "depth": 112, "acceptance": 0.95402, "accepted": 83, "generated": 87, "mean_len": 3.86}
+{"kind": "prefill", "t": 1785178731.9260423, "depth": 118456, "cached": 116849, "tps": 556.6}
+{"kind": "prefill", "t": 1785178735.1107213, "depth": 118525, "cached": 116849, "tps": 1.3}
+{"kind": "decode", "t": 1785178737.1395772, "depth": 118620, "tps": 46.82}
+{"kind": "decode", "t": 1785178739.2081692, "depth": 118719, "tps": 47.38}
+{"kind": "accept", "t": 1785178739.2081692, "depth": 259, "acceptance": 0.84932, "accepted": 186, "generated": 219, "mean_len": 3.55}
+{"kind": "prefill", "t": 1785178743.7497876, "depth": 118795, "cached": 118456, "tps": 1.6}
+{"kind": "decode", "t": 1785178745.8038557, "depth": 118890, "tps": 46.25}
+{"kind": "accept", "t": 1785178747.8141596, "depth": 216, "acceptance": 0.78646, "accepted": 151, "generated": 192, "mean_len": 3.36}
+{"kind": "prefill", "t": 1785178750.7017097, "depth": 118902, "cached": 118732, "tps": 7.3}
+{"kind": "decode", "t": 1785178752.7236772, "depth": 118998, "tps": 47.48}
+{"kind": "decode", "t": 1785178754.7325995, "depth": 119079, "tps": 40.32}
+{"kind": "accept", "t": 1785178754.7325995, "depth": 210, "acceptance": 0.80874, "accepted": 148, "generated": 183, "mean_len": 3.43}
+{"kind": "prefill", "t": 1785178756.7337232, "depth": 119445, "cached": 118866, "tps": 220.4}
+{"kind": "prefill", "t": 1785178759.5136437, "depth": 119501, "cached": 118866, "tps": 1.4}
+{"kind": "decode", "t": 1785178761.5493703, "depth": 119604, "tps": 50.6}
+{"kind": "accept", "t": 1785178763.5984983, "depth": 185, "acceptance": 0.77381, "accepted": 130, "generated": 168, "mean_len": 3.32}
+{"kind": "prefill", "t": 1785178766.0723662, "depth": 119933, "cached": 0, "tps": 145.1}
+{"kind": "decode", "t": 1785178770.129384, "depth": 120047, "tps": 44.26}
+{"kind": "decode", "t": 1785178772.1715353, "depth": 120137, "tps": 43.58}
+{"kind": "accept", "t": 1785178772.1715353, "depth": 181, "acceptance": 0.84967, "accepted": 130, "generated": 153, "mean_len": 3.55}
+{"kind": "prefill", "t": 1785178774.1726327, "depth": 120467, "cached": 119952, "tps": 243.9}
+{"kind": "prefill", "t": 1785178777.0181844, "depth": 120518, "cached": 119952, "tps": 1.4}
+{"kind": "decode", "t": 1785178779.0471082, "depth": 120624, "tps": 51.75}
+{"kind": "accept", "t": 1785178779.0471082, "depth": 153, "acceptance": 0.75177, "accepted": 106, "generated": 141, "mean_len": 3.26}
+{"kind": "prefill", "t": 1785178781.048167, "depth": 121012, "cached": 120467, "tps": 13.0}
+{"kind": "prefill", "t": 1785178784.520281, "depth": 121080, "cached": 120467, "tps": 1.2}
+{"kind": "decode", "t": 1785178786.565922, "depth": 121171, "tps": 44.48}
+{"kind": "accept", "t": 1785178786.565922, "depth": 156, "acceptance": 0.86822, "accepted": 112, "generated": 129, "mean_len": 3.6}
+{"kind": "prefill", "t": 1785178791.4752967, "depth": 121606, "cached": 121012, "tps": 1.4}
+{"kind": "decode", "t": 1785178793.5006917, "depth": 121694, "tps": 43.45}
+{"kind": "decode", "t": 1785178795.5249515, "depth": 121802, "tps": 53.35}
+{"kind": "decode", "t": 1785178797.5859065, "depth": 121912, "tps": 53.37}
+{"kind": "decode", "t": 1785178799.653117, "depth": 122024, "tps": 54.18}
+{"kind": "decode", "t": 1785178801.6934164, "depth": 122136, "tps": 54.89}
+{"kind": "decode", "t": 1785178803.7640343, "depth": 122245, "tps": 52.64}
+{"kind": "decode", "t": 1785178805.804983, "depth": 122356, "tps": 54.39}
+{"kind": "decode", "t": 1785178807.8467262, "depth": 122468, "tps": 54.86}
+{"kind": "decode", "t": 1785178809.9198043, "depth": 122580, "tps": 54.03}
+{"kind": "decode", "t": 1785178811.9645312, "depth": 122688, "tps": 52.82}
+{"kind": "decode", "t": 1785178813.966481, "depth": 122795, "tps": 53.45}
+{"kind": "decode", "t": 1785178816.011657, "depth": 122903, "tps": 52.81}
+{"kind": "decode", "t": 1785178818.0139909, "depth": 123015, "tps": 55.93}
+{"kind": "prefill", "t": 1785178820.0626018, "depth": 16495, "cached": 14447, "tps": 740.5}
+{"kind": "accept", "t": 1785178820.0626018, "depth": 1475, "acceptance": 0.95462, "accepted": 1094, "generated": 1146, "mean_len": 3.86}
+{"kind": "prefill", "t": 1785178824.2105596, "depth": 18543, "cached": 14447, "tps": 493.7}
+{"kind": "prefill", "t": 1785178827.1252751, "depth": 20591, "cached": 14447, "tps": 702.6}
+{"kind": "prefill", "t": 1785178830.0749526, "depth": 22639, "cached": 14447, "tps": 694.3}
+{"kind": "prefill", "t": 1785178833.0526757, "depth": 24687, "cached": 14447, "tps": 687.8}
+{"kind": "prefill", "t": 1785178836.0579624, "depth": 26735, "cached": 14447, "tps": 681.5}
+{"kind": "prefill", "t": 1785178839.0947068, "depth": 29056, "cached": 14447, "tps": 764.3}
+{"kind": "prefill", "t": 1785178842.8687804, "depth": 31104, "cached": 14447, "tps": 542.6}
+{"kind": "prefill", "t": 1785178845.966863, "depth": 33152, "cached": 14447, "tps": 661.1}
+{"kind": "prefill", "t": 1785178849.092763, "depth": 35200, "cached": 14447, "tps": 655.2}
+{"kind": "prefill", "t": 1785178852.241751, "depth": 36534, "cached": 14447, "tps": 423.6}
+{"kind": "prefill", "t": 1785178854.3486946, "depth": 38814, "cached": 14447, "tps": 1082.1}
+{"kind": "prefill", "t": 1785178858.2151926, "depth": 40862, "cached": 14447, "tps": 529.7}
+{"kind": "prefill", "t": 1785178861.4495828, "depth": 42910, "cached": 14447, "tps": 633.2}
+{"kind": "prefill", "t": 1785178864.712532, "depth": 44802, "cached": 14447, "tps": 579.8}
+{"kind": "prefill", "t": 1785178867.773309, "depth": 46135, "cached": 14447, "tps": 435.5}
+{"kind": "prefill", "t": 1785178870.2827566, "depth": 48183, "cached": 14447, "tps": 816.1}
+{"kind": "prefill", "t": 1785178873.615621, "depth": 50231, "cached": 14447, "tps": 614.5}
+{"kind": "prefill", "t": 1785178876.9791977, "depth": 52279, "cached": 14447, "tps": 608.9}
+{"kind": "prefill", "t": 1785178880.3735287, "depth": 53320, "cached": 14447, "tps": 306.7}
+{"kind": "prefill", "t": 1785178882.4676044, "depth": 55368, "cached": 14447, "tps": 978.0}
+{"kind": "prefill", "t": 1785178885.9012454, "depth": 57416, "cached": 14447, "tps": 596.5}
+{"kind": "prefill", "t": 1785178889.3729808, "depth": 59464, "cached": 14447, "tps": 589.9}
+{"kind": "prefill", "t": 1785178892.871449, "depth": 61512, "cached": 14447, "tps": 585.4}
+{"kind": "prefill", "t": 1785178896.4015536, "depth": 64286, "cached": 14447, "tps": 785.8}
+{"kind": "prefill", "t": 1785178901.6501417, "depth": 66334, "cached": 14447, "tps": 390.2}
+{"kind": "prefill", "t": 1785178905.2497308, "depth": 68382, "cached": 14447, "tps": 569.0}
+{"kind": "prefill", "t": 1785178908.8768294, "depth": 70430, "cached": 14447, "tps": 564.6}
+{"kind": "prefill", "t": 1785178912.5279055, "depth": 73156, "cached": 14447, "tps": 746.6}
+{"kind": "prefill", "t": 1785178917.903948, "depth": 75204, "cached": 14447, "tps": 380.9}
+{"kind": "prefill", "t": 1785178921.6219277, "depth": 77252, "cached": 14447, "tps": 550.8}
+{"kind": "prefill", "t": 1785178925.3645172, "depth": 79300, "cached": 14447, "tps": 547.2}
+{"kind": "prefill", "t": 1785178929.1381402, "depth": 82016, "cached": 14447, "tps": 719.7}
+{"kind": "prefill", "t": 1785178934.711303, "depth": 84064, "cached": 14447, "tps": 367.5}
+{"kind": "prefill", "t": 1785178938.5592618, "depth": 86112, "cached": 14447, "tps": 532.2}
+{"kind": "prefill", "t": 1785178942.4354851, "depth": 88160, "cached": 14447, "tps": 528.3}
+{"kind": "prefill", "t": 1785178946.3410668, "depth": 90208, "cached": 14447, "tps": 524.4}
+{"kind": "prefill", "t": 1785178950.2742198, "depth": 93016, "cached": 14447, "tps": 713.9}
+{"kind": "prefill", "t": 1785178956.1513858, "depth": 95064, "cached": 14447, "tps": 348.5}
+{"kind": "prefill", "t": 1785178960.150899, "depth": 97112, "cached": 14447, "tps": 512.1}
+{"kind": "prefill", "t": 1785178964.1807346, "depth": 99160, "cached": 14447, "tps": 508.2}
+{"kind": "prefill", "t": 1785178974.2403045, "depth": 101922, "cached": 14447, "tps": 271.1}
+{"kind": "decode", "t": 1785178976.2639906, "depth": 102040, "tps": 58.31}
+{"kind": "accept", "t": 1785178978.302293, "depth": 171, "acceptance": 0.97727, "accepted": 129, "generated": 132, "mean_len": 3.93}
+{"kind": "prefill", "t": 1785178980.5129902, "depth": 102214, "cached": 101883, "tps": 43.4}
+{"kind": "decode", "t": 1785178982.520988, "depth": 102294, "tps": 38.35}
+{"kind": "accept", "t": 1785178982.520988, "depth": 126, "acceptance": 1.0, "accepted": 96, "generated": 96, "mean_len": 4.0}
+{"kind": "prefill", "t": 1785178984.5221095, "depth": 102448, "cached": 0, "tps": 1.5}
+{"kind": "prefill", "t": 1785179000.9911933, "depth": 16495, "cached": 14447, "tps": 1010.0}
+{"kind": "prefill", "t": 1785179004.3336291, "depth": 18543, "cached": 14447, "tps": 612.7}
+{"kind": "prefill", "t": 1785179007.2570205, "depth": 20591, "cached": 14447, "tps": 700.6}
+{"kind": "prefill", "t": 1785179010.2071054, "depth": 22639, "cached": 14447, "tps": 694.2}
+{"kind": "prefill", "t": 1785179013.183432, "depth": 24687, "cached": 14447, "tps": 688.1}
+{"kind": "prefill", "t": 1785179016.1811004, "depth": 26735, "cached": 14447, "tps": 683.2}
+{"kind": "prefill", "t": 1785179019.2108943, "depth": 28783, "cached": 14447, "tps": 676.0}
+{"kind": "prefill", "t": 1785179022.2679963, "depth": 30831, "cached": 14447, "tps": 669.9}
+{"kind": "prefill", "t": 1785179025.3575113, "depth": 33630, "cached": 14447, "tps": 906.0}
+{"kind": "prefill", "t": 1785179029.8514626, "depth": 35678, "cached": 14447, "tps": 455.7}
+{"kind": "prefill", "t": 1785179033.0069404, "depth": 37726, "cached": 14447, "tps": 649.0}
+{"kind": "prefill", "t": 1785179036.189549, "depth": 39774, "cached": 14447, "tps": 643.5}
+{"kind": "prefill", "t": 1785179039.403949, "depth": 41822, "cached": 14447, "tps": 637.1}
+{"kind": "prefill", "t": 1785179042.6447792, "depth": 43870, "cached": 14447, "tps": 631.9}
+{"kind": "prefill", "t": 1785179045.917297, "depth": 45918, "cached": 14447, "tps": 625.8}
+{"kind": "prefill", "t": 1785179049.2233293, "depth": 47949, "cached": 14447, "tps": 614.3}
+{"kind": "prefill", "t": 1785179052.7123783, "depth": 50207, "cached": 14447, "tps": 647.2}
+{"kind": "prefill", "t": 1785179056.7201467, "depth": 52255, "cached": 14447, "tps": 511.0}
+{"kind": "prefill", "t": 1785179060.128469, "depth": 54303, "cached": 14447, "tps": 600.9}
+{"kind": "prefill", "t": 1785179063.5543911, "depth": 56351, "cached": 14447, "tps": 597.8}
+{"kind": "prefill", "t": 1785179067.009446, "depth": 57685, "cached": 14447, "tps": 386.1}
+{"kind": "prefill", "t": 1785179069.4344707, "depth": 59965, "cached": 14447, "tps": 940.2}
+{"kind": "prefill", "t": 1785179073.7180042, "depth": 62013, "cached": 14447, "tps": 478.1}
+{"kind": "prefill", "t": 1785179077.259699, "depth": 64061, "cached": 14447, "tps": 578.3}
+{"kind": "prefill", "t": 1785179080.8259726, "depth": 65953, "cached": 14447, "tps": 530.5}
+{"kind": "prefill", "t": 1785179084.1761224, "depth": 67286, "cached": 14447, "tps": 397.9}
+{"kind": "prefill", "t": 1785179087.0712914, "depth": 69334, "cached": 14447, "tps": 707.4}
+{"kind": "prefill", "t": 1785179090.706871, "depth": 71382, "cached": 14447, "tps": 563.3}
+{"kind": "prefill", "t": 1785179094.3734856, "depth": 73430, "cached": 14447, "tps": 558.6}
+{"kind": "prefill", "t": 1785179098.0683053, "depth": 74471, "cached": 14447, "tps": 281.7}
+{"kind": "prefill", "t": 1785179100.3808808, "depth": 76519, "cached": 14447, "tps": 885.6}
+{"kind": "prefill", "t": 1785179104.112463, "depth": 78567, "cached": 14447, "tps": 548.8}
+{"kind": "prefill", "t": 1785179107.876177, "depth": 80615, "cached": 14447, "tps": 544.1}
+{"kind": "prefill", "t": 1785179111.6670744, "depth": 82663, "cached": 14447, "tps": 540.2}
+{"kind": "prefill", "t": 1785179115.4879632, "depth": 85437, "cached": 14447, "tps": 726.0}
+{"kind": "prefill", "t": 1785179121.2349107, "depth": 87485, "cached": 14447, "tps": 356.4}
+{"kind": "prefill", "t": 1785179125.124776, "depth": 89533, "cached": 14447, "tps": 526.5}
+{"kind": "prefill", "t": 1785179129.0426981, "depth": 91581, "cached": 14447, "tps": 522.7}
+{"kind": "prefill", "t": 1785179132.9839733, "depth": 94307, "cached": 14447, "tps": 691.7}
+{"kind": "prefill", "t": 1785179138.8451278, "depth": 96355, "cached": 14447, "tps": 349.4}
+{"kind": "prefill", "t": 1785179142.8589904, "depth": 98403, "cached": 14447, "tps": 510.2}
+{"kind": "prefill", "t": 1785179146.9068, "depth": 100451, "cached": 14447, "tps": 506.0}
+{"kind": "prefill", "t": 1785179156.9907277, "depth": 105215, "cached": 14447, "tps": 472.4}
+{"kind": "prefill", "t": 1785179161.1989462, "depth": 107263, "cached": 14447, "tps": 486.7}
+{"kind": "prefill", "t": 1785179165.3799913, "depth": 109311, "cached": 14447, "tps": 489.8}
+{"kind": "prefill", "t": 1785179169.5893, "depth": 111359, "cached": 14447, "tps": 486.5}
+{"kind": "prefill", "t": 1785179173.8249366, "depth": 112119, "cached": 14447, "tps": 179.4}
+{"kind": "prefill", "t": 1785179175.9056163, "depth": 114167, "cached": 14447, "tps": 984.3}
+{"kind": "prefill", "t": 1785179180.1873946, "depth": 116215, "cached": 14447, "tps": 478.3}
+{"kind": "prefill", "t": 1785179184.500107, "depth": 118263, "cached": 14447, "tps": 474.9}
+{"kind": "prefill", "t": 1785179188.838695, "depth": 120311, "cached": 14447, "tps": 472.0}
+{"kind": "prefill", "t": 1785179193.2072246, "depth": 121647, "cached": 14447, "tps": 305.8}
+{"kind": "prefill", "t": 1785179196.6477194, "depth": 122522, "cached": 14447, "tps": 254.3}
+{"kind": "prefill", "t": 1785179199.5675764, "depth": 122599, "cached": 14447, "tps": 1.4}
+{"kind": "decode", "t": 1785179201.6109889, "depth": 122692, "tps": 44.53}
+{"kind": "accept", "t": 1785179201.6109889, "depth": 165, "acceptance": 0.95349, "accepted": 123, "generated": 129, "mean_len": 3.86}
+{"kind": "prefill", "t": 1785179207.498678, "depth": 18543, "cached": 14447, "tps": 526.9}
+{"kind": "prefill", "t": 1785179210.4208515, "depth": 20591, "cached": 14447, "tps": 700.8}
+{"kind": "prefill", "t": 1785179213.3686693, "depth": 22639, "cached": 14447, "tps": 694.8}
+{"kind": "prefill", "t": 1785179216.3470004, "depth": 24687, "cached": 14447, "tps": 687.6}
+{"kind": "prefill", "t": 1785179219.3506012, "depth": 26735, "cached": 14447, "tps": 681.8}
+{"kind": "prefill", "t": 1785179222.3817403, "depth": 29056, "cached": 14447, "tps": 765.7}
+{"kind": "prefill", "t": 1785179226.149153, "depth": 31104, "cached": 14447, "tps": 543.6}
+{"kind": "prefill", "t": 1785179229.2442293, "depth": 33152, "cached": 14447, "tps": 661.7}
+{"kind": "prefill", "t": 1785179232.3692904, "depth": 35200, "cached": 14447, "tps": 655.3}
+{"kind": "prefill", "t": 1785179235.5196424, "depth": 36534, "cached": 14447, "tps": 423.4}
+{"kind": "prefill", "t": 1785179237.6247032, "depth": 38814, "cached": 14447, "tps": 1083.1}
+{"kind": "prefill", "t": 1785179241.4888363, "depth": 40862, "cached": 14447, "tps": 530.0}
+{"kind": "prefill", "t": 1785179244.718178, "depth": 42910, "cached": 14447, "tps": 634.2}
+{"kind": "prefill", "t": 1785179247.9766333, "depth": 44802, "cached": 14447, "tps": 580.6}
+{"kind": "prefill", "t": 1785179251.031469, "depth": 46135, "cached": 14447, "tps": 436.4}
+{"kind": "prefill", "t": 1785179253.5384116, "depth": 48183, "cached": 14447, "tps": 816.9}
+{"kind": "prefill", "t": 1785179256.870064, "depth": 50231, "cached": 14447, "tps": 614.7}
+{"kind": "prefill", "t": 1785179260.2357972, "depth": 52279, "cached": 14447, "tps": 608.5}
+{"kind": "prefill", "t": 1785179263.6340458, "depth": 53320, "cached": 14447, "tps": 306.3}
+{"kind": "prefill", "t": 1785179265.7302768, "depth": 55368, "cached": 14447, "tps": 977.0}
+{"kind": "prefill", "t": 1785179269.1620858, "depth": 57416, "cached": 14447, "tps": 596.8}
+{"kind": "prefill", "t": 1785179272.629528, "depth": 59464, "cached": 14447, "tps": 590.6}
+{"kind": "prefill", "t": 1785179276.1285636, "depth": 61512, "cached": 14447, "tps": 585.3}
+{"kind": "prefill", "t": 1785179279.6562939, "depth": 64286, "cached": 14447, "tps": 786.3}
+{"kind": "prefill", "t": 1785179284.9083345, "depth": 66334, "cached": 14447, "tps": 389.9}
+{"kind": "prefill", "t": 1785179288.5073814, "depth": 68382, "cached": 14447, "tps": 569.0}
+{"kind": "prefill", "t": 1785179292.1338408, "depth": 70430, "cached": 14447, "tps": 564.7}
+{"kind": "prefill", "t": 1785179295.7938395, "depth": 73156, "cached": 14447, "tps": 744.8}
+{"kind": "prefill", "t": 1785179301.1718228, "depth": 75204, "cached": 14447, "tps": 380.8}
+{"kind": "prefill", "t": 1785179304.8903532, "depth": 77252, "cached": 14447, "tps": 550.8}
+{"kind": "prefill", "t": 1785179308.6329818, "depth": 79300, "cached": 14447, "tps": 547.2}
+{"kind": "prefill", "t": 1785179312.4037719, "depth": 82016, "cached": 14447, "tps": 720.3}
+{"kind": "prefill", "t": 1785179317.9684415, "depth": 84064, "cached": 14447, "tps": 368.0}
+{"kind": "prefill", "t": 1785179321.8154297, "depth": 86112, "cached": 14447, "tps": 532.4}
+{"kind": "prefill", "t": 1785179325.6877344, "depth": 88160, "cached": 14447, "tps": 528.9}
+{"kind": "prefill", "t": 1785179329.5829904, "depth": 90208, "cached": 14447, "tps": 525.8}
+{"kind": "prefill", "t": 1785179333.5106432, "depth": 93016, "cached": 14447, "tps": 714.9}
+{"kind": "prefill", "t": 1785179339.3882494, "depth": 95064, "cached": 14447, "tps": 348.4}
+{"kind": "prefill", "t": 1785179343.3890665, "depth": 97112, "cached": 14447, "tps": 511.9}
+{"kind": "prefill", "t": 1785179347.4224575, "depth": 99160, "cached": 14447, "tps": 507.8}
+{"kind": "prefill", "t": 1785179351.4814591, "depth": 100496, "cached": 14447, "tps": 329.1}
+{"kind": "prefill", "t": 1785179354.7093813, "depth": 101644, "cached": 14447, "tps": 355.6}
+{"kind": "prefill", "t": 1785179357.9543602, "depth": 102940, "cached": 14447, "tps": 399.4}
+{"kind": "prefill", "t": 1785179360.9571197, "depth": 103013, "cached": 14447, "tps": 1.3}
+{"kind": "decode", "t": 1785179362.988551, "depth": 103088, "tps": 35.94}
+{"kind": "accept", "t": 1785179362.988551, "depth": 143, "acceptance": 0.8374, "accepted": 103, "generated": 123, "mean_len": 3.51}
+{"kind": "prefill", "t": 1785179367.2797034, "depth": 103134, "cached": 102940, "tps": 24.9}
+{"kind": "decode", "t": 1785179369.2846432, "depth": 103165, "tps": 13.97}
+{"kind": "accept", "t": 1785179369.2846432, "depth": 80, "acceptance": 0.96825, "accepted": 61, "generated": 63, "mean_len": 3.9}
+{"kind": "prefill", "t": 1785179371.2857516, "depth": 103319, "cached": 103079, "tps": 48.5}
+{"kind": "decode", "t": 1785179373.5339806, "depth": 103423, "tps": 46.26}
+{"kind": "accept", "t": 1785179375.5959125, "depth": 162, "acceptance": 0.88148, "accepted": 119, "generated": 135, "mean_len": 3.64}
+{"kind": "prefill", "t": 1785179378.3640573, "depth": 103714, "cached": 103315, "tps": 92.1}
+{"kind": "decode", "t": 1785179380.4088657, "depth": 103821, "tps": 51.84}
+{"kind": "accept", "t": 1785179380.4088657, "depth": 134, "acceptance": 0.94286, "accepted": 99, "generated": 105, "mean_len": 3.83}
+{"kind": "decode", "t": 1785179384.4178953, "depth": 103816, "tps": 49.31}
+{"kind": "decode", "t": 1785179386.453261, "depth": 103899, "tps": 40.78}
+{"kind": "accept", "t": 1785179386.453261, "depth": 190, "acceptance": 0.83333, "accepted": 135, "generated": 162, "mean_len": 3.5}
+{"kind": "prefill", "t": 1785179388.4543967, "depth": 104104, "cached": 103706, "tps": 185.4}
+{"kind": "prefill", "t": 1785179390.525426, "depth": 104170, "cached": 103706, "tps": 1.9}
+{"kind": "decode", "t": 1785179392.5591376, "depth": 104275, "tps": 51.63}
+{"kind": "accept", "t": 1785179394.5699387, "depth": 213, "acceptance": 0.79894, "accepted": 151, "generated": 189, "mean_len": 3.4}
+{"kind": "prefill", "t": 1785179397.1772268, "depth": 104445, "cached": 104104, "tps": 61.4}
+{"kind": "decode", "t": 1785179399.181419, "depth": 104554, "tps": 54.39}
+{"kind": "decode", "t": 1785179401.1925585, "depth": 104642, "tps": 42.26}
+{"kind": "accept", "t": 1785179401.1925585, "depth": 213, "acceptance": 0.84153, "accepted": 154, "generated": 183, "mean_len": 3.52}
+{"kind": "prefill", "t": 1785179405.4118235, "depth": 104830, "cached": 104423, "tps": 1.8}
+{"kind": "decode", "t": 1785179407.4205432, "depth": 104911, "tps": 39.83}
+{"kind": "accept", "t": 1785179407.4205432, "depth": 162, "acceptance": 0.95238, "accepted": 120, "generated": 126, "mean_len": 3.86}
+{"kind": "decode", "t": 1785179413.9401736, "depth": 105120, "tps": 37.88}
+{"kind": "accept", "t": 1785179413.9401736, "depth": 78, "acceptance": 0.96667, "accepted": 58, "generated": 60, "mean_len": 3.9}
+{"kind": "prefill", "t": 1785179415.9413037, "depth": 105120, "cached": 105038, "tps": 27.5}
+{"kind": "prefill", "t": 1785179418.1763961, "depth": 105230, "cached": 105038, "tps": 25.9}
+{"kind": "decode", "t": 1785179420.233457, "depth": 105320, "tps": 43.75}
+{"kind": "decode", "t": 1785179422.2769353, "depth": 105427, "tps": 51.87}
+{"kind": "accept", "t": 1785179422.2769353, "depth": 249, "acceptance": 0.80365, "accepted": 176, "generated": 219, "mean_len": 3.41}
+{"kind": "prefill", "t": 1785179424.3321416, "depth": 105427, "cached": 105174, "tps": 55.0}
+{"kind": "prefill", "t": 1785179428.9383175, "depth": 105574, "cached": 105494, "tps": 1.5}
+{"kind": "decode", "t": 1785179430.9740102, "depth": 105671, "tps": 47.65}
+{"kind": "accept", "t": 1785179430.9740102, "depth": 151, "acceptance": 0.68707, "accepted": 101, "generated": 147, "mean_len": 3.06}
+{"kind": "prefill", "t": 1785179533.0245311, "depth": 105612, "cached": 105517, "tps": 34.0}
+{"kind": "prefill", "t": 1785179535.3459685, "depth": 105950, "cached": 105517, "tps": 142.6}
+{"kind": "decode", "t": 1785179537.3747725, "depth": 106063, "tps": 55.7}
+{"kind": "accept", "t": 1785179539.4083657, "depth": 137, "acceptance": 0.92593, "accepted": 100, "generated": 108, "mean_len": 3.78}
+{"kind": "prefill", "t": 1785179543.9582386, "depth": 106153, "cached": 0, "tps": 1.6}
+{"kind": "prefill", "t": 1785179812.0866458, "depth": 102544, "cached": 100496, "tps": 1010.0}
+{"kind": "prefill", "t": 1785179817.9740596, "depth": 104830, "cached": 100496, "tps": 388.3}
+{"kind": "prefill", "t": 1785179823.886296, "depth": 105163, "cached": 100496, "tps": 54.0}
+{"kind": "decode", "t": 1785179825.9297185, "depth": 105276, "tps": 55.3}
+{"kind": "accept", "t": 1785179827.958972, "depth": 129, "acceptance": 0.87963, "accepted": 95, "generated": 108, "mean_len": 3.64}
+{"kind": "prefill", "t": 1785179830.5759983, "depth": 106962, "cached": 105145, "tps": 495.2}
+{"kind": "prefill", "t": 1785179833.5890105, "depth": 107035, "cached": 105145, "tps": 1.3}
+{"kind": "decode", "t": 1785179835.608454, "depth": 107145, "tps": 54.47}
+{"kind": "decode", "t": 1785179837.616836, "depth": 107237, "tps": 44.81}
+{"kind": "accept", "t": 1785179837.616836, "depth": 270, "acceptance": 0.85526, "accepted": 195, "generated": 228, "mean_len": 3.57}
+{"kind": "prefill", "t": 1785179842.0277655, "depth": 107345, "cached": 106962, "tps": 1.7}
+{"kind": "decode", "t": 1785179844.053733, "depth": 107460, "tps": 56.76}
+{"kind": "accept", "t": 1785179846.0637429, "depth": 237, "acceptance": 0.98889, "accepted": 178, "generated": 180, "mean_len": 3.97}
+{"kind": "prefill", "t": 1785179848.667758, "depth": 107646, "cached": 107258, "tps": 36.9}
+{"kind": "decode", "t": 1785179850.7132037, "depth": 107746, "tps": 48.4}
+{"kind": "accept", "t": 1785179850.7132037, "depth": 140, "acceptance": 0.92793, "accepted": 103, "generated": 111, "mean_len": 3.78}
+{"kind": "prefill", "t": 1785179852.71431, "depth": 108050, "cached": 107602, "tps": 50.0}
+{"kind": "prefill", "t": 1785179855.322881, "depth": 108135, "cached": 107602, "tps": 1.5}
+{"kind": "decode", "t": 1785179857.357469, "depth": 108251, "tps": 57.01}
+{"kind": "decode", "t": 1785179859.3762662, "depth": 108334, "tps": 41.11}
+{"kind": "accept", "t": 1785179861.4131405, "depth": 298, "acceptance": 0.85317, "accepted": 215, "generated": 252, "mean_len": 3.56}
+{"kind": "prefill", "t": 1785179863.847721, "depth": 108499, "cached": 108050, "tps": 39.4}
+{"kind": "decode", "t": 1785179865.8971856, "depth": 108599, "tps": 48.79}
+{"kind": "decode", "t": 1785179867.942038, "depth": 108702, "tps": 49.39}
+{"kind": "accept", "t": 1785179867.942038, "depth": 240, "acceptance": 0.86567, "accepted": 174, "generated": 201, "mean_len": 3.6}
+{"kind": "prefill", "t": 1785179869.9431515, "depth": 108962, "cached": 108457, "tps": 47.0}
+{"kind": "prefill", "t": 1785179872.9823263, "depth": 109036, "cached": 108457, "tps": 1.3}
+{"kind": "decode", "t": 1785179874.9927235, "depth": 109072, "tps": 16.91}
+{"kind": "accept", "t": 1785179874.9927235, "depth": 105, "acceptance": 0.84444, "accepted": 76, "generated": 90, "mean_len": 3.53}
+{"kind": "prefill", "t": 1785179879.280359, "depth": 109168, "cached": 108962, "tps": 1.7}
+{"kind": "decode", "t": 1785179881.295668, "depth": 109257, "tps": 44.16}
+{"kind": "decode", "t": 1785179883.3106842, "depth": 109319, "tps": 29.78}
+{"kind": "accept", "t": 1785179883.3106842, "depth": 218, "acceptance": 0.72464, "accepted": 150, "generated": 207, "mean_len": 3.17}
+{"kind": "prefill", "t": 1785179885.3117926, "depth": 109323, "cached": 109096, "tps": 44.5}
+{"kind": "decode", "t": 1785179887.6715167, "depth": 109430, "tps": 45.34}
+{"kind": "accept", "t": 1785179889.7244728, "depth": 155, "acceptance": 0.9127, "accepted": 115, "generated": 126, "mean_len": 3.74}
+{"kind": "prefill", "t": 1785179892.645139, "depth": 109589, "cached": 0, "tps": 22.6}
+{"kind": "accept", "t": 1785179892.645139, "depth": 44, "acceptance": 0.91667, "accepted": 33, "generated": 36, "mean_len": 3.75}
+{"kind": "prefill", "t": 1785179896.9705133, "depth": 109723, "cached": 109540, "tps": 1.8}
+{"kind": "accept", "t": 1785179898.988423, "depth": 107, "acceptance": 0.82796, "accepted": 77, "generated": 93, "mean_len": 3.48}
+{"kind": "prefill", "t": 1785179901.4535747, "depth": 109988, "cached": 109645, "tps": 101.4}
+{"kind": "decode", "t": 1785179903.4656374, "depth": 110049, "tps": 29.82}
+{"kind": "accept", "t": 1785179903.4656374, "depth": 70, "acceptance": 0.77778, "accepted": 49, "generated": 63, "mean_len": 3.33}
+{"kind": "decode", "t": 1785179907.549937, "depth": 110147, "tps": 36.96}
+{"kind": "prefill", "t": 1785179909.5539913, "depth": 110176, "cached": 110066, "tps": 7.5}
+{"kind": "accept", "t": 1785179909.5539913, "depth": 106, "acceptance": 0.66667, "accepted": 70, "generated": 105, "mean_len": 3.0}
+{"kind": "prefill", "t": 1785179911.8261786, "depth": 110402, "cached": 110066, "tps": 89.3}
+{"kind": "decode", "t": 1785179913.872717, "depth": 110476, "tps": 35.67}
+{"kind": "accept", "t": 1785179913.872717, "depth": 97, "acceptance": 0.91026, "accepted": 71, "generated": 78, "mean_len": 3.73}
+{"kind": "prefill", "t": 1785180200.0033438, "depth": 2048, "cached": 0, "tps": 1010.0}
+{"kind": "prefill", "t": 1785180205.0228403, "depth": 4096, "cached": 0, "tps": 408.0}
+{"kind": "prefill", "t": 1785180207.749229, "depth": 6144, "cached": 0, "tps": 751.2}
+{"kind": "prefill", "t": 1785180210.4769979, "depth": 8192, "cached": 0, "tps": 750.8}
+{"kind": "prefill", "t": 1785180213.2475197, "depth": 10240, "cached": 0, "tps": 739.2}
+{"kind": "prefill", "t": 1785180216.0225844, "depth": 12288, "cached": 0, "tps": 738.0}
+{"kind": "prefill", "t": 1785180218.8407774, "depth": 14336, "cached": 0, "tps": 726.7}
+{"kind": "prefill", "t": 1785180221.6668139, "depth": 16246, "cached": 0, "tps": 675.9}
+{"kind": "prefill", "t": 1785180224.7172368, "depth": 17527, "cached": 0, "tps": 419.9}
+{"kind": "prefill", "t": 1785180226.7205849, "depth": 17649, "cached": 0, "tps": 2.0}
+{"kind": "decode", "t": 1785180228.7549, "depth": 17708, "tps": 28.51}
+{"kind": "accept", "t": 1785180228.7549, "depth": 177, "acceptance": 0.73939, "accepted": 122, "generated": 165, "mean_len": 3.22}
+{"kind": "prefill", "t": 1785180236.4672048, "depth": 19861, "cached": 17527, "tps": 1.1}
+{"kind": "accept", "t": 1785180238.488763, "depth": 40, "acceptance": 0.75397, "accepted": 95, "generated": 126, "mean_len": 3.26}
+{"kind": "decode", "t": 1785180240.5317671, "depth": 20048, "tps": 63.63}
+{"kind": "decode", "t": 1785180242.5361612, "depth": 20191, "tps": 71.34}
+{"kind": "decode", "t": 1785180244.567998, "depth": 20321, "tps": 63.98}
+{"kind": "decode", "t": 1785180246.582926, "depth": 20478, "tps": 77.92}
+{"kind": "prefill", "t": 1785180248.6299849, "depth": 20442, "cached": 19875, "tps": 207.1}
+{"kind": "accept", "t": 1785180248.6299849, "depth": 644, "acceptance": 0.73102, "accepted": 443, "generated": 606, "mean_len": 3.19}
+{"kind": "prefill", "t": 1785180250.6779099, "depth": 21389, "cached": 19875, "tps": 458.0}
+{"kind": "prefill", "t": 1785180252.7152524, "depth": 23232, "cached": 21376, "tps": 172.3}
+{"kind": "accept", "t": 1785180252.7152524, "depth": 87, "acceptance": 0.75309, "accepted": 61, "generated": 81, "mean_len": 3.26}
+{"kind": "prefill", "t": 1785180257.1998794, "depth": 23339, "cached": 21376, "tps": 0.9}
+{"kind": "accept", "t": 1785180259.2456555, "depth": 186, "acceptance": 0.71186, "accepted": 126, "generated": 177, "mean_len": 3.14}
+{"kind": "prefill", "t": 1785180262.0802553, "depth": 24058, "cached": 0, "tps": 1.4}
+{"kind": "accept", "t": 1785180262.0802553, "depth": 126, "acceptance": 0.92157, "accepted": 94, "generated": 102, "mean_len": 3.76}
+{"kind": "decode", "t": 1785180266.0850704, "depth": 24219, "tps": 83.84}
+{"kind": "prefill", "t": 1785180268.1247985, "depth": 26267, "cached": 23949, "tps": 1123.2}
+{"kind": "accept", "t": 1785180268.1247985, "depth": 295, "acceptance": 0.93162, "accepted": 218, "generated": 234, "mean_len": 3.79}
+{"kind": "prefill", "t": 1785180272.530997, "depth": 28783, "cached": 23949, "tps": 571.0}
+{"kind": "prefill", "t": 1785180276.5465689, "depth": 28921, "cached": 23949, "tps": 1.0}
+{"kind": "decode", "t": 1785180278.56234, "depth": 29069, "tps": 72.43}
+{"kind": "accept", "t": 1785180278.56234, "depth": 281, "acceptance": 0.97222, "accepted": 210, "generated": 216, "mean_len": 3.92}
+{"kind": "prefill", "t": 1785180284.5564275, "depth": 33165, "cached": 28783, "tps": 512.9}
+{"kind": "prefill", "t": 1785180287.672647, "depth": 35213, "cached": 28783, "tps": 657.2}
+{"kind": "prefill", "t": 1785180290.8029983, "depth": 37261, "cached": 28783, "tps": 654.2}
+{"kind": "prefill", "t": 1785180293.9787009, "depth": 39309, "cached": 28783, "tps": 644.9}
+{"kind": "prefill", "t": 1785180297.1656213, "depth": 40857, "cached": 28783, "tps": 485.7}
+{"kind": "prefill", "t": 1785180299.6503057, "depth": 42901, "cached": 28783, "tps": 822.6}
+{"kind": "prefill", "t": 1785180303.1163368, "depth": 43009, "cached": 28783, "tps": 1.2}
+{"kind": "decode", "t": 1785180305.1782584, "depth": 43159, "tps": 72.75}
+{"kind": "accept", "t": 1785180307.1981893, "depth": 316, "acceptance": 0.89535, "accepted": 231, "generated": 258, "mean_len": 3.69}
+{"kind": "prefill", "t": 1785180309.4212887, "depth": 45236, "cached": 42901, "tps": 921.2}
+{"kind": "prefill", "t": 1785180312.9904857, "depth": 47284, "cached": 42901, "tps": 573.8}
+{"kind": "prefill", "t": 1785180316.3064768, "depth": 49332, "cached": 42901, "tps": 617.6}
+{"kind": "prefill", "t": 1785180319.654638, "depth": 51380, "cached": 42901, "tps": 611.7}
+{"kind": "prefill", "t": 1785180323.0335977, "depth": 53428, "cached": 42901, "tps": 606.1}
+{"kind": "prefill", "t": 1785180326.4385529, "depth": 55476, "cached": 42901, "tps": 601.5}
+{"kind": "prefill", "t": 1785180329.8752048, "depth": 57640, "cached": 42901, "tps": 629.7}
+{"kind": "prefill", "t": 1785180333.8876667, "depth": 57728, "cached": 42901, "tps": 1.0}
+{"kind": "decode", "t": 1785180335.9149408, "depth": 57868, "tps": 69.06}
+{"kind": "accept", "t": 1785180337.9379582, "depth": 318, "acceptance": 0.875, "accepted": 231, "generated": 264, "mean_len": 3.62}
+{"kind": "prefill", "t": 1785180343.2647529, "depth": 61641, "cached": 57640, "tps": 366.6}
+{"kind": "prefill", "t": 1785180346.922731, "depth": 64076, "cached": 57640, "tps": 665.7}
+{"kind": "prefill", "t": 1785180351.9479704, "depth": 64164, "cached": 57640, "tps": 0.8}
+{"kind": "decode", "t": 1785180353.9856694, "depth": 64295, "tps": 64.29}
+{"kind": "accept", "t": 1785180356.0030065, "depth": 257, "acceptance": 0.84475, "accepted": 185, "generated": 219, "mean_len": 3.53}
+{"kind": "prefill", "t": 1785180360.4867623, "depth": 67737, "cached": 64076, "tps": 455.9}
+{"kind": "prefill", "t": 1785180364.3985283, "depth": 67835, "cached": 64076, "tps": 1.0}
+{"kind": "decode", "t": 1785180366.422986, "depth": 67971, "tps": 67.18}
+{"kind": "accept", "t": 1785180368.4740832, "depth": 278, "acceptance": 0.93607, "accepted": 205, "generated": 219, "mean_len": 3.81}
+{"kind": "prefill", "t": 1785180373.3154683, "depth": 71641, "cached": 67737, "tps": 383.4}
+{"kind": "prefill", "t": 1785180376.6459692, "depth": 72587, "cached": 67737, "tps": 284.0}
+{"kind": "prefill", "t": 1785180379.1072972, "depth": 74631, "cached": 67737, "tps": 830.4}
+{"kind": "prefill", "t": 1785180383.1327317, "depth": 74704, "cached": 67737, "tps": 1.0}
+{"kind": "decode", "t": 1785180385.1518636, "depth": 74804, "tps": 49.53}
+{"kind": "decode", "t": 1785180387.1781416, "depth": 74859, "tps": 27.14}
+{"kind": "prefill", "t": 1785204591.076262, "depth": 18542, "cached": 14446, "tps": 510.5}
+{"kind": "prefill", "t": 1785204594.000445, "depth": 20590, "cached": 14446, "tps": 700.4}
+{"kind": "prefill", "t": 1785204596.9513, "depth": 22638, "cached": 14446, "tps": 694.0}
+{"kind": "prefill", "t": 1785204599.9212158, "depth": 24972, "cached": 14446, "tps": 785.9}
+{"kind": "prefill", "t": 1785204603.5568993, "depth": 27020, "cached": 14446, "tps": 563.3}
+{"kind": "prefill", "t": 1785204606.5889337, "depth": 29068, "cached": 14446, "tps": 675.5}
+{"kind": "prefill", "t": 1785204609.6467135, "depth": 31116, "cached": 14446, "tps": 669.8}
+{"kind": "prefill", "t": 1785204612.7413921, "depth": 33164, "cached": 14446, "tps": 661.8}
+{"kind": "prefill", "t": 1785204615.8679574, "depth": 35212, "cached": 14446, "tps": 655.0}
+{"kind": "prefill", "t": 1785204619.0248258, "depth": 37260, "cached": 14446, "tps": 648.7}
+{"kind": "prefill", "t": 1785204622.2070663, "depth": 39308, "cached": 14446, "tps": 643.6}
+{"kind": "prefill", "t": 1785204625.4196508, "depth": 41356, "cached": 14446, "tps": 637.5}
+{"kind": "prefill", "t": 1785204628.6595137, "depth": 43941, "cached": 14446, "tps": 797.9}
+{"kind": "prefill", "t": 1785204633.0511224, "depth": 45989, "cached": 14446, "tps": 466.3}
+{"kind": "prefill", "t": 1785204636.3605852, "depth": 48037, "cached": 14446, "tps": 618.8}
+{"kind": "prefill", "t": 1785204639.6894858, "depth": 50085, "cached": 14446, "tps": 615.2}
+{"kind": "prefill", "t": 1785204643.0464537, "depth": 52133, "cached": 14446, "tps": 610.1}
+{"kind": "prefill", "t": 1785204646.4278383, "depth": 54181, "cached": 14446, "tps": 605.7}
+{"kind": "prefill", "t": 1785204649.8430152, "depth": 56229, "cached": 14446, "tps": 599.7}
+{"kind": "prefill", "t": 1785204653.2856464, "depth": 58676, "cached": 14446, "tps": 710.8}
+{"kind": "prefill", "t": 1785204657.7619982, "depth": 60724, "cached": 14446, "tps": 457.5}
+{"kind": "prefill", "t": 1785204661.2685375, "depth": 62772, "cached": 14446, "tps": 584.1}
+{"kind": "prefill", "t": 1785204664.8028378, "depth": 64820, "cached": 14446, "tps": 579.5}
+{"kind": "prefill", "t": 1785204668.3718758, "depth": 66438, "cached": 14446, "tps": 453.3}
+{"kind": "prefill", "t": 1785204671.4229882, "depth": 67912, "cached": 14446, "tps": 483.1}
+{"kind": "prefill", "t": 1785204674.6766722, "depth": 68486, "cached": 14446, "tps": 176.4}
+{"kind": "decode", "t": 1785204676.7815926, "depth": 68574, "tps": 41.81}
+{"kind": "accept", "t": 1785204678.8065395, "depth": 166, "acceptance": 0.64881, "accepted": 109, "generated": 168, "mean_len": 2.95}
+{"kind": "prefill", "t": 1785204681.6271737, "depth": 70042, "cached": 68482, "tps": 446.4}
+{"kind": "prefill", "t": 1785204684.208089, "depth": 70125, "cached": 68482, "tps": 1.5}
+{"kind": "decode", "t": 1785204686.2418842, "depth": 70207, "tps": 40.32}
+{"kind": "decode", "t": 1785204688.2802534, "depth": 70317, "tps": 53.96}
+{"kind": "decode", "t": 1785204690.3018696, "depth": 70404, "tps": 43.03}
+{"kind": "decode", "t": 1785204692.339731, "depth": 70485, "tps": 39.75}
+{"kind": "decode", "t": 1785204694.3516011, "depth": 70565, "tps": 39.76}
+{"kind": "decode", "t": 1785204696.3624527, "depth": 70641, "tps": 37.79}
+{"kind": "decode", "t": 1785204698.3701367, "depth": 70714, "tps": 36.36}
+{"kind": "decode", "t": 1785204700.409913, "depth": 70798, "tps": 41.18}
+{"kind": "decode", "t": 1785204702.4239006, "depth": 70881, "tps": 41.21}
+{"kind": "decode", "t": 1785204704.4382448, "depth": 70967, "tps": 42.69}
+{"kind": "decode", "t": 1785204706.4848244, "depth": 71047, "tps": 39.09}
+{"kind": "decode", "t": 1785204708.500713, "depth": 71127, "tps": 39.68}
+{"kind": "decode", "t": 1785204710.51734, "depth": 71214, "tps": 43.14}
+{"kind": "decode", "t": 1785204712.565928, "depth": 71297, "tps": 40.52}
+{"kind": "decode", "t": 1785204714.5860116, "depth": 71362, "tps": 32.18}
+{"kind": "decode", "t": 1785204716.5962455, "depth": 71435, "tps": 36.31}
+{"kind": "decode", "t": 1785204718.6389565, "depth": 71520, "tps": 41.61}
+{"kind": "decode", "t": 1785204720.6591377, "depth": 71598, "tps": 38.61}
+{"kind": "decode", "t": 1785204722.677022, "depth": 71670, "tps": 35.68}
+{"kind": "decode", "t": 1785204724.6945179, "depth": 71742, "tps": 35.69}
+{"kind": "decode", "t": 1785204726.74546, "depth": 71831, "tps": 43.39}
+{"kind": "decode", "t": 1785204728.771595, "depth": 71912, "tps": 39.98}
+{"kind": "decode", "t": 1785204730.7946138, "depth": 72000, "tps": 43.5}
+{"kind": "decode", "t": 1785204732.8512967, "depth": 72081, "tps": 39.38}
+{"kind": "decode", "t": 1785204734.878633, "depth": 72152, "tps": 35.02}
+{"kind": "decode", "t": 1785204736.8984785, "depth": 72241, "tps": 44.06}
+{"kind": "decode", "t": 1785204738.9579844, "depth": 72332, "tps": 44.19}
+{"kind": "decode", "t": 1785204740.9900968, "depth": 72416, "tps": 41.34}
+{"kind": "decode", "t": 1785204743.019995, "depth": 72497, "tps": 39.9}
+{"kind": "decode", "t": 1785204745.022787, "depth": 72589, "tps": 45.94}
+{"kind": "decode", "t": 1785204747.058656, "depth": 72670, "tps": 39.79}
+{"kind": "decode", "t": 1785204749.0907004, "depth": 72750, "tps": 39.37}
+{"kind": "decode", "t": 1785204751.1492825, "depth": 72846, "tps": 46.63}
+{"kind": "decode", "t": 1785204753.1852431, "depth": 72932, "tps": 42.24}
+{"kind": "decode", "t": 1785204755.2200844, "depth": 73024, "tps": 45.21}
+{"kind": "decode", "t": 1785204757.2297409, "depth": 73108, "tps": 41.8}
+{"kind": "decode", "t": 1785204759.2664535, "depth": 73216, "tps": 53.03}
+{"kind": "decode", "t": 1785204761.313959, "depth": 73348, "tps": 64.47}
+{"kind": "prefill", "t": 1785204763.3510044, "depth": 72353, "cached": 70042, "tps": 366.7}
+{"kind": "accept", "t": 1785204763.3510044, "depth": 3338, "acceptance": 0.50642, "accepted": 2013, "generated": 3975, "mean_len": 2.52}
+{"kind": "prefill", "t": 1785204768.9651306, "depth": 74401, "cached": 70042, "tps": 364.8}
+{"kind": "prefill", "t": 1785204772.6794047, "depth": 75807, "cached": 70042, "tps": 378.5}
+{"kind": "prefill", "t": 1785204775.242333, "depth": 77851, "cached": 70042, "tps": 797.5}
+{"kind": "decode", "t": 1785204781.39174, "depth": 77965, "tps": 42.46}
+{"kind": "decode", "t": 1785204783.4409478, "depth": 78062, "tps": 47.34}
+{"kind": "decode", "t": 1785204785.4678504, "depth": 78166, "tps": 51.31}
+{"kind": "decode", "t": 1785204787.470538, "depth": 78295, "tps": 64.41}
+{"kind": "prefill", "t": 1785204789.5241456, "depth": 78171, "cached": 77874, "tps": 131.5}
+{"kind": "accept", "t": 1785204789.5241456, "depth": 497, "acceptance": 0.75658, "accepted": 345, "generated": 456, "mean_len": 3.27}
+{"kind": "prefill", "t": 1785204791.9969184, "depth": 79960, "cached": 77874, "tps": 723.5}
+{"kind": "prefill", "t": 1785204795.6987696, "depth": 82004, "cached": 77874, "tps": 552.2}
+{"kind": "prefill", "t": 1785204799.8584628, "depth": 82097, "cached": 77874, "tps": 1.0}
+{"kind": "decode", "t": 1785204801.9065723, "depth": 82220, "tps": 60.06}
+{"kind": "accept", "t": 1785204801.9065723, "depth": 213, "acceptance": 0.92857, "accepted": 156, "generated": 168, "mean_len": 3.79}
+{"kind": "prefill", "t": 1785204808.3970218, "depth": 83695, "cached": 82004, "tps": 0.9}
+{"kind": "decode", "t": 1785204810.4395123, "depth": 83777, "tps": 40.15}
+{"kind": "decode", "t": 1785204812.4767182, "depth": 83865, "tps": 43.2}
+{"kind": "decode", "t": 1785204814.4859996, "depth": 83949, "tps": 41.81}
+{"kind": "decode", "t": 1785204816.4923065, "depth": 84023, "tps": 36.88}
+{"kind": "decode", "t": 1785204818.5287695, "depth": 84115, "tps": 45.18}
+{"kind": "decode", "t": 1785204820.542908, "depth": 84194, "tps": 39.22}
+{"kind": "decode", "t": 1785204822.548661, "depth": 84271, "tps": 38.39}
+{"kind": "decode", "t": 1785204824.584845, "depth": 84365, "tps": 46.16}
+{"kind": "decode", "t": 1785204826.6000185, "depth": 84439, "tps": 36.72}
+{"kind": "decode", "t": 1785204828.6075447, "depth": 84527, "tps": 43.84}
+{"kind": "decode", "t": 1785204830.6519575, "depth": 84601, "tps": 36.2}
+{"kind": "decode", "t": 1785204832.661152, "depth": 84672, "tps": 35.34}
+{"kind": "decode", "t": 1785204834.6708834, "depth": 84751, "tps": 39.31}
+{"kind": "decode", "t": 1785204836.710344, "depth": 84832, "tps": 39.72}
+{"kind": "decode", "t": 1785204838.724493, "depth": 84923, "tps": 45.18}
+{"kind": "decode", "t": 1785204840.743513, "depth": 85022, "tps": 49.03}
+{"kind": "decode", "t": 1785204842.7922215, "depth": 85134, "tps": 54.67}
+{"kind": "decode", "t": 1785204844.8204873, "depth": 85229, "tps": 46.84}
+{"kind": "decode", "t": 1785204846.840414, "depth": 85311, "tps": 40.6}
+{"kind": "decode", "t": 1785204848.886303, "depth": 85387, "tps": 37.15}
+{"kind": "decode", "t": 1785204850.902812, "depth": 85492, "tps": 52.07}
+{"kind": "decode", "t": 1785204852.9299877, "depth": 85572, "tps": 39.46}
+{"kind": "decode", "t": 1785204854.9802127, "depth": 85649, "tps": 37.56}
+{"kind": "decode", "t": 1785204856.998836, "depth": 85745, "tps": 47.56}
+{"kind": "decode", "t": 1785204859.0244598, "depth": 85840, "tps": 46.9}
+{"kind": "decode", "t": 1785204861.0776467, "depth": 85920, "tps": 38.96}
+{"kind": "decode", "t": 1785204863.098659, "depth": 86004, "tps": 41.56}
+{"kind": "decode", "t": 1785204865.1224992, "depth": 86089, "tps": 42.0}
+{"kind": "decode", "t": 1785204867.1739254, "depth": 86168, "tps": 38.51}
+{"kind": "decode", "t": 1785204869.1958287, "depth": 86262, "tps": 46.49}
+{"kind": "decode", "t": 1785204871.224009, "depth": 86340, "tps": 38.46}
+{"kind": "decode", "t": 1785204873.2743435, "depth": 86425, "tps": 41.46}
+{"kind": "decode", "t": 1785204875.3007398, "depth": 86508, "tps": 40.96}
+{"kind": "decode", "t": 1785204877.3256402, "depth": 86588, "tps": 39.51}
+{"kind": "decode", "t": 1785204879.379958, "depth": 86699, "tps": 54.03}
+{"kind": "decode", "t": 1785204881.4214132, "depth": 86795, "tps": 47.03}
+{"kind": "decode", "t": 1785204883.4814622, "depth": 86888, "tps": 45.14}
+{"kind": "decode", "t": 1785204885.5172298, "depth": 86967, "tps": 38.81}
+{"kind": "decode", "t": 1785204887.545427, "depth": 87050, "tps": 40.92}
+{"kind": "decode", "t": 1785204889.5663385, "depth": 87148, "tps": 48.49}
+{"kind": "decode", "t": 1785204891.6269205, "depth": 87241, "tps": 45.13}
+{"kind": "decode", "t": 1785204893.680393, "depth": 87317, "tps": 37.01}
+{"kind": "decode", "t": 1785204895.6908119, "depth": 87399, "tps": 40.79}
+{"kind": "decode", "t": 1785204897.7356303, "depth": 87491, "tps": 44.99}
+{"kind": "decode", "t": 1785204899.778992, "depth": 87578, "tps": 42.58}
+{"kind": "decode", "t": 1785204901.7810113, "depth": 87663, "tps": 42.46}
+{"kind": "decode", "t": 1785204903.8167875, "depth": 87767, "tps": 51.09}
+{"kind": "decode", "t": 1785204905.8619342, "depth": 87864, "tps": 47.43}
+{"kind": "decode", "t": 1785204907.8709464, "depth": 87962, "tps": 48.78}
+{"kind": "decode", "t": 1785204909.915318, "depth": 88064, "tps": 49.89}
+{"kind": "decode", "t": 1785204911.9589958, "depth": 88157, "tps": 45.51}
+{"kind": "decode", "t": 1785204913.9691038, "depth": 88231, "tps": 36.81}
+{"kind": "decode", "t": 1785204916.0045621, "depth": 88330, "tps": 48.64}
+{"kind": "decode", "t": 1785204918.0225112, "depth": 88416, "tps": 42.62}
+{"kind": "decode", "t": 1785204920.069169, "depth": 88508, "tps": 44.95}
+{"kind": "decode", "t": 1785204922.120988, "depth": 88583, "tps": 36.55}
+{"kind": "decode", "t": 1785204924.14968, "depth": 88672, "tps": 43.87}
+{"kind": "decode", "t": 1785204926.2031994, "depth": 88755, "tps": 40.42}
+{"kind": "decode", "t": 1785204928.2553995, "depth": 88825, "tps": 34.11}
+{"kind": "decode", "t": 1785204930.299625, "depth": 88901, "tps": 37.18}
+{"kind": "decode", "t": 1785204932.3137984, "depth": 88984, "tps": 41.21}
+{"kind": "decode", "t": 1785204934.3664165, "depth": 89057, "tps": 35.56}
+{"kind": "decode", "t": 1785204936.4107184, "depth": 89148, "tps": 44.51}
+{"kind": "decode", "t": 1785204938.429741, "depth": 89240, "tps": 45.57}
+{"kind": "decode", "t": 1785204940.4802113, "depth": 89344, "tps": 50.72}
+{"kind": "decode", "t": 1785204942.5005255, "depth": 89417, "tps": 36.13}
+{"kind": "decode", "t": 1785204944.5491035, "depth": 89534, "tps": 57.11}
+{"kind": "decode", "t": 1785204946.5519998, "depth": 89633, "tps": 49.43}
+{"kind": "decode", "t": 1785204948.578372, "depth": 89720, "tps": 42.93}
+{"kind": "decode", "t": 1785204950.6337552, "depth": 89797, "tps": 37.46}
+{"kind": "decode", "t": 1785204952.6829057, "depth": 89883, "tps": 41.97}
+{"kind": "decode", "t": 1785204954.7044258, "depth": 89975, "tps": 45.51}
+{"kind": "decode", "t": 1785204956.7636197, "depth": 90063, "tps": 42.74}
+{"kind": "decode", "t": 1785204958.8210065, "depth": 90155, "tps": 44.72}
+{"kind": "decode", "t": 1785204960.8484354, "depth": 90258, "tps": 50.8}
+{"kind": "decode", "t": 1785204962.8521943, "depth": 90355, "tps": 48.41}
+{"kind": "decode", "t": 1785204964.9150884, "depth": 90437, "tps": 39.75}
+{"kind": "decode", "t": 1785204966.9384696, "depth": 90531, "tps": 46.46}
+{"kind": "decode", "t": 1785204969.0021677, "depth": 90623, "tps": 44.58}
+{"kind": "decode", "t": 1785204971.0645633, "depth": 90725, "tps": 49.46}
+{"kind": "decode", "t": 1785204973.1013355, "depth": 90841, "tps": 56.95}
+{"kind": "decode", "t": 1785204975.113884, "depth": 90951, "tps": 54.66}
+{"kind": "decode", "t": 1785204977.1525896, "depth": 91059, "tps": 52.97}
+{"kind": "decode", "t": 1785204979.1642156, "depth": 91176, "tps": 58.16}
+{"kind": "decode", "t": 1785204981.2073357, "depth": 91296, "tps": 58.73}
+{"kind": "decode", "t": 1785204983.2248564, "depth": 91388, "tps": 45.6}
+{"kind": "decode", "t": 1785204985.2314522, "depth": 91473, "tps": 42.36}
+{"kind": "decode", "t": 1785204987.2648149, "depth": 91582, "tps": 53.61}
+{"kind": "decode", "t": 1785204989.2825105, "depth": 91693, "tps": 55.01}
+{"kind": "decode", "t": 1785204991.3258734, "depth": 91795, "tps": 49.92}
+{"kind": "decode", "t": 1785204993.339446, "depth": 91887, "tps": 45.69}
+{"kind": "decode", "t": 1785204995.3493357, "depth": 91967, "tps": 39.8}
+{"kind": "decode", "t": 1785204997.3891191, "depth": 92057, "tps": 44.12}
+{"kind": "decode", "t": 1785204999.4023302, "depth": 92141, "tps": 41.72}
+{"kind": "decode", "t": 1785205001.4093678, "depth": 92234, "tps": 46.34}
+{"kind": "decode", "t": 1785205003.4516022, "depth": 92335, "tps": 49.46}
+{"kind": "decode", "t": 1785205005.469579, "depth": 92419, "tps": 41.63}
+{"kind": "decode", "t": 1785205007.5090194, "depth": 92510, "tps": 44.62}
+{"kind": "decode", "t": 1785205009.525973, "depth": 92599, "tps": 44.13}
+{"kind": "decode", "t": 1785205011.5414455, "depth": 92675, "tps": 37.71}
+{"kind": "decode", "t": 1785205013.580631, "depth": 92764, "tps": 43.64}
+{"kind": "decode", "t": 1785205015.598906, "depth": 92850, "tps": 42.61}
+{"kind": "decode", "t": 1785205017.6136658, "depth": 92953, "tps": 51.12}
+{"kind": "decode", "t": 1785205019.6649995, "depth": 93052, "tps": 48.26}
+{"kind": "decode", "t": 1785205021.6880176, "depth": 93156, "tps": 51.41}
+{"kind": "decode", "t": 1785205023.7127326, "depth": 93251, "tps": 46.92}
+{"kind": "decode", "t": 1785205025.7649155, "depth": 93340, "tps": 43.37}
+{"kind": "decode", "t": 1785205027.7852693, "depth": 93420, "tps": 39.6}
+{"kind": "decode", "t": 1785205029.804059, "depth": 93529, "tps": 53.99}
+{"kind": "decode", "t": 1785205031.8621273, "depth": 93624, "tps": 46.16}
+{"kind": "decode", "t": 1785205033.8882809, "depth": 93716, "tps": 45.41}
+{"kind": "decode", "t": 1785205035.9404945, "depth": 93813, "tps": 47.27}
+{"kind": "decode", "t": 1785205037.9684076, "depth": 93903, "tps": 44.38}
+{"kind": "decode", "t": 1785205039.9930975, "depth": 94000, "tps": 47.91}
+{"kind": "decode", "t": 1785205042.0525181, "depth": 94094, "tps": 45.64}
+{"kind": "decode", "t": 1785205044.0854447, "depth": 94176, "tps": 40.34}
+{"kind": "decode", "t": 1785205046.109994, "depth": 94258, "tps": 40.5}
+{"kind": "decode", "t": 1785205048.1668756, "depth": 94342, "tps": 40.84}
+{"kind": "decode", "t": 1785205050.1953084, "depth": 94436, "tps": 46.34}
+{"kind": "decode", "t": 1785205052.2278864, "depth": 94512, "tps": 37.39}
+{"kind": "decode", "t": 1785205054.2825854, "depth": 94584, "tps": 35.04}
+{"kind": "decode", "t": 1785205056.3083148, "depth": 94681, "tps": 47.88}
+{"kind": "decode", "t": 1785205058.3440757, "depth": 94783, "tps": 50.1}
+{"kind": "decode", "t": 1785205060.3460798, "depth": 94895, "tps": 55.94}
+{"kind": "decode", "t": 1785205062.39043, "depth": 95010, "tps": 56.25}
+{"kind": "decode", "t": 1785205064.4011307, "depth": 95128, "tps": 58.69}
+{"kind": "decode", "t": 1785205066.4499617, "depth": 95237, "tps": 53.2}
+{"kind": "decode", "t": 1785205068.4578898, "depth": 95350, "tps": 56.28}
+{"kind": "decode", "t": 1785205070.5052373, "depth": 95434, "tps": 41.03}
+{"kind": "decode", "t": 1785205072.5410128, "depth": 95512, "tps": 38.31}
+{"kind": "decode", "t": 1785205074.6034958, "depth": 95602, "tps": 43.64}
+{"kind": "decode", "t": 1785205076.6445012, "depth": 95681, "tps": 38.71}
+{"kind": "decode", "t": 1785205078.680361, "depth": 95782, "tps": 49.61}
+{"kind": "decode", "t": 1785205080.6905558, "depth": 95877, "tps": 47.26}
+{"kind": "decode", "t": 1785205082.7359736, "depth": 95982, "tps": 51.33}
+{"kind": "decode", "t": 1785205084.7850358, "depth": 96089, "tps": 52.22}
+{"kind": "decode", "t": 1785205086.799388, "depth": 96207, "tps": 58.58}
+{"kind": "decode", "t": 1785205088.8581421, "depth": 96308, "tps": 49.06}
+{"kind": "decode", "t": 1785205090.8723078, "depth": 96402, "tps": 46.67}
+{"kind": "decode", "t": 1785205092.9208724, "depth": 96495, "tps": 45.4}
+{"kind": "decode", "t": 1785205094.9678855, "depth": 96565, "tps": 34.2}
+{"kind": "decode", "t": 1785205096.9706771, "depth": 96658, "tps": 46.44}
+{"kind": "decode", "t": 1785205099.0202563, "depth": 96747, "tps": 43.42}
+{"kind": "decode", "t": 1785205101.0688066, "depth": 96848, "tps": 49.3}
+{"kind": "decode", "t": 1785205103.0866272, "depth": 96951, "tps": 51.05}
+{"kind": "decode", "t": 1785205105.1426651, "depth": 97038, "tps": 42.31}
+{"kind": "decode", "t": 1785205107.154213, "depth": 97119, "tps": 40.27}
+{"kind": "decode", "t": 1785205109.2047706, "depth": 97219, "tps": 48.77}
+{"kind": "decode", "t": 1785205111.2615092, "depth": 97294, "tps": 36.47}
+{"kind": "decode", "t": 1785205113.2713313, "depth": 97385, "tps": 45.28}
+{"kind": "decode", "t": 1785205115.3258915, "depth": 97470, "tps": 41.37}
+{"kind": "decode", "t": 1785205117.3764749, "depth": 97540, "tps": 34.14}
+{"kind": "decode", "t": 1785205119.385335, "depth": 97617, "tps": 38.33}
+{"kind": "decode", "t": 1785205121.436996, "depth": 97713, "tps": 46.79}
+{"kind": "decode", "t": 1785205123.4975734, "depth": 97797, "tps": 40.77}
+{"kind": "decode", "t": 1785205125.516528, "depth": 97879, "tps": 40.62}
+{"kind": "decode", "t": 1785205127.57114, "depth": 97964, "tps": 41.37}
+{"kind": "decode", "t": 1785205129.6283917, "depth": 98070, "tps": 51.53}
+{"kind": "decode", "t": 1785205131.6565247, "depth": 98160, "tps": 44.38}
+{"kind": "decode", "t": 1785205133.718675, "depth": 98252, "tps": 44.61}
+{"kind": "decode", "t": 1785205135.7795215, "depth": 98339, "tps": 42.22}
+{"kind": "decode", "t": 1785205137.8028173, "depth": 98433, "tps": 46.46}
+{"kind": "decode", "t": 1785205139.8690865, "depth": 98518, "tps": 41.14}
+{"kind": "decode", "t": 1785205141.9294574, "depth": 98602, "tps": 40.77}
+{"kind": "decode", "t": 1785205143.9709904, "depth": 98671, "tps": 33.8}
+{"kind": "decode", "t": 1785205146.0265357, "depth": 98774, "tps": 50.11}
+{"kind": "decode", "t": 1785205148.0307155, "depth": 98855, "tps": 40.42}
+{"kind": "decode", "t": 1785205150.0569646, "depth": 98946, "tps": 44.91}
+{"kind": "decode", "t": 1785205152.0581427, "depth": 99043, "tps": 48.47}
+{"kind": "decode", "t": 1785205154.0618224, "depth": 99144, "tps": 50.41}
+{"kind": "decode", "t": 1785205156.0963993, "depth": 99247, "tps": 50.62}
+{"kind": "decode", "t": 1785205158.113913, "depth": 99356, "tps": 54.03}
+{"kind": "decode", "t": 1785205160.1538465, "depth": 99451, "tps": 46.57}
+{"kind": "decode", "t": 1785205162.1609905, "depth": 99537, "tps": 42.85}
+{"kind": "decode", "t": 1785205164.1659868, "depth": 99626, "tps": 44.39}
+{"kind": "decode", "t": 1785205166.2012975, "depth": 99705, "tps": 38.81}
+{"kind": "decode", "t": 1785205168.2053473, "depth": 99799, "tps": 46.91}
+{"kind": "decode", "t": 1785205170.2143872, "depth": 99886, "tps": 43.3}
+{"kind": "decode", "t": 1785205172.2515767, "depth": 99972, "tps": 42.22}
+{"kind": "decode", "t": 1785205174.261012, "depth": 100056, "tps": 41.8}
+{"kind": "decode", "t": 1785205176.2694266, "depth": 100142, "tps": 42.82}
+{"kind": "decode", "t": 1785205178.3104055, "depth": 100233, "tps": 44.59}
+{"kind": "decode", "t": 1785205180.32472, "depth": 100317, "tps": 41.7}
+{"kind": "decode", "t": 1785205182.3349934, "depth": 100400, "tps": 41.29}
+{"kind": "decode", "t": 1785205184.3774405, "depth": 100488, "tps": 43.09}
+{"kind": "decode", "t": 1785205186.3919895, "depth": 100574, "tps": 42.69}
+{"kind": "decode", "t": 1785205188.4075613, "depth": 100673, "tps": 49.12}
+{"kind": "decode", "t": 1785205190.4564195, "depth": 100760, "tps": 42.46}
+{"kind": "decode", "t": 1785205192.4725533, "depth": 100834, "tps": 36.7}
+{"kind": "decode", "t": 1785205194.4832735, "depth": 100943, "tps": 54.21}
+{"kind": "decode", "t": 1785205196.5386074, "depth": 101016, "tps": 35.52}
+{"kind": "decode", "t": 1785205198.550974, "depth": 101108, "tps": 45.72}
+{"kind": "decode", "t": 1785205200.5712373, "depth": 101208, "tps": 49.5}
+{"kind": "decode", "t": 1785205202.6249886, "depth": 101291, "tps": 40.41}
+{"kind": "decode", "t": 1785205204.6448376, "depth": 101389, "tps": 48.52}
+{"kind": "decode", "t": 1785205206.6985786, "depth": 101479, "tps": 43.82}
+{"kind": "decode", "t": 1785205208.7229872, "depth": 101560, "tps": 40.01}
+{"kind": "decode", "t": 1785205210.7420065, "depth": 101636, "tps": 37.64}
+{"kind": "decode", "t": 1785205212.7879875, "depth": 101709, "tps": 35.68}
+{"kind": "decode", "t": 1785205214.806136, "depth": 101790, "tps": 40.14}
+{"kind": "decode", "t": 1785205216.8263917, "depth": 101880, "tps": 44.55}
+{"kind": "decode", "t": 1785205218.8524315, "depth": 101973, "tps": 45.9}
+{"kind": "decode", "t": 1785205220.9112675, "depth": 102066, "tps": 45.17}
+{"kind": "decode", "t": 1785205222.9394202, "depth": 102138, "tps": 35.5}
+{"kind": "decode", "t": 1785205224.9883463, "depth": 102226, "tps": 42.95}
+{"kind": "decode", "t": 1785205226.998458, "depth": 102308, "tps": 40.79}
+{"kind": "decode", "t": 1785205229.0426285, "depth": 102390, "tps": 40.11}
+{"kind": "decode", "t": 1785205231.0804667, "depth": 102504, "tps": 55.94}
+{"kind": "decode", "t": 1785205233.096799, "depth": 102617, "tps": 56.04}
+{"kind": "decode", "t": 1785205235.136658, "depth": 102705, "tps": 43.14}
+{"kind": "decode", "t": 1785205237.1964738, "depth": 102785, "tps": 38.84}
+{"kind": "decode", "t": 1785205239.2227921, "depth": 102884, "tps": 48.86}
+{"kind": "decode", "t": 1785205241.2569287, "depth": 102967, "tps": 40.8}
+{"kind": "decode", "t": 1785205243.3152075, "depth": 103055, "tps": 42.75}
+{"kind": "decode", "t": 1785205245.3490055, "depth": 103129, "tps": 36.39}
+{"kind": "decode", "t": 1785205247.3744395, "depth": 103206, "tps": 38.02}
+{"kind": "decode", "t": 1785205249.4329488, "depth": 103274, "tps": 33.03}
+{"kind": "decode", "t": 1785205251.4612565, "depth": 103376, "tps": 50.29}
+{"kind": "decode", "t": 1785205253.5045, "depth": 103467, "tps": 44.54}
+{"kind": "decode", "t": 1785205255.5705345, "depth": 103556, "tps": 43.08}
+{"kind": "decode", "t": 1785205257.607502, "depth": 103641, "tps": 41.73}
+{"kind": "decode", "t": 1785205259.6413198, "depth": 103738, "tps": 47.69}
+{"kind": "decode", "t": 1785205261.6449397, "depth": 103833, "tps": 47.41}
+{"kind": "decode", "t": 1785205263.686514, "depth": 103925, "tps": 45.06}
+{"kind": "decode", "t": 1785205265.7271352, "depth": 104029, "tps": 50.96}
+{"kind": "decode", "t": 1785205267.7354872, "depth": 104149, "tps": 59.75}
+{"kind": "decode", "t": 1785205269.7887754, "depth": 104263, "tps": 55.52}
+{"kind": "decode", "t": 1785205271.801409, "depth": 104364, "tps": 50.18}
+{"kind": "decode", "t": 1785205273.8480473, "depth": 104452, "tps": 43.0}
+{"kind": "decode", "t": 1785205275.852995, "depth": 104551, "tps": 49.38}
+{"kind": "decode", "t": 1785205277.9001672, "depth": 104646, "tps": 46.41}
+{"kind": "decode", "t": 1785205279.9465528, "depth": 104740, "tps": 45.93}
+{"kind": "decode", "t": 1785205281.9567885, "depth": 104826, "tps": 42.78}
+{"kind": "decode", "t": 1785205284.0008943, "depth": 104927, "tps": 49.41}
+{"kind": "decode", "t": 1785205286.0524826, "depth": 105013, "tps": 41.92}
+{"kind": "decode", "t": 1785205288.0601585, "depth": 105107, "tps": 46.82}
+{"kind": "decode", "t": 1785205290.1102839, "depth": 105200, "tps": 45.36}
+{"kind": "decode", "t": 1785205292.1593425, "depth": 105289, "tps": 43.43}
+{"kind": "decode", "t": 1785205294.1698968, "depth": 105392, "tps": 51.23}
+{"kind": "decode", "t": 1785205296.225283, "depth": 105484, "tps": 44.76}
+{"kind": "decode", "t": 1785205298.236282, "depth": 105573, "tps": 44.26}
+{"kind": "decode", "t": 1785205300.2877069, "depth": 105659, "tps": 41.92}
+{"kind": "decode", "t": 1785205302.338332, "depth": 105749, "tps": 43.89}
+{"kind": "decode", "t": 1785205304.3519676, "depth": 105839, "tps": 44.7}
+{"kind": "decode", "t": 1785205306.4066432, "depth": 105920, "tps": 39.42}
+{"kind": "decode", "t": 1785205308.458081, "depth": 105998, "tps": 38.02}
+{"kind": "decode", "t": 1785205310.4692483, "depth": 106093, "tps": 47.24}
+{"kind": "decode", "t": 1785205312.5287275, "depth": 106202, "tps": 52.93}
+{"kind": "decode", "t": 1785205314.5932047, "depth": 106271, "tps": 33.42}
+{"kind": "decode", "t": 1785205316.6054833, "depth": 106366, "tps": 47.21}
+{"kind": "decode", "t": 1785205318.6667395, "depth": 106441, "tps": 36.39}
+{"kind": "decode", "t": 1785205320.7191541, "depth": 106536, "tps": 46.29}
+{"kind": "decode", "t": 1785205322.7412405, "depth": 106621, "tps": 42.04}
+{"kind": "decode", "t": 1785205324.7987034, "depth": 106709, "tps": 42.77}
+{"kind": "decode", "t": 1785205326.8578465, "depth": 106806, "tps": 47.11}
+{"kind": "decode", "t": 1785205328.8816135, "depth": 106911, "tps": 51.88}
+{"kind": "decode", "t": 1785205330.949806, "depth": 107009, "tps": 47.38}
+{"kind": "decode", "t": 1785205333.04222, "depth": 107102, "tps": 44.45}
+{"kind": "decode", "t": 1785205335.045008, "depth": 107193, "tps": 45.44}
+{"kind": "decode", "t": 1785205337.1115255, "depth": 107294, "tps": 48.87}
+{"kind": "decode", "t": 1785205339.1447096, "depth": 107382, "tps": 43.28}
+{"kind": "decode", "t": 1785205341.2105176, "depth": 107479, "tps": 46.95}
+{"kind": "decode", "t": 1785205343.2799904, "depth": 107573, "tps": 45.42}
+{"kind": "decode", "t": 1785205345.309216, "depth": 107662, "tps": 43.86}
+{"kind": "decode", "t": 1785205347.3775723, "depth": 107753, "tps": 44.0}
+{"kind": "decode", "t": 1785205349.4475846, "depth": 107846, "tps": 44.93}
+{"kind": "decode", "t": 1785205351.4821665, "depth": 107942, "tps": 47.18}
+{"kind": "decode", "t": 1785205353.4854534, "depth": 108029, "tps": 43.43}
+{"kind": "decode", "t": 1785205355.553322, "depth": 108132, "tps": 49.81}
+{"kind": "decode", "t": 1785205357.5918818, "depth": 108213, "tps": 39.73}
+{"kind": "decode", "t": 1785205359.659886, "depth": 108297, "tps": 40.62}
+{"kind": "accept", "t": 1785205361.6905017, "depth": 1, "acceptance": 0.65229, "accepted": 16375, "generated": 25104, "mean_len": 2.96}
+{"kind": "decode", "t": 1785205364.2729566, "depth": 83744, "tps": 41.43}
+{"kind": "accept", "t": 1785205366.2865968, "depth": 1, "acceptance": 0.87582, "accepted": 134, "generated": 153, "mean_len": 3.63}
+{"kind": "decode", "t": 1785205368.6849318, "depth": 83742, "tps": 43.78}
+{"kind": "decode", "t": 1785205370.702764, "depth": 83828, "tps": 41.63}
+{"kind": "accept", "t": 1785205370.702764, "depth": 190, "acceptance": 0.86792, "accepted": 138, "generated": 159, "mean_len": 3.6}
+{"kind": "prefill", "t": 1785205372.7038784, "depth": 85681, "cached": 83633, "tps": 1021.4}
+{"kind": "prefill", "t": 1785205377.2080433, "depth": 87729, "cached": 83633, "tps": 454.7}
+{"kind": "prefill", "t": 1785205381.1012418, "depth": 89777, "cached": 83633, "tps": 526.0}
+{"kind": "prefill", "t": 1785205385.012224, "depth": 91825, "cached": 83633, "tps": 523.7}
+{"kind": "prefill", "t": 1785205388.9679163, "depth": 93873, "cached": 83633, "tps": 517.7}
+{"kind": "prefill", "t": 1785205392.9385953, "depth": 95921, "cached": 83633, "tps": 515.8}
+{"kind": "prefill", "t": 1785205396.9525545, "depth": 97969, "cached": 83633, "tps": 510.2}
+{"kind": "prefill", "t": 1785205400.9758348, "depth": 100017, "cached": 83633, "tps": 509.0}
+{"kind": "prefill", "t": 1785205405.044922, "depth": 102058, "cached": 83633, "tps": 501.6}
+{"kind": "prefill", "t": 1785205409.124904, "depth": 103962, "cached": 83633, "tps": 466.7}
+{"kind": "prefill", "t": 1785205414.1109104, "depth": 104139, "cached": 83633, "tps": 28.9}
+{"kind": "decode", "t": 1785205416.1286082, "depth": 104214, "tps": 37.17}
+{"kind": "decode", "t": 1785205418.1340249, "depth": 104314, "tps": 49.86}
+{"kind": "decode", "t": 1785205420.1881676, "depth": 104386, "tps": 35.05}
+{"kind": "decode", "t": 1785205422.2294273, "depth": 104451, "tps": 31.84}
+{"kind": "decode", "t": 1785205424.231593, "depth": 104548, "tps": 48.45}
+{"kind": "decode", "t": 1785205426.2892735, "depth": 104649, "tps": 49.08}
+{"kind": "decode", "t": 1785205428.3532975, "depth": 104759, "tps": 53.29}
+{"kind": "decode", "t": 1785205430.3861399, "depth": 104864, "tps": 51.65}
+{"kind": "accept", "t": 1785205432.4519255, "depth": 759, "acceptance": 0.69086, "accepted": 514, "generated": 744, "mean_len": 3.07}
+{"kind": "prefill", "t": 1785205443.6805842, "depth": 108802, "cached": 104102, "tps": 0.8}
+{"kind": "decode", "t": 1785205445.6917615, "depth": 108871, "tps": 34.31}
+{"kind": "decode", "t": 1785205447.7009964, "depth": 108951, "tps": 39.82}
+{"kind": "decode", "t": 1785205449.7166057, "depth": 109059, "tps": 53.58}
+{"kind": "decode", "t": 1785205451.7776408, "depth": 109090, "tps": 14.07}
+{"kind": "accept", "t": 1785205451.7776408, "depth": 345, "acceptance": 0.66957, "accepted": 231, "generated": 345, "mean_len": 3.01}
+{"kind": "prefill", "t": 1785205465.0066502, "depth": 110564, "cached": 108740, "tps": 457.5}
+{"kind": "prefill", "t": 1785205469.179588, "depth": 110630, "cached": 108740, "tps": 1.0}
+{"kind": "decode", "t": 1785205471.222138, "depth": 110705, "tps": 36.72}
+{"kind": "decode", "t": 1785205473.2428825, "depth": 110779, "tps": 36.62}
+{"kind": "decode", "t": 1785205475.2635944, "depth": 110846, "tps": 33.16}
+{"kind": "decode", "t": 1785205477.2798388, "depth": 110930, "tps": 41.66}
+{"kind": "decode", "t": 1785205479.3411138, "depth": 111001, "tps": 34.44}
+{"kind": "decode", "t": 1785205481.3648713, "depth": 111069, "tps": 33.6}
+{"kind": "decode", "t": 1785205483.3871453, "depth": 111138, "tps": 34.12}
+{"kind": "decode", "t": 1785205485.4376323, "depth": 111195, "tps": 27.8}
+{"kind": "decode", "t": 1785205487.4537823, "depth": 111261, "tps": 32.74}
+{"kind": "decode", "t": 1785205489.4724486, "depth": 111334, "tps": 36.16}
+{"kind": "decode", "t": 1785205491.4946198, "depth": 111405, "tps": 35.11}
+{"kind": "decode", "t": 1785205493.548886, "depth": 111463, "tps": 28.23}
+{"kind": "decode", "t": 1785205495.5697718, "depth": 111523, "tps": 29.69}
+{"kind": "decode", "t": 1785205497.590327, "depth": 111591, "tps": 33.65}
+{"kind": "decode", "t": 1785205499.6150937, "depth": 111665, "tps": 36.55}
+{"kind": "decode", "t": 1785205501.6707342, "depth": 111718, "tps": 25.78}
+{"kind": "decode", "t": 1785205503.6887088, "depth": 111787, "tps": 34.19}
+{"kind": "decode", "t": 1785205505.7123291, "depth": 111848, "tps": 30.14}
+{"kind": "decode", "t": 1785205507.7316582, "depth": 111915, "tps": 33.18}
+{"kind": "decode", "t": 1785205509.7845223, "depth": 111984, "tps": 33.61}
+{"kind": "decode", "t": 1785205511.811832, "depth": 112050, "tps": 32.56}
+{"kind": "decode", "t": 1785205513.8378618, "depth": 112104, "tps": 26.65}
+{"kind": "decode", "t": 1785205515.8574502, "depth": 112167, "tps": 31.19}
+{"kind": "decode", "t": 1785205517.911401, "depth": 112241, "tps": 36.03}
+{"kind": "decode", "t": 1785205519.941743, "depth": 112309, "tps": 33.49}
+{"kind": "decode", "t": 1785205521.9694946, "depth": 112366, "tps": 28.11}
+{"kind": "decode", "t": 1785205523.990836, "depth": 112447, "tps": 40.07}
+{"kind": "decode", "t": 1785205526.0531318, "depth": 112513, "tps": 32.0}
+{"kind": "decode", "t": 1785205528.0803723, "depth": 112575, "tps": 30.58}
+{"kind": "decode", "t": 1785205530.105984, "depth": 112643, "tps": 33.57}
+{"kind": "decode", "t": 1785205532.160935, "depth": 112703, "tps": 29.2}
+{"kind": "decode", "t": 1785205534.1859245, "depth": 112772, "tps": 34.07}
+{"kind": "decode", "t": 1785205536.2127774, "depth": 112843, "tps": 35.03}
+{"kind": "decode", "t": 1785205538.2419138, "depth": 112912, "tps": 34.0}
+{"kind": "decode", "t": 1785205540.3009217, "depth": 113015, "tps": 50.02}
+{"kind": "accept", "t": 1785205542.3623939, "depth": 2515, "acceptance": 0.46324, "accepted": 1462, "generated": 3156, "mean_len": 2.39}
+{"kind": "prefill", "t": 1785205544.7166648, "depth": 111661, "cached": 110564, "tps": 372.1}
+{"kind": "prefill", "t": 1785205547.0644345, "depth": 113705, "cached": 110564, "tps": 870.6}
+{"kind": "prefill", "t": 1785205551.7688046, "depth": 113767, "cached": 110564, "tps": 0.9}
+{"kind": "decode", "t": 1785205553.7928514, "depth": 113861, "tps": 46.44}
+{"kind": "decode", "t": 1785205555.8589132, "depth": 113970, "tps": 52.76}
+{"kind": "decode", "t": 1785205557.8917265, "depth": 114077, "tps": 52.64}
+{"kind": "decode", "t": 1785205559.8974035, "depth": 114171, "tps": 46.87}
+{"kind": "decode", "t": 1785205561.9650073, "depth": 114258, "tps": 42.08}
+{"kind": "decode", "t": 1785205563.988942, "depth": 114345, "tps": 42.99}
+{"kind": "decode", "t": 1785205566.0552428, "depth": 114445, "tps": 48.4}
+{"kind": "decode", "t": 1785205568.0850987, "depth": 114543, "tps": 48.28}
+{"kind": "decode", "t": 1785205570.0867357, "depth": 114648, "tps": 52.46}
+{"kind": "decode", "t": 1785205572.1597066, "depth": 114743, "tps": 45.83}
+{"kind": "decode", "t": 1785205574.1925373, "depth": 114846, "tps": 50.67}
+{"kind": "decode", "t": 1785205576.1954768, "depth": 114938, "tps": 45.93}
+{"kind": "decode", "t": 1785205578.2248883, "depth": 115038, "tps": 49.28}
+{"kind": "decode", "t": 1785205580.259429, "depth": 115133, "tps": 46.69}
+{"kind": "decode", "t": 1785205582.2658277, "depth": 115227, "tps": 46.85}
+{"kind": "decode", "t": 1785205584.2993042, "depth": 115315, "tps": 43.28}
+{"kind": "decode", "t": 1785205586.300422, "depth": 115397, "tps": 40.98}
+{"kind": "decode", "t": 1785205588.367605, "depth": 115490, "tps": 44.99}
+{"kind": "accept", "t": 1785205590.410066, "depth": 1782, "acceptance": 0.78392, "accepted": 1277, "generated": 1629, "mean_len": 3.35}
+{"kind": "decode", "t": 1785205598.45592, "depth": 115756, "tps": 53.88}
+{"kind": "decode", "t": 1785205600.5018222, "depth": 115847, "tps": 44.48}
+{"kind": "accept", "t": 1785205602.5086794, "depth": 285, "acceptance": 0.83539, "accepted": 203, "generated": 243, "mean_len": 3.51}
+{"kind": "prefill", "t": 1785205605.4515438, "depth": 116043, "cached": 115619, "tps": 32.6}
+{"kind": "decode", "t": 1785205607.4759166, "depth": 116123, "tps": 39.52}
+{"kind": "decode", "t": 1785205609.539052, "depth": 116210, "tps": 42.17}
+{"kind": "decode", "t": 1785205611.6067646, "depth": 116319, "tps": 52.72}
+{"kind": "decode", "t": 1785205613.6485841, "depth": 116426, "tps": 52.4}
+{"kind": "decode", "t": 1785205615.6619294, "depth": 116516, "tps": 44.7}
+{"kind": "decode", "t": 1785205617.6989286, "depth": 116594, "tps": 38.29}
+{"kind": "decode", "t": 1785205619.701133, "depth": 116698, "tps": 51.94}
+{"kind": "decode", "t": 1785205621.7168038, "depth": 116794, "tps": 47.63}
+{"kind": "decode", "t": 1785205623.7586348, "depth": 116896, "tps": 49.96}
+{"kind": "decode", "t": 1785205625.776468, "depth": 117001, "tps": 52.04}
+{"kind": "decode", "t": 1785205627.8265927, "depth": 117093, "tps": 44.88}
+{"kind": "decode", "t": 1785205629.84433, "depth": 117173, "tps": 39.65}
+{"kind": "decode", "t": 1785205631.8536072, "depth": 117258, "tps": 42.3}
+{"kind": "decode", "t": 1785205633.8943415, "depth": 117350, "tps": 45.08}
+{"kind": "decode", "t": 1785205635.9152129, "depth": 117439, "tps": 44.04}
+{"kind": "decode", "t": 1785205637.9331956, "depth": 117527, "tps": 43.61}
+{"kind": "decode", "t": 1785205639.98112, "depth": 117601, "tps": 36.13}
+{"kind": "decode", "t": 1785205641.9944797, "depth": 117683, "tps": 40.73}
+{"kind": "decode", "t": 1785205644.0096374, "depth": 117751, "tps": 33.74}
+{"kind": "decode", "t": 1785205646.0180633, "depth": 117850, "tps": 49.29}
+{"kind": "decode", "t": 1785205648.067849, "depth": 117961, "tps": 54.15}
+{"kind": "decode", "t": 1785205650.1008978, "depth": 118073, "tps": 55.09}
+{"kind": "decode", "t": 1785205652.1593726, "depth": 118181, "tps": 52.47}
+{"kind": "accept", "t": 1785205654.192054, "depth": 2216, "acceptance": 0.7708, "accepted": 1547, "generated": 2007, "mean_len": 3.31}
+{"kind": "prefill", "t": 1785205656.2661135, "depth": 118233, "cached": 116013, "tps": 969.1}
+{"kind": "prefill", "t": 1785205661.0088, "depth": 118304, "cached": 116013, "tps": 8.0}
+{"kind": "accept", "t": 1785205663.040959, "depth": 110, "acceptance": 0.87778, "accepted": 79, "generated": 90, "mean_len": 3.63}
+{"kind": "prefill", "t": 1785205665.9967191, "depth": 119564, "cached": 118267, "tps": 409.0}
+{"kind": "prefill", "t": 1785205669.062899, "depth": 119643, "cached": 118267, "tps": 1.3}
+{"kind": "decode", "t": 1785205671.075982, "depth": 119755, "tps": 55.64}
+{"kind": "decode", "t": 1785205673.1251187, "depth": 119864, "tps": 53.19}
+{"kind": "decode", "t": 1785205675.193549, "depth": 119976, "tps": 54.15}
+{"kind": "decode", "t": 1785205677.2370768, "depth": 120088, "tps": 54.81}
+{"kind": "decode", "t": 1785205679.3086429, "depth": 120199, "tps": 53.58}
+{"kind": "decode", "t": 1785205681.3568041, "depth": 120310, "tps": 54.19}
+{"kind": "decode", "t": 1785205683.4029708, "depth": 120418, "tps": 52.78}
+{"kind": "decode", "t": 1785205685.4112985, "depth": 120529, "tps": 55.27}
+{"kind": "decode", "t": 1785205687.457998, "depth": 120636, "tps": 52.28}
+{"kind": "decode", "t": 1785205689.460733, "depth": 120743, "tps": 53.43}
+{"kind": "decode", "t": 1785205691.5050192, "depth": 120844, "tps": 49.41}
+{"kind": "decode", "t": 1785205693.5119112, "depth": 120939, "tps": 47.34}
+{"kind": "decode", "t": 1785205695.559764, "depth": 121028, "tps": 43.46}
+{"kind": "decode", "t": 1785205697.6027937, "depth": 121100, "tps": 35.24}
+{"kind": "decode", "t": 1785205699.6688151, "depth": 121207, "tps": 51.79}
+{"kind": "decode", "t": 1785205701.7215478, "depth": 121318, "tps": 54.07}
+{"kind": "decode", "t": 1785205703.7760875, "depth": 121426, "tps": 52.57}
+{"kind": "decode", "t": 1785205705.7857895, "depth": 121538, "tps": 55.73}
+{"kind": "decode", "t": 1785205707.8386931, "depth": 121646, "tps": 52.61}
+{"kind": "accept", "t": 1785205709.848302, "depth": 2141, "acceptance": 0.93713, "accepted": 1580, "generated": 1686, "mean_len": 3.81}
+{"kind": "prefill", "t": 1785205712.1344843, "depth": 121709, "cached": 119564, "tps": 854.7}
+{"kind": "prefill", "t": 1785205717.911173, "depth": 121835, "cached": 119564, "tps": 16.3}
+{"kind": "accept", "t": 1785205719.9238927, "depth": 71, "acceptance": 0.91228, "accepted": 52, "generated": 57, "mean_len": 3.74}
+{"kind": "prefill", "t": 1785205724.8784177, "depth": 122069, "cached": 121975, "tps": 1.5}
+{"kind": "decode", "t": 1785205726.9490018, "depth": 122156, "tps": 42.02}
+{"kind": "decode", "t": 1785205728.9549844, "depth": 122229, "tps": 36.39}
+{"kind": "prefill", "t": 1785205730.9981635, "depth": 122255, "cached": 121998, "tps": 112.6}
+{"kind": "accept", "t": 1785205730.9981635, "depth": 252, "acceptance": 0.69959, "accepted": 170, "generated": 243, "mean_len": 3.1}
+{"kind": "prefill", "t": 1785205733.2727551, "depth": 122386, "cached": 121998, "tps": 44.4}
+{"kind": "decode", "t": 1785205735.3114455, "depth": 122472, "tps": 42.18}
+{"kind": "decode", "t": 1785205737.359842, "depth": 122540, "tps": 33.2}
+{"kind": "decode", "t": 1785205739.4009748, "depth": 122621, "tps": 39.68}
+{"kind": "decode", "t": 1785205741.4488826, "depth": 122706, "tps": 41.51}
+{"kind": "prefill", "t": 1785205743.4697237, "depth": 122761, "cached": 122352, "tps": 25.2}
+{"kind": "accept", "t": 1785205743.4697237, "depth": 405, "acceptance": 0.6817, "accepted": 272, "generated": 399, "mean_len": 3.05}
+{"kind": "prefill", "t": 1785205746.0565956, "depth": 123436, "cached": 122352, "tps": 260.9}
+{"kind": "prefill", "t": 1785205748.5550623, "depth": 125480, "cached": 122352, "tps": 818.1}
+{"kind": "prefill", "t": 1785205753.4589205, "depth": 125546, "cached": 122352, "tps": 0.8}
+{"kind": "decode", "t": 1785205755.4974213, "depth": 125626, "tps": 39.24}
+{"kind": "decode", "t": 1785205757.5682964, "depth": 125708, "tps": 39.6}
+{"kind": "decode", "t": 1785205759.6005714, "depth": 125816, "tps": 53.14}
+{"kind": "decode", "t": 1785205761.610439, "depth": 125918, "tps": 50.75}
+{"kind": "decode", "t": 1785205763.6219063, "depth": 126001, "tps": 41.26}
+{"kind": "accept", "t": 1785205765.650429, "depth": 554, "acceptance": 0.78112, "accepted": 389, "generated": 498, "mean_len": 3.34}
+{"kind": "prefill", "t": 1785205768.9692574, "depth": 126175, "cached": 125480, "tps": 28.9}
+{"kind": "decode", "t": 1785205771.0062177, "depth": 126252, "tps": 37.8}
+{"kind": "decode", "t": 1785205773.0333772, "depth": 126339, "tps": 42.92}
+{"kind": "accept", "t": 1785205775.0351343, "depth": 245, "acceptance": 0.7316, "accepted": 169, "generated": 231, "mean_len": 3.19}
+{"kind": "prefill", "t": 1785205777.590483, "depth": 126525, "cached": 126144, "tps": 122.5}
+{"kind": "decode", "t": 1785205779.6325061, "depth": 126607, "tps": 40.16}
+{"kind": "decode", "t": 1785205781.6338801, "depth": 126690, "tps": 41.47}
+{"kind": "accept", "t": 1785205783.6350148, "depth": 222, "acceptance": 0.7343, "accepted": 152, "generated": 207, "mean_len": 3.2}
+{"kind": "prefill", "t": 1785205786.0928414, "depth": 126904, "cached": 126511, "tps": 127.3}
+{"kind": "decode", "t": 1785205788.1420717, "depth": 126987, "tps": 40.5}
+{"kind": "accept", "t": 1785205790.1815693, "depth": 160, "acceptance": 0.80851, "accepted": 114, "generated": 141, "mean_len": 3.43}
+{"kind": "prefill", "t": 1785205792.5345843, "depth": 127887, "cached": 126890, "tps": 354.0}
+{"kind": "prefill", "t": 1785205794.9794238, "depth": 129931, "cached": 126890, "tps": 836.0}
+{"kind": "prefill", "t": 1785205799.9625132, "depth": 129989, "cached": 126890, "tps": 0.8}
+{"kind": "decode", "t": 1785205802.0361516, "depth": 130065, "tps": 36.65}
+{"kind": "decode", "t": 1785205804.0918224, "depth": 130122, "tps": 27.73}
+{"kind": "decode", "t": 1785205806.1045973, "depth": 130196, "tps": 36.77}
+{"kind": "decode", "t": 1785205808.1234164, "depth": 130283, "tps": 43.09}
+{"kind": "decode", "t": 1785205810.1531928, "depth": 130375, "tps": 45.33}
+{"kind": "decode", "t": 1785205812.2178278, "depth": 130465, "tps": 43.59}
+{"kind": "decode", "t": 1785205814.2514222, "depth": 130542, "tps": 37.86}
+{"kind": "decode", "t": 1785205816.278657, "depth": 130637, "tps": 46.86}
+{"kind": "decode", "t": 1785205818.2942107, "depth": 130741, "tps": 51.6}
+{"kind": "decode", "t": 1785205820.3344889, "depth": 130849, "tps": 52.93}
+{"kind": "decode", "t": 1785205822.4064598, "depth": 130943, "tps": 45.37}
+{"kind": "decode", "t": 1785205824.4449966, "depth": 131020, "tps": 37.77}
+{"kind": "decode", "t": 1785205826.4793472, "depth": 131095, "tps": 36.87}
+{"kind": "decode", "t": 1785205828.540158, "depth": 131184, "tps": 43.19}
+{"kind": "decode", "t": 1785205830.5767965, "depth": 131256, "tps": 35.35}
+{"kind": "accept", "t": 1785205832.6046817, "depth": 1327, "acceptance": 0.70824, "accepted": 903, "generated": 1275, "mean_len": 3.12}
+{"kind": "prefill", "t": 1785205836.9966838, "depth": 131390, "cached": 129931, "tps": 21.9}
+{"kind": "decode", "t": 1785205839.007161, "depth": 131479, "tps": 44.27}
+{"kind": "decode", "t": 1785205841.069518, "depth": 131554, "tps": 36.37}
+{"kind": "accept", "t": 1785205841.069518, "depth": 185, "acceptance": 0.78182, "accepted": 129, "generated": 165, "mean_len": 3.35}
+{"kind": "prefill", "t": 1785205849.4061635, "depth": 132684, "cached": 132594, "tps": 1.9}
+{"kind": "prefill", "t": 1785205851.4115813, "depth": 132742, "cached": 132617, "tps": 48.9}
+{"kind": "accept", "t": 1785205851.4115813, "depth": 74, "acceptance": 0.85714, "accepted": 54, "generated": 63, "mean_len": 3.57}
+{"kind": "prefill", "t": 1785205853.8789952, "depth": 132800, "cached": 132617, "tps": 1.6}
+{"kind": "decode", "t": 1785205855.8862147, "depth": 132875, "tps": 37.37}
+{"kind": "decode", "t": 1785205857.952996, "depth": 132983, "tps": 52.26}
+{"kind": "accept", "t": 1785205857.952996, "depth": 238, "acceptance": 0.76389, "accepted": 165, "generated": 216, "mean_len": 3.29}
+{"kind": "prefill", "t": 1785205860.017164, "depth": 133730, "cached": 132742, "tps": 416.1}
+{"kind": "prefill", "t": 1785205864.2857203, "depth": 133790, "cached": 132742, "tps": 0.9}
+{"kind": "decode", "t": 1785205866.2962515, "depth": 133891, "tps": 50.24}
+{"kind": "accept", "t": 1785205868.3119557, "depth": 180, "acceptance": 0.87333, "accepted": 131, "generated": 150, "mean_len": 3.62}
+{"kind": "prefill", "t": 1785205870.4441593, "depth": 134443, "cached": 133730, "tps": 279.5}
+{"kind": "decode", "t": 1785205872.931461, "depth": 134534, "tps": 36.59}
+{"kind": "decode", "t": 1785205874.9716644, "depth": 134635, "tps": 49.5}
+{"kind": "decode", "t": 1785205876.987108, "depth": 134739, "tps": 51.6}
+{"kind": "decode", "t": 1785205879.0115337, "depth": 134847, "tps": 53.35}
+{"kind": "decode", "t": 1785205881.0836003, "depth": 134943, "tps": 46.33}
+{"kind": "decode", "t": 1785205883.105321, "depth": 135049, "tps": 52.43}
+{"kind": "decode", "t": 1785205885.1796122, "depth": 135156, "tps": 51.58}
+{"kind": "decode", "t": 1785205887.2532127, "depth": 135254, "tps": 47.26}
+{"kind": "decode", "t": 1785205889.3200903, "depth": 135355, "tps": 48.87}
+{"kind": "decode", "t": 1785205891.3460767, "depth": 135457, "tps": 50.35}
+{"kind": "decode", "t": 1785205893.3725922, "depth": 135547, "tps": 44.41}
+{"kind": "decode", "t": 1785205895.4393275, "depth": 135643, "tps": 46.45}
+{"kind": "decode", "t": 1785205897.5144086, "depth": 135739, "tps": 46.26}
+{"kind": "prefill", "t": 1785205899.5661433, "depth": 135700, "cached": 134439, "tps": 267.1}
+{"kind": "accept", "t": 1785205899.5661433, "depth": 1312, "acceptance": 0.92529, "accepted": 966, "generated": 1044, "mean_len": 3.78}
+{"kind": "prefill", "t": 1785205905.047846, "depth": 136510, "cached": 134439, "tps": 147.8}
+{"kind": "prefill", "t": 1785205907.3882256, "depth": 136575, "cached": 134439, "tps": 1.7}
+{"kind": "decode", "t": 1785205909.4220057, "depth": 136662, "tps": 42.29}
+{"kind": "accept", "t": 1785205909.4220057, "depth": 148, "acceptance": 0.9, "accepted": 108, "generated": 120, "mean_len": 3.7}
+{"kind": "prefill", "t": 1785205914.2904987, "depth": 136992, "cached": 136510, "tps": 1.4}
+{"kind": "decode", "t": 1785205916.3599167, "depth": 137089, "tps": 46.87}
+{"kind": "accept", "t": 1785205918.3651736, "depth": 178, "acceptance": 0.83007, "accepted": 127, "generated": 153, "mean_len": 3.49}
+{"kind": "prefill", "t": 1785205920.7566216, "depth": 137495, "cached": 136934, "tps": 166.4}
+{"kind": "decode", "t": 1785205922.8496637, "depth": 137578, "tps": 39.66}
+{"kind": "decode", "t": 1785205924.9057581, "depth": 137679, "tps": 49.12}
+{"kind": "decode", "t": 1785205926.9404387, "depth": 137783, "tps": 51.11}
+{"kind": "decode", "t": 1785205928.9850545, "depth": 137887, "tps": 50.87}
+{"kind": "decode", "t": 1785205930.999793, "depth": 137991, "tps": 51.62}
+{"kind": "decode", "t": 1785205933.0429888, "depth": 138094, "tps": 50.41}
+{"kind": "decode", "t": 1785205935.0585346, "depth": 138198, "tps": 51.6}
+{"kind": "decode", "t": 1785205937.0748491, "depth": 138278, "tps": 39.68}
+{"kind": "accept", "t": 1785205937.0748491, "depth": 784, "acceptance": 0.95875, "accepted": 581, "generated": 606, "mean_len": 3.88}
+{"kind": "prefill", "t": 1785205939.0759475, "depth": 138266, "cached": 137491, "tps": 106.9}
+{"kind": "prefill", "t": 1785205942.329373, "depth": 138382, "cached": 137491, "tps": 29.5}
+{"kind": "decode", "t": 1785205944.3975167, "depth": 138473, "tps": 44.0}
+{"kind": "decode", "t": 1785205946.4063559, "depth": 138547, "tps": 35.84}
+{"kind": "accept", "t": 1785205946.4063559, "depth": 184, "acceptance": 0.83019, "accepted": 132, "generated": 159, "mean_len": 3.49}
+{"kind": "prefill", "t": 1785205951.4418786, "depth": 139048, "cached": 138358, "tps": 1.3}
+{"kind": "decode", "t": 1785205953.4553552, "depth": 139124, "tps": 37.75}
+{"kind": "decode", "t": 1785205955.4629087, "depth": 139224, "tps": 49.81}
+{"kind": "prefill", "t": 1785205957.4825835, "depth": 139751, "cached": 138982, "tps": 69.8}
+{"kind": "accept", "t": 1785205957.4825835, "depth": 270, "acceptance": 0.8355, "accepted": 193, "generated": 231, "mean_len": 3.51}
+{"kind": "prefill", "t": 1785205961.3997986, "depth": 141795, "cached": 138982, "tps": 521.8}
+{"kind": "prefill", "t": 1785205966.5915906, "depth": 141856, "cached": 138982, "tps": 0.8}
+{"kind": "decode", "t": 1785205968.6431184, "depth": 141955, "tps": 48.26}
+{"kind": "decode", "t": 1785205970.6547112, "depth": 142059, "tps": 51.7}
+{"kind": "decode", "t": 1785205972.6947038, "depth": 142145, "tps": 42.16}
+{"kind": "accept", "t": 1785205974.7589867, "depth": 386, "acceptance": 0.90385, "accepted": 282, "generated": 312, "mean_len": 3.71}
+{"kind": "prefill", "t": 1785205977.74864, "depth": 142267, "cached": 141795, "tps": 31.4}
+{"kind": "decode", "t": 1785205979.7632146, "depth": 142342, "tps": 37.23}
+{"kind": "decode", "t": 1785205981.8172703, "depth": 142404, "tps": 30.18}
+{"kind": "decode", "t": 1785205983.838767, "depth": 142467, "tps": 31.17}
+{"kind": "decode", "t": 1785205985.85886, "depth": 142557, "tps": 44.55}
+{"kind": "accept", "t": 1785205987.8928108, "depth": 358, "acceptance": 0.63686, "accepted": 235, "generated": 369, "mean_len": 2.91}
+{"kind": "prefill", "t": 1785205990.6887171, "depth": 142590, "cached": 142241, "tps": 71.2}
+{"kind": "decode", "t": 1785205992.6909163, "depth": 142651, "tps": 30.47}
+{"kind": "decode", "t": 1785205994.7417762, "depth": 142716, "tps": 31.69}
+{"kind": "decode", "t": 1785205996.7656512, "depth": 142773, "tps": 28.16}
+{"kind": "decode", "t": 1785205998.7861092, "depth": 142851, "tps": 38.61}
+{"kind": "decode", "t": 1785206000.8451126, "depth": 142940, "tps": 43.22}
+{"kind": "accept", "t": 1785206002.8839412, "depth": 408, "acceptance": 0.6023, "accepted": 262, "generated": 435, "mean_len": 2.81}
+{"kind": "prefill", "t": 1785206005.87147, "depth": 143059, "cached": 142578, "tps": 110.8}
+{"kind": "decode", "t": 1785206008.0696783, "depth": 143136, "tps": 35.03}
+{"kind": "decode", "t": 1785206010.0855868, "depth": 143222, "tps": 42.16}
+{"kind": "accept", "t": 1785206010.0855868, "depth": 163, "acceptance": 0.8227, "accepted": 116, "generated": 141, "mean_len": 3.47}
+{"kind": "prefill", "t": 1785206014.7293632, "depth": 143426, "cached": 143055, "tps": 1.5}
+{"kind": "decode", "t": 1785206016.762793, "depth": 143530, "tps": 51.15}
+{"kind": "decode", "t": 1785206018.8127031, "depth": 143634, "tps": 50.73}
+{"kind": "decode", "t": 1785206020.8924944, "depth": 143738, "tps": 50.01}
+{"kind": "prefill", "t": 1785206022.9446833, "depth": 143739, "cached": 143369, "tps": 25.3}
+{"kind": "accept", "t": 1785206022.9446833, "depth": 393, "acceptance": 0.95098, "accepted": 291, "generated": 306, "mean_len": 3.85}
+{"kind": "prefill", "t": 1785206026.0524049, "depth": 143855, "cached": 143369, "tps": 30.9}
+{"kind": "decode", "t": 1785206028.0849633, "depth": 143923, "tps": 33.46}
+{"kind": "decode", "t": 1785206030.1494522, "depth": 143984, "tps": 29.55}
+{"kind": "decode", "t": 1785206032.1793687, "depth": 144052, "tps": 33.5}
+{"kind": "decode", "t": 1785206034.2129412, "depth": 144131, "tps": 38.85}
+{"kind": "decode", "t": 1785206036.2812366, "depth": 144188, "tps": 27.56}
+{"kind": "decode", "t": 1785206038.3134346, "depth": 144249, "tps": 30.02}
+{"kind": "decode", "t": 1785206040.3470886, "depth": 144314, "tps": 31.96}
+{"kind": "decode", "t": 1785206042.3812902, "depth": 144393, "tps": 38.84}
+{"kind": "decode", "t": 1785206044.4545293, "depth": 144477, "tps": 40.52}
+{"kind": "accept", "t": 1785206044.4545293, "depth": 643, "acceptance": 0.57345, "accepted": 406, "generated": 708, "mean_len": 2.72}
+{"kind": "prefill", "t": 1785206046.4556406, "depth": 144443, "cached": 143831, "tps": 73.0}
+{"kind": "prefill", "t": 1785206049.8795848, "depth": 144488, "cached": 143831, "tps": 1.2}
+{"kind": "decode", "t": 1785206051.8918924, "depth": 144556, "tps": 33.79}
+{"kind": "decode", "t": 1785206053.9322944, "depth": 144624, "tps": 33.33}
+{"kind": "decode", "t": 1785206055.9719987, "depth": 144702, "tps": 38.24}
+{"kind": "decode", "t": 1785206058.0479496, "depth": 144782, "tps": 38.54}
+{"kind": "decode", "t": 1785206060.0945647, "depth": 144861, "tps": 38.6}
+{"kind": "decode", "t": 1785206062.140134, "depth": 144925, "tps": 31.29}
+{"kind": "decode", "t": 1785206064.2101226, "depth": 145016, "tps": 43.96}
+{"kind": "decode", "t": 1785206066.2119195, "depth": 145112, "tps": 47.96}
+{"kind": "decode", "t": 1785206068.2167232, "depth": 145212, "tps": 49.88}
+{"kind": "decode", "t": 1785206070.228875, "depth": 145315, "tps": 51.19}
+{"kind": "decode", "t": 1785206072.2914007, "depth": 145415, "tps": 48.48}
+{"kind": "decode", "t": 1785206074.3066962, "depth": 145511, "tps": 47.64}
+{"kind": "decode", "t": 1785206076.37083, "depth": 145615, "tps": 50.38}
+{"kind": "prefill", "t": 1785206078.4366167, "depth": 145167, "cached": 144443, "tps": 52.3}
+{"kind": "accept", "t": 1785206078.4366167, "depth": 1171, "acceptance": 0.77652, "accepted": 820, "generated": 1056, "mean_len": 3.33}
+{"kind": "prefill", "t": 1785206082.2164586, "depth": 145281, "cached": 144443, "tps": 25.4}
+{"kind": "decode", "t": 1785206084.274749, "depth": 145380, "tps": 48.1}
+{"kind": "accept", "t": 1785206086.3409016, "depth": 136, "acceptance": 0.85965, "accepted": 98, "generated": 114, "mean_len": 3.58}
+{"kind": "prefill", "t": 1785206088.50299, "depth": 145891, "cached": 145259, "tps": 238.2}
+{"kind": "prefill", "t": 1785206090.6518364, "depth": 145936, "cached": 145259, "tps": 1.9}
+{"kind": "decode", "t": 1785206092.719113, "depth": 146012, "tps": 36.76}
+{"kind": "decode", "t": 1785206094.7251596, "depth": 146109, "tps": 48.35}
+{"kind": "decode", "t": 1785206096.7422903, "depth": 146209, "tps": 49.58}
+{"kind": "decode", "t": 1785206098.7699974, "depth": 146309, "tps": 49.32}
+{"kind": "decode", "t": 1785206100.7713957, "depth": 146411, "tps": 50.96}
+{"kind": "decode", "t": 1785206102.851236, "depth": 146511, "tps": 48.08}
+{"kind": "decode", "t": 1785206104.8820043, "depth": 146614, "tps": 50.72}
+{"kind": "decode", "t": 1785206106.9608717, "depth": 146714, "tps": 48.1}
+{"kind": "decode", "t": 1785206109.024986, "depth": 146814, "tps": 48.45}
+{"kind": "prefill", "t": 1785206111.0822544, "depth": 146775, "cached": 145891, "tps": 120.5}
+{"kind": "accept", "t": 1785206111.0822544, "depth": 955, "acceptance": 0.9249, "accepted": 702, "generated": 759, "mean_len": 3.77}
+{"kind": "prefill", "t": 1785206115.6464982, "depth": 146896, "cached": 145891, "tps": 21.0}
+{"kind": "decode", "t": 1785206117.7083366, "depth": 146983, "tps": 42.2}
+{"kind": "decode", "t": 1785206119.7351143, "depth": 147045, "tps": 30.59}
+{"kind": "decode", "t": 1785206121.8022995, "depth": 147122, "tps": 37.25}
+{"kind": "accept", "t": 1785206123.8728683, "depth": 297, "acceptance": 0.67003, "accepted": 199, "generated": 297, "mean_len": 3.01}
+{"kind": "prefill", "t": 1785206127.3294926, "depth": 147259, "cached": 146867, "tps": 18.8}
+{"kind": "decode", "t": 1785206129.409993, "depth": 147337, "tps": 37.49}
+{"kind": "decode", "t": 1785206131.4775758, "depth": 147424, "tps": 42.08}
+{"kind": "accept", "t": 1785206133.5569947, "depth": 236, "acceptance": 0.75463, "accepted": 163, "generated": 216, "mean_len": 3.26}
+{"kind": "prefill", "t": 1785206136.6462457, "depth": 148548, "cached": 147230, "tps": 369.0}
+{"kind": "prefill", "t": 1785206140.6887631, "depth": 148600, "cached": 147230, "tps": 1.0}
+{"kind": "decode", "t": 1785206142.742818, "depth": 148677, "tps": 37.49}
+{"kind": "decode", "t": 1785206144.822551, "depth": 148752, "tps": 36.06}
+{"kind": "decode", "t": 1785206146.8520586, "depth": 148814, "tps": 29.56}
+{"kind": "accept", "t": 1785206146.8520586, "depth": 261, "acceptance": 0.62637, "accepted": 171, "generated": 273, "mean_len": 2.88}
+{"kind": "prefill", "t": 1785206151.459723, "depth": 148840, "cached": 148548, "tps": 1.5}
+{"kind": "decode", "t": 1785206153.5027692, "depth": 148913, "tps": 35.73}
+{"kind": "accept", "t": 1785206155.576473, "depth": 148, "acceptance": 0.62179, "accepted": 97, "generated": 156, "mean_len": 2.87}
+{"kind": "prefill", "t": 1785206158.243642, "depth": 149000, "cached": 148794, "tps": 34.1}
+{"kind": "accept", "t": 1785206160.2510185, "depth": 69, "acceptance": 0.81667, "accepted": 49, "generated": 60, "mean_len": 3.45}
+{"kind": "prefill", "t": 1785206163.243556, "depth": 149147, "cached": 148980, "tps": 30.4}
+{"kind": "decode", "t": 1785206165.2819932, "depth": 149235, "tps": 43.17}
+{"kind": "accept", "t": 1785206167.3600216, "depth": 123, "acceptance": 0.77477, "accepted": 86, "generated": 111, "mean_len": 3.32}
+{"kind": "prefill", "t": 1785206169.5143347, "depth": 149415, "cached": 149128, "tps": 99.3}
+{"kind": "decode", "t": 1785206171.5214708, "depth": 149490, "tps": 36.87}
+{"kind": "accept", "t": 1785206171.5214708, "depth": 78, "acceptance": 0.75, "accepted": 54, "generated": 72, "mean_len": 3.25}
+{"kind": "prefill", "t": 1785206176.0432034, "depth": 149730, "cached": 149408, "tps": 1.6}
+{"kind": "decode", "t": 1785206178.0841937, "depth": 149810, "tps": 39.2}
+{"kind": "decode", "t": 1785206180.1137388, "depth": 149899, "tps": 43.85}
+{"kind": "decode", "t": 1785206182.195363, "depth": 149999, "tps": 48.04}
+{"kind": "decode", "t": 1785206184.2064683, "depth": 150092, "tps": 46.24}
+{"kind": "decode", "t": 1785206186.2453055, "depth": 150179, "tps": 42.67}
+{"kind": "decode", "t": 1785206188.2518647, "depth": 150259, "tps": 39.87}
+{"kind": "decode", "t": 1785206190.25554, "depth": 150353, "tps": 46.91}
+{"kind": "decode", "t": 1785206192.295347, "depth": 150422, "tps": 33.83}
+{"kind": "decode", "t": 1785206194.297434, "depth": 150494, "tps": 35.96}
+{"kind": "decode", "t": 1785206196.299087, "depth": 150572, "tps": 38.97}
+{"kind": "decode", "t": 1785206198.3358727, "depth": 150658, "tps": 42.22}
+{"kind": "decode", "t": 1785206200.344673, "depth": 150728, "tps": 34.85}
+{"kind": "decode", "t": 1785206202.347377, "depth": 150798, "tps": 34.95}
+{"kind": "decode", "t": 1785206204.379775, "depth": 150881, "tps": 40.84}
+{"kind": "decode", "t": 1785206206.389552, "depth": 150959, "tps": 38.81}
+{"kind": "decode", "t": 1785206208.3958235, "depth": 151031, "tps": 35.89}
+{"kind": "decode", "t": 1785206210.4003148, "depth": 151111, "tps": 39.91}
+{"kind": "decode", "t": 1785206212.4411669, "depth": 151204, "tps": 45.57}
+{"kind": "decode", "t": 1785206214.457076, "depth": 151295, "tps": 45.14}
+{"kind": "decode", "t": 1785206216.470428, "depth": 151383, "tps": 43.71}
+{"kind": "decode", "t": 1785206218.516814, "depth": 151481, "tps": 47.89}
+{"kind": "decode", "t": 1785206220.53738, "depth": 151554, "tps": 36.13}
+{"kind": "decode", "t": 1785206222.5753496, "depth": 151616, "tps": 30.42}
+{"kind": "decode", "t": 1785206224.5811908, "depth": 151708, "tps": 45.87}
+{"kind": "decode", "t": 1785206226.5997016, "depth": 151788, "tps": 39.63}
+{"kind": "decode", "t": 1785206228.6123354, "depth": 151863, "tps": 37.26}
+{"kind": "decode", "t": 1785206230.6547747, "depth": 151954, "tps": 44.55}
+{"kind": "decode", "t": 1785206232.6732728, "depth": 152045, "tps": 45.08}
+{"kind": "decode", "t": 1785206234.692742, "depth": 152139, "tps": 46.55}
+{"kind": "decode", "t": 1785206236.7434847, "depth": 152228, "tps": 43.4}
+{"kind": "decode", "t": 1785206238.76351, "depth": 152325, "tps": 48.02}
+{"kind": "decode", "t": 1785206240.817275, "depth": 152405, "tps": 38.95}
+{"kind": "decode", "t": 1785206242.8356102, "depth": 152501, "tps": 47.56}
+{"kind": "decode", "t": 1785206244.8607795, "depth": 152596, "tps": 46.91}
+{"kind": "prefill", "t": 1785206246.914041, "depth": 150507, "cached": 149676, "tps": 272.2}
+{"kind": "accept", "t": 1785206246.914041, "depth": 2963, "acceptance": 0.78812, "accepted": 2083, "generated": 2643, "mean_len": 3.36}
+{"kind": "prefill", "t": 1785206256.7371976, "depth": 152555, "cached": 149676, "tps": 208.5}
+{"kind": "decode", "t": 1785206258.967141, "depth": 152621, "tps": 29.6}
+{"kind": "accept", "t": 1785206258.967141, "depth": 67, "acceptance": 0.88889, "accepted": 48, "generated": 54, "mean_len": 3.67}
+{"kind": "prefill", "t": 1785206263.5484703, "depth": 152917, "cached": 152551, "tps": 1.6}
+{"kind": "accept", "t": 1785206265.6143665, "depth": 106, "acceptance": 0.69608, "accepted": 71, "generated": 102, "mean_len": 3.09}
+{"kind": "prefill", "t": 1785206268.8032775, "depth": 153217, "cached": 152876, "tps": 85.0}
+{"kind": "decode", "t": 1785206270.822023, "depth": 153302, "tps": 42.11}
+{"kind": "decode", "t": 1785206272.8468363, "depth": 153373, "tps": 35.06}
+{"kind": "decode", "t": 1785206274.8985364, "depth": 153448, "tps": 36.56}
+{"kind": "decode", "t": 1785206276.9201875, "depth": 153514, "tps": 32.15}
+{"kind": "accept", "t": 1785206276.9201875, "depth": 299, "acceptance": 0.69416, "accepted": 202, "generated": 291, "mean_len": 3.08}
+{"kind": "prefill", "t": 1785206280.97986, "depth": 153577, "cached": 153211, "tps": 41.3}
+{"kind": "decode", "t": 1785206283.0580964, "depth": 153659, "tps": 39.46}
+{"kind": "accept", "t": 1785206283.0580964, "depth": 97, "acceptance": 0.80952, "accepted": 68, "generated": 84, "mean_len": 3.43}
+{"kind": "prefill", "t": 1785206287.7262392, "depth": 153890, "cached": 153559, "tps": 1.5}
+{"kind": "decode", "t": 1785206289.7740228, "depth": 153901, "tps": 4.39}
+{"kind": "accept", "t": 1785206289.7740228, "depth": 68, "acceptance": 0.87719, "accepted": 50, "generated": 57, "mean_len": 3.63}
+{"kind": "prefill", "t": 1785206309.783981, "depth": 154325, "cached": 153828, "tps": 111.9}
+{"kind": "prefill", "t": 1785206313.6102242, "depth": 154388, "cached": 153828, "tps": 1.0}
+{"kind": "decode", "t": 1785206315.6579084, "depth": 154455, "tps": 32.72}
+{"kind": "accept", "t": 1785206315.6579084, "depth": 127, "acceptance": 0.90196, "accepted": 92, "generated": 102, "mean_len": 3.71}
+{"kind": "prefill", "t": 1785206320.1961627, "depth": 154513, "cached": 154325, "tps": 38.6}
+{"kind": "decode", "t": 1785206322.2134457, "depth": 154588, "tps": 36.19}
+{"kind": "accept", "t": 1785206322.2134457, "depth": 93, "acceptance": 0.92, "accepted": 69, "generated": 75, "mean_len": 3.76}
+{"kind": "prefill", "t": 1785206330.2176557, "depth": 155013, "cached": 154490, "tps": 176.9}
+{"kind": "prefill", "t": 1785206333.2406428, "depth": 155075, "cached": 154490, "tps": 1.3}
+{"kind": "decode", "t": 1785206335.244659, "depth": 155147, "tps": 35.93}
+{"kind": "accept", "t": 1785206337.3083315, "depth": 150, "acceptance": 0.75362, "accepted": 104, "generated": 138, "mean_len": 3.26}
+{"kind": "prefill", "t": 1785206339.5994546, "depth": 155306, "cached": 155013, "tps": 68.5}
+{"kind": "decode", "t": 1785206341.6103404, "depth": 155366, "tps": 28.84}
+{"kind": "accept", "t": 1785206341.6103404, "depth": 71, "acceptance": 0.75758, "accepted": 50, "generated": 66, "mean_len": 3.27}
+{"kind": "prefill", "t": 1785206345.9415, "depth": 155554, "cached": 155290, "tps": 1.7}
+{"kind": "accept", "t": 1785206347.9472854, "depth": 65, "acceptance": 0.76667, "accepted": 46, "generated": 60, "mean_len": 3.3}
+{"kind": "prefill", "t": 1785206350.1484442, "depth": 155594, "cached": 155499, "tps": 8.2}
+{"kind": "decode", "t": 1785206352.173182, "depth": 155677, "tps": 40.01}
+{"kind": "accept", "t": 1785206352.173182, "depth": 106, "acceptance": 0.78125, "accepted": 75, "generated": 96, "mean_len": 3.34}
+{"kind": "prefill", "t": 1785206354.2089803, "depth": 155662, "cached": 155566, "tps": 12.3}
+{"kind": "prefill", "t": 1785206356.6709325, "depth": 155722, "cached": 155566, "tps": 1.6}
+{"kind": "accept", "t": 1785206358.68248, "depth": 72, "acceptance": 0.86667, "accepted": 52, "generated": 60, "mean_len": 3.6}
+{"kind": "prefill", "t": 1785206361.0033314, "depth": 155769, "cached": 155662, "tps": 14.6}
+{"kind": "decode", "t": 1785206363.0602381, "depth": 155861, "tps": 44.73}
+{"kind": "accept", "t": 1785206363.0602381, "depth": 116, "acceptance": 0.90323, "accepted": 84, "generated": 93, "mean_len": 3.71}
+{"kind": "prefill", "t": 1785206365.0612788, "depth": 155915, "cached": 155742, "tps": 44.5}
+{"kind": "prefill", "t": 1785206367.7115152, "depth": 155962, "cached": 155742, "tps": 1.5}
+{"kind": "accept", "t": 1785206369.7194424, "depth": 71, "acceptance": 0.69565, "accepted": 48, "generated": 69, "mean_len": 3.09}
+{"kind": "prefill", "t": 1785206372.1057882, "depth": 156006, "cached": 155915, "tps": 7.5}
+{"kind": "decode", "t": 1785206374.1320257, "depth": 156096, "tps": 44.42}
+{"kind": "decode", "t": 1785206376.1804314, "depth": 156107, "tps": 4.39}
+{"kind": "accept", "t": 1785206376.1804314, "depth": 120, "acceptance": 0.78704, "accepted": 85, "generated": 108, "mean_len": 3.36}
+{"kind": "prefill", "t": 1785206402.1936026, "depth": 156873, "cached": 155982, "tps": 409.8}
+{"kind": "prefill", "t": 1785206406.3524714, "depth": 156923, "cached": 155982, "tps": 1.0}
+{"kind": "decode", "t": 1785206408.3656719, "depth": 157011, "tps": 43.71}
+{"kind": "decode", "t": 1785206410.4438207, "depth": 157097, "tps": 40.42}
+{"kind": "accept", "t": 1785206410.4438207, "depth": 219, "acceptance": 0.83069, "accepted": 157, "generated": 189, "mean_len": 3.49}
+{"kind": "prefill", "t": 1785206415.0455463, "depth": 157141, "cached": 156873, "tps": 1.5}
+{"kind": "decode", "t": 1785206417.055414, "depth": 157206, "tps": 32.34}
+{"kind": "decode", "t": 1785206419.0695455, "depth": 157305, "tps": 49.15}
+{"kind": "decode", "t": 1785206421.153002, "depth": 157403, "tps": 47.04}
+{"kind": "decode", "t": 1785206423.2113144, "depth": 157499, "tps": 46.64}
+{"kind": "decode", "t": 1785206425.218925, "depth": 157599, "tps": 49.81}
+{"kind": "decode", "t": 1785206427.2803266, "depth": 157699, "tps": 48.51}
+{"kind": "decode", "t": 1785206429.3706324, "depth": 157798, "tps": 47.36}
+{"kind": "decode", "t": 1785206431.4354486, "depth": 157896, "tps": 47.46}
+{"kind": "decode", "t": 1785206433.4994764, "depth": 157992, "tps": 46.51}
+{"kind": "decode", "t": 1785206435.5105548, "depth": 158089, "tps": 48.23}
+{"kind": "decode", "t": 1785206437.5739572, "depth": 158177, "tps": 42.16}
+{"kind": "accept", "t": 1785206437.5739572, "depth": 1085, "acceptance": 0.93567, "accepted": 800, "generated": 855, "mean_len": 3.81}
+{"kind": "prefill", "t": 1785206439.575027, "depth": 158126, "cached": 157088, "tps": 409.3}
+{"kind": "prefill", "t": 1785206443.5201042, "depth": 158241, "cached": 157088, "tps": 23.8}
+{"kind": "decode", "t": 1785206445.584717, "depth": 158341, "tps": 48.44}
+{"kind": "accept", "t": 1785206447.651647, "depth": 137, "acceptance": 0.97143, "accepted": 102, "generated": 105, "mean_len": 3.91}
+{"kind": "prefill", "t": 1785206450.275173, "depth": 160482, "cached": 158216, "tps": 779.1}
+{"kind": "prefill", "t": 1785206455.7904224, "depth": 160538, "cached": 158216, "tps": 0.7}
+{"kind": "decode", "t": 1785206457.8026624, "depth": 160628, "tps": 44.73}
+{"kind": "decode", "t": 1785206459.8190658, "depth": 160728, "tps": 49.59}
+{"kind": "accept", "t": 1785206461.8982182, "depth": 289, "acceptance": 0.93421, "accepted": 213, "generated": 228, "mean_len": 3.8}
+{"kind": "prefill", "t": 1785206465.0842912, "depth": 160807, "cached": 160482, "tps": 30.1}
+{"kind": "decode", "t": 1785206467.1657662, "depth": 160891, "tps": 40.36}
+{"kind": "decode", "t": 1785206469.1818874, "depth": 160980, "tps": 44.14}
+{"kind": "accept", "t": 1785206471.2011983, "depth": 246, "acceptance": 0.8599, "accepted": 178, "generated": 207, "mean_len": 3.58}
+{"kind": "prefill", "t": 1785206474.7229984, "depth": 161105, "cached": 160783, "tps": 27.3}
+{"kind": "decode", "t": 1785206476.7306187, "depth": 161186, "tps": 40.35}
+{"kind": "decode", "t": 1785206478.8018355, "depth": 161273, "tps": 42.0}
+{"kind": "decode", "t": 1785206480.8764029, "depth": 161326, "tps": 25.55}
+{"kind": "decode", "t": 1785206482.887772, "depth": 161411, "tps": 42.26}
+{"kind": "decode", "t": 1785206484.9668515, "depth": 161439, "tps": 12.02}
+{"kind": "accept", "t": 1785206484.9668515, "depth": 346, "acceptance": 0.71171, "accepted": 237, "generated": 333, "mean_len": 3.14}
+{"kind": "prefill", "t": 1785206498.9738839, "depth": 161800, "cached": 161087, "tps": 202.4}
+{"kind": "prefill", "t": 1785206502.533687, "depth": 161850, "cached": 161087, "tps": 1.1}
+{"kind": "decode", "t": 1785206504.6018498, "depth": 161931, "tps": 37.71}
+{"kind": "accept", "t": 1785206504.6018498, "depth": 125, "acceptance": 0.81081, "accepted": 90, "generated": 111, "mean_len": 3.43}
+{"kind": "prefill", "t": 1785206524.967698, "depth": 163032, "cached": 161800, "tps": 478.1}
+{"kind": "prefill", "t": 1785206528.2686505, "depth": 163077, "cached": 161800, "tps": 1.2}
+{"kind": "decode", "t": 1785206530.3029974, "depth": 163172, "tps": 46.7}
+{"kind": "accept", "t": 1785206532.320701, "depth": 138, "acceptance": 0.83333, "accepted": 100, "generated": 120, "mean_len": 3.5}
+{"kind": "prefill", "t": 1785206534.4890041, "depth": 163572, "cached": 163032, "tps": 201.1}
+{"kind": "prefill", "t": 1785206536.5238454, "depth": 163619, "cached": 163032, "tps": 2.0}
+{"kind": "decode", "t": 1785206538.5358617, "depth": 163714, "tps": 47.22}
+{"kind": "accept", "t": 1785206540.5587225, "depth": 152, "acceptance": 0.85271, "accepted": 110, "generated": 129, "mean_len": 3.56}
+{"kind": "prefill", "t": 1785206543.0554273, "depth": 163746, "cached": 163572, "tps": 7.6}
+{"kind": "decode", "t": 1785206545.0660918, "depth": 163842, "tps": 47.75}
+{"kind": "prefill", "t": 1785206547.118064, "depth": 163885, "cached": 163724, "tps": 2.4}
+{"kind": "accept", "t": 1785206547.118064, "depth": 164, "acceptance": 0.90152, "accepted": 119, "generated": 132, "mean_len": 3.7}
+{"kind": "prefill", "t": 1785206550.2990863, "depth": 163998, "cached": 163724, "tps": 30.5}
+{"kind": "decode", "t": 1785206552.3199914, "depth": 164086, "tps": 43.54}
+{"kind": "decode", "t": 1785206554.340373, "depth": 164097, "tps": 4.45}
+{"kind": "accept", "t": 1785206554.340373, "depth": 114, "acceptance": 0.86458, "accepted": 83, "generated": 96, "mean_len": 3.59}
+{"kind": "prefill", "t": 1785206569.5624976, "depth": 165317, "cached": 163978, "tps": 387.8}
+{"kind": "prefill", "t": 1785206573.1304257, "depth": 165362, "cached": 163978, "tps": 1.1}
+{"kind": "decode", "t": 1785206575.143957, "depth": 165440, "tps": 38.74}
+{"kind": "decode", "t": 1785206577.1996005, "depth": 165518, "tps": 37.94}
+{"kind": "decode", "t": 1785206579.2209074, "depth": 165601, "tps": 41.06}
+{"kind": "accept", "t": 1785206581.2486846, "depth": 315, "acceptance": 0.7457, "accepted": 217, "generated": 291, "mean_len": 3.24}
