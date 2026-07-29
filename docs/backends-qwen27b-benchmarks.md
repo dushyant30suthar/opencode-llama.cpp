@@ -1,5 +1,16 @@
 # Qwen3.6-27B serving stacks on this box — measured 2026-07-28
 
+> **CORRECTION 2026-07-29.** Every exllamav3 decode number first published here
+> came from `sweepx.py`'s client-side math, which divided all generated tokens
+> by the window *after* the first token arrived — inflating short-generation
+> rates ~1.7x. The llama.cpp numbers came from llama-server's own timings and
+> were correct, so the cross-engine comparison was rigged by the measurement.
+> Corrected, server-measured figures are in "THE CROWN" below; the headline
+> "1.4-1.8x faster than llama.cpp" is withdrawn — the two are comparable, and
+> llama.cpp is ahead at 163k. The caching results (97.6% hit rate, rebuild
+> counts) were always server-side and stand.
+
+
 One file, one row of truth per stack. Hardware: i5-9400F, 32GB RAM, 2× RTX 5060 Ti
 16GB on PCIe Gen3 **x8/x4**. All numbers measured on this machine, this day, same
 corpus, same sampling (temp 0.6, top-k 20, top-p 0.95). Raw data: `results.jsonl`
@@ -79,13 +90,16 @@ budget that held a state slot forever. Fix: `rq and not eos` (one condition).
 Both fixes: `exllamav3-both-fixes.patch` (92 lines); posted to issue #260.
 Validated 30/30 across all historical failure patterns.
 
-| depth | TP+MTP best/med | LS+MTP best/med | llama.cpp prod |
-|------:|------:|------:|------:|
-| 4k    | **125 / 109** | 79 / 73 | 70–75 |
-| 49k   | **86 / 83**   | 70 / 62 | ~58 |
-| 94k   | **102 / 78**  | 70 / 55 | ~55 |
-| 131k  | **90 / 79**   | 60 / 52 | ~50 |
-| 163k  | **60 / 49**   | 35 / 31 | ~45 |
+| depth | TP+MTP (server) | LS+MTP (server) | llama.cpp prod | real traffic |
+|------:|------:|------:|------:|------:|
+| 4k    | **74.5** | 53.1 | 70-75 | 58 (<16k) |
+| 32k   | **62.0** | 48.4 | ~62   | 67 (16-48k) |
+| 94k   | **50.8** | 35.7 | ~55   | 55 (48-96k) |
+| 131k  | **50.7** | 33.7 | ~50   | 45 (96-160k) |
+| 163k  | 34.9 | 22.9 | **~45** | — |
+
+Real-traffic column: 787 requests over 14 h on 2026-07-29, same server metric.
+It sits on the TP+MTP curve, confirming the benchmark once measured correctly.
 
 Agents test with TP+MTP: conversation switches **1.1–1.4 s** (llama.cpp 35–94 s).
 Config: `tabbyAPI/config-crown.yml` (tensor_parallel + draft_mode mtp, 4 slots,
