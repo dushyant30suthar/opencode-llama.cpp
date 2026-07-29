@@ -204,3 +204,62 @@ would drop it to ~37 t/s.
 - draft window and `max_batch_size` both scale GDN recurrent state
   `(bsz, draft+1, 48, 128, 128)` fp32 x48 layers ~ 2.81 GB at bsz4/draft4.
   Window 6 OOM'd at Q8 before the cache change freed room.
+
+### Prefill: at the hardware limit, and 26% of it is the x4 slot
+
+Measured cold 98k prefill = 543-553 t/s (~180 s). llama.cpp on this box did
+500-700 t/s, so this is parity, not a deficiency.
+
+Where the 181 s goes (PCIe probed on this machine, rest derived):
+
+- GPU0 sits on CPU root port 00:01.0, measured H2D 5.64 / D2H 4.32 GB/s (Gen3
+  x8 — the 5060 Ti is a native x8 card, so this is not a misconfiguration).
+- GPU1 sits on 00:1c.0, a **PCH port behind DMI 3.0** on the ROG STRIX B360-F,
+  measured H2D 2.85 / D2H 2.76 GB/s. B360 does not bifurcate the CPU lanes, so
+  GPU1 cannot be moved to a CPU-attached slot on this board.
+- TP fires `tp_reduce` once per attn/GDN module and once per MLP = **128
+  all-reduces x 64 layers per forward**, payload `[chunk, 5120]` at 2 B/element.
+  Per rank per token that is 1.31 MB out + 1.31 MB in, **independent of
+  chunk_size** — only the call count changes.
+- For 98,304 tokens: 128.8 GB each direction per rank. At GPU1's 2.76 GB/s
+  that is **~47 s = ~26% of wall time, a hard floor**.
+- The residual ~134 s against ~3.4 PFLOP/GPU is ~25 TFLOP/s per GPU, which is
+  where EXL3 trellis-dequant GEMM should land on this card.
+
+So prefill is roughly **74% compute-bound at hardware speed, 26% bound by a
+slot that cannot be changed**. Realistic tuning headroom is 10-20%, not 2x.
+
+| chunk_size | cold 98k prefill | peak VRAM | verdict |
+|---|---|---|---|
+| 1024 | 531 t/s | 14521/13540 | slower, saves only ~220 MB |
+| **2048** | **548 t/s** | 14713/13737 | **kept** |
+| 4096 | 553 t/s | 15033/14057 | +0.9% for +320 MB — not worth the OOM margin |
+
+Other prefill facts established:
+
+- The MTP draft head prefills the whole prompt too (`job.py:1218`), on one GPU
+  since `qwen3_5_mtp` declares `supports_tp: False` — costs ~5-8%. Keep it
+  anyway: MTP is worth 2-2.8x on decode.
+- The 48 gated-deltanet layers are *cheap* in prefill (chunked scan, no
+  quadratic term). They are why this model prefills as fast as it does; the
+  quadratic cost comes from the 16 full-attention layers.
+- `tensor_parallel_backend: nccl` does not reduce PCIe bytes for 2 ranks
+  (upstream #75 measured 438.2 nccl vs 439.4 native T/s). Skipped.
+- Dead ends on this box, verified: `EXL3_BC_ATTN` (decode-only, declines under
+  TP), `EXL3_PREFER_FA2` (flash-attn not installed), `EXL3_TP_REDUCE_THREADS`
+  (AVX-512 only; i5-9400F is AVX2), moving GPU1 to another slot (B360).
+- **No prefill persistence exists** in either engine. A restart always costs a
+  full reprocess, and it is harder to add here than llama.cpp's slot-save
+  because it would need both the paged K/V and the GDN recurrent checkpoints.
+
+### Final deployed config (tabbyAPI/config-crown.yml)
+
+```
+cache_mode: 6,4        cache_size: 262144     chunk_size: 2048
+max_seq_len: 196608    tensor_parallel: true  max_batch_size: 4
+draft_model: draft_mode mtp, draft_num_tokens 4
+memory: sysmem_recurrent_cache 4096
+```
+
+VRAM 14297/13369 MiB at rest (peak +1.2 GB during prefill), RAM 15 GB used.
+Decode ~74 t/s shallow, ~57 at 131k. Prefill ~548 t/s. Tool calls verified.

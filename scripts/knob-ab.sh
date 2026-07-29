@@ -34,9 +34,14 @@ got = cfg.get(sec, {}).get(key)
 assert str(got) == val, f"{key} not landed in {sec}: {got!r}"
 print(f"  verified: {sec}.{key} = {got}")
 PY
+  # Wait for the PORT, not just the process: TP workers outlive the parent
+  # briefly, and a half-dead server still answers /health while the next
+  # instance is loading — which silently benchmarks the wrong server (or 503s).
   pkill -f "main[.]py --config" 2>/dev/null
-  for i in $(seq 1 30); do pgrep -f "main[.]py --config" >/dev/null || break; sleep 2; done
-  pkill -9 -f "main[.]py --config" 2>/dev/null; sleep 3
+  for i in $(seq 1 40); do ss -tln 2>/dev/null | grep -q ":5000 " || break; sleep 2; done
+  pkill -9 -f "main[.]py --config" 2>/dev/null
+  for i in $(seq 1 20); do ss -tln 2>/dev/null | grep -q ":5000 " || break; sleep 2; done
+  sleep 2
   MARK=$(date "+%Y-%m-%d %H:%M:%S")
   cd "$TB"
   nohup "$EX/venv/bin/python" main.py --config config-crown.yml > "$ST/server.log" 2>&1 &
@@ -47,6 +52,12 @@ PY
     kill -0 "$(cat $ST/server.pid)" 2>/dev/null || break
     sleep 5
   done
+  # /health can go green before the model is servable; require a real answer
+  if [ $UP -eq 1 ]; then
+    curl -s --max-time 120 http://127.0.0.1:5000/v1/completions -H 'Content-Type: application/json' \
+      -d '{"model":"Qwen3.6-27B-exl3-5.00bpw","prompt":"ping","max_tokens":1}' \
+      | grep -q '"choices"' || { echo "  server up but not serving"; UP=0; }
+  fi
   [ $UP -eq 0 ] && { echo "  FAILED TO START"; tail -3 "$ST/server.log"; continue; }
 
   python3 - "$CORPUS" <<'PY'
