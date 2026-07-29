@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """Bench harness for OpenAI-style endpoints (TabbyAPI/exllamav3).
+
+CORRECTED 2026-07-29: read generation rate from the SERVER log, not from this
+client. See report_server_rate() and the note in gen(). The original client
+math inflated short-generation rates ~1.7x.
 Splits prefill (TTFB) from decode via streaming. Mirrors the llama.cpp sweep so
 results are apples-to-apples: same corpus, same depths, same sampling.
 
@@ -54,10 +58,17 @@ def gen(prompt_text, n_predict=96):
     t_end = time.time()
     ttfb = round((t_first or t_end) - t0, 3)
     dec_s = t_end - (t_first or t_end)
-    n_tok = len(encode("".join(parts))) if parts else 0   # true token count, chunking-proof
+    n_tok = len(encode("".join(parts))) if parts else 0
+    # NOTE (corrected 2026-07-29): client-side rate is NOT authoritative and is
+    # kept only as a cross-check. Dividing all generated tokens by the window
+    # AFTER the first token arrives discards time-to-first-token while counting
+    # every token, which inflated short generations by ~1.7x and produced the
+    # bogus 125 t/s headline. The server's own "Generate:" metric in the
+    # TabbyAPI log is the number to trust; parse it with report_server_rate().
     return {"ttfb_s": ttfb, "gen_tokens": n_tok,
-            "decode_tps": round((n_tok - 1) / dec_s, 1) if n_tok > 1 and dec_s > 0 else None,
-            "wall_s": round(t_end - t0, 2)}
+            "client_tps_UNRELIABLE": round((n_tok - 1) / dec_s, 1) if n_tok > 1 and dec_s > 0 else None,
+            "wall_s": round(t_end - t0, 2),
+            "true_tps_hint": round(n_tok / (t_end - t0 - ttfb + 1e-9), 1) if n_tok > 1 else None}
 
 out = open(OUT, "a")
 def rec(**kw):
@@ -100,3 +111,28 @@ elif MODE == "agents":
         rec(phase=label, **r)
 
 print("DONE", flush=True)
+
+
+def report_server_rate(log_path: str):
+    """The authoritative rates: TabbyAPI's own per-request Metrics lines.
+
+    Pair with a sweep by timestamp, or just read the medians. Log lines wrap,
+    hence the whitespace squash before matching."""
+    import re, statistics
+    raw = re.sub(r"\s+", " ", open(log_path).read())
+    pat = (r"(\d+) tokens generated in ([\d.]+) seconds \(Queue: ([\d.]+) s, "
+           r"Process: (\d+) cached tokens and (\d+) new tokens at ([\d.]+) T/s, "
+           r"Generate: ([\d.]+) T/s, Context: (\d+) tokens, "
+           r"Draft: (\d+) / (\d+) tokens accepted \(([\d.]+)%\)\)")
+    rows = [{"gen": int(m[0]), "prefill_tps": float(m[5]), "tps": float(m[6]),
+             "ctx": int(m[7]), "accept_pct": float(m[10])}
+            for m in re.findall(pat, raw)]
+    real = [r for r in rows if r["gen"] > 50]
+    if real:
+        print(f"server-measured: n={len(real)} median {statistics.median(r['tps'] for r in real):.1f} t/s, "
+              f"acceptance median {statistics.median(r['accept_pct'] for r in real):.1f}%")
+    return rows
+
+
+if __name__ == "__main__" and MODE == "serverstats":
+    report_server_rate(OUT)
