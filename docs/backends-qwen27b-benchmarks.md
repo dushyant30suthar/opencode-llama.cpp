@@ -159,3 +159,48 @@ Re-test on each exllamav3 release; harness is one command per mode:
 cross-conversation reuse — open #45238; MTP mutually exclusive with caching),
 SGLang (real hybrid radix cache but VRAM-only for this arch + open Claude Code
 tool-parser bugs), ik_llama.cpp (worse), TensorRT-LLM (SM120 consumer gaps).
+
+---
+
+## Tuning session 2026-07-29 (all server-measured, repeats where noted)
+
+Baseline for this section: exllamav3 `dev` build (both #260 fixes upstream:
+`ce77f0a`, `1048003`), TP + MTP, measured with the engine's own `Generate:`
+metric — never client stream timing (see the correction banner above).
+
+### What moved
+
+| change | effect | evidence |
+|---|---|---|
+| `sysmem_recurrent_cache` 8192 → 4096 | swap 24 GB → 1 GB, RAM available 3 → 18 GB | TP duplicates host state; 8 GB of checkpoints on top forced the box into zram, and decompressing 19.6 GB of swapped-out server was burning CPU on every request |
+| `cache_mode` Q8 → **6,4** | **+7.7% @98k, +9.3% @131k**, 2.88 GB freed | 4 reps/config, acceptance matched (77%, 94/95%); spread at 131k was [57.5-57.6] |
+| `cache_size` 245760 → **360448** | +47% resident context | funded by the cache-mode saving |
+| `draft_num_tokens` | **keep 4** | 2 → 55.8 t/s @4k (-28%); 6 → 50.7 (-33%, acceptance collapses 72% → 59%) |
+
+### The counterintuitive one
+
+exllamav3 wants MORE KV quantization, llama.cpp wanted LESS. On llama.cpp we
+measured f16 keys halving the depth-degradation slope, because that engine
+dequantizes as a separate step on every attention read. exllamav3 dequantizes
+inside the attention kernel with no latency cost, so bytes-read is all that
+matters and K6V4 > K8V8 > FP16 monotonically. Engine-specific; do not carry
+settings across.
+
+### Physics ceiling (why the levers are what they are)
+
+Weights 19.9 GB, 10 GB per GPU under TP, 448 GB/s per card = 22 ms per decode
+step = **45 t/s base ceiling**. Everything above that comes from MTP producing
+several tokens per weight-read. So only two things raise the ceiling: fewer
+bytes per read (quant, cache mode) or more tokens per read (draft window,
+which is already at its optimum). A *larger* quant lowers the ceiling — 6bpw
+would drop it to ~37 t/s.
+
+### Config traps found
+
+- `draft_num_tokens` under `model:` is silently ignored — it belongs to
+  `draft_model:`. Pydantic `extra='ignore'` drops it with no warning, so a
+  sweep of that key measures nothing. `scripts/knob-ab.sh` now asserts the
+  value lands before running.
+- draft window and `max_batch_size` both scale GDN recurrent state
+  `(bsz, draft+1, 48, 128, 128)` fp32 x48 layers ~ 2.81 GB at bsz4/draft4.
+  Window 6 OOM'd at Q8 before the cache change freed room.
