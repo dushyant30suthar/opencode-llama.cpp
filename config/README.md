@@ -18,9 +18,9 @@ config/
       server.ini                     bin, tabby-dir, models-dir, host/port
       models/                        one TabbyAPI YAML per model
         Qwen3.6-27B-exl3-5.00bpw.yml            MTP, 4 slots, 311296 cache
-        Qwen3.6-27B-exl3-5.00bpw-dflash.yml     DFlash, 1 slot, 294912
         Qwen3.6-27B-exl3-6.00bpw.yml            MTP, 4 slots, 163840
-        Qwen3.6-27B-exl3-6.00bpw-dflash.yml     DFlash, 1 slot, 131072
+        Qwen3.6-27B-exl3-5.00bpw-dflash.yml     ARCHIVED — see below
+        Qwen3.6-27B-exl3-6.00bpw-dflash.yml     ARCHIVED — see below
     llamacpp/
       server.ini
       models.ini                     llama.cpp's own format, --models-preset
@@ -48,6 +48,23 @@ config/
 - **`cache_size` vs `max_seq_len`** — size the pool as a *multiple* of the max
   sequence, not equal to it. The 6.00bpw file's 1:1 ratio caused cache thrashing
   with 4 concurrent agents (39% reuse where an uncontended request got 96%).
+
+## The two `-dflash` files are archived, not deployed
+
+Removed from the live machine on 2026-08-01, along with the 1.21 GiB drafter.
+Kept here because the measurements are worth having and re-deriving them costs a
+download and an evening.
+
+DFlash lost to MTP on every axis that mattered — 50.5% draft acceptance against
+MTP's 82-87%, decaying to 34.8% by 66k context where MTP held steady. See
+`docs/HANDOVER-2026-08-01.md` §4. Note the `draft_num_tokens: 4` line in both
+files: leaving it unset takes the drafter's default of 15 and costs 15.5%
+acceptance instead of 50.5%, so any future attempt should start from these
+files rather than from scratch.
+
+To use one again: copy it back into `~/.config/opencode/providers/exl3/models/`
+and download `turboderp/Qwen3.6-27B-DFlash-exl3` at 6.00bpw into the
+`model_dir` its `draft_model_name` points at.
 
 ## Machine-specific
 
