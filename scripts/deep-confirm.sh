@@ -5,7 +5,7 @@ set -u
 EX=/home/dushyant30suthar/Projects/exllamav3
 TB=/home/dushyant30suthar/Projects/tabbyAPI
 ST=/home/dushyant30suthar/.local/state/opencode/providers/exl3
-CFG=$TB/config-crown.yml
+CFG=/home/dushyant30suthar/.config/opencode/providers/exl3/models/Qwen3.6-27B-exl3-5.00bpw.yml
 CORPUS=$(cd "$(dirname "$0")" && pwd)/corpus.txt
 
 for VAL in "$@"; do
@@ -22,7 +22,7 @@ for VAL in "$@"; do
   sleep 2
   MARK=$(date "+%Y-%m-%d %H:%M:%S")
   cd "$TB"
-  nohup "$EX/venv/bin/python" main.py --config config-crown.yml > "$ST/server.log" 2>&1 &
+  nohup "$EX/venv/bin/python" main.py --config /home/dushyant30suthar/.config/opencode/providers/exl3/models/Qwen3.6-27B-exl3-5.00bpw.yml > "$ST/server.log" 2>&1 &
   echo $! > "$ST/server.pid"
   UP=0
   for i in $(seq 1 60); do

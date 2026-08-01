@@ -1,0 +1,104 @@
+# Qwen3.6-27B EXL3 5.00bpw + DFlash drafter, SINGLE SLOT.
+#
+# Same 18.53 GiB main weights as the plain 5.00bpw file. What differs is the
+# drafter and, forced by it, the slot count.
+#
+# WHY ONE SLOT. DFlash's draft length is fixed by the drafter, not configurable:
+# its config.json carries block_size 16, read as native_draft_len in
+# architecture/dflash.py:86. Gated-deltanet state is sized (max_history + 1) per
+# slot, and on this model that is 144 MiB per step across the 48 GDN layers — so
+# 17 steps = 2.39 GiB PER SLOT against MTP's 0.70. The budget, with the measured
+# 2.14 GiB prefill transient and 1.0 GiB autosplit reserve included:
+#
+#     slots   GDN state   left for KV   context
+#       4       9.56 G      -0.93 G     does not fit
+#       2       4.78 G       3.85 G     201,785
+#       1       2.39 G       6.24 G     327,122   <- this file
+#
+# Pairing DFlash with the 6.00bpw main model instead leaves 52,887 tokens at 2
+# slots — below a single request seen in real traffic (49,791) — so 5.00bpw is
+# the only sensible pairing.
+#
+# ONE SLOT IS NOT OBVIOUSLY WORSE. Measured decode by concurrency on this box:
+# 1 job 76.2 t/s, 2 jobs 40.2 each, 4 jobs 15.1 each. Four agents each producing
+# T tokens take T/15.1 concurrently but 4T/76.2 run one after another — the
+# sequential path is faster in wall-clock, because the GPU is already saturated
+# at one sequence and 4-way only divides it worse. Queued conversations also
+# keep their cached prefix (page-hashed, refcounted), so waiting for a slot
+# costs latency, not recomputation: revisits measured 0.5s against 34.7s cold.
+# That sample was small and noisy, which is exactly what this config is for.
+#
+# DFlash is auto-detected, not selected: generator.py:255 sets dflash_draft from
+# the draft model's own caps, so draft_mode is plain `model` and pointing
+# draft_model_name at the DFlash directory is all that is needed.
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: Qwen3.6-27B-exl3-5.00bpw
+
+  # 327,122 is the computed ceiling at 1 slot; this leaves headroom for the
+  # allocator retention measured today (a 98k prefill peaks +2.14 GiB and the
+  # CUDA caching allocator keeps it rather than returning it to the driver).
+  cache_size: 294912
+  max_seq_len: 294912
+  cache_mode: 6,4
+
+  # the whole point of this file — see the budget above
+  max_batch_size: 1
+  tensor_parallel: true
+  gpu_split_auto: true
+  autosplit_reserve: [512, 512]
+  chunk_size: 2048
+  output_chunking: false
+
+  vision: false
+  reasoning: true
+  tool_format: qwen3_coder
+
+draft_model:
+  # `model`, not `mtp`: this loads a separate drafter rather than the MTP head
+  # baked into the weights. The two are alternatives, never both.
+  draft_mode: model
+  draft_model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  draft_model_name: Qwen3.6-27B-DFlash-exl3-6.00bpw
+  draft_cache_mode: FP16
+  # 4, not unset. Unset takes the drafter's default_draft_size = block_size - 1
+  # = 15 (architecture/dflash.py:174), which is ALSO the cache's max_history
+  # (tabbyAPI model.py:506) — so it maximises both wasted drafting and GDN
+  # state. The drafter does run at its fixed 16-token block, but the generator
+  # truncates it to this window ("dynamic window truncates the drafted block",
+  # generator.py:653; num_draft_tokens is the ceiling, generator.py:91).
+  #
+  # Measured on the 6.00bpw pairing, 1 slot, same explore prompt:
+  #     draft_num_tokens   acceptance   decode median   drafted per emitted
+  #          15 (unset)       15.5%        31.6 T/s           4.80
+  #           4               50.5%        42.4 T/s           1.17
+  # Matches the upstream advice that starting at 2-4 rather than 15
+  # "dramatically improved acceptance rates and actual throughput"
+  # (huggingface.co/z-lab/Qwen3.6-27B-DFlash/discussions/2).
+  #
+  # Still short of MTP, which holds 82-87% acceptance at every depth while
+  # DFlash slid 68% -> 35% as context grew to 68k — consistent with the drafter
+  # reading hidden states drifted by quantised weights, which no draft-length
+  # setting addresses.
+  #
+  # Note max_history 4 costs 0.70 GiB of GDN state per slot instead of 2.39,
+  # the same as MTP — so the 1-slot restriction above is no longer forced by
+  # this setting. Left at 1 for comparability with the runs already recorded.
+  draft_num_tokens: 4
+
+sampling:
+  override_preset: safe_defaults
+
+memory:
+  sysmem_recurrent_cache: 4096
+  cuda_malloc_async: true

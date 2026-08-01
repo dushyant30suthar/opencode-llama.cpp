@@ -1,0 +1,80 @@
+# Qwen3.6-27B EXL3 6.00bpw. 21.37 GiB weights.
+#
+# Identical to the 5.00bpw file except model_name, cache_size and max_seq_len.
+# Everything else is held at the same swept values on purpose, so a comparison
+# between the two isolates bitrate and nothing else.
+#
+# WHAT WAS MEASURED — decode throughput only, 2026-08-01 (matched configs,
+# exllamav3 v1.3.0, real corpus, engine-side `Generate:` metric, 4 reps after a
+# discarded warmup):
+#     depth    5.00bpw   6.00bpw   delta   6bpw acceptance
+#      4k       75.3      69.2     -8.1%      65.3%
+#     32k       74.3      69.7     -6.2%      76.9%
+#     98k       58.1      53.4     -8.1%      74.1%
+# (An earlier "+12.4% faster" reading was a confound — it compared this build on
+# v1.3.0 against a 5.00bpw baseline recorded on the older 7858de8 build.)
+#
+# WHAT WAS NOT MEASURED — output quality on real work. These are different
+# quants, not the same model at different speeds. turboderp's published mean KLD
+# against the unquantised reference is 0.035 for 5.00bpw and 0.013 for 6.00bpw,
+# with the reference's own self-noise floor at 0.0102 — so 6.00bpw is closer to
+# full precision by a factor the metric can barely resolve, on a SHORT-CONTEXT
+# test (10 x 4096 tokens). Whether that difference matters at 100k+ depth on
+# agentic coding is unknown: nobody has run it, and aggregate KLD is known not
+# to rank near-baseline quants reliably. The speed cost is certain; the quality
+# gain is real but unquantified at this workload. Pick accordingly.
+#
+# WHY cache_size DROPS to 163840: the weights are +2.84 GiB over 5.00bpw, and
+# that has to come out of the KV pool. At cache_mode 6,4 the cost is 20 KiB per
+# token (16 full-attn layers x 4 kv-heads x 256 head_dim; K 6-bit = 12288 B,
+# V 4-bit = 8192 B), so 163840 tokens = 3.2 GiB. Measured basis: at cache_size
+# 131072 this build sat at 25.3 GiB of 31.86 (13209 + 12703 MiB), leaving 6.5
+# GiB idle — but idle is misleading, a deep prefill takes +2.14 GiB on top and
+# the CUDA allocator keeps it. Do not ladder past this without confirming a full
+# deep prefill: the 07-29 note records cache_size 360448 leaving 53 MiB free and
+# OOMing everything.
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: Qwen3.6-27B-exl3-6.00bpw
+
+  cache_size: 163840
+  max_seq_len: 163840
+  cache_mode: 6,4
+
+  max_batch_size: 4
+  tensor_parallel: true
+  gpu_split_auto: true
+  autosplit_reserve: [512, 512]
+  chunk_size: 2048
+  output_chunking: false
+
+  vision: false
+  reasoning: true
+  tool_format: qwen3_coder
+
+draft_model:
+  draft_mode: mtp
+  draft_model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  # verified present in this build: 39 mtp.* tensors, same count as 5.00bpw.
+  # (Third-party 6.00/8.00bpw uploads exist that STRIP the MTP head — check the
+  # weight index before trusting one. Losing MTP costs ~2x decode.)
+  draft_model_name:
+  draft_cache_mode: FP16
+  draft_num_tokens: 4
+
+sampling:
+  override_preset: safe_defaults
+
+memory:
+  sysmem_recurrent_cache: 4096
+  cuda_malloc_async: true

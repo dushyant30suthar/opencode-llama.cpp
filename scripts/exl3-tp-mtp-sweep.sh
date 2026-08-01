@@ -1,5 +1,5 @@
 #!/bin/bash
-# The crown runs: patched exllamav3, MTP working. Layer-split MTP sweep + agents,
+# EXL3 layer-split vs tensor-parallel sweep, both with MTP: patched exllamav3, MTP working. Layer-split MTP sweep + agents,
 # then TP+MTP (never run anywhere before). Router restored at the end.
 OUT=/home/dushyant30suthar/Projects/opencode-localhost
 RESTORE=/tmp/claude-1000/-home-dushyant30suthar-Projects-opencode-localhost/af5f9353-9954-46ff-aba2-9bd7fdd6f16d/scratchpad/RESTORE.sh
@@ -19,27 +19,27 @@ launch() {  # config, logname
 }
 
 # Phase A: layer-split + MTP (config-dbg.yml = known-good 4-slot config, draft mtp)
-if launch config-dbg.yml tabby-crown-ls.log; then
+if launch config-dbg.yml tabby-layersplit-mtp.log; then
   cd "$OUT"
-  python3 sweepx.py http://127.0.0.1:5000 exl3-LS-MTP-FIXED sweep exl3-results.jsonl > "$OUT/crown-ls-sweep.log" 2>&1
-  echo "A-sweep: $(tail -1 $OUT/crown-ls-sweep.log)"
-  python3 sweepx.py http://127.0.0.1:5000 exl3-LS-MTP-FIXED agents exl3-results.jsonl > "$OUT/crown-ls-agents.log" 2>&1
-  echo "A-agents: $(tail -1 $OUT/crown-ls-agents.log)"
+  python3 sweepx.py http://127.0.0.1:5000 exl3-LS-MTP-FIXED sweep exl3-results.jsonl > "$OUT/layersplit-mtp-sweep.log" 2>&1
+  echo "A-sweep: $(tail -1 $OUT/layersplit-mtp-sweep.log)"
+  python3 sweepx.py http://127.0.0.1:5000 exl3-LS-MTP-FIXED agents exl3-results.jsonl > "$OUT/layersplit-mtp-agents.log" 2>&1
+  echo "A-agents: $(tail -1 $OUT/layersplit-mtp-agents.log)"
 fi
 
-# Phase B: TP + MTP (the crown config)
+# Phase B: TP + MTP
 cd /home/dushyant30suthar/Projects/tabbyAPI
-sed 's/^  tensor_parallel: false$/  tensor_parallel: true/' config-dbg.yml > config-crown.yml
-if launch config-crown.yml tabby-crown-tp.log; then
+sed 's/^  tensor_parallel: false$/  tensor_parallel: true/' config-dbg.yml > config-tp-mtp.yml
+if launch config-tp-mtp.yml tabby-tp-mtp.log; then
   cd "$OUT"
-  python3 sweepx.py http://127.0.0.1:5000 exl3-TP-MTP-CROWN sweep exl3-results.jsonl > "$OUT/crown-tp-sweep.log" 2>&1
-  echo "B-sweep: $(tail -1 $OUT/crown-tp-sweep.log)"
-  python3 sweepx.py http://127.0.0.1:5000 exl3-TP-MTP-CROWN agents exl3-results.jsonl > "$OUT/crown-tp-agents.log" 2>&1
-  echo "B-agents: $(tail -1 $OUT/crown-tp-agents.log)"
+  python3 sweepx.py http://127.0.0.1:5000 exl3-TP-MTP sweep exl3-results.jsonl > "$OUT/tp-mtp-sweep.log" 2>&1
+  echo "B-sweep: $(tail -1 $OUT/tp-mtp-sweep.log)"
+  python3 sweepx.py http://127.0.0.1:5000 exl3-TP-MTP agents exl3-results.jsonl > "$OUT/tp-mtp-agents.log" 2>&1
+  echo "B-agents: $(tail -1 $OUT/tp-mtp-agents.log)"
 else
   echo "TP+MTP failed to launch"
 fi
 
 pkill -9 -f "main[.]py --config" 2>/dev/null; sleep 3
 bash "$RESTORE"
-echo "CROWN-COMPLETE"
+echo "SWEEP-COMPLETE"

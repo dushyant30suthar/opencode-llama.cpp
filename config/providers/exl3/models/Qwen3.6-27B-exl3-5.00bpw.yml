@@ -1,0 +1,88 @@
+# Qwen3.6-27B EXL3 5.00bpw. 18.53 GiB weights, 2x RTX 5060 Ti.
+#
+# One file per model. The panel lists this directory; picking a model relaunches
+# TabbyAPI against that file. TabbyAPI holds exactly one model per process, and
+# the relaunch is not incidental — exllamav3 does not return VRAM to the driver
+# on unload, so killing the process is what reclaims it. (Measured 2026-08-01:
+# an in-process 6.00 -> 5.00bpw swap left 29.2 GiB allocated with NO model
+# loaded and could not reload. inline_model_loading is therefore off.)
+#
+# Faster than 6.00bpw on decode. Matched A/B on exllamav3 v1.3.0 — same corpus,
+# harness, cache_size and build, engine-side `Generate:` metric, 4 reps after a
+# discarded warmup:
+#     depth    5.00bpw   6.00bpw   delta
+#      4k       75.3      69.2     -8.1%
+#     32k       74.3      69.7     -6.2%
+#     98k       58.1      53.4     -8.1%
+# It also holds ~150k more tokens of resident context, since 6.00bpw's weights
+# are +2.84 GiB and the cache has to give that back.
+#
+# The trade runs the other way on fidelity: 6.00bpw's mean KLD against the
+# unquantised reference is 0.013 vs this file's 0.035 (noise floor 0.0102).
+# That was measured on 10 x 4096 tokens — short context. Nobody has compared
+# their OUTPUT at the depths this box actually works at. See the 6.00bpw file.
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: Qwen3.6-27B-exl3-5.00bpw
+
+  cache_size: 311296
+  # full window — EXL3 attention KV is cheap here: 16 of 64 layers are full
+  # attention, the other 48 are gated-deltanet with fixed-size recurrent state
+  max_seq_len: 196608
+  # K6/V4 = 20 KiB/token. exllamav3 dequants inside the attention kernel at no
+  # latency cost, so FEWER KV bits is FASTER: 6,4 beat Q8 by +7.7% @98k and
+  # +9.3% @131k with acceptance matched. 4,4 rejected — loses at 131k and
+  # quantises keys, the sensitive half. This is the OPPOSITE of llama.cpp, where
+  # f16 keys halve the depth slope. Do not carry KV settings between engines.
+  cache_mode: 6,4
+
+  # pool > per-request length is the point: main agent + subagents coexist
+  max_batch_size: 4
+  # 74.5 vs 53.1 t/s @4k against layer split. exllamav3 #245 (illegal memory
+  # access under TP on sm_120) is WSL2-only; native Linux is fine.
+  tensor_parallel: true
+  gpu_split_auto: true
+  autosplit_reserve: [512, 512]
+  # 1024/2048/4096 = 531/548/553 t/s. 4096's +0.9% costs 320 MB of OOM margin,
+  # and margin is scarce: a 98k prefill peaks +2.14 GiB over idle and the CUDA
+  # allocator keeps it, leaving ~2.5 GiB free in steady state.
+  chunk_size: 2048
+  # one SSE event per token so bench harnesses can count decode exactly
+  output_chunking: false
+
+  vision: false
+  reasoning: true
+  # without this, Qwen3-Coder XML tool calls stream through as plain text and
+  # clients render raw tool_call blocks instead of executing them
+  tool_format: qwen3_coder
+
+draft_model:
+  draft_mode: mtp
+  draft_model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  # blank on purpose: draft_mode mtp with no name uses the MTP head baked into
+  # the weights (39 mtp.* tensors), NOT the separate 203 MB Qwen3.6-27B-MTP-exl3
+  # module. Note /v1/model reports `draft: null` either way — that is NOT
+  # evidence MTP is off; check the log for "Using main model MTP component".
+  draft_model_name:
+  draft_cache_mode: FP16
+  # 2 -> 55.8 t/s @4k (-28%); 6 -> 50.7 (-33%, acceptance collapses 72% -> 59%)
+  draft_num_tokens: 4
+
+sampling:
+  override_preset: safe_defaults
+
+memory:
+  # GDN recurrent-state checkpoints in host RAM (MB). 8192 forced 24 GB into
+  # zram swap on this 31 GB box; 4096 is the working value.
+  sysmem_recurrent_cache: 4096
+  cuda_malloc_async: true
