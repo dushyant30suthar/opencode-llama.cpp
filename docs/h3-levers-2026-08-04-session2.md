@@ -1302,10 +1302,30 @@ slower. Use `match` unless identity fidelity visibly fails.
 
 ### Joining clips past the model's ceiling
 
-15.1 s is the model's trained maximum (§10) and no flag moves it. But `gen.py`
-reproduces its `--first-frame` seed at frame 0 to within 2.7/255, so seeding
-clip N+1 with clip N's last frame produces a cut nobody can see, and a pair
-plays as one 30 s take.
+15.1 s is the model's trained maximum (§10) and no flag moves it. Seeding clip
+N+1 with clip N's second-to-last frame extends a sequence past it.
+
+**How exact that join is depends on the seed, and the difference is large:**
+
+| seed | frame-0 error vs seed |
+|---|---:|
+| a clean photograph | 2.7/255 |
+| a previously generated frame | **8.6/255** |
+
+The 2.7 figure was measured seeding from a photograph and I initially carried it
+over to generated seeds. That was wrong, and the film caught it: at the
+shot-002 -> shot-003 boundary the car shifted left and the framing widened
+slightly. The difference image lit up along the entire car silhouette — the
+signature of displacement, not of noise.
+
+What survives the join reliably is the scene, the subject's identity, the
+lighting and the action. What does not survive is exact framing. So a chained
+pair reads as continuous *footage with an edit in it*, not as one unbroken take
+— which is still the thing that gets a sequence past 15.1 s, just not silently.
+
+**The correction worth keeping: a metric measured on one input class does not
+transfer to another.** 2.7/255 was a real measurement; reusing it for generated
+seeds was an assumption wearing a measurement's clothes.
 
 `bench/lastframe.sh` takes the **second**-to-last frame deliberately. The final
 frame of a VAE-decoded clip is the most likely to carry temporal-tile edge
