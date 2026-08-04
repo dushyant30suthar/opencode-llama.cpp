@@ -1,5 +1,7 @@
 # HANDOVER — MiniMax H3 video on the 2× RTX 5060 Ti box
 
+_SUPERSEDED by [HANDOVER-2026-08-04b-h3-video.md](HANDOVER-2026-08-04b-h3-video.md) (second session of the same day): resolution measured at 2.4-3.2x, the two-GPU split unblocked, a validated cost model, and the EasyCache figure below corrected from ~31% to ~26%. Kept for its chronology._
+
 _Written 2026-08-04. Self-contained: assume the reader (human or model) has no
 session context. Companion narrative with all measurements:
 [minimax-h3-video-2026-08-03.md](minimax-h3-video-2026-08-03.md). Raw data:

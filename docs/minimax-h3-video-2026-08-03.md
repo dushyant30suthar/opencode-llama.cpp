@@ -13,9 +13,14 @@ Harnesses: `scripts/h3-sweep.py`, `scripts/h3-matrix.py`, `scripts/h3-analyse.py
 ## Executive summary
 
 - **Single-GPU tuning: 3.1× faster, deployed.** SageAttention 2.2 (−50% at real
-  clip length; the probe understated it 5×) + EasyCache 0.4 (−31.7%, and −2.7 GB
-  peak VRAM) + `--fast` (−5%). A 5.2s clip: 20.8 → ~6.8 min. 15s: ~2 h → ~35–40 min.
-  `cfg=1.0` is architecturally correct (guidance-distilled), halving everything.
+  clip length; the probe understated it 5×) + EasyCache 0.4 (−31.7% here, and
+  −2.7 GB peak VRAM) + `--fast` (−5%). A 5.2s clip: 20.8 → ~6.8 min. 15s: ~2 h →
+  ~35–40 min. `cfg=1.0` is architecturally correct (guidance-distilled), halving
+  everything.
+  _Correction from the second 2026-08-04 session: the cache figure is ~−26% and
+  the compounded total ~2.8×; the baseline row alone carried a ~24 s
+  checkpoint-staging cost. The wall-clock figures above were measured directly
+  and stand._
 - **Two-GPU: a custom pipeline split was built and RAN** — both cards executing,
   whole 21 GB DiT VRAM-resident, faster per-step than single-GPU — something
   upstream ComfyUI cannot do at all (open feature request #13951). Blocked from
@@ -228,11 +233,19 @@ H3 is **guidance-distilled but NOT step-distilled**, so no lightning LoRA exists
 and steps cannot be cut for free. Caching is the only way to buy back step cost.
 `EasyCache`/`LazyCache` ship natively in v0.30.1.
 
-| row | config | server s | vs base | peak VRAM cuda:0 |
+> **CORRECTION (second session, 2026-08-04).** The `vs base` column below is
+> overstated by about 5 points. K0 is the first row of a phase that shares one
+> server, so it alone absorbed the ~24 s cost of staging the checkpoint —
+> measured later in phase N and fixed by `sweep.py --warmup`. Warm, K0 is ~343 s,
+> which makes **EasyCache 0.4 ≈ −26%, not −31.7%**. Still the largest single
+> tuning win on this box. See
+> [h3-levers-2026-08-04-session2.md](h3-levers-2026-08-04-session2.md) §5b.
+
+| row | config | server s | vs base (overstated, see above) | peak VRAM cuda:0 |
 |---|---|---:|---:|---:|
-| K0 | no cache | 366.7 | — | 14.04 GB |
+| K0 | no cache | 366.7 (cold; ~343 warm) | — | 14.04 GB |
 | K1 | EasyCache 0.2 | 284.7 | −23.0% | **11.31 GB** |
-| **K2** | **EasyCache 0.4** | **252.6** | **−31.7%** | |
+| **K2** | **EasyCache 0.4** | **252.6** | **−31.7% → ~−26%** | |
 | K3 | LazyCache 0.2 | 281.5 | −23.9% | |
 | K4 | EasyCache 0.3, early start | 252.9 | −31.6% | |
 
@@ -258,6 +271,10 @@ on faith.
 
 sage (−50%) × EasyCache 0.4 (−31.7%) × `--fast` (−5.0%) ≈ **3.1× faster**.
 
+> **CORRECTION:** with the cache restated at ~−26% (see above), the compounded
+> figure is ≈ **2.8×**, not 3.1×. The tuned wall-clock numbers below were
+> measured directly and are unaffected — only the decomposition changes.
+
 | clip | untuned | tuned |
 |---|---:|---:|
 | 5.2s @ 20 steps | 1250.6s (20.8 min) | ~6.8 min |
@@ -279,6 +296,15 @@ Options evaluated:
   throughput for batch work and is the standard answer. **Not viable here**:
   2 × 21.7 GB RSS against 31 GB RAM would thrash into zram — the same disaster
   recorded in the llama.cpp work at 26.8 GB.
+> **NOTE (2026-08-04 session 2):** the "x4 slot is slow" framing below needs
+> scoping. Phase D's D4 row ran the entire streaming 21 GB DiT on cuda:1's x4
+> slot and matched the x8 slot to **0.06%**, so for WEIGHT STREAMING the 2.76
+> GB/s figure is not the constraint — that cost is per-transfer overhead, not
+> throughput. **The xDiT rejection below still stands**, because all-to-all of
+> ACTIVATIONS is a genuinely different traffic pattern and is bandwidth-bound.
+> What is revised is only the broader implication that cuda:1 is a poor place to
+> put compute; it is not.
+
 - **xDiT / USP / PipeFusion** — real sequence-parallel compute across GPUs
   (FLUX.1: 13.87s → 6.98s). Rejected: large integration effort against ComfyUI's
   custom H3 implementation, and communication-heavy all-to-all across GPU1's
