@@ -1186,3 +1186,72 @@ failed workarounds are not evidence of a hardware limit; they are evidence the
 workarounds targeted the wrong variable.** Profiling the allocation would have
 found this in minutes; reasoning about the failure took hours and reached the
 wrong answer.
+
+---
+
+## 11. The other two generation modes, finally exercised
+
+_2026-08-05. H3 has three input modes and only one had ever produced a frame on
+this box. Both others work; one needed a fix._
+
+### Image-to-video — works, and the conditioning is real
+
+`MiniMaxH3ImageToVideo` is misleadingly named: `first_frame` and `last_frame`
+are **optional**, and omitting both is plain text-to-video. There is no separate
+T2V node. Supply `first_frame` and it animates from that image; supply both and
+it interpolates.
+
+Tested by extracting frame 340 of the 15.1 s native clip and using it as the
+seed, with a prompt continuing the scene. 5.2 s at native, 20 steps, **386 s**.
+
+Verification that the conditioning is genuine rather than a loose hint: frame 0
+of the output against the seed image is a **mean absolute difference of 2.7 /
+255**. It starts from the supplied image.
+
+Two consequences worth having:
+
+- **Clips can be chained past the model's 15.1 s limit.** Last frame of one
+  becomes the first frame of the next. The 362-frame training cap applies to a
+  segment, not to a sequence.
+- **The subject can be supplied rather than described.** For anything where a
+  specific face or place matters, this is a different order of control than
+  prompting.
+
+Wired into `bench/gen.py` as `--first-frame` / `--last-frame` (filenames in
+`input/`).
+
+### Reference-to-video — the shipped workflow could never have worked
+
+`workflows/h3/h3-r2v.json` was written in the first session and carried the note
+"validates but has never generated." The second half of that sentence was doing
+all the work.
+
+It passed `/prompt` validation and died the moment it executed:
+
+```
+TypeError: MiniMaxH3ReferenceToVideo.execute() got an unexpected keyword
+argument 'ref_image_0'
+```
+
+`ref_image_0` is the **UI socket name** — the autogrow template declares
+`prefix="ref_image_"`, so the schema legitimately contains `ref_image_0`,
+`ref_image_1`, … and validation is happy. But `execute()` receives the collected
+form:
+
+```python
+def execute(cls, ..., ref_images=None, ref_videos=None, ...):
+    for img in (ref_images or {}).values():     # a DICT, keyed by socket name
+```
+
+So the API format needs `"ref_images": {"ref_image_0": ["14", 0]}`. Both names
+are real; they live at different layers. Fixed in the workflow file itself and
+guarded in `bench/run-r2v.py`.
+
+**The general lesson is cheap and repeatable: validating and running are
+different tests.** A ComfyUI graph can satisfy the schema and be unrunnable, and
+nothing surfaces the difference until execution. Any workflow described as
+"validated" should be assumed unrun until a file lands in `output/`.
+
+r2v also loads a **separate 21 GB checkpoint** (`minimax_h3_ref2va_pruned_int8_convrot`)
+which had never been read off disk in two days of work — worth remembering when
+budgeting time, since it will not be in page cache.
