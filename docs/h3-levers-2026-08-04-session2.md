@@ -1255,3 +1255,76 @@ nothing surfaces the difference until execution. Any workflow described as
 r2v also loads a **separate 21 GB checkpoint** (`minimax_h3_ref2va_pruned_int8_convrot`)
 which had never been read off disk in two days of work — worth remembering when
 budgeting time, since it will not be in page cache.
+
+---
+
+## 12. The three modes as one pipeline — and what references actually cost
+
+Dated 2026-08-05. The three modes had each been proven in isolation; nothing
+combined them, and the production path (`bench/gen.py`) only spoke t2v and i2v.
+`run-r2v.py` was a separate script that carried **none** of the memory flags
+from §10 — no head chunking, no tiled decode, no `--lowmem` — so it could only
+ever have run short clips. Both paths are now the same path.
+
+### r2v folded into gen.py
+
+`--ref a.png,b.png` switches the checkpoint to ref2va and builds the
+`MiniMaxH3ReferenceToVideo` graph; `--ref-video`, `--ref-size` follow. Every
+memory flag applies unchanged, which is the whole point — reference generation
+at 362 frames is only reachable with the §10 stack underneath it.
+
+`build_workflow()` now emits the collected-dict form directly, so the
+`ref_image_0` trap from §11 cannot recur from this path.
+
+### Reference tokens are nearly free at `match` size
+
+The open question was whether reference tokens — which ride through **every**
+sampling step — would break a clip already at the memory ceiling. Attention is
+quadratic, and 362 frames at 1344×768 was measured in §10 to have no headroom
+left.
+
+Measured, 1344×768 × 362 frames, `--chunk 4 --tiled 32 --lowmem`, two
+references at `ref_size=match`:
+
+| | per step | GPU0 | MemAvailable | fallback |
+|---|---:|---:|---:|---|
+| t2v (§10 `fast`) | ~169 s | 15.6 GB | 4.4 GB | none |
+| **r2v, 2 refs** | **167 s** | **15.6 GB** | **4.4 GB** | **none** |
+
+Two references at `match` are **free** at this shape. The reason is that `match`
+scales each reference *down* to the generation's pixel area, so a reference
+contributes ~4k tokens against the clip's own count — a rounding error against
+a quadratic term that is already enormous.
+
+**`max` (2048px short edge) is NOT measured at 362 frames and should be assumed
+to be what breaks the budget.** The schema itself warns it can be several times
+slower. Use `match` unless identity fidelity visibly fails.
+
+### Joining clips past the model's ceiling
+
+15.1 s is the model's trained maximum (§10) and no flag moves it. But `gen.py`
+reproduces its `--first-frame` seed at frame 0 to within 2.7/255, so seeding
+clip N+1 with clip N's last frame produces a cut nobody can see, and a pair
+plays as one 30 s take.
+
+`bench/lastframe.sh` takes the **second**-to-last frame deliberately. The final
+frame of a VAE-decoded clip is the most likely to carry temporal-tile edge
+artifacts, and here any artifact is not a one-frame blemish — it is the seed of
+the entire next clip, so it propagates.
+
+Chain two or three, not ten: each generation inherits its predecessor's drift.
+
+### What this makes possible that nothing else did
+
+The modes answer different questions and only together cover a real shoot:
+
+- **t2v** — a place you have no photograph of.
+- **i2v** — the photograph *is* the shot; frame 0 is the real thing.
+- **r2v** — a real subject somewhere it has never been. This is the only one
+  that can put a specific car on a specific road that was never photographed
+  together, and it is the mode that had never once run.
+- **chaining** — duration past a hard model limit.
+
+`produce.sh` exposes all four as per-prompt directives (`@image`, `@ref`,
+`@refsize`, `@chain`), so a shot list is a plain text file and the mode is a
+property of the shot rather than of the run.
