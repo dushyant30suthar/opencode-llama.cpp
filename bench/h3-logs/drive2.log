@@ -1,0 +1,14 @@
+
+########## K extended — cache thresholds 0.5/0.6, full-trajectory, torch.compile  (23:52) ##########
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase K: step caching & compile — the last big lever (no step-distill exists for H3)
+  (one server, base flags: --use-sage-attention)
+  K/K0          366.7s server    36.673 s/step   peak {'cuda:0': 14.04, 'cuda:1': 0.18}
+  K/K1          284.7s server    28.470 s/step   peak {'cuda:0': 11.31, 'cuda:1': 0.17}
+  K/K2          253.5s server    25.350 s/step   peak {'cuda:0': 14.97, 'cuda:1': 0.17}
+  K/K3          283.2s server    28.317 s/step   peak {'cuda:0': 14.97, 'cuda:1': 0.17}
+  K/K4          255.0s server    25.503 s/step   peak {'cuda:0': 14.94, 'cuda:1': 0.17}

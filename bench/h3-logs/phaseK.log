@@ -1,0 +1,14 @@
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase K: step caching & compile — the last big lever (no step-distill exists for H3)
+  (one server, base flags: --use-sage-attention)
+  K/K0          369.8s server    36.978 s/step   peak {'cuda:0': 13.26, 'cuda:1': 0.18}
+  K/K1          285.1s server    28.510 s/step   peak {'cuda:0': 11.29, 'cuda:1': 0.18}
+  K/K2          252.6s server    25.259 s/step   peak {'cuda:0': 14.91, 'cuda:1': 0.18}
+  K/K3          281.5s server    28.149 s/step   peak {'cuda:0': 14.91, 'cuda:1': 0.18}
+  K/K4          252.9s server    25.294 s/step   peak {'cuda:0': 14.94, 'cuda:1': 0.18}
+
+done — /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl

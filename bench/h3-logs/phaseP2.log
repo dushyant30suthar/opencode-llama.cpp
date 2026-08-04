@@ -1,0 +1,4 @@
+usage: sweep.py [-h] [--confirm] [--base-flags [BASE_FLAGS ...]]
+                [--length LENGTH] [--steps STEPS] [--list]
+                [phases ...]
+sweep.py: error: unrecognized arguments: --disable-cuda-malloc

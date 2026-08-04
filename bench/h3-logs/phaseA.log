@@ -1,0 +1,17 @@
+stage=probe  base={'width': 1344, 'height': 768, 'length': 22, 'steps': 10, 'cfg': 1.0}
+tokens=7,130
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase A: attention backend — the dominant term (58% of FLOPs at 5s, 80% at 15s)
+  -- A0: (defaults)  default (torch SDPA, flash-capable)
+  A/A0           83.3s server     8.335 s/step   peak {'cuda:0': 15.11, 'cuda:1': 0.17}
+  -- A1: --use-pytorch-cross-attention  explicit torch 2.x SDPA
+  A/A1           89.4s server     8.943 s/step   peak {'cuda:0': 15.0, 'cuda:1': 0.18}
+  -- A2: --use-sage-attention  SageAttention 2 — INT8 QK, FP16 V; ~30-35% over SDPA reported on Blackwell
+  A/A2           74.3s server     7.428 s/step   peak {'cuda:0': 15.02, 'cuda:1': 0.17}
+  A/A3       SKIP — python module 'flash_attn' not installed (run bench/install-accel.sh)
+  -- A4: --use-split-cross-attention  memory-thrifty, expected slower; run it to bound the axis
+  A/A4          130.4s server    13.043 s/step   peak {'cuda:0': 13.11, 'cuda:1': 0.18}
+
+done — /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl

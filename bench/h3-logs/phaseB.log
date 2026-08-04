@@ -1,0 +1,18 @@
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase B: --fast optimizations (applied on top of the A winner)
+  -- B0: --use-sage-attention  control
+  B/B0          373.4s server    37.336 s/step   peak {'cuda:0': 13.58, 'cuda:1': 0.18}
+  -- B1: --use-sage-attention --fast fp16_accumulation  fp16 accumulate in GEMMs
+  B/B1          359.2s server    35.924 s/step   peak {'cuda:0': 13.73, 'cuda:1': 0.18}
+  -- B2: --use-sage-attention --fast fp16_accumulation cublas_ops  + cuBLAS paths
+  B/B2          356.4s server    35.643 s/step   peak {'cuda:0': 13.79, 'cuda:1': 0.18}
+  -- B3: --use-sage-attention --fast autotune  kernel autotune; the first run pays for it
+  B/B3          373.1s server    37.306 s/step   peak {'cuda:0': 14.31, 'cuda:1': 0.18}
+  -- B4: --use-sage-attention --fast  everything — ComfyUI calls these untested and quality-affecting
+  B/B4          354.8s server    35.480 s/step   peak {'cuda:0': 14.34, 'cuda:1': 0.18}
+
+done — /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl

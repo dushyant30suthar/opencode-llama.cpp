@@ -1,0 +1,9 @@
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase P: pipeline split — GPU1 executes blocks >= split_index
+  (one server, base flags: --use-sage-attention)
+  P/P0          368.4s server    36.844 s/step   peak {'cuda:0': 13.77, 'cuda:1': 0.18}
+  P/P1          FAILED   ['execution_start', {'prompt_id': 'a2d9049b-b92d-48e3-9531-c3b8ac8a447f', 'timestamp': 178

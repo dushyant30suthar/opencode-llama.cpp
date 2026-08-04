@@ -1,0 +1,13 @@
+diff --git a/comfy/ldm/minimax/audio_vae.py b/comfy/ldm/minimax/audio_vae.py
+index 033ae696..a9ac84b1 100644
+--- a/comfy/ldm/minimax/audio_vae.py
++++ b/comfy/ldm/minimax/audio_vae.py
+@@ -98,7 +98,7 @@ class UpSample1d(nn.Module):
+     def forward(self, x):
+         _, C, _ = x.shape
+         x = F.pad(x, (self.pad, self.pad), mode="replicate")
+-        x = F.conv_transpose1d(x, self.filter.expand(C, -1, -1).to(x.dtype), stride=self.stride, groups=C).mul_(self.ratio)
++        x = F.conv_transpose1d(x, self.filter.expand(C, -1, -1).to(device=x.device, dtype=x.dtype), stride=self.stride, groups=C).mul_(self.ratio)
+         x = x[..., self.pad_left:-self.pad_right]
+         return x
+ 

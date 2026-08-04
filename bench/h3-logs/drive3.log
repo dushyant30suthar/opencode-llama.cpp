@@ -1,0 +1,12 @@
+
+########## M — DisTorch2 sharding: DiT spill onto idle GPU1 instead of host RAM  (00:22) ##########
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase M: DisTorch2 sharding — put the DiT spill on idle GPU1 instead of host RAM
+  (one server, base flags: --use-sage-attention)
+  M/M0          369.2s server    36.917 s/step   peak {'cuda:0': 13.73, 'cuda:1': 0.18}
+  M/M1          348.0s server    34.797 s/step   peak {'cuda:0': 11.52, 'cuda:1': 0.17}
+  M/M2          359.9s server    35.987 s/step   peak {'cuda:0': 13.03, 'cuda:1': 0.17}

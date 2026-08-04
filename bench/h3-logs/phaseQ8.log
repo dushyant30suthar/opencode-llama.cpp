@@ -1,0 +1,8 @@
+stage=probe-len124-s10  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 10, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase Q: pipeline split, isolated server
+  (one server, base flags: --use-sage-attention --disable-cuda-malloc --disable-async-offload --disable-dynamic-vram)
+[memguard] TRIPPED: MemAvailable=6730MiB swap+3324MiB — killing pgid 1940

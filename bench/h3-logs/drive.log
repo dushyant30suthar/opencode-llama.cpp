@@ -1,0 +1,11 @@
+
+########## A confirm — does the attention win grow with sequence length?  (22:26:22) ##########
+stage=confirm  base={'width': 1344, 'height': 768, 'length': 124, 'steps': 20, 'cfg': 1.0}
+tokens=37,710
+results -> /home/dushyant30suthar/Projects/comfyui/bench/results.jsonl
+
+
+### phase A: attention backend — the dominant term (58% of FLOPs at 5s, 80% at 15s)
+  -- A0: (defaults)  default (torch SDPA, flash-capable)
+  A/A0         1250.6s server    62.528 s/step   peak {'cuda:0': 13.11, 'cuda:1': 0.18}
+  -- A1: --use-pytorch-cross-attention  explicit torch 2.x SDPA

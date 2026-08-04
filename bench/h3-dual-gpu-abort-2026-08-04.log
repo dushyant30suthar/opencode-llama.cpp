@@ -1,0 +1,12 @@
+baseline: MemAvailable 26 GB, cached 5 GB, swap used 733 MiB
+
+  instance gpu0 on :8194 — up
+  instance gpu1 on :8195 — up
+
+firing both at once...
+  [     5s] avail 21 GB  cached  5 GB  swap+   -1 MiB
+  [    10s] avail 13 GB  cached  5 GB  swap+   -1 MiB
+  [    15s] avail  5 GB  cached  5 GB  swap+   -1 MiB
+  [    20s] avail  2 GB  cached  3 GB  swap+ 1520 MiB
+
+!! ABORT: swap grew 3971 MiB — thrashing. Two instances do not fit.
