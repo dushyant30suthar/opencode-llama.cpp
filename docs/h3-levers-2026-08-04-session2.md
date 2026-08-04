@@ -1348,3 +1348,35 @@ The modes answer different questions and only together cover a real shoot:
 `produce.sh` exposes all four as per-prompt directives (`@image`, `@ref`,
 `@refsize`, `@chain`), so a shot list is a plain text file and the mode is a
 property of the shot rather than of the run.
+
+
+### What each mode actually holds over 15 seconds
+
+Observed on the journey film, 2026-08-05, all at 1344x768 x 362 frames.
+
+**i2v recovers detail from the seed that no prompt described.** Shot 4 was
+seeded with a photograph of the car's cabin. The generation reproduced the
+yellow sticker on the sun visor, the bell hanging from the mirror, the orange
+vent surrounds, the driver's check shirt and his blue wristband — none of which
+were in the prompt. As a way of getting a specific real interior on screen it is
+far stronger than describing it.
+
+**But i2v does not hold a face for 15 seconds.** In the same shot the driver is
+recognisably the man from the seed photograph for the first few seconds and has
+drifted into a generic man in the same shirt by the end. The scene, the car and
+the wardrobe all survive; the identity does not. The subject being the thing in
+motion is probably what costs it — the camera move in that shot also overshot
+its brief, swinging around the cabin rather than the "slow drift" prompted.
+
+Practical consequence: **for a shot whose point is a specific person, prefer r2v
+with a face reference over i2v from a photo of them.** i2v is the right tool
+when the point is the *place* — a cabin, a road, a slope — and a person merely
+happens to be in it.
+
+**r2v held a vehicle's identity cleanly across a whole clip** (shot 2): body
+colour, contrast roof, shoulder line, C-pillar treatment, headlamp signature and
+wheel pattern all read as the referenced car for the full 15 s, in a location
+that was never photographed. Identity carried by reference appears to be far
+more stable than identity carried by a seed frame — which is what the two modes
+are respectively designed for, so this is the expected result rather than a
+surprise. It is worth having measured it anyway.
