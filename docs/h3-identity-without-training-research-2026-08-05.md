@@ -1,5 +1,34 @@
 # Getting a SPECIFIC real subject into H3 video — without training
 
+> ## ⚠ CORRECTION 2026-08-05, AFTER THIS RESEARCH WAS COMMISSIONED
+>
+> **The premise of this document was false.** It was commissioned because
+> reference-to-video "carried attributes but not identity". It has since been
+> established that **references were never reaching the model at all**.
+>
+> `bench/matrix.py` emitted the autogrow input as a pre-collected dict,
+> `{"ref_images": {"ref_image_0": ...}}`. ComfyUI expects the dot-prefixed form
+> `{"ref_images.ref_image_0": ...}`, and when it finds nothing it sets the
+> dynamic path to an EMPTY DICT — no error, no warning. Every r2v run on this
+> box, including the journey film's car shots, generated from prompt text alone.
+> Confirmed by instrumenting the node's reference loop: it had never once
+> executed. Fixed in commit `b365a5f3`.
+>
+> **Therefore §1's conclusion — "references carry attributes, not identity, and
+> that ceiling is architectural" — is UNSUPPORTED.** It was inference about a
+> mechanism that was not running. The claim may still turn out to be true; it has
+> simply never been tested. A proper test is running.
+>
+> **What survives unaffected:** the structural finding that H3 uses no ArcFace
+> (§1's table), the adapter dead-end (§2), the inventory of installed nodes (§3),
+> the face-swap blocker (§4), the vapourware list (§5), the relighting gap (§6)
+> and the licensing flags (§7). Those were established by reading code and
+> repositories, not by our measurements.
+>
+> **What must be re-judged:** the ranking in §8. It was ordered on the assumption
+> that references had been tried and found wanting.
+
+
 _Research, 2026-08-05. Commissioned after the user looked at the best
 reference-to-video output of his own car and said: **"it looks legit but it's not
 what my car looks like."** He ruled out LoRA training explicitly — training a

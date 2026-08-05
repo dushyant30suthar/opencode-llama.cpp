@@ -1276,7 +1276,19 @@ at 362 frames is only reachable with the §10 stack underneath it.
 `build_workflow()` now emits the collected-dict form directly, so the
 `ref_image_0` trap from §11 cannot recur from this path.
 
-### Reference tokens are nearly free at `match` size
+### SUPERSEDED 2026-08-05 — this section measured references that were not there
+
+The measurement below is real but means the opposite of what it says. References
+were being silently discarded by `bench/matrix.py` (wrong autogrow key format;
+see commit `b365a5f3`), so "r2v with 2 refs costs the same as t2v" was measuring
+r2v with ZERO refs. Reference cost on this box is currently **unknown**.
+
+The tell was in the number itself and I wrote it up as a feature. 167 s/step
+against 169, and 26.9 min against 26.8 at 362 frames — a reference pathway that
+costs *nothing at all* should have prompted a check that it was running, not a
+paragraph explaining why it was cheap.
+
+### Reference tokens are nearly free at `match` size — VOID, SEE ABOVE
 
 The open question was whether reference tokens — which ride through **every**
 sampling step — would break a clip already at the memory ceiling. Attention is
