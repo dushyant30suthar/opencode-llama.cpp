@@ -1380,3 +1380,41 @@ that was never photographed. Identity carried by reference appears to be far
 more stable than identity carried by a seed frame — which is what the two modes
 are respectively designed for, so this is the expected result rather than a
 surprise. It is worth having measured it anyway.
+### Chaining: the seed you inherit is not one you chose
+
+Shot 8 ended on an extreme overhead push-in onto the car's roof — heavily
+motion-smeared and blocky. `lastframe.sh` duly handed that to shot 9 as its
+seed, and shot 9's brief was to open out into a valley.
+
+It recovered. The first second or so carries the degraded frame, then the
+generation pulls away clean and delivers the best landscape in the film. This is
+the same softness the 8.6/255 seam measurement describes, seen from the other
+side: **i2v conditioning is strongest at frame 0 and decays quickly**, so a bad
+seed costs the opening beat rather than the clip.
+
+Two rules worth keeping:
+
+1. **When chaining, prompt an immediate camera move AWAY from the seed** — pull
+   back, lift, widen. The degraded frames pass while the camera is already
+   leaving them. Shot 9's prompt said "the tracking shot widens and lifts",
+   which is why it got away with it.
+2. **A shot that will be chained FROM should not end on a dramatic push-in.**
+   You do not choose the frame you hand forward; whatever the previous
+   generation happened to end on becomes the next clip's opening composition.
+   Ending wide is a gift to the next shot.
+
+This is the real cost of chaining, and it is a directing cost rather than a
+technical one — nothing in the tooling can pick a better last frame than the one
+the clip actually ends on.
+
+### Reference identity only pays off if the subject is framed large
+
+Shot 2 (car fills the frame) held the referenced vehicle convincingly for 15 s.
+Shot 8 (same car, three references instead of two, but distant for most of the
+clip) reads as a generic hatchback silhouette — the reference work is real but
+invisible at that scale.
+
+Cost is identical either way: **26.9 min for two references and 26.9 min for
+three**, so reference count is free at `ref_size=match` — but it buys nothing in
+a shot that never lets you see the subject. Spend references on shots that frame
+the subject large.
