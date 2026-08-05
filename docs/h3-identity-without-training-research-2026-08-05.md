@@ -73,9 +73,27 @@ is sequential offload into host RAM we do not have.
 | **`WanPhantomSubjectToVideo`** | `nodes_wan.py` | Phantom — general-subject, Apache-2.0, GGUF available. The RAM-cheapest way to sanity-check the general-subject branch, via the 1.3B variant, without disturbing H3. |
 | **`ColorTransfer`** | — | `per_frame` / `uniform` / `target_frame` modes. Video-aware harmonisation for compositing. |
 
-**REPORTED cost for Bernini:** Q4_K_M is 9.66 GB × 2 experts + umT5 ≈ **26 GB
-staged** — requires evicting H3 from RAM first. Not a chained test; a separate
-session.
+### CORRECTION 2026-08-05 — the node is installed, the MODEL is not
+
+**VERIFIED locally, and this reverses the "already installed" framing above.**
+`nodes_bernini.py` line 20 reads: *"Bernini in-context conditioning for a
+**Wan2.2-A14B** model."*
+
+`ads2v` is **not an H3 feature.** It is a Wan2.2-A14B feature, and we do not have
+that checkpoint:
+
+```
+models/diffusion_models/  Wan2.2-TI2V-5B-Q6_K.gguf   4.0 GB   <- a DIFFERENT, smaller model
+                          (no A14B present)
+```
+
+So the real cost is not "evict H3 from RAM". It is: **download a 14B×2-expert
+MoE (~26 GB staged at Q4_K_M), stand up a second pipeline, and accept that it
+cannot coexist with H3 in 31 GB.** That is a project, not a test.
+
+The `ads2v` capability is real and remains the correct answer for *exactness*.
+But it is a fork in the road onto a different model family, not a switch to flip
+on the setup we have.
 
 **VERIFIED locally:** `WanVaceToVideo` accepts only **one** reference image —
 `reference_image[:1]` at `nodes_wan.py:324` silently discards the rest. H3's nine
