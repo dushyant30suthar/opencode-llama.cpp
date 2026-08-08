@@ -1,0 +1,126 @@
+# nvidia/Qwen3.6-35B-A3B-NVFP4 — NVIDIA's own ModelOpt checkpoint, 21.85 GiB.
+#
+# This file IS vLLM's `--config` format: every key is a `vllm serve` flag with
+# the leading dashes dropped. The backend passes it verbatim and overrides only
+# host/port (so the address it probes is the address vLLM binds) and the
+# positional model (so the value works on every vLLM that has --config).
+#
+# WHY THIS MODEL, on 2x RTX 5060 Ti (sm_120, 31.86 GiB total):
+#   MoE. 256 experts, 8 active — roughly 3B params read per decode step against
+#   the dense 27B's ~20 GiB. On a bandwidth-bound box that is the whole game:
+#   measured 140 tok/s here (500 tokens, shallow prompt) against the 27B EXL3
+#   5.00bpw's 75.3 at 4k. Capacity cost is full — all 256 experts stay resident —
+#   so the trade is VRAM for speed, which is the right way round here.
+#
+# ON THE KERNEL, correcting an earlier reading of this same file: vLLM selects
+#   'MARLIN' as the NvFp4 MoE backend on sm_120 over the FlashInfer and CUTLASS
+#   options. That is NOT a fallback or an sm_120 deficiency — vLLM's own recipe
+#   for this checkpoint specifies `--moe-backend marlin` explicitly, DGX Spark
+#   (GB10) included. The 140 tok/s above is Marlin's number, with MTP off.
+#   (The dense Qwen3.6-27B NVFP4 is separately W4A16 weight-only, which #48199
+#   confirms is routed through Marlin by design on every GPU including B200.)
+#   torch 2.11.0+cu130 does list sm_120, so the cards are reachable either way.
+#
+# MEASURED ON THIS BOX 2026-08-09, from the engine's own startup log:
+#     max-num-seqs 256, gpu-mem-util 0.92 -> KV pool 247,164 tokens
+#     max-num-seqs  64, gpu-mem-util 0.92 -> KV pool 299,707 tokens
+# The pool GREW by 52k tokens purely from lowering max-num-seqs: each decode
+# slot reserves a Mamba block, and the blocks 192 unused slots were holding came
+# back as KV. Worth knowing — on this architecture the concurrency cap and the
+# context window trade against each other directly.
+#
+# Two independent levers, and they are easy to confuse:
+#   max-model-len          how much of the pool ONE request may take. Costs
+#                          nothing to raise while it stays under the pool.
+#   gpu-memory-utilization how big the pool IS. This is the one that can OOM.
+#
+# At 196608 against a 299,707-token pool that is 1.52x concurrency, close to the
+# 1.58x the exl3 5.00bpw file runs (cache_size 311296 / max_seq_len 196608) —
+# so the two engines are now comparable window-for-window.
+#
+# 262144 (the checkpoint's native window) is reachable but drops concurrency to
+# ~1.14x, which is under one full-length request plus a subagent. Left at 196608
+# deliberately: this box runs a main agent with subagents, and the exl3 config
+# settled on the same number for the same reason.
+#
+# IF IT FAILS AT LOAD, the errors that mean "max-model-len too high" are
+#   "No available memory for the cache blocks"
+#   "The model's max seq len ... is larger than the maximum number of tokens
+#    that can be stored in KV cache"
+# Lower max-model-len first; only then consider raising gpu-memory-utilization,
+# which trades away the headroom CUDA graph capture needs.
+#
+# MTP IS DELIBERATELY OFF FOR THE FIRST BOOT. The checkpoint has the head
+# (config.json excludes `mtp*` from quantisation, so it is present and
+# unquantised) and vLLM supports it natively — no draft model needed:
+#     speculative-config: '{"method": "mtp", "num_speculative_tokens": 1}'
+# Left out because it adds VRAM and a second failure mode to a launch whose only
+# job right now is to answer whether the FP4 kernels engage. Turn it on once the
+# log says they do, and expect to lower max-model-len again when you do.
+
+model: /home/dushyant30suthar/.lmstudio/models/nvidia/Qwen3.6-35B-A3B-NVFP4
+
+# What /v1/models reports, and how the backend tells an already-running server
+# apart from one it must relaunch. Keep it UNIQUE across every file in this
+# directory — two configs claiming one name makes the adopt path unreliable and
+# every panel restart pays for a full reload. (exl3 needs a directory symlink
+# for the same effect; vLLM has a real alias, so use it.)
+served-model-name: Qwen3.6-35B-A3B-NVFP4
+
+# 21.85 GiB does not fit one 16 GiB card. GPU1 is on PCIe Gen3 x4 behind the
+# PCH (measured 2.76 GB/s), so the all-reduce traffic TP generates is the known
+# tax on this box — the same one that costs exl3 ~26% of a deep prefill.
+tensor-parallel-size: 2
+
+max-model-len: 196608
+
+# REQUIRED, and the failure it prevents is not obvious. Qwen3.6's gated-deltanet
+# layers carry recurrent state, and vLLM allocates one Mamba cache block per
+# DECODE SEQUENCE. Measured here: 132 blocks fit. vLLM's default max_num_seqs is
+# 256, so CUDA graph capture aborted with
+#     ValueError: max_num_seqs (256) exceeds available Mamba cache blocks (132)
+# after the KV cache had already been sized successfully — i.e. late, and
+# nothing about the message points at this file until you know to look.
+#
+# 64 rather than the permitted 132: the ceiling is what fits, not what helps.
+# This is the same constraint exl3 hits, where max_batch_size sits at 4 because
+# GDN recurrent state scales with batch. Agentic use is a handful of concurrent
+# conversations, and every unused slot is state allocated for nobody.
+max-num-seqs: 64
+
+# Halves KV bytes per token against fp16, which is the difference between a
+# usable window and none on 2x16 GiB. Blackwell has native FP8, so this is not
+# a dequantise-on-read cost the way quantised KV is under llama.cpp.
+kv-cache-dtype: fp8
+
+# 0.955. Measured at 0.92 the engine settled at 13,998 / 14,008 MiB against a
+# 15,006 MiB budget — about 1 GB of budget unspent, and 2.3 GB short of the
+# 16,311 MiB card. 0.955 = 15,577 MiB budget, leaving ~734 MiB of physical
+# headroom per card, which is real because this box is headless (GPU0 2 MiB /
+# GPU1 12 MiB at rest, since 2026-08-02).
+#
+# THIS IS THE SETTING THAT OOMs. CUDA graph capture allocates AFTER the KV cache
+# is sized, so an over-large value fails late, during capture, not at load. If
+# that happens, come back to 0.92 before touching anything else — and note the
+# engine may not spend the whole budget anyway, since KV is allocated in whole
+# blocks and rounds down.
+gpu-memory-utilization: 0.955
+
+# Qwen3.6 emits thinking blocks; without this they arrive as literal text and
+# the client renders reasoning as content. Matches vLLM's own Qwen3.6 recipe.
+reasoning-parser: qwen3
+
+# REQUIRED BY OPENCODE. Without both of these vLLM rejects the request outright:
+#   "auto tool choice requires --enable-auto-tool-choice and --tool-call-parser
+#    to be set"
+# They are a pair — vLLM's ParserManager.get_tool_parser() returns None unless
+# enable_auto_tools is true AND a parser name resolves, and the OpenAI endpoint
+# refuses tool_choice:"auto" when it gets None back.
+#
+# qwen3_xml is vLLM's recipe choice for Qwen3.6 and is registered in this build
+# (verified against ToolParserManager: 44 parsers, qwen3_coder and qwen3_xml
+# both present). Note exl3 uses `tool_format: qwen3_coder` for the 27B — the
+# two engines name and implement this differently, so do not copy one to the
+# other on the assumption they mean the same thing.
+tool-call-parser: qwen3_xml
+enable-auto-tool-choice: true

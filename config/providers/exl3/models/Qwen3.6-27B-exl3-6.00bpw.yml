@@ -4,15 +4,23 @@
 # Everything else is held at the same swept values on purpose, so a comparison
 # between the two isolates bitrate and nothing else.
 #
-# WHAT WAS MEASURED — decode throughput only, 2026-08-01 (matched configs,
-# exllamav3 v1.3.0, real corpus, engine-side `Generate:` metric, 4 reps after a
-# discarded warmup):
-#     depth    5.00bpw   6.00bpw   delta   6bpw acceptance
-#      4k       75.3      69.2     -8.1%      65.3%
-#     32k       74.3      69.7     -6.2%      76.9%
-#     98k       58.1      53.4     -8.1%      74.1%
+# WHAT WAS MEASURED — throughput, 2026-08-01, matched configs, exllamav3 v1.3.0,
+# real corpus, engine-side `Generate:` metric, 4 reps after a discarded warmup,
+# cache_size 131072 on BOTH sides so the comparison isolates bitrate.
+#
+#     depth   decode 5.00 / 6.00   delta    prefill 5.00 / 6.00   accept 5.00 / 6.00
+#      4k        75.3 / 69.2      -8.1%       576.3 / 566.7          69.0% / 65.3%
+#     32k        74.3 / 69.7      -6.2%       478.9 / 476.7          80.9% / 76.9%
+#     98k        58.1 / 53.4      -8.1%       385.3 / 344.0          80.8% / 74.1%
+#
 # (An earlier "+12.4% faster" reading was a confound — it compared this build on
 # v1.3.0 against a 5.00bpw baseline recorded on the older 7858de8 build.)
+#
+# Note every figure here was sampled at temperature 0.6, so draft acceptance
+# varies run to run and carries several percent of noise. For comparing
+# CONFIGURATIONS rather than measuring production, use temperature 0: both
+# drafter and verifier become deterministic and acceptance is then identical
+# between runs.
 #
 # WHAT WAS NOT MEASURED — output quality on real work. These are different
 # quants, not the same model at different speeds. turboderp's published mean KLD

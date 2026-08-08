@@ -1,0 +1,83 @@
+# nvidia/Qwen3.6-35B-A3B-NVFP4 — vLLM's OFFICIAL recipe, adapted to this box.
+#
+# Same checkpoint as Qwen3.6-35B-A3B-NVFP4.yaml; that file is the conservative
+# one that came up first. This is the tuned one. Two files, one checkpoint: the
+# picker keys on the FILENAME and each declares its own served-model-name, so
+# both list separately and either can be selected.
+#
+# SOURCE: recipes.vllm.ai/Qwen/Qwen3.6-35B-A3B, "DGX Spark NVFP4" section.
+# Everything below is from that recipe except where this box forced a change,
+# and each change is noted. Getting this from the recipe rather than deriving it
+# saved several failed boots — the Mamba-block and tool-parser settings in
+# particular are not things you would guess.
+#
+# WHAT THE RECIPE CORRECTED, and it is worth stating plainly: `moe-backend
+# marlin` is the OFFICIAL choice for this checkpoint, on DGX Spark (GB10)
+# included. vLLM auto-selecting MARLIN over the FlashInfer/CUTLASS options on
+# sm_120 is therefore correct behaviour, not an sm_120 deficiency and not a
+# degraded fallback. It is set explicitly here so the choice is visible in the
+# file rather than inferred from a log line at startup.
+#
+# DEVIATIONS FROM THE RECIPE, all forced by 2x16 GiB against DGX Spark's 128 GiB
+# unified memory:
+#   tensor-parallel-size  1      -> 2       21.85 GiB does not fit one 16 GiB card
+#   gpu-memory-utilization 0.5   -> 0.92    0.5 of 16 GiB leaves no room at all
+#   max-model-len       262144   -> 163840  measured KV pool here is 247,164
+#                                           tokens; 262144 exceeds it outright,
+#                                           and 163840 leaves 1.5x concurrency
+#
+# MEASURED ON THIS BOX 2026-08-09 (engine startup log, gpu-mem-util 0.92):
+#   GPU KV cache size: 247,164 tokens at kv-cache-dtype fp8
+#   Mamba cache blocks: 132        <- the ceiling that matters, see max-num-seqs
+
+model: /home/dushyant30suthar/.lmstudio/models/nvidia/Qwen3.6-35B-A3B-NVFP4
+served-model-name: Qwen3.6-35B-A3B-NVFP4-tuned
+
+tensor-parallel-size: 2
+gpu-memory-utilization: 0.92
+max-model-len: 163840
+
+# Explicit rather than auto-selected. See the header: this is the recipe's own
+# choice for this checkpoint, not a fallback.
+moe-backend: marlin
+kv-cache-dtype: fp8
+
+# The recipe's value. Qwen3.6's gated-deltanet layers allocate one Mamba cache
+# block per decode sequence and only 132 fit here; vLLM's default of 256 aborts
+# CUDA graph capture with "max_num_seqs (256) exceeds available Mamba cache
+# blocks (132)" — and it does so AFTER the KV cache sizes successfully, so the
+# failure arrives late and points nowhere near this setting. 8 is well under the
+# ceiling and matches agentic use: a handful of concurrent conversations, not a
+# serving farm. Every unused slot is recurrent state allocated for nobody.
+max-num-seqs: 8
+max-num-batched-tokens: 8192
+enable-chunked-prefill: true
+async-scheduling: true
+
+# THE ONE THAT MATTERS MOST FOR AGENT WORK. vLLM turns this OFF by itself on
+# this hybrid architecture — the first boot logged enable_prefix_caching=False
+# without being asked — which is the 0% cross-conversation reuse that made vLLM
+# a non-starter here back in July. The recipe enables it explicitly, so it is
+# supported; the recipe also flags Mamba prefix caching as experimental in
+# 'align' mode. If turns start returning wrong or truncated context, this is the
+# first thing to turn off.
+enable-prefix-caching: true
+
+# MTP. The head is present and unquantised (config.json excludes `mtp*` from
+# quantisation) and needs no separate draft model. moe_backend triton for the
+# drafter is the recipe's choice, not a typo — the drafter runs a different
+# backend from the main model's marlin.
+speculative-config: '{"method":"mtp","num_speculative_tokens":3,"moe_backend":"triton"}'
+
+# Reads shards in parallel. Matters here specifically: available RAM (20.72 GiB)
+# is under the checkpoint size (21.82 GiB), so vLLM disabled auto-prefetch and
+# the load is I/O bound.
+load-format: fastsafetensors
+
+# Without the tool-call parser, opencode gets tool calls as literal XML text in
+# the message body and renders raw blocks instead of executing them — the same
+# failure exl3's `tool_format: qwen3_coder` exists to prevent.
+reasoning-parser: qwen3
+tool-call-parser: qwen3_xml
+enable-auto-tool-choice: true
+trust-remote-code: true
