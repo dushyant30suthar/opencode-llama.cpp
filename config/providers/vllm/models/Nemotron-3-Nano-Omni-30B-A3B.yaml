@@ -1,0 +1,79 @@
+# nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4 — 22.4 GB on disk.
+#
+# The multimodal sibling of Nemotron-3-Nano-30B-A3B: same 30B-A3B hybrid MoE
+# base plus a C-RADIOv4-H vision encoder and a Parakeet speech encoder. The only
+# path on this box to AUDIO; the Qwen3.6 pair does still images only. Also does
+# OCR and GUI understanding.
+#
+# MEASURED HERE (all three verified, not assumed):
+#   text          1.0s   "OK"
+#   image / OCR   1.9s   read "INVOICE 2026-A9" off a rendered PNG exactly
+#   audio         4.7s   described a 440 Hz tone as "a bell ringing"
+#   video         DOES NOT FIT — see below
+#
+# VIDEO WORKS. An earlier version of this file disabled it and claimed it could
+# not fit — that was wrong, and reached by shrinking max-model-len alone. The
+# encoder reserve is driven by the largest possible video item, so the knobs
+# that matter are frames and EVS pruning, not the window:
+#     media-io-kwargs {"video": {"num_frames": 32, "fps": 1}}
+#     video-pruning-rate 0.5        <- Efficient Video Sampling
+# Capping frames is strictly BETTER than limit-mm-per-prompt video:0, which left
+# a 185,373-token KV pool against 835,115 here — 4.5x worse, for less capability.
+#
+# MEASURED, all four modalities on this box:
+#     text          1.0s
+#     image / OCR   1.9s   read "INVOICE 2026-A9" off a rendered PNG exactly
+#     audio         4.7s   described a 440 Hz tone as "a bell ringing"
+#     video         3.3s   "A red square moves from left to right." — correct
+#                          object AND direction, so temporal info is real
+#
+# Weights are 12.12 GiB PER GPU (9.88 for the text-only Nemotron; the C-RADIOv4-H
+# and Parakeet encoders cost +2.24 each), so headroom is genuinely tight — raise
+# num_frames only with a restart and a check. NVIDIA's own recipe uses 512
+# frames at pruning 0.5, which needs a far larger card.
+#
+# COST against the text-only Nemotron: KV pool 2,539,275 -> 835,115. That model
+# stays the fan-out host; this is the specialist for image, audio, video, OCR
+# and document work.
+#
+# AUDIO NEEDS PYTHON DEPS that vLLM does not install by default. Without them
+# the request fails with "Please install vllm[audio] for audio support", and
+# with only some of them it fails with the more confusing "PlaceholderModule
+# should not be used when the original module can be imported". The full set,
+# from vllm/multimodal/audio.py: librosa, soundfile, av, soxr, scipy. Installed
+# with `uv pip install` (this venv is uv-managed and has no pip module), pinning
+# vllm==0.26.0 so resolving them cannot upgrade a working engine.
+
+model: /home/dushyant30suthar/.lmstudio/models/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4
+served-model-name: Nemotron-3-Nano-Omni-30B-A3B
+
+tensor-parallel-size: 2
+kv-cache-dtype: fp8
+max-model-len: 131072
+max-num-seqs: 8
+
+# Mamba 'align' page is 2128 tokens on this model (1600 on the Qwen3.6-27B, 2096
+# on the 35B). vLLM asserts block_size <= max_num_batched_tokens and refuses to
+# start otherwise — which reads like a memory ceiling but is not. 4096 clears it.
+max-num-batched-tokens: 4096
+
+gpu-memory-utilization: 0.955
+
+# See the header: this is what makes the model fit at all.
+
+enable-prefix-caching: true
+async-scheduling: true
+
+# Custom modelling code ships with the checkpoint (configuration_nemotron_h.py,
+# configuration_radio.py, audio_model.py, evs.py) and vLLM must import it.
+trust-remote-code: true
+
+enable-auto-tool-choice: true
+tool-call-parser: qwen3_coder
+
+# This checkpoint does NOT ship nano_v3_reasoning_parser.py; borrowed from the
+# text-only Nemotron, same parser and same family.
+reasoning-parser-plugin: /home/dushyant30suthar/.lmstudio/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4/nano_v3_reasoning_parser.py
+reasoning-parser: nano_v3
+media-io-kwargs: {"video": {"num_frames": 32, "fps": 1}}
+video-pruning-rate: 0.5

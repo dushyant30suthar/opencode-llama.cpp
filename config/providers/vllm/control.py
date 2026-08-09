@@ -129,7 +129,11 @@ class H(BaseHTTPRequestHandler):
             if not entry:
                 return self._send(404, {"error": f"unknown id {wanted}",
                                         "known": [e["id"] for e in entries]})
-            if served_now() == entry["served"]:
+            # "already" is right for normal selection — no point paying a
+            # multi-minute reload for a model that is already up. But it also
+            # made it impossible to pick up new deps or an edited YAML, so
+            # {"force": true} bypasses it.
+            if served_now() == entry["served"] and not body.get("force"):
                 return self._send(200, {"started": True, "already": True, "served": entry["served"]})
             # Launch in a worker: loading takes minutes and the caller only
             # needs to know the swap was accepted. Progress is visible via

@@ -5,6 +5,10 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=%h/Projects/vllm/venv/bin/python %h/Projects/vllm/control.py
+# The daemon spawns vLLM in a tmux session. With the default
+# KillMode=control-group, restarting this unit tears down the whole cgroup and
+# takes the running model with it — which is exactly what happened once.
+KillMode=process
 Restart=always
 RestartSec=5
 
