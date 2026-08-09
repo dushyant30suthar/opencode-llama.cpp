@@ -1,0 +1,77 @@
+# nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4 — 18.03 GiB, MoE, hybrid.
+#
+# The different-lab counterweight to Qwen3.6-35B-A3B, and smaller than it
+# (18.03 vs 21.85 GiB). Trained from scratch by NVIDIA on Nemotron-Agentic-v1;
+# the paper is "Nemotron 3 Nano: ... Hybrid Mamba-Transformer Model for Agentic
+# Reasoning". Card benchmarks, no tools: AIME25 89.1, GPQA 73.0, HLE 10.2.
+#
+# Caveat on "different lab": the card says "Improved using Qwen", so the lineage
+# is not fully independent. Different training data and objective, but not the
+# clean separation Devstral gives.
+#
+# WHY IT FITS SO WELL — the layer pattern is the whole story:
+#     MEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEMEM*EMEMEMEME
+#     52 layers, of which only 6 are attention (*). Rest is Mamba (M) / MoE (E).
+# KV is paid only on those 6:  2 x 2 kv_heads x 128 head_dim x 6 = ~3 KiB/token.
+# For scale, measured on this box: Qwen3.6-27B ~32 KiB/token, the dense
+# Nemotron-Super-49B 48.6 KiB/token (which is why that one died at 4,832 tokens).
+# At 3 KiB/token a FULL 262,144-token request costs ~768 MiB of KV.
+#
+# SOURCE: NVIDIA's model card vLLM section. Their invocation, verbatim:
+#     VLLM_USE_FLASHINFER_MOE_FP4=1 VLLM_FLASHINFER_MOE_BACKEND=throughput \
+#     vllm serve ... --served-model-name model --max-num-seqs 8 \
+#       --tensor-parallel-size 1 --max-model-len 262144 --trust-remote-code \
+#       --enable-auto-tool-choice --tool-call-parser qwen3_coder \
+#       --reasoning-parser-plugin nano_v3_reasoning_parser.py \
+#       --reasoning-parser nano_v3 --kv-cache-dtype fp8
+#
+# THE TWO ENV VARS ARE NOT IN THIS FILE and cannot be — vLLM config YAML sets
+# flags, not environment. They live in ~/Projects/vllm/launch.sh:
+#     VLLM_USE_FLASHINFER_MOE_FP4=1     force the FlashInfer FP4 MoE path
+#     VLLM_FLASHINFER_MOE_BACKEND=throughput
+# This is the knob that overrides the MARLIN MoE backend selection documented in
+# docs/vllm-nvfp4-sm120-2026-08-09.md §1. Without them expect Marlin and a
+# slower decode; the startup log names the backend either way, so check it.
+#
+# WHAT WAS MEASURED HERE: nothing yet. Sizes and the KV arithmetic are from the
+# config; everything else is NVIDIA's card. The engine's own "GPU KV cache size"
+# line is the only number that counts — the dense 49B taught that the hard way.
+
+model: /home/dushyant30suthar/.lmstudio/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4
+served-model-name: Nemotron-3-Nano-30B-A3B-NVFP4
+
+# NVIDIA's example uses 1; 18.03 GiB does not fit one 16 GiB card here.
+tensor-parallel-size: 2
+
+# The card's default. The checkpoint supports 1M, but that needs
+# VLLM_ALLOW_LONG_MAX_MODEL_LEN=1 and there is no reason to reach for it before
+# 262144 is shown to work.
+max-model-len: 262144
+
+kv-cache-dtype: fp8
+
+# NVIDIA's value. This is also the Mamba-block lever: hybrid layers take one
+# recurrent-state block per decode sequence, and on the Qwen 35B exceeding the
+# available blocks aborted CUDA graph capture AFTER KV sizing reported success.
+# 8 is conservative; with KV this cheap there is likely room to raise it for
+# agent fan-out once the block count is known. Read it off the startup log.
+max-num-seqs: 8
+
+# Proven ceiling on this box: the cards expose 15.52 GiB usable / 15.19 free,
+# not the 15.93 nvidia-smi implies, so 0.98 is unreachable and ~0.96 is the cap.
+gpu-memory-utilization: 0.955
+
+trust-remote-code: true
+
+# Built-in parser, not a plugin — and it is qwen3_coder, the same one exl3 uses
+# for Qwen3.6-27B. That is the "Improved using Qwen" lineage surfacing.
+enable-auto-tool-choice: true
+tool-call-parser: qwen3_coder
+
+# Reasoning IS a plugin, and plugins are where NVIDIA models have bitten before:
+# the Llama-Nemotron-49B tool parser targets vllm==0.9.2 and fails to import on
+# 0.26. This one ships in the same checkpoint. If startup fails with
+# ModuleNotFoundError or "has not been registered", patch it the same way —
+# see ~/Projects/vllm/patch_nemotron_parser.py for the import mapping.
+reasoning-parser-plugin: /home/dushyant30suthar/.lmstudio/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4/nano_v3_reasoning_parser.py
+reasoning-parser: nano_v3

@@ -1,0 +1,68 @@
+# nvidia/Qwen3.6-27B-NVFP4 - dense 27B, NVIDIA ModelOpt build, WITH MTP.
+#
+# THE THING WORTH KNOWING ABOUT THIS CHECKPOINT: it is not uniformly 4-bit.
+# hf_quant_config.json lists 401 quantised layers:
+#     linear_attn  x144  FP8          <- 8-bit
+#     self_attn    x64   FP8          <- 8-bit
+#     mlp          x192  W4A16_NVFP4 group 16
+#     lm_head      x1    W4A16_NVFP4
+#     kv_cache_quant_algo: FP8
+# Every one of the 208 attention layers is FP8. Only the MLPs are 4-bit. That is
+# why this build reads as higher quality than the exl3 5.00bpw of the SAME model,
+# which quantises attention harder and runs its KV cache at 6-bit K / 4-bit V
+# (cache_mode: 6,4). Attention and KV are where long-range coherence lives.
+# On disk: 21.92 GB here vs 19.90 GB for exl3 5bpw - 10% more bits retained.
+#
+# MTP: the checkpoint ships mtp.fc + mtp.layers.0 (15 tensors, unquantised) and
+# vLLM 0.26 registers Qwen3_5MTP / method "qwen3_5_mtp". Earlier notes in this
+# repo claiming "NVFP4 has no MTP" were a config gap, not a checkpoint fact.
+#
+# MEASURED on this box (2x 16 GiB, TP2, identical prompt, temp 0, steady state):
+#     no MTP                       35.0 tok/s   KV pool 162,710
+#     MTP k=2  batched 2048        63.4 tok/s   accept 2.66-2.76
+#     MTP k=3  batched 2048        73.6 tok/s   accept 3.14-3.34
+#     MTP k=4  batched 8192        77.7 tok/s   accept 3.75-3.86  KV pool 125,551
+#     MTP k=3  batched 8192        77.6 tok/s   accept 3.39-3.50  KV pool 132,544
+#   for reference, exl3 5.00bpw + MTP on the same model: 75.3 tok/s @4k
+#
+# k=3 IS CHOSEN OVER k=4 DELIBERATELY: they decode at the same speed (77.6 vs
+# 77.7, inside run-to-run noise) but k=3 leaves ~7,000 more tokens of KV pool,
+# and that is what lets the window sit at the full 131,072. Raising k past the
+# point where acceptance saturates buys nothing and costs cache.
+#
+# So this build is now FASTER than the exl3 one AND higher fidelity, at the same
+# window it had before MTP. exl3 still wins raw window (196,608) - it buys that
+# with the lossy 6/4-bit KV cache.
+#
+# Reasoning is ON and must stay on - reasoning-parser qwen3, no enable_thinking
+# override. MTP does not change what the model thinks, only how fast it arrives.
+
+model: /home/dushyant30suthar/.lmstudio/models/nvidia/Qwen3.6-27B-NVFP4
+served-model-name: Qwen3.6-27B-NVFP4-nvidia
+
+tensor-parallel-size: 2
+kv-cache-dtype: fp8
+
+# The MTP head and its draft KV come out of the same pool. Without MTP the pool
+# held 162,710 tokens; at k=3 it holds ~125,000, so the window is sized to sit
+# just under that rather than fail sizing at boot.
+max-model-len: 131072
+
+# Single-user box. Raising this multiplies activation memory and shrinks the KV
+# pool - that is what killed the first two attempts at this model.
+max-num-seqs: 4
+
+# Speculative decoding pins this to 2048 by default, which throttles prefill.
+# TTFT at a 64k prompt measured 91.5s before raising it.
+max-num-batched-tokens: 8192
+
+# Proven ceiling: cards expose 15.52 GiB usable, not the 15.93 nvidia-smi shows.
+gpu-memory-utilization: 0.955
+
+enable-auto-tool-choice: true
+tool-call-parser: qwen3_xml
+reasoning-parser: qwen3
+
+speculative-config:
+  method: qwen3_5_mtp
+  num_speculative_tokens: 3
