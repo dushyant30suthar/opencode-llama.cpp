@@ -1,0 +1,12 @@
+[Unit]
+Description=vLLM control daemon (model list / start / stop for remote opencode)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/Projects/vllm/venv/bin/python %h/Projects/vllm/control.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
