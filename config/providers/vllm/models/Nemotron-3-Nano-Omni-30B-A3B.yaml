@@ -73,7 +73,7 @@ tool-call-parser: qwen3_coder
 
 # This checkpoint does NOT ship nano_v3_reasoning_parser.py; borrowed from the
 # text-only Nemotron, same parser and same family.
-reasoning-parser-plugin: /home/dushyant30suthar/.lmstudio/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4/nano_v3_reasoning_parser.py
+reasoning-parser-plugin: /home/dushyant30suthar/.lmstudio/models/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4/nano_v3_reasoning_parser.py
 reasoning-parser: nano_v3
-media-io-kwargs: {"video": {"num_frames": 32, "fps": 1}}
-video-pruning-rate: 0.5
+media-io-kwargs: {"video": {"fps": 2, "num_frames": 64}}
+video-pruning-rate: 0.7
