@@ -100,3 +100,9 @@ speculative-config:
 # page. That is why the repeat costs 4.9s rather than ~0. vLLM also flags
 # prefix caching in 'align' mode as EXPERIMENTAL for Mamba layers.
 enable-prefix-caching: true
+# From the official vLLM recipe for this model. Measured no single-stream
+# effect here (decode 76.9 -> 76.9 t/s, cold prefill 684 -> 683 t/s, both inside
+# the ~1% run-to-run spread) because the workload is GPU/PCIe-bound and the CPU
+# scheduling gap was already hidden. Kept because that A/B was single-stream and
+# the payoff is CPU/GPU overlap under CONCURRENT requests - the subagent case.
+async-scheduling: true
