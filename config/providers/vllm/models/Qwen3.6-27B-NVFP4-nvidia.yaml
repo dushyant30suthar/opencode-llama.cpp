@@ -21,8 +21,18 @@
 #     no MTP                       35.0 tok/s   KV pool 162,710
 #     MTP k=2  batched 2048        63.4 tok/s   accept 2.66-2.76
 #     MTP k=3  batched 2048        73.6 tok/s   accept 3.14-3.34
-#     MTP k=4  batched 8192        77.7 tok/s   accept 3.75-3.86  KV pool 125,551
-#     MTP k=3  batched 8192        77.6 tok/s   accept 3.39-3.50  KV pool 132,544
+#     MTP k=4  batched 8192        77.7 tok/s   accept 3.75-3.86  ** OOMs at depth
+#     MTP k=3  batched 8192        77.6 tok/s   accept 3.39-3.50  ** OOMs at depth
+#     MTP k=3  batched 2048        depth curve below                <- SHIPPED
+#
+# DEPTH CURVE (shipped config, streamed, temp 0) - the only figures here taken
+# on prompts big enough to mean anything:
+#     4k    TTFT  11.1s   53.7 t/s   (cold, first call after restart)
+#    32k    TTFT  46.3s   66.5 t/s
+#    98k    TTFT 157.2s   60.1 t/s
+# exl3 5.00bpw + MTP for comparison: 75.3 t/s @4k, 58.1 @98k - so this config
+# is ahead at 98k. TTFT is the weak spot and cannot be fixed by batching, see
+# the max-num-batched-tokens note below.
 #   for reference, exl3 5.00bpw + MTP on the same model: 75.3 tok/s @4k
 #
 # k=3 IS CHOSEN OVER k=4 DELIBERATELY: they decode at the same speed (77.6 vs
@@ -52,9 +62,15 @@ max-model-len: 131072
 # pool - that is what killed the first two attempts at this model.
 max-num-seqs: 4
 
-# Speculative decoding pins this to 2048 by default, which throttles prefill.
-# TTFT at a 64k prompt measured 91.5s before raising it.
-max-num-batched-tokens: 8192
+# LEAVE THIS AT 2048. Speculative decoding pins max_num_scheduled_tokens to
+# 2048, which does throttle prefill (~640 tok/s, 157s TTFT at a 100k prompt),
+# and raising it to 8192 does buy ~5% decode. It also makes the engine OOM
+# during prefill on prompts as small as ~7.5k tokens:
+#     RuntimeError: Worker failed with error 'CUDA out of memory. Tried to
+#     allocate 252.00 MiB. GPU 0 ... 233.50 MiB is free' -> EngineDeadError
+# Every decode benchmark here uses a ~20-token prompt and so never touched it.
+# 5% decode is not worth an engine that dies on a real coding-agent prompt.
+max-num-batched-tokens: 2048
 
 # Proven ceiling: cards expose 15.52 GiB usable, not the 15.93 nvidia-smi shows.
 gpu-memory-utilization: 0.955
