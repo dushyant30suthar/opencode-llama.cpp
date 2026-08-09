@@ -56,7 +56,10 @@ kv-cache-dtype: fp8
 # The MTP head and its draft KV come out of the same pool. Without MTP the pool
 # held 162,710 tokens; at k=3 it holds ~125,000, so the window is sized to sit
 # just under that rather than fail sizing at boot.
-max-model-len: 131072
+# 122880, not 131072: enabling prefix caching needs ~1% more KV than the full
+# window leaves (it asked for 2.52 GiB against 2.5 available). Losing 6% of the
+# window to gain a 23x faster repeat prefill is not a close call.
+max-model-len: 122880
 
 # Single-user box. Raising this multiplies activation memory and shrinks the KV
 # pool - that is what killed the first two attempts at this model.
@@ -82,3 +85,18 @@ reasoning-parser: qwen3
 speculative-config:
   method: qwen3_5_mtp
   num_speculative_tokens: 3
+# THE SINGLE BIGGEST WIN FOR AGENT USE. A 100k-token prompt costs 114.8s cold
+# and 4.9s on repeat - 23x. Coding agents resend a long shared prefix every
+# turn, so this is worth far more than any decode tuning in this file.
+#
+# Caveat specific to this architecture (64 layers: 48 linear_attention +
+# 16 full_attention). The gated-deltanet layers carry a fixed-size RECURRENT
+# STATE, not per-token KV, so vLLM must snapshot that state at page boundaries
+# and force both page types to the same size:
+#     Mamba cache mode is set to 'align' ... when prefix caching is enabled
+#     Setting attention block size to 1600 tokens
+# Pages are therefore 1600 tokens, not the usual 16, so REUSE IS QUANTISED TO
+# 1600 TOKENS - a turn adding less than that re-prefills the whole trailing
+# page. That is why the repeat costs 4.9s rather than ~0. vLLM also flags
+# prefix caching in 'align' mode as EXPERIMENTAL for Mamba layers.
+enable-prefix-caching: true
