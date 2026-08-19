@@ -1,0 +1,82 @@
+# Gemma-4-31B-it EXL3 6.00bpw (mul1 variant, turboderp/gemma-4-31b-it-exl3).
+# ~27 GiB weights on 2x RTX 5060 Ti 16GB — this is the HEAVY end for this box.
+# 6.00bpw chosen for max fidelity (matches the Qwen 6.00bpw quality-first call);
+# the cost is context: ~27 GiB weights leaves only ~4-5 GiB for KV on 31.86 GiB
+# total, so max_seq_len/cache_size are the tight lever. STRETCHED empirically:
+# start modest, push cache_size up until a deep prefill nearly OOMs, back off one.
+#
+# Dense 31B, no MTP (Gemma-4 dense has no multi-token-prediction head), so unlike
+# Qwen the win here is exl3's paged cross-conversation cache, not draft speedup.
+# Gemma-4 arch has per-layer output scalars (layer_scalar) — verified handled in
+# this build's architecture/gemma4.py; watch for garbled output/deadlock as the
+# signature of the known layer_scalar bug if you ever change engine versions.
+#
+# VISION IS INCLUDED: Gemma4ForConditionalGeneration with the vision tower baked
+# into the shards (356 vision tensors). Enable live by flipping `vision: true`
+# below — no separate download. Caveat: on this tight 32GB box, vision-on eats the
+# already-thin KV margin, so expect noticeably less context when it's enabled.
+# NOTE: Gemma's official sampler is temp 1.0 / top-k 64 / top-p 0.95 (NOT Qwen's
+# 0.6/20/0.95) — send it from the client, or the server.ini [sampling] Qwen preset
+# will be wrong for this model.
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: gemma-4-31b-it-exl3-6.00bpw
+
+  # Stretched on 2x16GB with 27GB of 6bpw weights. The binding constraint is the
+  # prefill transient, so chunk_size 1024 (below) shrinks it ~1GB and lets 49152
+  # fit with real headroom (49152 @ chunk 2048 left only 95 MiB — unsafe).
+  # 32768: vision-on eats the KV margin further, so ctx is backed off from 49152
+  # to keep real prefills (opencode's system+tool prompt) from OOMing on GPU0.
+  cache_size: 32768
+  max_seq_len: 32768
+  # exllamav3 dequants KV in-kernel, so fewer KV bits is FASTER and frees context;
+  # 6,4 (K6/V4) is the box-proven default. Revisit if quality dips on Gemma.
+  cache_mode: 6,4
+
+  max_batch_size: 4
+  tensor_parallel: true
+  # Server-managed split (dynamic — no brittle hardcoded GB). Caveat: under TP the
+  # autosplit structurally leaves GPU0 tighter than GPU1 because GPU0 holds the
+  # anchor (embeddings/output/all-reduce buffers) on top of its even tensor half.
+  # This is NOT a display leftover and autosplit can't self-compensate for it.
+  # It's harmless (TP compute is even, so decode speed is unaffected). Balancing
+  # would need either a static gpu_split (brittle) or layer split (slower decode).
+  gpu_split_auto: true
+  # NOTE: under tensor_parallel, autosplit_reserve does NOT rebalance the split —
+  # measured 2026-08-02, [768,256] gave byte-identical idle free to [512,512]. TP
+  # splits tensors evenly and pins the anchor (embeddings/output/all-reduce) to
+  # GPU0, so GPU0 always runs tighter (383 vs 921 MiB free at 46k). Can't tune it.
+  autosplit_reserve: [512, 512]
+  # 2048: restored after the desktop display was disabled (freed ~1GB on GPU0),
+  # so the larger prefill transient fits again — faster prefill at the same 49k
+  # context. Drop back to 1024 only if VRAM tightens (display re-enabled, vision).
+  chunk_size: 1024
+  output_chunking: false
+
+  vision: true
+  reasoning: false
+  # Gemma-4 emits pseudo-JSON tool calls (<|tool_call>call:...{...}<tool_call|>).
+  # The gemma4 parser in TabbyAPI turns that into structured OpenAI tool_calls.
+  tool_format: gemma4
+
+draft_model:
+  # Gemma-4 dense has NO MTP head. Must set 'disabled' explicitly — TabbyAPI
+  # defaults draft_mode to mtp and aborts trying to load a nonexistent 'mtp'
+  # component ("Gemma4ForConditionalGeneration does not define a 'mtp' component").
+  draft_mode: disabled
+
+sampling:
+  override_preset: safe_defaults
+
+memory:
+  cuda_malloc_async: true

@@ -1,0 +1,78 @@
+# unsloth/Qwen3.8-27B-NVFP4 - dense 27B, unsloth compressed-tensors mixed-precision
+# quant of the new Qwen3.8 VL model. Same qwen3_5 architecture the box already
+# runs (Qwen3.6-27B-NVFP4-nvidia.yaml), so the proven engine flags carry over.
+#
+# THE QUANT, FROM hf_quant_config.json: it is NOT uniformly 4-bit. Two groups:
+#     group_0  FP8 (float-quantized)   self_attn q/k/v/o, linear_attn in/qkv/
+#                                      z/out, lm_head, AND the last 8 layers'
+#                                      MLPs (56..63) - 8-bit, the layers whose
+#                                      coherence matters most on 27B
+#     group_1  NVFP4 (group 16)        every other mlp gate/up/down
+#     kv_cache_scheme                  FP8 (torch.float8_e4m3fn, static_minmax)
+#     vision tower                     ignored (stays BF16)
+#     mtp                              ignored (stays BF16) - see below
+# That is the same "attention FP8, MLP 4-bit" split the nvidia build uses, so
+# quality should track the Qwen3.6-27B-NVFP4 measurements this config is
+# patterned on. On disk 23.4 GB (22.6 model + 0.85 MTP head), ~1.5 GB more than
+# the nvidia Qwen3.6-27B build - the pool below is sized for that.
+#
+# MTP: the checkpoint ships model_mtp.safetensors and vLLM 0.26 registers
+# qwen3_5_mtp, so speculative decoding works the same way it does on the
+# Qwen3.6-27B. As there, mtp.fc is excluded from the quant and stays BF16.
+# MEASURE the k first: acceptance and pool cost move with the model even when
+# the arch does not, so treat num_speculative_tokens as a starting point, not
+# a conclusion.
+#
+# REASONING: on by default, qwen3 parser - same as the rest of the Qwen3.x
+# family on this box. `reasoning_effort` / `preserve_thinking` are
+# request-level chat-template kwargs, handled by vLLM's qwen3_5 template, so
+# nothing engine-level is needed for them.
+
+model: /home/dushyant30suthar/.lmstudio/models/unsloth/Qwen3.8-27B-NVFP4
+served-model-name: Qwen3.8-27B-NVFP4
+
+tensor-parallel-size: 2
+kv-cache-dtype: fp8
+
+# Sized by what the engine actually reported on first boot, not guessed:
+# a 114688 window needed 2.26 GiB of KV cache against 1.83 GiB available, and
+# vLLM refused to start (estimated max 88000). This build keeps more layers in
+# FP8 than the Qwen3.6-27B (the last 8 MLPs are 8-bit here) and carries the
+# vision tower, so KV headroom is tighter. 86016 sits under the estimate with
+# room for the MTP draft KV and prefix caching; re-measure before raising it.
+max-model-len: 86016
+
+# Single-user box, same reasoning as the Qwen3.6-27B: raising this multiplies
+# activation memory and shrinks the KV pool.
+# 1 = strictly single-stream (subagent requests queue, never interleave) and
+# shrinks peak activation, giving the KV pool a little more room.
+max-num-seqs: 1
+
+# LEAVE AT 2048. Speculative decoding pins max_num_scheduled_tokens to 2048;
+# raising it to 8192 OOMs during prefill on this model's sibling. Same rule as
+# Qwen3.6-27B-nvidia.yaml.
+max-num-batched-tokens: 2048
+
+# Proven ceiling on this box: cards expose 15.52 GiB usable, not the 15.93
+# nvidia-smi shows. 0.965: CUDA-graph profiling makes 0.955 effectively 0.9442;
+# 0.9658 restores the same effective KV, clawing back ~0.2 GiB/GPU of cache.
+gpu-memory-utilization: 0.965
+
+enable-auto-tool-choice: true
+tool-call-parser: qwen3_coder
+reasoning-parser: qwen3
+
+speculative-config:
+  method: qwen3_5_mtp
+  num_speculative_tokens: 3
+
+# Same hybrid-architecture caveat as the Qwen3.6-27B: 48 gated-deltanet layers
+# carry a fixed recurrent state, so vLLM must snapshot it at page boundaries and
+# forces both page types to the same size (Mamba cache 'align' mode). Reuse is
+# therefore quantised to that page, and vLLM flags it experimental - but the
+# repeat-prefill win for a coding agent is still the biggest lever here.
+enable-prefix-caching: true
+
+# No single-stream effect measured on the sibling model (GPU/PCIe-bound), kept
+# for CPU/GPU overlap under concurrent requests - the subagent case.
+async-scheduling: true
