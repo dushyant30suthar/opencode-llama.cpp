@@ -1,0 +1,113 @@
+# Qwen3.8-27B EXL3 6.00bpw — production profile, 220k context, TP + MTP.
+#
+# THE BRANCH IS THE SWITCH (no env var):
+#     git -C ~/Projects/exllamav3 checkout tp-draft-conf   <- use this
+#     git -C ~/Projects/exllamav3 checkout dev             <- upstream stock
+# The venv is an editable install of that checkout, so the checked-out branch
+# decides what EVERY TabbyAPI launch runs, including hand-started servers.
+#
+# WHY tp-draft-conf (commit 66d4664, 14 lines, pushed to the `fork` remote):
+# under tensor parallel, upstream's tp_dispatch_lm_head_argmax returns only a
+# token index and never the logit value, so params["draft_conf"] is never set
+# and the draft-confidence calibrator gets no labels — see the note upstream
+# leaves at generator/generator.py:250. Net effect on stock: `dynamic_draft`
+# below is a SILENT NO-OP and every draft runs the full window. Proved by
+# measuring avg_draft_len == 4.00/4 exactly on dev. The patch returns the
+# winning value the sharded argmax already computes. Measured @31k, greedy,
+# 10 samples per arm across alternating loads:
+#     dev            42.48 T/s (sd 0.29)
+#     tp-draft-conf  45.82 T/s (sd 1.07)   = +7.9%, ranges do not overlap
+#
+# SUPERSEDED: the old `mtp-local-head` branch (private un-sharded lm_head on
+# cuda:0, +0.9 GB) is obsolete — it only worked because computing logits
+# locally happened to switch the calibrator on. Head to head at identical
+# settings it is SLOWER than tp-draft-conf (36.2 vs 37.9 @31k, 36.2 vs 38.7
+# @70k) and costs 864 MB more. Do not run it.
+#
+# DEAD ENDS, measured — do not retry (~/ab-pp-tp/results-conf.txt):
+#   - draft_num_tokens 4 -> 8 on stock TP: -31% (8 draft passes for 2.88 tokens)
+#   - draft_confidence 0.4 -> 0.25: wash;  -> 0.10: -17%. Upstream's 0.4 is right.
+#   - prefix caching already works (log shows "N cached tokens and M new").
+
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+  log_chat_completion_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: Qwen3.8-27B-exl3-6.00bpw
+
+  # 220160 = 860 x 256: cache_size must be a multiple of PAGE_SIZE (256).
+  # 200k -> 220k costs ~2.65 GB, taking total free headroom from ~4.9 GB down
+  # to ~2.3 GB. Verified to survive a 70k prefill with no OOM. The cache is
+  # preallocated, so memory does not grow with context depth in use.
+  # If deep prefills ever OOM, step back to 200192 (782 x 256).
+  cache_size: 220160
+  max_seq_len: 220160
+  # 8,8 = 20 KiB/token. exllamav3 dequants inside the attention kernel at no
+  # latency cost; do not carry KV settings over from llama.cpp.
+  cache_mode: 8,8
+
+  max_batch_size: 1
+  tensor_parallel: true
+  gpu_split_auto: false
+  # gpu_split[0] is a hard cap on cuda:0; the remainder spills to cuda:1, whose
+  # 16.0 never binds. cuda:0 also carries the MTP drafter and TP-master logits
+  # buffers, hence the asymmetry.
+  #
+  # DO NOT TUNE THIS FOR MEMORY BALANCE. Decode at depth is BIMODAL: the same
+  # config lands in either a ~52 T/s state or a ~41-44 T/s state, and gpu_split
+  # sets the PROBABILITY of the fast state, not the speed. Balancing the two
+  # cards makes the slow state more likely. Measured @70k, 4 reps each after 2
+  # discarded warmups (~/ab-pp-tp/results-quick.txt):
+  #     [13.9, 16.0]  52.09 51.73 44.67 52.07  median 51.90  free 1372 / 941
+  #     [14.3, 16.0]  42.33 41.46 51.42 40.93  median 41.89  free 1178 / 1101
+  # 13.9 hits the fast state 3/4; the "balanced" 14.3 only 1/4 -- 24% slower on
+  # medians. Same pattern on the quality profile: cuda:0 wants MORE free memory
+  # than cuda:1, and the roomier-cuda:0 split wins.
+  #
+  # [13.5, 16.0] is NOT an option at this cache size -- it squeezes cuda:1 to
+  # ~825 MB and collapses (measured 5.37 T/s).
+  #
+  # Single-sample timings here are worthless because of the bimodality; use
+  # several reps and compare medians if you ever retune.
+  gpu_split: [13.9, 16.0]
+  autosplit_reserve: [512, 512]
+  chunk_size: 2048
+  # one SSE event per token so bench harnesses can count decode exactly
+  output_chunking: false
+
+  vision: false
+  reasoning: true
+  tool_format: qwen3_coder
+  template_vars_force:
+    preserve_thinking: true
+
+draft_model:
+  draft_mode: mtp
+  draft_model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  # blank on purpose: draft_mode mtp with no name uses the MTP head baked into
+  # the weights (39 mtp.* tensors). Confirm with "Using main model MTP
+  # component" in the log. On tp-draft-conf there is NO "[MTP] local ..." line
+  # — that message belonged to the superseded mtp-local-head branch, and seeing
+  # it means the wrong branch is checked out.
+  draft_model_name:
+  draft_cache_mode: FP16
+  # 4 is correct. Raising it is measurably worse (see DEAD ENDS above).
+  draft_num_tokens: 4
+  # Only actually does anything on tp-draft-conf. Inert on stock dev.
+  dynamic_draft: true
+
+sampling:
+  override_preset: qwen38_thinking
+
+memory:
+  sysmem_recurrent_cache: 4096
+  cuda_malloc_async: true

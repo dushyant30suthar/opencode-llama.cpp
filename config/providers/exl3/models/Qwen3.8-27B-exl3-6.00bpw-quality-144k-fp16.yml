@@ -1,0 +1,87 @@
+# Qwen3.8-27B EXL3 6.00bpw — QUALITY profile: KV 16,16 at 144k context.
+#
+# Same checkpoint as Qwen3.8-27B-exl3-6.00bpw.yml; the ONLY differences are
+# cache_mode 16,16 (full 16-bit K/V — no KV quantisation, remaining fidelity
+# loss is only the 6.00bpw weights) and the 144k context. Panel lists by
+# filename, so it shows as a separate entry serving the same weights.
+#
+# REQUIRES branch `tp-draft-conf` in ~/Projects/exllamav3 (see the canonical
+# profile's header for why). On upstream `dev`, dynamic_draft below is a
+# silent no-op under tensor parallel.
+#
+# VRAM MATH (2x RTX 5060 Ti, 31.9 GiB physical): 16,16 = 64 KiB/token (3.2x
+# the 20 KiB/token of the 8,8 canonical). 147456 pool = 9 GiB KV, so this sits
+# near the box's ceiling and is genuinely tighter than the canonical profile
+# (~700-990 MB free per card here vs ~1.1-1.4 GB there).
+#
+# CORRECTED 2026-08-23: an earlier version of this header claimed deep prefills
+# WILL OOM. Measured, they do not — a real 70k prefill completed with 990/719
+# MB free and no OOM. The margin is thin but it is not zero. If a much deeper
+# prefill ever does OOM, back cache_size/max_seq_len off to 131072 (128k) or
+# 114688 (112k).
+#
+# DO NOT TUNE gpu_split FOR MEMORY BALANCE. Decode at depth is bimodal (~52 vs
+# ~41-44 T/s states) and gpu_split sets which state you tend to land in, not
+# the speed. cuda:0 wants MORE free memory than cuda:1. Measured @70k:
+#     [14.4, 16.0]  free 990 / 719   -> 55.8 T/s   <- keep this
+#     [14.7, 16.0]  free 812 / 801   -> 42.3 T/s   (balanced, and 24% slower)
+#     [15.0, 16.0]  free 686 / 961   -> 43.4 T/s
+# Those are SINGLE samples; given the bimodality, re-measure with several reps
+# and compare medians before believing any retune.
+#
+# IS FP16 KV FASTER THAN 8,8? NOT ESTABLISHED. Short prompts feel fast, but the
+# only depth comparison available (55.8 here vs ~52 median canonical) is across
+# different cache sizes with unequal sample counts. Treat this profile as a
+# fidelity choice, not a speed one, until someone measures it properly.
+
+network:
+  host: 0.0.0.0
+  port: 5000
+  disable_auth: true
+
+logging:
+  log_prompt: false
+  log_generation_params: false
+  log_requests: false
+  log_chat_completion_requests: false
+
+model:
+  model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  model_name: Qwen3.8-27B-exl3-6.00bpw
+
+  cache_size: 147456
+  max_seq_len: 147456
+  # FP16 = full 16-bit K/V ("16,16"), 64 KiB/token. TabbyAPI's quantised pair
+  # syntax only accepts single digits 2-8 (^[2-8],[2-8]$), so 16,16 fails
+  # config validation and kills the process before exllamav3 starts — FP16 is
+  # the 16-bit mode. The 144k pool is what fits on this box (9 GiB).
+  cache_mode: FP16
+
+  max_batch_size: 1
+  tensor_parallel: true
+  gpu_split_auto: false
+  gpu_split: [14.4, 16.0]
+  autosplit_reserve: [512, 512]
+  chunk_size: 2048
+  output_chunking: false
+
+  vision: false
+  reasoning: true
+  tool_format: qwen3_coder
+  template_vars_force:
+    preserve_thinking: true
+
+draft_model:
+  draft_mode: mtp
+  draft_model_dir: /home/dushyant30suthar/.lmstudio/models/turboderp
+  draft_model_name:
+  draft_cache_mode: FP16
+  draft_num_tokens: 4
+  dynamic_draft: true
+
+sampling:
+  override_preset: qwen38_thinking
+
+memory:
+  sysmem_recurrent_cache: 4096
+  cuda_malloc_async: true
