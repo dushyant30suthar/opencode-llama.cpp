@@ -43,7 +43,7 @@
 #   OVMS_PORT        default REST port             (default: 8100)
 set -euo pipefail
 
-OVMS_VERSION="${OVMS_VERSION:-2026.2.1}"
+OVMS_VERSION="${OVMS_VERSION:-2026.3.1}"
 OVMS_DISTRO="${OVMS_DISTRO:-redhat}"
 OVMS_PREFIX="${OVMS_PREFIX:-$HOME/.local/opt/ovms}"
 OVMS_STATE_DIR="${OVMS_STATE_DIR:-$HOME/.local/state/ovms}"
@@ -147,6 +147,9 @@ tool_parser_for() {
   for tpl in "$dir/chat_template.jinja" "$dir/tokenizer_config.json"; do
     [[ -f "$tpl" ]] || continue
     grep -q '<function=' "$tpl" 2>/dev/null && { echo "qwen3coder"; return; }
+    # Gemma4 uses format_tool_response_block; 'tool_call' also appears in
+    # its Jinja variables, so this must precede the generic tool_call check.
+    grep -q 'format_tool_response_block' "$tpl" 2>/dev/null && { echo "gemma4"; return; }
     grep -q 'tool_call'  "$tpl" 2>/dev/null && { echo "hermes3";    return; }
   done
   # No template on disk — fall back to the name.
@@ -155,6 +158,7 @@ tool_parser_for() {
     *qwen2.5*|*qwen3*)          echo "hermes3" ;;
     *llama-3*|*llama3*)         echo "llama3" ;;
     *mistral*)                  echo "mistral" ;;
+    *gemma*|*gptoss*|*gpt-oss*) echo "gemma4" ;;
     *)                          echo "" ;;
   esac
 }
@@ -187,10 +191,19 @@ write_servable() {
   reasoner="$(reasoning_parser_for "$name" "$model_dir")"
   dir="$OVMS_STATE_DIR/servables/$name"
   mkdir -p "$dir"
+  # Gemma 4 26B-A4B on GPU hits a 4 GiB allocation cliff in OVMS
+  # 2026.3.0's continuous-batching VLM_CB path (openvino#36737): the
+  # SDPA→PagedAttention transform resets sliding_window to 0, which
+  # allocates the full 28k-context KV buffer (~4 GiB) which exceeds the
+  # Xe driver's 4 GiB−10KB cap. Setting pipeline_type: VLM switches to
+  # the legacy stateful executor which bypasses that broken transform.
+  local pipeline_type=""
+  [[ "${name,,}" == *gemma* ]] && pipeline_type="pipeline_type: VLM"
   {
     echo '# OVMS_GRAPH_QUEUE_MAX_SIZE: AUTO'
     echo 'input_stream: "HTTP_REQUEST_PAYLOAD:input"'
     echo 'output_stream: "HTTP_RESPONSE_PAYLOAD:output"'
+    [[ -n "$pipeline_type" ]] && echo "$pipeline_type"
     echo
     echo 'node: {'
     echo '  name: "LLMExecutor"'

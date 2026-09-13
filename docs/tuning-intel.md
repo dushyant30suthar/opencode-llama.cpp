@@ -160,7 +160,7 @@ forward pass — about 21 ms at typical launch cost, matching the measurement
 almost exactly.
 
 **So the MoE has roughly 2× waiting on an upstream fusion fix.** We already run
-the newest OpenVINO (2026.2.1) and get 29–32 t/s against that issue's ~10 t/s,
+the newest OpenVINO (2026.3.1) and get 29–32 t/s against that issue's ~10 t/s,
 so the configuration is not the problem. Re-test when a release ships with MoE
 fusion.
 
@@ -332,6 +332,7 @@ not retried.
 | `MAX_PROMPT_LEN` | NPU-only. Silently ignored on GPU. |
 | `max_num_batched_tokens: 4096` | **Harmful here, despite being Intel's own recommendation.** That guidance assumes a discrete card with dedicated VRAM; on shared memory the larger prefill activation buffers come out of the same 32 GB as the model and cache. Pushed 3.3 GB into swap: a 90k prefill ran 12+ minutes at 98% CPU idle and ~6 MB/s swap-in — not a crash, just thrash. **2048 is the working value**; the OVMS default of 256 is too low. |
 | Sparse attention | Skip. It applies to only the 16 full-attention layers of 64, and the kernel is gated to Xe2 — the Arc 140T reports `xe_hpg`. |
+| Gemma 4 26B-A4B on GPU | **4 GiB OOM at 28k context.** OVMS 2026.3.0's continuous-batching VLM_CB path (openvino#36737) resets `sliding_window` to 0 via the SDPA→PagedAttention transform, allocating a full 28k-context KV buffer (~4 GiB) that exceeds the Xe driver's 4 GiB−10KB cap. **Fix:** `pipeline_type: VLM` in graph.pbtxt switches to the legacy stateful executor, bypassing the broken path entirely. See [tuning-intel.md#dead-ends] and [REPORT.md](../ovms-audit/REPORT.md). |
 
 ### The pattern behind four of these
 

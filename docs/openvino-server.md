@@ -55,8 +55,8 @@ measures **29.4 t/s** on the same setup; it is a larger model.)
 
 Nothing is compiled. OVMS builds with Bazel and takes hours; the script installs
 the **official release tarball** instead. The `model_server` submodule is pinned
-to the same tag (`v2026.2.1`) purely as the doc/template reference — the binary's
-own build hash `1122f03bf` matches the pinned commit exactly.
+to the same tag (`v2026.3.1`) purely as the doc/template reference — the binary's
+own build hash `3a28d490b` matches the pinned commit exactly.
 
 Three things the script encodes, all of them load-bearing:
 
@@ -309,6 +309,17 @@ covers vision models too: a text export has `openvino_model.xml`, a VLM splits
 into `openvino_language_model.xml` plus vision/embedding parts, and OVMS picks
 the VLM pipeline on its own. The script accepts either (and skips directories
 with neither, which is what a half-finished download looks like).
+
+**GPU-only caveat for Gemma 4.** OVMS 2026.3.0's continuous-batching VLM_CB
+path triggers a broken SDPA→PagedAttention transform (openvino#36737) that
+resets `sliding_window` to 0 — a full 28k-context KV buffer (~4 GiB) which
+exceeds the Xe driver's 4 GiB−10KB cap. `setup-ovms.sh` works around this by
+emitting `pipeline_type: VLM` in the graph for any model whose name contains
+`gemma`, which switches to the legacy stateful executor and bypasses the
+broken transform entirely. It also adds `tool_parser: gemma4` so the
+native `<|tool_response|>` format works — the model's own chat template
+uses `format_tool_response_block` rather than the `<function=` marker
+that the generic detector looks for. See [tuning-intel.md](tuning-intel.md#dead-ends-with-reasons).
 
 The VLM path is since **verified for text generation** — both Qwen3.6
 checkpoints ship as VLM exports and serve text, tool calls and reasoning
