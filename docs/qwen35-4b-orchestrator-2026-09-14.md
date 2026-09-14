@@ -63,7 +63,15 @@ cache holds ~262k tokens. The advertised 65536 is a quarter of the ceiling;
 
 ## Thinking mode: fixation, not a loop
 
-The model is a hybrid thinker (Qwen3-style `<tool_call>` tags, on by default).
+> **CORRECTION 2026-09-14 (later).** The decision at the bottom of this
+> section — force thinking off for the 4B — was wrong in live use. The
+> template's thinking-off path appends an empty think block to the prompt,
+> and the 4B leaks bare closing think tags out of that state. Final state:
+> the plugin sends **no** chat_template_kwargs for the 4B (commit `6743426`),
+> i.e. the template default, thinking on. Measurements below stand as
+> measured; the decision history is at the end of the section.
+
+The model is a hybrid thinker (Qwen3-style `<think>` tags, on by default).
 The question that decided the deployment: is thinking-on the Gemma-style
 loop we are escaping, or just slow?
 
@@ -92,11 +100,35 @@ Two properties decide the deployment:
 2. **~10× latency on trivial relay turns.** For a Telegram-facing relay,
    every reply costs 30–90 s of thinking about nothing.
 
-Decision (opencode-localhost commit `1ab0627`): the plugin forces
-`enable_thinking: true` for Qwen3 **developer** models (27B/35B — where the
-Qwen model card's agentic-capability claim applies) and **excludes the 4B
-orchestrator**. Thinking off is the relay's default; the hard thinking
-belongs to the model that does the hard work.
+Decision round 1 (opencode-localhost commit `1ab0627`, superseded): the
+plugin forces `enable_thinking: true` for Qwen3 **developer** models
+(27B/35B — where the Qwen model card's agentic-capability claim applies) and
+**excludes the 4B orchestrator**. That exclusion was not a disable — the
+template default is thinking on — so the 4B ran thinking-on with a 32k
+budget, and a trivial "hi" burned it whole (~21 min of generation).
+
+Decision round 2 (commit `92ee8fb`, superseded): explicit
+`enable_thinking: false` for the 4B. Fast (14 tokens, 1.3 s on "hi") — but
+the template's thinking-off path appends an empty think block to the prompt,
+and in live opencode use the 4B **leaked bare closing think tags into the
+visible output** and lost track of a second image in the conversation
+("I can't see the second image", four times in a row).
+
+Decision round 3 (commit `6743426`, **final**): no kwargs at all for the 4B —
+pure template default, thinking on. The model's trained mode. Measured
+against the live server, the exact failing scenario (two different note
+images, two turns):
+
+| Test | Result |
+|---|---|
+| Single turn + image A | 217 tokens, 9 s, no leak, transcribed |
+| Two turns, image B on turn 2 | 133 tokens, 6 s, no leak, **second image read correctly** |
+| History contains a leaked bare tag | 71 tokens, 3 s, no leak, **recovered** |
+
+Thinking length on image tasks stayed short (40–170 tokens); the 32k-budget
+burn was one outlier run, not the regime. The 9B was considered and not
+needed: the 4B passes every orchestrator requirement in its default mode,
+and the 9B would roughly double generation latency for it.
 
 ## The repetitive-context trap
 
@@ -116,7 +148,11 @@ prefix before suspecting the model.
   vision-capable` (hasVision: the picker gets `vision: true`, images stop
   being stripped)
 - `opencode-localhost` `1ab0627` — `server: scope qwen3 thinking kwargs to
-  developer models, keep the 4B orchestrator non-thinking`
+  developer models` (superseded: exclusion was not disable)
+- `opencode-localhost` `92ee8fb` — `server: explicitly disable thinking for
+  the 4B orchestrator` (superseded: forced-off mode leaks think tags)
+- `opencode-localhost` `6743426` — `server: run the 4B orchestrator on the
+  template default (thinking on)` (final)
 - `opencode-llama.cpp` `c278dca` — deployed config mirrored under
   `config/providers/openvino/`
 
