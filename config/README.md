@@ -27,6 +27,8 @@ config/
       templates/
     openvino/
       server.ini
+      servables/
+        Qwen3.5-4B-int4-ov.graph.pbtxt   OVMS graph: GPU, VLM, cache tuning
 ```
 
 ## Reading order

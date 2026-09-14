@@ -1,0 +1,42 @@
+# OVMS_GRAPH_QUEUE_MAX_SIZE: AUTO
+input_stream: "HTTP_REQUEST_PAYLOAD:input"
+output_stream: "HTTP_RESPONSE_PAYLOAD:output"
+
+node: {
+  name: "LLMExecutor"
+  calculator: "HttpLLMCalculator"
+  input_stream: "LOOPBACK:loopback"
+  input_stream: "HTTP_REQUEST_PAYLOAD:input"
+  input_side_packet: "LLM_NODE_RESOURCES:llm"
+  output_stream: "LOOPBACK:loopback"
+  output_stream: "HTTP_RESPONSE_PAYLOAD:output"
+  input_stream_info: {
+    tag_index: 'LOOPBACK:0',
+    back_edge: true
+  }
+  node_options: {
+      [type.googleapis.com / mediapipe.LLMCalculatorOptions]: {
+          models_path: "/home/dushyant30suthar/.lmstudio/models-ov/Qwen3.5-4B-int4-ov",
+          plugin_config: '{"KV_CACHE_PRECISION":"u8"}',
+          enable_prefix_caching: true,
+          cache_size: 4,
+          cache_interval_multiplier: 1024,
+          max_num_seqs: 1,
+          max_num_batched_tokens: 2048,
+          device: "GPU",
+          tool_parser: "qwen3coder",
+          reasoning_parser: "qwen3",
+          pipeline_type: VLM
+      }
+  }
+  input_stream_handler {
+    input_stream_handler: "SyncSetInputStreamHandler",
+    options {
+      [mediapipe.SyncSetInputStreamHandlerOptions.ext] {
+        sync_set {
+          tag_index: "LOOPBACK:0"
+        }
+      }
+    }
+  }
+}
