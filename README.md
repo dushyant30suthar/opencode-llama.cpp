@@ -36,7 +36,7 @@ owning the whole chain:
 | Path | What it is |
 | --- | --- |
 | `llama.cpp/` | Submodule → [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp), pinned at the commit the configs were validated against |
-| `docs/` | [setup](docs/setup.md), [tuning](docs/tuning.md), [inference flag map](docs/inference-flag-map.md), [Laguna S retune](docs/laguna-retune-2026-07-27.md), [27B at production depth](docs/q27b-production-depth-2026-07-28.md), **[handover](docs/HANDOVER-2026-07-28.md)** — Intel: [setup](docs/setup-intel.md), [tuning](docs/tuning-intel.md), [OpenVINO server](docs/openvino-server.md), [Qwen3.5-4B orchestrator](docs/qwen35-4b-orchestrator-2026-09-14.md) |
+| `docs/` | [setup](docs/setup.md), [tuning](docs/tuning.md), [inference flag map](docs/inference-flag-map.md), [Laguna S retune](docs/laguna-retune-2026-07-27.md), [27B at production depth](docs/q27b-production-depth-2026-07-28.md), **[handover](docs/HANDOVER-2026-07-28.md)** — Intel: [setup](docs/setup-intel.md), [tuning](docs/tuning-intel.md), [OpenVINO server](docs/openvino-server.md), [Qwen3.5-4B orchestrator](docs/qwen35-4b-orchestrator-2026-09-14.md), [LM Studio UHDR channel error](docs/lmstudio-uhdr-channel-error-2026-09-15.md) |
 | `scripts/` | `build-llama.sh`, model downloaders, the tuner — the build knowledge as executable fact |
 | `config/` | `models.ini.example` — the tuned per-model settings file, documented |
 | `bench/` | The experiment harness and raw results behind every number in the docs |
