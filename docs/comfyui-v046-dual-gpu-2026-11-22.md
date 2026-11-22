@@ -89,4 +89,28 @@ Trace (w6a8, no --lowmem): the 15 GB text encoder lands as *anonymous* RSS (file
 - Character consistency = H3 r2v with cropped refs + `--ref-size max`; LoRA training is the next
   lever (comfyui `OPEN-LEVERS.md` #5).
 
-Test harnesses: `scripts/comfyui-2026-11-22/` (dual.py, mix.py, lora.py, full.py, watch.sh).
+## 8. Newer turbo LoRAs (lightx2v, tested same day)
+
+Same prompts/seeds, 960×544×124, w6a8, int8 VAE, res_multistep/simple, run two at a time.
+
+| run | LoRA | steps | shift_video | time | result |
+|---|---|---:|---:|---:|---|
+| R0 | none (r2v, 3 refs) | 20 | 12 | 294 s | reference |
+| **R1** | **ref2v 8-step v1.1 768p** | 8 | 12 | **119 s** | **≈ R0**: faces, outfits, staging, action |
+| R2 | ref2v 8-step v1.1 768p | 8 | 6 | 154 s | close; framing differs |
+| T1 | fl2v 8-step v1.2 768p | 8 | 12 | 146 s* | clean, better colour than v1.0, still skips the leap/catch |
+| T2 | fl2v 8-step v1.2 768p | 8 | 6 | 109 s | artifacts (duplicate frisbee) |
+
+\*first job on its server, includes model load.
+
+Decisions:
+- Keep `shift_video` 12. The reported shift-6 training value never helped and added artifacts.
+- r2v: `minimax_h3_ref2v_turbo_8step_v1.1_768p_comfyui_bf16` at 8 steps is the default (2.5× faster, no visible loss).
+- t2v/i2v: `minimax_h3_fl2v_turbo_8step_v1.2_768p_comfyui_bf16` at 8 steps for drafts only;
+  finals = no LoRA, 20 steps. Don't run a turbo LoRA at 20 steps (distilled for 8; untested, not expected to help).
+- Deleted the superseded `fl2v_turbo_8step_v1.0` and `ref2v_turbo_4step_v0.1` (the built-in
+  ComfyUI H3 templates still name these; pick the new files there).
+- Parked: 4B text encoder + ClipProj (`Merserk/qwen3vl-4b-int4-convrot`, `NicoLab28/ClipProj-MiniMax-H3`),
+  2.6 + 0.5 GB instead of 15.7 GB: the biggest RAM relief for dual-GPU, prompt adherence unmeasured.
+
+Test harnesses: `scripts/comfyui-2026-11-22/` (dual.py, mix.py, lora.py, lora2.py, full.py, watch.sh).
