@@ -1,0 +1,64 @@
+--- a/custom_nodes/h3_dualpipe/__init__.py	2026-11-22 14:44:14.649049982 +0530
++++ b/custom_nodes/h3_dualpipe/__init__.py	2026-11-22 14:44:14.662031434 +0530
+@@ -182,12 +182,42 @@
+             import comfy_aimdo.torch as aimdo_torch
+             import comfy.memory_management
+             from comfy.ops import materialize_meta_param
+-            rebound = moved = 0
++            rebound = moved = refaulted = 0
++            # Release cuda:1's torch pool (previous shot's activations, boundary
++            # copies) before faulting arena pages. soft_empty_cache() only trims
++            # the CURRENT device, which is cuda:0.
++            with torch.cuda.device(dev_b):
++                torch.cuda.empty_cache()
+             for i in range(split_index, n):
+                 for mod in blocks[i].modules():
+                     v = getattr(mod, "_v", None)
+                     if v is None:
+                         continue
++                    if v[0] is vbar_b:
++                        # RE-LOAD of an already-rebound module. ComfyUI's loader
++                        # keeps an existing _v (model_patcher: `not hasattr(m,
++                        # "_v")`), so this module still owns its cuda:1 alloc.
++                        # Allocating a fresh one here (the old behaviour) leaks a
++                        # full copy of blocks s..49 into a bump-only arena on
++                        # every load -> "vbar OOM while rebinding" on the 2nd
++                        # sampler / 2nd prompt. Re-fault the SAME alloc instead,
++                        # exactly like ops.cast_modules_with_vbar does.
++                        with torch.cuda.device(dev_b):
++                            sig = comfy_aimdo.model_vbar.vbar_fault(v)
++                            if sig is None:
++                                raise RuntimeError(
++                                    f"[H3PipelineSplit] cuda:{dev_b.index} vbar OOM re-faulting "
++                                    f"block {i} — RAISE split_index (fewer blocks on {device_b}) or free VRAM")
++                            if not comfy_aimdo.model_vbar.vbar_signature_compare(
++                                    sig, getattr(mod, "_v_signature", None)):
++                                # pages were evicted: refill the same views
++                                materialize_meta_param(mod, ["weight", "bias"])
++                                mod._v_weight.copy_(mod.weight, non_blocking=False)
++                                if mod.bias is not None and mod._v_bias is not None:
++                                    mod._v_bias.copy_(mod.bias, non_blocking=False)
++                                refaulted += 1
++                            mod._v_signature = sig
++                        continue
+                     # EAGER fault-in. The lazy path cannot serve a fresh
+                     # allocation: pin/file-slice descriptors were registered for
+                     # the ORIGINAL load-time allocs, so a re-fault falls back to
+@@ -212,7 +242,7 @@
+                         guard.__exit__(None, None, None)
+                         raise RuntimeError(
+                             f"[H3PipelineSplit] cuda:{dev_b.index} vbar OOM while "
+-                            f"rebinding block {i} — lower split_index or free VRAM")
++                            f"rebinding block {i} — RAISE split_index (fewer blocks on {device_b}) or free VRAM")
+                     views = comfy.memory_management.interpret_gathered_like(
+                         [mod.weight, mod.bias], dest)
+                     views[0].copy_(mod.weight, non_blocking=False)
+@@ -256,7 +286,7 @@
+ 
+             torch.cuda.synchronize()
+             logging.info(f"[H3PipelineSplit] vbar-rebound {rebound} modules of blocks "
+-                         f"{split_index}..{n-1} to {device_b} arena; "
++                         f"{split_index}..{n-1} to {device_b} arena; re-faulted {refaulted} evicted; "
+                          f"moved {moved} plain params/buffers to {device_b}")
+             state["placed"] = True
+ 

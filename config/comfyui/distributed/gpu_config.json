@@ -1,0 +1,44 @@
+{
+  "master": {
+    "host": "127.0.0.1",
+    "name": "GPU 0 (master)",
+    "port": 8188,
+    "cuda_device": 0,
+    "extra_args": ""
+  },
+  "workers": [
+    {
+      "id": "gpu1",
+      "name": "GPU 1",
+      "type": "remote",
+      "host": "127.0.0.1",
+      "port": 8189,
+      "cuda_device": 1,
+      "enabled": true,
+      "extra_args": ""
+    }
+  ],
+  "settings": {
+    "debug": false,
+    "auto_launch_workers": false,
+    "stop_workers_on_master_exit": false,
+    "master_delegate_only": false,
+    "websocket_orchestration": true,
+    "worker_probe_concurrency": 8,
+    "worker_prep_concurrency": 4,
+    "media_sync_concurrency": 2,
+    "media_sync_timeout_seconds": 120,
+    "image_list_job_timeout_seconds": 0.0,
+    "has_auto_populated_workers": true
+  },
+  "tunnel": {
+    "status": "stopped",
+    "public_url": "",
+    "pid": null,
+    "log_file": "",
+    "previous_master_host": "",
+    "pid_create_time": null,
+    "pid_start_id": null
+  },
+  "managed_processes": {}
+}
