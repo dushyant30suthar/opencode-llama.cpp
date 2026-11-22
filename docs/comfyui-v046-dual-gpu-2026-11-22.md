@@ -113,4 +113,19 @@ Decisions:
 - Parked: 4B text encoder + ClipProj (`Merserk/qwen3vl-4b-int4-convrot`, `NicoLab28/ClipProj-MiniMax-H3`),
   2.6 + 0.5 GB instead of 15.7 GB: the biggest RAM relief for dual-GPU, prompt adherence unmeasured.
 
+## 9. Images, styles and the agent-facing catalog (same day, later)
+
+- Qwen-Image 2.1 base (`qwen_image_2.1_int8_convrot`) added for LoRAs; Turbo stays for LoRA-free drafts.
+- `renderartist/technically-color-qwen` is for the ORIGINAL Qwen-Image (60 blocks × 3072) and cannot load on 2.1
+  (32 blocks × 4096); deleted. No Technicolor LoRA exists for 2.1 (HF + Civitai "Qwen 2.1" searched).
+- Qwen 2.1 film LoRAs (Civitai, need an API key for some): `80sfy` (author: 25 steps, cfg 3, negative "blurry"),
+  `GrainScape UltraReal` (author: 0.7). Diffusion smooths grain away; visible grain = ffmpeg after generation.
+- Edit mode (input image) keeps the subject; for new people use text-to-image with the look described.
+- H3 style LoRAs (Civitai, API key): 1980s Fantasy / Horror / SciFi Movies (fl2va), Nostalgic Cinema (`r3tr0sks`),
+  Minimax H3 Cinematic V2 (0.85). Fantasy and Nostalgic tested: i2v from a Qwen 80s frame, 704×1280×124, 20 steps,
+  ~9 min per clip, both GPUs at once; characters and look hold.
+- H3 width must be a multiple of 32 (720 → shape error; 704 works).
+- Agent-facing files served by ComfyUI from `input/`: `agent-guide.md`, `model-catalog.md`, `model-catalog.json`
+  (`pairs_with` per LoRA, `takes_loras` per model). Copies in `config/comfyui/`.
+
 Test harnesses: `scripts/comfyui-2026-11-22/` (dual.py, mix.py, lora.py, lora2.py, full.py, watch.sh).
