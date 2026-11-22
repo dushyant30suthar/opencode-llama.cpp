@@ -10,7 +10,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=%h/Projects/comfyui
-ExecStart=/bin/sh -c 'exec %h/Projects/comfyui/.venv/bin/python main.py --port $((8188 + %i)) --cuda-device %i --use-sage-attention --fast --disable-product-tips --fast-disk --disable-smart-memory --fp16-intermediates'
+ExecStart=/bin/sh -c 'exec %h/Projects/comfyui/.venv/bin/python main.py --port $((8188 + %i)) --cuda-device %i --use-sage-attention --fast --disable-product-tips --fast-disk --disable-smart-memory --fp16-intermediates --enable-cors-header'
 StandardOutput=append:%h/.local/state/opencode/providers/comfyui/gpu%i.log
 StandardError=inherit
 Restart=on-failure
