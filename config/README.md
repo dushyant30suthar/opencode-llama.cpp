@@ -29,6 +29,8 @@ config/
       server.ini
       servables/
         Qwen3.5-4B-int4-ov.graph.pbtxt   OVMS graph: GPU, VLM, cache tuning
+    comfyui/
+      server.ini                     ComfyUI v0.46.2 (branch h3-v0.46.2), args + why
 ```
 
 ## Reading order
