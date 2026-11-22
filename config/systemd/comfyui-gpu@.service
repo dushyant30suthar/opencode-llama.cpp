@@ -1,0 +1,22 @@
+# One ComfyUI server per GPU: comfyui-gpu@0 -> cuda:0 on :8188, comfyui-gpu@1 -> cuda:1 on :8189.
+# Measured 2026-11-22 (w6a8, 960x544x124, 10 steps): two clips in 179 s, 9.5 s/step on each
+# card, no swap. --fast-disk serves weights from the safetensors file, so both servers share
+# one page-cache copy instead of each holding a private ~15 GB; --disable-smart-memory drops
+# the 15 GB text encoder after encoding. Each server sees ONE GPU, so H3PipelineSplit
+# (cuda:0 -> cuda:1) cannot be used in workflows sent to these servers.
+[Unit]
+Description=ComfyUI on GPU %i
+After=network.target
+
+[Service]
+WorkingDirectory=%h/Projects/comfyui
+ExecStart=/bin/sh -c 'exec %h/Projects/comfyui/.venv/bin/python main.py --port $((8188 + %i)) --cuda-device %i --use-sage-attention --fast --disable-product-tips --fast-disk --disable-smart-memory --fp16-intermediates'
+StandardOutput=append:%h/.local/state/opencode/providers/comfyui/gpu%i.log
+StandardError=inherit
+Restart=on-failure
+RestartSec=10
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
